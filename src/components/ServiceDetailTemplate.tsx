@@ -57,7 +57,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
   return (
     <>
       <SEO
-        title={`${service.title} | Practice Areas | Matlala M&M Attorneys Inc.`}
+        title={`${service.title} | Services | Keatlegile Mabena`}
         description={service.shortDescription}
         ogImage={service.image}
         breadcrumbs={[
@@ -69,8 +69,8 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
           '@type': 'Service',
           'name': service.title,
           'provider': {
-            '@type': 'LegalService',
-            'name': 'Matlala M&M Attorneys Inc.'
+            '@type': 'Person',
+            'name': 'Keatlegile Mabena'
           },
           'description': service.shortDescription,
           'areaServed': 'South Africa'
@@ -197,13 +197,13 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
             <div className="bg-[#1C1C1C] text-white p-8 rounded-sm border-2 border-[#D4AF37] shadow-xl space-y-6">
               <div className="space-y-2 border-b-2 border-white/10 pb-4">
                 <span className="text-[10px] font-bold text-[#E2C45C] uppercase tracking-widest">
-                  Direct Legal Access
+                  Direct Advisory Access
                 </span>
                 <h3 className="font-serif text-2xl font-bold text-white">
                   Schedule Consultation
                 </h3>
                 <p className="text-xs text-white/70">
-                  Discuss your legal matter directly with our experienced attorneys.
+                  Discuss your requirements directly with Keatlegile Mabena.
                 </p>
               </div>
 

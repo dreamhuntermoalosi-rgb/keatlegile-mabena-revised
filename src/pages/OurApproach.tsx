@@ -66,12 +66,12 @@ export const OurApproach: React.FC = () => {
   return (
     <>
       <SEO
-        title="Strategic Legal Approach & Methodology | Matlala M&M Attorneys Inc."
-        description="Our 6-step legal methodology combines rigorous statutory mastery with institutional understanding to deliver practical, enforceable outcomes."
+        title="Strategic Approach & Methodology | Keatlegile Mabena"
+        description="Our multi-disciplinary methodology combines purpose-driven clarity, self-discovery frameworks, and institutional governance to deliver practical, transformative outcomes."
         keywords={[
-          'Legal Methodology Polokwane',
-          'Legal Strategy Matlala M&M',
-          'Strategic Legal Advisory South Africa'
+          'Mentorship Methodology',
+          'Self Discovery Strategy',
+          'Governance Advisory South Africa'
         ]}
         breadcrumbs={[{ label: 'Our Strategic Approach', path: '/our-approach' }]}
       />

@@ -112,13 +112,13 @@ export const SEO: React.FC<SEOProps> = ({
             '@type': 'ListItem',
             'position': 1,
             'name': 'Home',
-            'item': 'https://matlalamm.co.za'
+            'item': 'https://keatlegilemabena.co.za'
           },
           ...breadcrumbs.map((b, idx) => ({
             '@type': 'ListItem',
             'position': idx + 2,
             'name': b.label,
-            'item': b.path ? `https://matlalamm.co.za${b.path}` : currentUrl
+            'item': b.path ? `https://keatlegilemabena.co.za${b.path}` : currentUrl
           }))
         ]
       });

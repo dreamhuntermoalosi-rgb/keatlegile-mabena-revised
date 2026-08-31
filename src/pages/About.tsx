@@ -188,7 +188,7 @@ export const About: React.FC = () => {
               <h1 className="font-serif text-3xl sm:text-5xl font-bold leading-tight">
                 Keatlegile Mabena
               </h1>
-              <p className="text-lg sm:text-xl text-[#E2C45C] font-serif italic">
+              <p className="text-xs sm:text-sm text-[#E2C45C] font-serif italic tracking-wide">
                 Self-Discovery, Healing &amp; Mental Health Speaker | Best-Selling Author | Career Success Expert
               </p>
               <p className="text-base text-white/85 max-w-2xl leading-relaxed pt-2">

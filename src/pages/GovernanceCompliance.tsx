@@ -22,7 +22,7 @@ export const GovernanceCompliance: React.FC = () => {
   return (
     <>
       <SEO
-        title="Governance & Statutory Compliance Advisory | Matlala M&M Attorneys Inc."
+        title="Governance & Statutory Compliance Advisory | Keatlegile Mabena"
         description="Flagship governance and compliance advisory for municipal councils, government institutions, and corporate boards across South Africa. PFMA, MFMA, and King IV expertise."
         keywords={[
           'Governance and Compliance Lawyer South Africa',

@@ -83,13 +83,13 @@ Please contact me regarding a legal consultation.`;
   return (
     <>
       <SEO
-        title="Request Legal Consultation | Matlala M&M Attorneys Inc. Polokwane"
-        description="Book a confidential legal consultation with senior attorneys at Matlala M&M Attorneys Inc. Expert advisory for government, municipal, corporate, and private clients."
+        title="Request Advisory & Consultation | Keatlegile Mabena"
+        description="Book a consultation with Keatlegile Mabena. Expert advisory, speaking engagements, and mentorship for corporate, institutional, and individual clients."
         keywords={[
-          'Book Lawyer Consultation Polokwane',
-          'Legal Consultation Request Limpopo',
-          'Matlala M&M Consultation',
-          'Attorney Appointment Polokwane'
+          'Book Consultation Keatlegile Mabena',
+          'Keynote Speaker Consultation',
+          'Mentorship Request',
+          'Governance Advisory Consultation'
         ]}
         breadcrumbs={[{ label: 'Request Consultation', path: '/request-consultation' }]}
       />

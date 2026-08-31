@@ -62,23 +62,17 @@ export const Home: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full py-12">
           <div className="max-w-3xl space-y-8">
-            {/* Top Eyebrow Badges - Full Positioning on Tablet/Desktop, Clean Shortened on Mobile */}
+            {/* Top Eyebrow Tagline - Clean text without background */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-wrap items-center gap-2"
+              className="flex items-start gap-2.5 text-xs sm:text-sm font-semibold tracking-wider uppercase"
             >
-              {/* Mobile Shortened Pill */}
-              <div className="inline-flex sm:hidden items-center gap-2 px-3 py-1.5 bg-[#9a3820]/90 backdrop-blur-md border border-[#D4AF37]/50 rounded-sm text-xs font-semibold tracking-wider text-[#E2C45C] uppercase">
-                <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>{FIRM_DETAILS.positioningShort}</span>
-              </div>
-
-              {/* Desktop / Tablet Full 3 Pillars */}
-              <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#9a3820]/80 backdrop-blur-md border border-[#D4AF37]/50 rounded-sm text-xs font-semibold tracking-wider text-[#E2C45C] uppercase">
-                <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-                <span className="leading-snug">{FIRM_DETAILS.positioning}</span>
+              <Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+              <div className="space-y-1 leading-snug">
+                <div className="block text-[#E2C45C]">Self-Discovery, Healing &amp; Mental Health Speaker</div>
+                <div className="block text-[#D4AF37] text-[11px] sm:text-xs">Best-Selling Author &bull; Career Success Expert</div>
               </div>
             </motion.div>
 
