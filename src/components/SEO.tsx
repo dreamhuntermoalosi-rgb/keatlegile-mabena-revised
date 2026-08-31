@@ -86,7 +86,7 @@ export const SEO: React.FC<SEOProps> = ({
       '@type': 'Person',
       '@id': 'https://keatlegilemabena.com/#person',
       'name': 'Keatlegile Mabena',
-      'jobTitle': 'Speaker • Career Success Expert • Author • Mentor',
+      'jobTitle': 'Self-Discovery, Healing & Mental Health Speaker | Best-Selling Author | Career Success Expert',
       'description': description,
       'url': 'https://keatlegilemabena.com',
       'image': ogImage,

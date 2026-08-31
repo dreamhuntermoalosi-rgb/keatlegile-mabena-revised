@@ -15,8 +15,10 @@ import {
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { IMAGES } from '../data/images';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const GovernanceCompliance: React.FC = () => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   return (
     <>
       <SEO
@@ -35,20 +37,20 @@ export const GovernanceCompliance: React.FC = () => {
       <Breadcrumbs items={[{ label: 'Governance & Compliance' }]} />
 
       {/* Flagship Hero Header */}
-      <section className="relative bg-[#004C4C] text-white py-24 border-b-2 border-[#D4AF37] overflow-hidden">
+      <section className="relative bg-[#7e2e19] text-white py-24 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
             alt="Governance & Strategy"
             className="w-full h-full object-cover opacity-70 filter brightness-105 contrast-105 transform-gpu"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#003333]/85 via-[#004C4C]/60 to-[#003333]/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#004C4C]/75 via-transparent to-[#004C4C]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#5a1f10]/85 via-[#7e2e19]/60 to-[#5a1f10]/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#7e2e19]/75 via-transparent to-[#7e2e19]/40" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_50%)] pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#006666] border border-[#D4AF37] rounded-sm text-xs font-bold text-[#E2C45C] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#9a3820] border border-[#D4AF37] rounded-sm text-xs font-bold text-[#E2C45C] uppercase tracking-wider">
             <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
             <span>Governance &amp; Strategy</span>
           </div>
@@ -65,13 +67,20 @@ export const GovernanceCompliance: React.FC = () => {
           </p>
 
           <div className="pt-4 flex flex-wrap gap-4">
-            <Link
-              to="/start-a-conversation"
-              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl inline-flex items-center gap-2 border border-[#E2C45C]"
+            <button
+              type="button"
+              onClick={() =>
+                openWhatsAppModal({
+                  title: 'Schedule Advisory Session',
+                  subtitle: 'Strategic Governance, Board Alignment & Statutory Compliance',
+                  defaultService: 'Governance & Compliance Advisory'
+                })
+              }
+              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl inline-flex items-center gap-2 border border-[#E2C45C] cursor-pointer"
             >
               <span>Schedule Advisory Session</span>
               <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -80,10 +89,10 @@ export const GovernanceCompliance: React.FC = () => {
       <section className="py-20 bg-white text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="text-xs font-bold tracking-widest text-[#006666] uppercase border-b-2 border-[#D4AF37] pb-1">
+            <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1">
               Institutional Frameworks
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#004C4C]">
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#7e2e19]">
               Comprehensive Governance Solutions
             </h2>
             <p className="text-sm text-[#1C1C1C]/75">
@@ -130,12 +139,12 @@ export const GovernanceCompliance: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-8 bg-white rounded-sm border-2 border-[#D4AF37]/30 shadow-md hover:shadow-2xl hover:border-[#006666] transition-all space-y-4 group"
+                className="p-8 bg-white rounded-sm border-2 border-[#D4AF37]/30 shadow-md hover:shadow-2xl hover:border-[#9a3820] transition-all space-y-4 group"
               >
-                <div className="w-12 h-12 bg-[#006666]/10 text-[#006666] group-hover:bg-[#006666] group-hover:text-white rounded-sm flex items-center justify-center transition-colors">
+                <div className="w-12 h-12 bg-[#9a3820]/10 text-[#9a3820] group-hover:bg-[#9a3820] group-hover:text-white rounded-sm flex items-center justify-center transition-colors">
                   <pillar.icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-serif text-xl font-bold text-[#004C4C] group-hover:text-[#006666] transition-colors">
+                <h3 className="font-serif text-xl font-bold text-[#7e2e19] group-hover:text-[#9a3820] transition-colors">
                   {pillar.title}
                 </h3>
                 <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
@@ -148,13 +157,13 @@ export const GovernanceCompliance: React.FC = () => {
       </section>
 
       {/* Deep Dive Section */}
-      <section className="py-20 bg-[#F8F5EF] border-t border-[#006666]/10 text-[#1C1C1C]">
+      <section className="py-20 bg-[#F8F5EF] border-t-2 border-[#9a3820]/10 text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs font-bold tracking-widest text-[#006666] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
+            <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
               Strategic Insight
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#004C4C]">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#7e2e19]">
               Why Governance Alignment Is Key To Success
             </h2>
             <p className="text-sm sm:text-base text-[#1C1C1C]/80 leading-relaxed">
@@ -166,15 +175,15 @@ export const GovernanceCompliance: React.FC = () => {
 
             <div className="space-y-3 pt-2 text-xs">
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-[#006666] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#9a3820] shrink-0 mt-0.5" />
                 <span>Protection against operational inefficiencies and procedural errors</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-[#006666] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#9a3820] shrink-0 mt-0.5" />
                 <span>Defensible administrative procedures and delegation frameworks</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-[#006666] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#9a3820] shrink-0 mt-0.5" />
                 <span>Strict adherence to fairness and compliance standards</span>
               </div>
             </div>
@@ -187,7 +196,7 @@ export const GovernanceCompliance: React.FC = () => {
                 alt="Executive Boardroom"
                 className="w-full h-[380px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#004C4C] via-transparent to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#7e2e19] via-transparent to-transparent opacity-90" />
               <div className="absolute bottom-6 left-6 right-6 p-4 bg-[#1C1C1C]/90 text-white border-l-4 border-[#D4AF37] rounded-r-sm">
                 <div className="text-xs font-bold text-[#E2C45C] uppercase mb-1">Executive Leadership</div>
                 <div className="text-xs text-white/90">Keatlegile Mabena &amp; MBN Empire Advisory</div>
@@ -198,7 +207,7 @@ export const GovernanceCompliance: React.FC = () => {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-16 bg-[#006666] text-white border-y-2 border-[#D4AF37]">
+      <section className="py-16 bg-[#9a3820] text-white border-y-2 border-[#D4AF37]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center space-y-6">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold">
             Strengthen Governance in Your Institution Today
@@ -206,13 +215,20 @@ export const GovernanceCompliance: React.FC = () => {
           <p className="text-sm text-white/80 max-w-xl mx-auto">
             Book an executive consultation or request a governance advisory session with Keatlegile Mabena.
           </p>
-          <Link
-            to="/start-a-conversation"
-            className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm inline-flex items-center gap-2 shadow-lg border border-[#E2C45C]"
+          <button
+            type="button"
+            onClick={() =>
+              openWhatsAppModal({
+                title: 'Request Governance Advisory',
+                subtitle: 'Strategic Governance, Board Alignment & Statutory Compliance',
+                defaultService: 'Governance & Compliance Advisory'
+              })
+            }
+            className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm inline-flex items-center gap-2 shadow-lg border border-[#E2C45C] cursor-pointer"
           >
             <span>Request Governance Advisory</span>
             <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
-          </Link>
+          </button>
         </div>
       </section>
     </>

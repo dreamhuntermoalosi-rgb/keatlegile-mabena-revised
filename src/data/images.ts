@@ -13,11 +13,11 @@ export const IMAGES = {
   aboutProfile: 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/08/KEATLEGILE-MABENA-scaled.webp',
 
   // Page title and breadcrumbs background (User requested image)
-  pageTitleBg: 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/07/www.beatsnoop.com-3k-vRxiJgZdYO.webp',
+  pageTitleBg: 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/08/44036-scaled.webp',
 
   // Official Logo & Favicon (User requested assets)
-  logo: 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/07/Matlala-logo.png',
-  favicon: 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/07/Matlala-Fav.jpg',
+  logo: 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/08/KM-whit_1.svg',
+  favicon: 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/08/KM-Fav-Icon.png',
   publicPrivateSector: 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/07/www.beatsnoop.com-3k-8RqA26f9he.webp',
 
   // Executive boardroom & governance

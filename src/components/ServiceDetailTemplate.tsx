@@ -36,7 +36,6 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
   const handleWhatsAppClick = () => {
     openWhatsAppModal({
       defaultService: service.title,
-      defaultMessage: `Hello Matlala M&M Attorneys Inc., I would like to inquire about ${service.title} services and request legal consultation.`,
     });
   };
 
@@ -86,20 +85,20 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
       />
 
       {/* Hero Section */}
-      <section className="relative bg-[#001A1A] text-white py-20 border-b-2 border-[#D4AF37] overflow-hidden">
+      <section className="relative bg-[#290c06] text-white py-20 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
             alt={service.title}
             className="w-full h-full object-cover opacity-70 filter brightness-105 contrast-105 transform-gpu"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#002222]/85 via-[#002929]/60 to-[#001A1A]/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#001A1A]/75 via-transparent to-[#001A1A]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#38120a]/85 via-[#42160c]/60 to-[#290c06]/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#290c06]/75 via-transparent to-[#290c06]/40" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_50%)] pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006666] border border-[#D4AF37] rounded-sm text-xs font-bold text-[#E2C45C] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9a3820] border border-[#D4AF37] rounded-sm text-xs font-bold text-[#E2C45C] uppercase tracking-wider">
             <IconComp className="w-4 h-4" />
             <span>Practice Area</span>
           </div>
@@ -141,7 +140,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
             {/* Detailed Content Sections */}
             {service.detailedSections.map((sec, idx) => (
               <div key={idx} className="bg-white p-8 rounded-sm border border-[#D4AF37]/30 shadow-md space-y-4">
-                <h2 className="font-serif text-2xl font-bold text-[#006666] border-b border-gray-100 pb-3">
+                <h2 className="font-serif text-2xl font-bold text-[#9a3820] border-b-2 border-gray-100 pb-3">
                   {sec.heading}
                 </h2>
                 <p className="text-sm text-[#1C1C1C]/80 leading-relaxed">
@@ -152,7 +151,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
                   <ul className="space-y-2.5 pt-2 text-xs sm:text-sm text-[#1C1C1C]/80">
                     {sec.bullets.map((b, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-[#006666] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#9a3820] shrink-0 mt-0.5" />
                         <span>{b}</span>
                       </li>
                     ))}
@@ -163,13 +162,13 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
 
             {/* Key Focus Areas List */}
             <div className="bg-white p-8 rounded-sm border border-[#D4AF37]/30 shadow-md space-y-6">
-              <h3 className="font-serif text-2xl font-bold text-[#004C4C]">
+              <h3 className="font-serif text-2xl font-bold text-[#7e2e19]">
                 Key Service Offerings in {service.title}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.keyAreas.map((area) => (
                   <div key={area} className="p-4 bg-gray-50 rounded border border-gray-200 flex items-start gap-3">
-                    <ShieldCheck className="w-5 h-5 text-[#006666] shrink-0 mt-0.5" />
+                    <ShieldCheck className="w-5 h-5 text-[#9a3820] shrink-0 mt-0.5" />
                     <span className="text-xs font-semibold text-[#1C1C1C]">{area}</span>
                   </div>
                 ))}
@@ -177,7 +176,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
             </div>
 
             {/* Institutional Benefits */}
-            <div className="p-8 bg-[#006666] text-white rounded-sm shadow-xl space-y-4 border border-[#D4AF37]">
+            <div className="p-8 bg-[#9a3820] text-white rounded-sm shadow-xl space-y-4 border border-[#D4AF37]">
               <h3 className="font-serif text-2xl font-bold text-[#E2C45C]">
                 Strategic Advantages &amp; Client Benefits
               </h3>
@@ -196,7 +195,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
           <div className="lg:col-span-4 space-y-8">
             {/* Consultation Card */}
             <div className="bg-[#1C1C1C] text-white p-8 rounded-sm border-2 border-[#D4AF37] shadow-xl space-y-6">
-              <div className="space-y-2 border-b border-white/10 pb-4">
+              <div className="space-y-2 border-b-2 border-white/10 pb-4">
                 <span className="text-[10px] font-bold text-[#E2C45C] uppercase tracking-widest">
                   Direct Legal Access
                 </span>
@@ -221,7 +220,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
 
               <Link
                 to="/request-consultation"
-                className="w-full py-3 bg-[#006666] hover:bg-[#004C4C] text-white text-xs font-bold uppercase tracking-wider rounded-sm text-center block shadow transition-colors border border-[#D4AF37]/40"
+                className="w-full py-3 bg-[#9a3820] hover:bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-wider rounded-sm text-center block shadow transition-colors border border-[#D4AF37]/40"
               >
                 Request Appointment
               </Link>
@@ -229,7 +228,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
 
             {/* Other Practice Areas List */}
             <div className="bg-white p-6 rounded-sm border border-[#D4AF37]/30 shadow-md space-y-4">
-              <h4 className="font-serif text-lg font-bold text-[#004C4C] border-b border-gray-100 pb-2">
+              <h4 className="font-serif text-lg font-bold text-[#7e2e19] border-b-2 border-gray-100 pb-2">
                 Other Practice Areas
               </h4>
               <ul className="space-y-2 text-xs">
@@ -237,7 +236,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
                   <li key={os.id}>
                     <Link
                       to={`/services/${os.slug}`}
-                      className="text-[#1C1C1C]/80 hover:text-[#006666] hover:bg-[#F8F5EF] p-2 rounded transition-colors block font-medium"
+                      className="text-[#1C1C1C]/80 hover:text-[#9a3820] hover:bg-[#F8F5EF] p-2 rounded transition-colors block font-medium"
                     >
                       {os.title}
                     </Link>

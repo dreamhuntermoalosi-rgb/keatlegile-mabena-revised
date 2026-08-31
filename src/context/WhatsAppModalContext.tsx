@@ -1,11 +1,15 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { X, MessageSquare, Send, Copy, Check, ShieldCheck, Sparkles } from 'lucide-react';
-import { FIRM_DETAILS, SERVICES } from '../data/firmData';
+import { X, MessageSquare, Send, Building2, User, Phone as PhoneIcon, Mail } from 'lucide-react';
+import { FIRM_DETAILS } from '../data/firmData';
 
 export interface WhatsAppModalOptions {
+  title?: string;
+  subtitle?: string;
+  ctaType?: 'speaking' | 'mentorship' | 'career' | 'book' | 'partnership' | 'conversation' | 'general';
   defaultService?: string;
   defaultMessage?: string;
   initialName?: string;
+  initialOrganization?: string;
 }
 
 interface WhatsAppModalContextType {
@@ -23,24 +27,56 @@ export const useWhatsAppModal = () => {
   return context;
 };
 
+const CTA_SERVICES = [
+  'Speaking & Keynote Addresses',
+  'One-on-One Mentorship Programme',
+  'Career Development & Employability',
+  'Book Orders & Enquiries (The Power of Pain / The Art of Becoming)',
+  'MBN Empire Strategic Advisory & Publishing',
+  'Youth & Leadership Workshops',
+  'Media, Interviews & Feature Enquiries',
+  'General Direct Enquiry'
+];
+
 export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState('Start a Conversation');
+  const [modalSubtitle, setModalSubtitle] = useState('Direct WhatsApp connect with Keatlegile Mabena');
+  const [ctaType, setCtaType] = useState<string>('conversation');
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
-  const [selectedService, setSelectedService] = useState('General Legal Inquiry');
-  const [urgency, setUrgency] = useState('Standard Consultation');
+  const [email, setEmail] = useState('');
+  const [organization, setOrganization] = useState('');
+  const [selectedService, setSelectedService] = useState(CTA_SERVICES[0]);
   const [message, setMessage] = useState('');
-  const [copied, setCopied] = useState(false);
 
   const openWhatsAppModal = (options?: WhatsAppModalOptions) => {
+    if (options?.title) setModalTitle(options.title);
+    else setModalTitle('Start a Conversation');
+
+    if (options?.subtitle) setModalSubtitle(options.subtitle);
+    else setModalSubtitle('Direct WhatsApp connect with Keatlegile Mabena');
+
+    if (options?.ctaType) setCtaType(options.ctaType);
+    else setCtaType('conversation');
+
     if (options?.initialName) setFullName(options.initialName);
-    if (options?.defaultService) setSelectedService(options.defaultService);
-    else setSelectedService('General Legal Inquiry');
+    else setFullName('');
+
+    if (options?.initialOrganization) setOrganization(options.initialOrganization);
+    else setOrganization('');
+
+    if (options?.defaultService) {
+      const matched = CTA_SERVICES.find(s => s.toLowerCase().includes(options.defaultService!.toLowerCase()));
+      setSelectedService(matched || options.defaultService);
+    } else {
+      setSelectedService(CTA_SERVICES[0]);
+    }
 
     if (options?.defaultMessage) {
       setMessage(options.defaultMessage);
     } else {
-      setMessage('I would like to inquire about legal representation and schedule an initial consultation with an attorney.');
+      setMessage('');
     }
 
     setIsOpen(true);
@@ -48,7 +84,6 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const closeWhatsAppModal = () => {
     setIsOpen(false);
-    setCopied(false);
   };
 
   // Close on escape key
@@ -74,24 +109,27 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
     };
   }, [isOpen]);
 
-  // Build the pre-filled formatted WhatsApp text message
+  // Build formatted message for WhatsApp payload upon submission
   const buildFormattedMessage = () => {
-    const clientName = fullName.trim() || 'Client';
-    const clientPhone = phone.trim() ? phone.trim() : 'Not specified';
+    const clientName = fullName.trim() || 'Enquirer';
+    const clientPhone = phone.trim() ? phone.trim() : 'Not provided';
+    const clientEmail = email.trim() ? email.trim() : 'Not provided';
+    const clientOrg = organization.trim() ? organization.trim() : 'Individual / Independent';
     const note = message.trim() || 'No additional details provided.';
 
-    return `Hello Matlala M&M Attorneys Inc.,
+    return `Hello Keatlegile Mabena,
 
-*WHATSAPP LEGAL INQUIRY*
-• Name: ${clientName}
-• Contact: ${clientPhone}
-• Practice Area: ${selectedService}
-• Urgency Level: ${urgency}
+*ENQUIRY: ${modalTitle.toUpperCase()}*
+• *Full Name:* ${clientName}
+• *Phone:* ${clientPhone}
+• *Email:* ${clientEmail}
+• *Organisation:* ${clientOrg}
+• *Area of Focus:* ${selectedService}
 
-*Details / Notes:*
+*Message / Request Details:*
 ${note}
 
-_Sent via Matlala M&M Attorneys Inc. Web Portal_`;
+_Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
   };
 
   const handleSendToWhatsApp = () => {
@@ -101,120 +139,138 @@ _Sent via Matlala M&M Attorneys Inc. Web Portal_`;
     closeWhatsAppModal();
   };
 
-  const handleCopyPayload = () => {
-    const formattedText = buildFormattedMessage();
-    navigator.clipboard.writeText(formattedText);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
   return (
     <WhatsAppModalContext.Provider value={{ openWhatsAppModal, closeWhatsAppModal }}>
       {children}
 
       {/* WhatsApp Modal Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-xs animate-fade-in overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs animate-fade-in overflow-y-auto">
           <div
-            className="relative w-full max-w-lg bg-white rounded-md shadow-2xl border-2 border-[#D4AF37]/50 my-8 overflow-hidden text-[#1C1C1C]"
+            className="relative w-full max-w-lg bg-white rounded-md shadow-2xl border-2 border-[#D4AF37] my-8 overflow-hidden text-[#1C1C1C]"
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
             aria-labelledby="whatsapp-modal-title"
           >
             {/* Modal Header */}
-            <div className="bg-[#4B071F] text-white p-5 sm:p-6 border-b border-[#D4AF37]/40 relative">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-md shrink-0">
-                  <MessageSquare className="w-5 h-5 fill-current stroke-none" />
+            <div className="bg-gradient-to-r from-[#5a1f10] via-[#7e2e19] to-[#5a1f10] text-white p-5 sm:p-6 border-b-2 border-[#D4AF37] relative">
+              <div className="flex items-center gap-3.5">
+                <div className="w-11 h-11 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shrink-0 border border-white/20">
+                  <MessageSquare className="w-6 h-6 fill-current stroke-none" />
                 </div>
                 <div>
-                  <h3 id="whatsapp-modal-title" className="font-serif text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-                    WhatsApp Inquiry Portal
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#E2C45C] mb-0.5">
+                    Direct Connect
+                  </div>
+                  <h3 id="whatsapp-modal-title" className="font-serif text-lg sm:text-xl font-bold text-white leading-tight">
+                    {modalTitle}
                   </h3>
-                  <p className="text-xs text-[#E2C45C] font-medium">
-                    Matlala M&M Attorneys Inc. — Instant Direct Connect
+                  <p className="text-xs text-white/80 mt-0.5 font-normal">
+                    {modalSubtitle}
                   </p>
                 </div>
               </div>
 
               <button
                 onClick={closeWhatsAppModal}
-                className="absolute top-4 right-4 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors focus:outline-none"
+                className="absolute top-4 right-4 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors focus:outline-none cursor-pointer"
                 aria-label="Close dialog"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Modal Body / Short Form */}
-            <div className="p-5 sm:p-6 space-y-4 max-h-[75vh] overflow-y-auto">
+            {/* Modal Body / Form */}
+            <div className="p-5 sm:p-6 space-y-4 max-h-[72vh] overflow-y-auto">
               <p className="text-xs text-gray-600 leading-relaxed">
-                Complete the short form below to generate a tailored, pre-formatted message for our legal team on WhatsApp Business.
+                Please fill in your details below to connect directly with Keatlegile Mabena on WhatsApp:
               </p>
 
               {/* Form Controls */}
-              <div className="space-y-3">
+              <div className="space-y-3.5">
                 {/* Full Name */}
                 <div>
                   <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
-                    Your Full Name / Organisation <span className="text-red-500">*</span>
+                    Your Full Name <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="text"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    placeholder="e.g. Adv. Thabo Mokoena / Capricorn District"
-                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7A1238] focus:bg-white transition-colors"
-                  />
+                  <div className="relative">
+                    <User className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                    <input
+                      type="text"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      placeholder="e.g. Thabo Mokoena"
+                      className="w-full pl-9 pr-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] focus:bg-white transition-colors"
+                    />
+                  </div>
                 </div>
 
-                {/* Contact Phone Number */}
+                {/* Contact Phone & Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
                     <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
-                      Contact Number (Optional)
+                      Phone / WhatsApp Number
                     </label>
-                    <input
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      placeholder="+27 82 123 4567"
-                      className="w-full px-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7A1238] focus:bg-white transition-colors"
-                    />
+                    <div className="relative">
+                      <PhoneIcon className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="+27 72 000 0000"
+                        className="w-full pl-9 pr-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] focus:bg-white transition-colors"
+                      />
+                    </div>
                   </div>
 
-                  {/* Urgency */}
                   <div>
                     <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
-                      Urgency / Timeline
+                      Email Address (Optional)
                     </label>
-                    <select
-                      value={urgency}
-                      onChange={(e) => setUrgency(e.target.value)}
-                      className="w-full px-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7A1238] focus:bg-white transition-colors"
-                    >
-                      <option value="Urgent (Within 24 Hours)">Urgent (Within 24 Hours)</option>
-                      <option value="Standard Consultation">Standard Consultation</option>
-                      <option value="General Information">General Information</option>
-                    </select>
+                    <div className="relative">
+                      <Mail className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="thabo@example.com"
+                        className="w-full pl-9 pr-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] focus:bg-white transition-colors"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                {/* Practice Area */}
+                {/* Organisation / Company (if applicable) */}
                 <div>
                   <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
-                    Practice Area / Legal Service
+                    Organisation / Institution (Optional)
+                  </label>
+                  <div className="relative">
+                    <Building2 className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                    <input
+                      type="text"
+                      value={organization}
+                      onChange={(e) => setOrganization(e.target.value)}
+                      placeholder="e.g. University / Company / Independent"
+                      className="w-full pl-9 pr-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] focus:bg-white transition-colors"
+                    />
+                  </div>
+                </div>
+
+                {/* Service / Topic */}
+                <div>
+                  <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
+                    Area of Focus / Engagement Topic
                   </label>
                   <select
                     value={selectedService}
                     onChange={(e) => setSelectedService(e.target.value)}
-                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7A1238] focus:bg-white transition-colors"
+                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] focus:bg-white transition-colors"
                   >
-                    <option value="General Legal Inquiry">General Legal Inquiry</option>
-                    {SERVICES.map((s) => (
-                      <option key={s.id} value={s.title}>
-                        {s.title}
+                    {CTA_SERVICES.map((s, idx) => (
+                      <option key={idx} value={s}>
+                        {s}
                       </option>
                     ))}
                   </select>
@@ -223,62 +279,25 @@ _Sent via Matlala M&M Attorneys Inc. Web Portal_`;
                 {/* Message Notes */}
                 <div>
                   <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
-                    Brief Note or Matter Description
+                    Your Message / Specific Request
                   </label>
                   <textarea
                     rows={3}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Briefly describe your legal concern or query..."
-                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7A1238] focus:bg-white transition-colors"
+                    placeholder="Share event dates, locations, mentorship goals, or specific requirements..."
+                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] focus:bg-white transition-colors"
                   />
                 </div>
-              </div>
-
-              {/* Pre-filled Live WhatsApp Payload Preview */}
-              <div className="pt-2">
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#7A1238] flex items-center gap-1">
-                    <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" /> Pre-formatted WhatsApp Payload
-                  </span>
-                  <button
-                    type="button"
-                    onClick={handleCopyPayload}
-                    className="text-[11px] font-medium text-gray-600 hover:text-[#7A1238] flex items-center gap-1 focus:outline-none"
-                  >
-                    {copied ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-600" />
-                        <span className="text-emerald-600 font-bold">Copied!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" />
-                        <span>Copy Text</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-                <div className="p-3 bg-emerald-50/60 border border-emerald-200 rounded text-[11px] font-mono text-emerald-950 whitespace-pre-wrap leading-relaxed shadow-inner">
-                  {buildFormattedMessage()}
-                </div>
-              </div>
-
-              {/* Security & POPIA note */}
-              <div className="flex items-center gap-2 text-[11px] text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-200">
-                <ShieldCheck className="w-4 h-4 text-[#7A1238] shrink-0" />
-                <span>
-                  All communications remain subject to legal professional privilege and POPIA guidelines.
-                </span>
               </div>
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 sm:p-5 bg-gray-100 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="p-4 sm:p-5 bg-gray-100 border-t-2 border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
               <button
                 type="button"
                 onClick={closeWhatsAppModal}
-                className="w-full sm:w-auto px-4 py-2 text-xs font-semibold text-gray-600 hover:text-gray-900 border border-gray-300 rounded hover:bg-gray-200 transition-colors"
+                className="w-full sm:w-auto px-4 py-2 text-xs font-semibold text-gray-600 hover:text-gray-900 border border-gray-300 rounded hover:bg-gray-200 transition-colors cursor-pointer"
               >
                 Cancel
               </button>
@@ -286,10 +305,10 @@ _Sent via Matlala M&M Attorneys Inc. Web Portal_`;
               <button
                 type="button"
                 onClick={handleSendToWhatsApp}
-                className="w-full sm:w-auto px-6 py-2.5 bg-[#25D366] hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider rounded shadow-lg transition-all flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto px-6 py-2.5 bg-[#25D366] hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider rounded shadow-lg transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 fill-current stroke-none" />
-                <span>Open WhatsApp &amp; Send</span>
+                <span>Submit &amp; Open WhatsApp</span>
                 <Send className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </button>
             </div>

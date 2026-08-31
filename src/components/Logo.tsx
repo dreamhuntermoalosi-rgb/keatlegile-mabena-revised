@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IMAGES } from '../data/images';
 
 interface LogoProps {
   variant?: 'light' | 'dark';
@@ -11,44 +12,50 @@ interface LogoProps {
 export const Logo: React.FC<LogoProps> = ({
   variant = 'dark',
   size = 'md',
+  showText = false,
   className = ''
 }) => {
   const isDarkBg = variant === 'dark';
+  const [imageError, setImageError] = useState(false);
 
-  const textSize = size === 'sm' ? 'text-base' : size === 'lg' ? 'text-2xl' : 'text-xl';
-  const subtextSize = size === 'sm' ? 'text-[9px]' : size === 'lg' ? 'text-[11px]' : 'text-[10px]';
-  const badgeSize = size === 'sm' ? 'w-8 h-8 text-xs' : size === 'lg' ? 'w-12 h-12 text-base' : 'w-10 h-10 text-sm';
+  const logoHeight =
+    size === 'sm'
+      ? 'h-8 sm:h-9 w-auto'
+      : size === 'lg'
+      ? 'h-14 sm:h-16 w-auto'
+      : 'h-10 sm:h-12 w-auto';
 
   return (
-    <Link to="/" className={`inline-flex items-center gap-3 group focus:outline-none ${className}`}>
-      {/* Monogram Badge */}
-      <div
-        className={`${badgeSize} rounded-sm flex items-center justify-center font-serif font-bold tracking-wider transition-transform duration-300 group-hover:scale-105 border ${
-          isDarkBg
-            ? 'bg-gradient-to-br from-[#E2C45C] via-[#D4AF37] to-[#A88616] text-[#003333] border-[#E2C45C] shadow-md'
-            : 'bg-[#004C4C] text-[#D4AF37] border-[#004C4C] shadow-sm'
-        }`}
-      >
-        KM
-      </div>
-
-      {/* Brand Text */}
-      <div className="flex flex-col">
-        <span
-          className={`font-serif ${textSize} font-bold tracking-wider uppercase transition-colors duration-200 leading-none ${
-            isDarkBg ? 'text-white group-hover:text-[#E2C45C]' : 'text-[#003333] group-hover:text-[#006666]'
+    <Link
+      to="/"
+      className={`inline-flex items-center gap-3 group focus:outline-none ${className}`}
+      aria-label="Keatlegile Mabena Home"
+    >
+      {/* Official Website Logo */}
+      {!imageError ? (
+        <img
+          src={IMAGES.logo}
+          alt="Keatlegile Mabena"
+          className={`${logoHeight} object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-sm`}
+          onError={() => setImageError(true)}
+        />
+      ) : (
+        <div
+          className={`${
+            size === 'sm'
+              ? 'w-9 h-9 text-sm'
+              : size === 'lg'
+              ? 'w-14 h-14 text-lg'
+              : 'w-11 h-11 text-base'
+          } rounded-sm flex items-center justify-center font-serif font-bold tracking-wider transition-transform duration-300 group-hover:scale-105 border ${
+            isDarkBg
+              ? 'bg-gradient-to-br from-[#E2C45C] via-[#D4AF37] to-[#A88616] text-[#5a1f10] border-[#E2C45C] shadow-md'
+              : 'bg-[#7e2e19] text-[#D4AF37] border-[#7e2e19] shadow-sm'
           }`}
         >
-          Keatlegile Mabena
-        </span>
-        <span
-          className={`${subtextSize} tracking-widest font-semibold uppercase mt-1 leading-none ${
-            isDarkBg ? 'text-[#D4AF37]' : 'text-[#006666]'
-          }`}
-        >
-          Speaker • Career Success Expert • Author • Philanthropist
-        </span>
-      </div>
+          KM
+        </div>
+      )}
     </Link>
   );
 };

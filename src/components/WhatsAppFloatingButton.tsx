@@ -8,8 +8,9 @@ export const WhatsAppFloatingButton: React.FC = () => {
 
   const handleOpen = () => {
     openWhatsAppModal({
-      defaultService: 'General Enquiry',
-      defaultMessage: 'Hello Keatlegile Mabena, I would like to enquire about your speaking, mentorship, or career services.',
+      title: 'Start a Conversation',
+      subtitle: 'Connect directly with Keatlegile Mabena on WhatsApp',
+      defaultService: 'General Direct Enquiry',
     });
   };
 

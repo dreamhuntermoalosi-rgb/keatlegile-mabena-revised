@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-[#004C4C] via-[#003333] to-[#002929] text-white pt-16 pb-8 border-t-4 border-[#D4AF37] relative overflow-visible">
+    <footer className="bg-gradient-to-b from-[#7e2e19] via-[#5a1f10] to-[#42160c] text-white pt-16 pb-8 border-t-4 border-[#D4AF37] relative overflow-visible">
       {/* Background Abstract Pattern Layer Container */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -22,27 +22,21 @@ export const Footer: React.FC = () => {
       <div className="absolute -top-[18px] left-1/2 -translate-x-1/2 z-20 flex flex-col items-center group">
         <button
           onClick={scrollToTop}
-          className="relative flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-[#E2C45C] via-[#D4AF37] to-[#A88616] text-[#003333] shadow-[0_0_15px_rgba(212,175,55,0.45)] border-2 border-[#FFFFFF] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group-hover:shadow-[0_0_25px_rgba(212,175,55,0.8)]"
+          className="relative flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-[#E2C45C] via-[#D4AF37] to-[#A88616] text-[#5a1f10] shadow-[0_0_15px_rgba(212,175,55,0.45)] border-2 border-[#FFFFFF] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group-hover:shadow-[0_0_25px_rgba(212,175,55,0.8)]"
           aria-label="Scroll to top of page"
         >
-          <ChevronUp className="w-4 h-4 stroke-[2.5] text-[#003333]" />
+          <ChevronUp className="w-4 h-4 stroke-[2.5] text-[#5a1f10]" />
         </button>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b-2 border-white/10">
           {/* Column 1: Brand Identity */}
           <div className="space-y-4">
             <Logo variant="dark" size="md" />
             <p className="text-xs text-white/75 leading-relaxed pt-2">
               Helping people move from pain and uncertainty towards healing, clarity, confidence and purposeful action.
             </p>
-            <div className="pt-1 text-[11px] text-[#E2C45C] space-y-1 bg-white/5 p-3 rounded border border-[#D4AF37]/20">
-              <div className="flex items-center gap-2 font-medium">
-                <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>Positioning: <strong>Speaker • Career Expert • Author • Philanthropist</strong></span>
-              </div>
-            </div>
 
             {/* Social Icons Container */}
             <div className="pt-2">
@@ -52,7 +46,7 @@ export const Footer: React.FC = () => {
                   href={FIRM_DETAILS.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-white/5 border border-[#D4AF37]/30 rounded-full hover:bg-[#D4AF37] hover:text-[#003333] transition-all text-[#E2C45C]"
+                  className="p-2 bg-white/5 border border-[#D4AF37]/30 rounded-full hover:bg-[#D4AF37] hover:text-[#5a1f10] transition-all text-[#E2C45C]"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-4 h-4" />
@@ -61,7 +55,7 @@ export const Footer: React.FC = () => {
                   href={FIRM_DETAILS.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-white/5 border border-[#D4AF37]/30 rounded-full hover:bg-[#D4AF37] hover:text-[#003333] transition-all text-[#E2C45C]"
+                  className="p-2 bg-white/5 border border-[#D4AF37]/30 rounded-full hover:bg-[#D4AF37] hover:text-[#5a1f10] transition-all text-[#E2C45C]"
                   aria-label="Facebook"
                 >
                   <Facebook className="w-4 h-4" />
@@ -70,7 +64,7 @@ export const Footer: React.FC = () => {
                   href={FIRM_DETAILS.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-white/5 border border-[#D4AF37]/30 rounded-full hover:bg-[#D4AF37] hover:text-[#003333] transition-all text-[#E2C45C]"
+                  className="p-2 bg-white/5 border border-[#D4AF37]/30 rounded-full hover:bg-[#D4AF37] hover:text-[#5a1f10] transition-all text-[#E2C45C]"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
@@ -133,7 +127,7 @@ export const Footer: React.FC = () => {
               ))}
             </ul>
 
-            <div className="pt-2 space-y-2 text-xs border-t border-white/10">
+            <div className="pt-2 space-y-2 text-xs border-t-2 border-white/10">
               <div className="text-[10px] font-bold uppercase tracking-wider text-[#E2C45C]">Social Channels</div>
               <a
                 href={FIRM_DETAILS.social.instagram}
@@ -164,7 +158,7 @@ export const Footer: React.FC = () => {
               </a>
             </div>
 
-            <div className="pt-2 space-y-2 text-xs text-white/80 border-t border-white/10">
+            <div className="pt-2 space-y-2 text-xs text-white/80 border-t-2 border-white/10">
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <a href={`tel:${FIRM_DETAILS.contact.phone.replace(/\s+/g, '')}`} className="hover:text-[#E2C45C]">

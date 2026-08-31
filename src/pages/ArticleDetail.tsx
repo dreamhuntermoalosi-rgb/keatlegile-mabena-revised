@@ -37,13 +37,13 @@ export const ArticleDetail: React.FC = () => {
       <article className="bg-white text-[#1C1C1C] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-8">
           <div className="space-y-4">
-            <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#004C4C] leading-tight">
+            <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#7e2e19] leading-tight">
               {article.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-xs text-[#1C1C1C]/70 pt-2 border-y border-[#D74B27]/30 py-3">
+            <div className="flex flex-wrap items-center gap-6 text-xs text-[#1C1C1C]/70 pt-2 border-y-2 border-[#D74B27]/30 py-3">
               <span className="flex items-center gap-1.5 font-medium">
-                <User className="w-4 h-4 text-[#006666]" /> Author: {article.author}
+                <User className="w-4 h-4 text-[#9a3820]" /> Author: {article.author}
               </span>
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4 text-[#D74B27]" /> Published: {article.date}
@@ -55,7 +55,7 @@ export const ArticleDetail: React.FC = () => {
           </div>
 
           {/* Key Takeaways Box */}
-          <div className="bg-[#004C4C] text-white p-8 rounded-sm shadow-lg space-y-4 border border-[#D74B27]">
+          <div className="bg-[#7e2e19] text-white p-8 rounded-sm shadow-lg space-y-4 border border-[#D74B27]">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E86543]">
               <Sparkles className="w-4 h-4 text-[#D74B27]" /> Core Takeaways
             </div>
@@ -70,7 +70,7 @@ export const ArticleDetail: React.FC = () => {
           </div>
 
           {/* Article Body */}
-          <div className="space-y-6 text-sm sm:text-base text-[#1C1C1C]/85 leading-relaxed border-b border-gray-200 pb-12">
+          <div className="space-y-6 text-sm sm:text-base text-[#1C1C1C]/85 leading-relaxed border-b-2 border-gray-200 pb-12">
             {article.content.map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
@@ -79,7 +79,7 @@ export const ArticleDetail: React.FC = () => {
           {/* Related Articles */}
           {relatedArticles.length > 0 && (
             <div className="pt-8 space-y-6">
-              <h3 className="font-serif text-2xl font-bold text-[#004C4C]">
+              <h3 className="font-serif text-2xl font-bold text-[#7e2e19]">
                 More Reflections
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -87,7 +87,7 @@ export const ArticleDetail: React.FC = () => {
                   <div key={rel.id} className="p-6 bg-[#F8F5EF] rounded-sm border border-[#D74B27]/30 space-y-2">
                     <h4 className="font-serif text-lg font-bold text-[#1C1C1C]">{rel.title}</h4>
                     <p className="text-xs text-[#1C1C1C]/70 line-clamp-2">{rel.summary}</p>
-                    <Link to={`/insights/${rel.slug}`} className="inline-flex items-center gap-1 text-xs font-bold text-[#006666] hover:underline pt-2">
+                    <Link to={`/insights/${rel.slug}`} className="inline-flex items-center gap-1 text-xs font-bold text-[#9a3820] hover:underline pt-2">
                       Read Article <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>

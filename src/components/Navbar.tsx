@@ -3,8 +3,10 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Menu, X, Phone, Mail, Sparkles, ArrowRight, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { Logo } from './Logo';
 import { FIRM_DETAILS } from '../data/firmData';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const Navbar: React.FC = () => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [workDropdownOpen, setWorkDropdownOpen] = useState(false);
@@ -40,7 +42,7 @@ export const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 w-full transition-colors duration-300 shadow-xl">
       {/* Top Utility Bar - Deep Teal */}
-      <div className="hidden md:block bg-[#003333] text-xs text-white/90 border-b border-[#D4AF37]/30">
+      <div className="hidden md:block bg-[#5a1f10] text-xs text-white/90 border-b-2 border-[#D4AF37]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-2 flex justify-between items-center">
           <div className="flex items-center gap-6">
             <a href={`tel:${FIRM_DETAILS.contact.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 text-white/90 hover:text-[#E2C45C] transition-colors">
@@ -92,12 +94,12 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Navigation Bar - Primary Teal (#004C4C) */}
+      {/* Main Navigation Bar - Primary Teal (#7e2e19) */}
       <nav
-        className={`w-full transition-colors duration-300 border-b border-[#D4AF37]/40 py-3.5 sm:py-4 ${
+        className={`w-full transition-colors duration-300 border-b-2 border-[#D4AF37]/40 py-3.5 sm:py-4 ${
           isScrolled
-            ? 'bg-[#003333] shadow-2xl'
-            : 'bg-[#004C4C] shadow-lg'
+            ? 'bg-[#5a1f10] shadow-2xl'
+            : 'bg-[#7e2e19] shadow-lg'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
@@ -152,7 +154,7 @@ export const Navbar: React.FC = () => {
 
               {workDropdownOpen && (
                 <div className="absolute top-full left-0 w-80 bg-[#1C1C1C] text-white shadow-2xl rounded-sm border-t-2 border-[#D4AF37] p-2 animate-fade-in z-50">
-                  <div className="px-3 py-2 text-[10px] font-bold tracking-widest text-[#D4AF37] uppercase border-b border-white/10 mb-1">
+                  <div className="px-3 py-2 text-[10px] font-bold tracking-widest text-[#D4AF37] uppercase border-b-2 border-white/10 mb-1">
                     Areas of Impact &amp; Work
                   </div>
                   {primaryWorkItems.map((item) => (
@@ -205,13 +207,20 @@ export const Navbar: React.FC = () => {
 
           {/* Responsive Desktop & Tablet Right CTA - Gold Button */}
           <div className="hidden sm:flex items-center gap-3">
-            <Link
-              to="/start-a-conversation"
-              className="px-3.5 sm:px-4 py-2 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-sm shadow-lg transition-all duration-300 hover:shadow-xl border border-[#E2C45C] inline-flex items-center gap-1.5 group whitespace-nowrap"
+            <button
+              type="button"
+              onClick={() =>
+                openWhatsAppModal({
+                  title: 'Start a Conversation',
+                  subtitle: 'Direct WhatsApp connect with Keatlegile Mabena',
+                  defaultService: 'General Direct Enquiry'
+                })
+              }
+              className="px-3.5 sm:px-4 py-2 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-sm shadow-lg transition-all duration-300 hover:shadow-xl border border-[#E2C45C] inline-flex items-center gap-1.5 group whitespace-nowrap cursor-pointer"
             >
               <span>Start a Conversation</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
-            </Link>
+            </button>
 
             {/* Mobile/Tablet Hamburger Toggle */}
             <button
@@ -239,10 +248,10 @@ export const Navbar: React.FC = () => {
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-black/70 flex justify-end">
-          <div className="w-full max-w-sm bg-[#004C4C] text-white h-full flex flex-col justify-between p-6 overflow-y-auto border-l border-[#D4AF37]/50 shadow-2xl">
+          <div className="w-full max-w-sm bg-[#7e2e19] text-white h-full flex flex-col justify-between p-6 overflow-y-auto border-l border-[#D4AF37]/50 shadow-2xl">
             <div>
               {/* Drawer Header */}
-              <div className="flex items-center justify-between border-b border-white/20 pb-4 mb-6">
+              <div className="flex items-center justify-between border-b-2 border-white/20 pb-4 mb-6">
                 <Logo variant="dark" size="sm" />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
@@ -258,7 +267,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
                   Home
@@ -267,7 +276,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/about"
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
                   About Keatlegile
@@ -280,7 +289,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/speaking"
                   className={({ isActive }) =>
-                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
+                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
                   }
                 >
                   • Speaking &amp; Keynotes
@@ -289,7 +298,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/mentorship"
                   className={({ isActive }) =>
-                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
+                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
                   }
                 >
                   • Mentorship
@@ -298,7 +307,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/career-development"
                   className={({ isActive }) =>
-                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
+                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
                   }
                 >
                   • Career Development
@@ -307,7 +316,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/books"
                   className={({ isActive }) =>
-                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
+                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
                   }
                 >
                   • Books &amp; Authorship
@@ -316,7 +325,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/governance-compliance"
                   className={({ isActive }) =>
-                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
+                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
                   }
                 >
                   • Governance &amp; Strategy
@@ -325,7 +334,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/insights"
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded mt-2 ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                    `block px-3 py-2 rounded mt-2 ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
                   Insights &amp; Reflections
@@ -334,7 +343,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/impact"
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
                   Social Impact
@@ -343,7 +352,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/media"
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
                   Media
@@ -352,7 +361,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/events"
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
                   Events
@@ -361,7 +370,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/mbn-empire"
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
                   MBN Empire
@@ -370,7 +379,7 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#006666] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
                   Contact
@@ -379,7 +388,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Drawer Footer CTA & Socials */}
-            <div className="pt-6 border-t border-white/20 space-y-4">
+            <div className="pt-6 border-t-2 border-white/20 space-y-4">
               <div className="flex items-center justify-center gap-4 text-[#E2C45C]">
                 <a
                   href={FIRM_DETAILS.social.instagram}
@@ -410,12 +419,20 @@ export const Navbar: React.FC = () => {
                 </a>
               </div>
 
-              <Link
-                to="/start-a-conversation"
-                className="w-full py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-center text-xs font-bold uppercase tracking-widest rounded shadow-lg block border border-[#E2C45C]"
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openWhatsAppModal({
+                    title: 'Start a Conversation',
+                    subtitle: 'Direct WhatsApp connect with Keatlegile Mabena',
+                    defaultService: 'General Direct Enquiry'
+                  });
+                }}
+                className="w-full py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-center text-xs font-bold uppercase tracking-widest rounded shadow-lg block border border-[#E2C45C] cursor-pointer"
               >
                 Start a Conversation
-              </Link>
+              </button>
             </div>
           </div>
         </div>

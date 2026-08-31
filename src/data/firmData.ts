@@ -4,7 +4,21 @@ import { IMAGES } from './images';
 export const FIRM_DETAILS = {
   name: 'Keatlegile Mabena',
   shortName: 'Keatlegile Mabena',
-  positioning: 'Speaker • Career Success Expert • Author • Philanthropist',
+  // Official full positioning
+  positioning: 'Self-Discovery, Healing & Mental Health Speaker | Best-Selling Author | Career Success Expert',
+  // Shortened & compact variants for versatile display
+  positioningShort: 'Speaker • Best-Selling Author • Career Success Expert',
+  positioningCompact: 'Speaker • Author • Career Expert',
+  positioningPillars: [
+    'Self-Discovery, Healing & Mental Health Speaker',
+    'Best-Selling Author',
+    'Career Success Expert'
+  ],
+  positioningPillarsShort: [
+    'Self-Discovery & Healing Speaker',
+    'Best-Selling Author',
+    'Career Success Expert'
+  ],
   brandTerritory: 'Healing • Self-Discovery • Purpose • Confidence • Career Success • Transformation',
   corePromise: 'Helping people move from pain and uncertainty towards healing, clarity, confidence and purposeful action.',
   lawFirmNo: 'KMB-2026',
@@ -35,13 +49,15 @@ export const BRAND_DETAILS = FIRM_DETAILS;
 
 export const LEADERSHIP: LeadershipMember = {
   name: 'Keatlegile Mabena',
-  title: 'Speaker • Career Success Expert • Author • Philanthropist',
+  title: 'Self-Discovery, Healing & Mental Health Speaker | Best-Selling Author | Career Success Expert',
   admittedStatus: 'Thought Leader & Founder of MBN Empire',
   qualifications: [
-    'Speaker & Keynote Presenter',
-    'Career Success Expert',
-    'Published Author',
-    'Philanthropist & Community Leader'
+    'Master of Social Sciences: Population and Sustainable Development (NWU)',
+    'Honours Bachelor of Social Science: Population Studies (Cum Laude, NWU)',
+    'Bachelor of Social Science: Population and Development Studies (Cum Laude, NWU)',
+    'Moderator Training (NQF Level 6) & Assessor Training (NQF Level 5)',
+    'Member of Population Association of Southern Africa (PASA)',
+    'Published Author & Keynote Speaker'
   ],
   bio: [
     'Keatlegile Mabena is a purpose-led personal brand centred on speaking, authorship, mentorship, thought leadership, career development and social impact.',
@@ -195,12 +211,12 @@ export const SERVICES: ServiceItem[] = [
     ],
     detailedSections: [
       {
-        heading: 'The Written Work',
-        content: 'A book can give language to an experience. It can challenge a belief. It can create perspective. It can remind someone that they are not alone. Through authorship, Keatlegile explores ideas around healing, purpose, self-discovery, career success and transformation.',
+        heading: 'Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence',
+        content: 'Published in 2019 (126 pages, ISBN: 9780620840668) with over 7,000+ copies sold. What are your chains? Sometimes the chains are circumstances. Sometimes they are fear. Sometimes they are unresolved experiences. Sometimes they are the beliefs we have developed about ourselves. And sometimes we become so accustomed to carrying them that we forget that another way of living is possible.',
         bullets: [
-          'Published books and upcoming titles by Keatlegile Mabena.',
-          'Essays, insights, and thought leadership articles.',
-          'Curated newsletter for ongoing reflections.'
+          'Published: 2019 | Length: 126 pages | ISBN: 9780620840668',
+          'Over 7,000+ copies sold to date across South Africa',
+          'Upcoming book: In development / Coming Soon'
         ]
       }
     ],

@@ -18,21 +18,24 @@ import {
 } from 'lucide-react';
 
 import { SEO } from '../components/SEO';
-import { WHO_THIS_IS_FOR, TRANSFORMATION_JOURNEY, TRUST_PILLARS } from '../data/firmData';
+import { FIRM_DETAILS, WHO_THIS_IS_FOR, TRANSFORMATION_JOURNEY, TRUST_PILLARS } from '../data/firmData';
 import { IMAGES } from '../data/images';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const Home: React.FC = () => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   return (
     <>
       <SEO
-        title="Keatlegile Mabena | Speaker • Career Success Expert • Author • Philanthropist"
-        description="Helping people move from pain and uncertainty towards healing, clarity, confidence and purposeful action."
+        title="Keatlegile Mabena | Self-Discovery, Healing & Mental Health Speaker | Best-Selling Author | Career Success Expert"
+        description="Official website of Keatlegile Mabena — Self-Discovery, Healing & Mental Health Speaker, Best-Selling Author, and Career Success Expert helping people move towards purpose and transformation."
         keywords={[
           'Keatlegile Mabena',
-          'Keynote Speaker',
+          'Self-Discovery Speaker',
+          'Healing and Mental Health Speaker',
+          'Best-Selling Author',
           'Career Success Expert',
-          'Author',
-          'Philanthropist',
+          'Keynote Speaker South Africa',
           'Healing and Purpose',
           'South Africa'
         ]}
@@ -41,7 +44,7 @@ export const Home: React.FC = () => {
       />
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#001A1A] text-white overflow-hidden pt-12 pb-20">
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#290c06] text-white overflow-hidden pt-12 pb-20">
         {/* Responsive Background Image (Mobile & Desktop per user request) */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <picture className="w-full h-full">
@@ -49,25 +52,34 @@ export const Home: React.FC = () => {
             <img
               src={IMAGES.heroMobile}
               alt="Keatlegile Mabena Brand Atmosphere"
-              className="w-full h-full object-cover object-center opacity-60 filter brightness-105 contrast-105 transform-gpu"
+              className="w-full h-full object-cover object-[top_center] opacity-60 filter brightness-105 contrast-105 transform-gpu"
             />
           </picture>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#002222]/90 via-[#002929]/70 to-[#001A1A]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#001A1A]/80 via-transparent to-[#001A1A]/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#38120a]/90 via-[#42160c]/70 to-[#290c06]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#290c06]/80 via-transparent to-[#290c06]/50" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.15),transparent_50%)] pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full py-12">
           <div className="max-w-3xl space-y-8">
-            {/* Top Eyebrow Badge */}
+            {/* Top Eyebrow Badges - Full Positioning on Tablet/Desktop, Clean Shortened on Mobile */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#006666]/80 backdrop-blur-md border border-[#D4AF37]/50 rounded-sm text-xs font-semibold tracking-widest text-[#E2C45C] uppercase"
+              className="flex flex-wrap items-center gap-2"
             >
-              <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-              <span>Speaker • Career Success Expert • Author • Philanthropist</span>
+              {/* Mobile Shortened Pill */}
+              <div className="inline-flex sm:hidden items-center gap-2 px-3 py-1.5 bg-[#9a3820]/90 backdrop-blur-md border border-[#D4AF37]/50 rounded-sm text-xs font-semibold tracking-wider text-[#E2C45C] uppercase">
+                <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span>{FIRM_DETAILS.positioningShort}</span>
+              </div>
+
+              {/* Desktop / Tablet Full 3 Pillars */}
+              <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#9a3820]/80 backdrop-blur-md border border-[#D4AF37]/50 rounded-sm text-xs font-semibold tracking-wider text-[#E2C45C] uppercase">
+                <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+                <span className="leading-snug">{FIRM_DETAILS.positioning}</span>
+              </div>
             </motion.div>
 
             {/* Main Headline */}
@@ -114,13 +126,20 @@ export const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4"
             >
-              <Link
-                to="/start-a-conversation"
-                className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C]"
+              <button
+                type="button"
+                onClick={() =>
+                  openWhatsAppModal({
+                    title: 'Start a Conversation',
+                    subtitle: 'Connect directly with Keatlegile Mabena',
+                    defaultService: 'Speaking & Keynote Addresses'
+                  })
+                }
+                className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C] cursor-pointer"
               >
                 <span>Start a Conversation</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
-              </Link>
+              </button>
 
               <Link
                 to="/about"
@@ -146,9 +165,9 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ================= HERO BANNER STRIP ================= */}
-      <section className="bg-[#004C4C] text-white py-5 sm:py-6 border-y-2 border-[#D4AF37] relative z-20 shadow-2xl">
+      <section className="bg-[#7e2e19] text-white py-5 sm:py-6 border-y-2 border-[#D4AF37] relative z-20 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center divide-x divide-[#D4AF37]/20">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center divide-x-2 divide-[#D4AF37]/20">
             {['Healing', 'Self-Discovery', 'Purpose', 'Confidence', 'Career Success', 'Transformation'].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -179,8 +198,8 @@ export const Home: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-7 space-y-6"
             >
-              <div className="text-xs font-bold tracking-widest text-[#006666] uppercase flex items-center gap-2">
-                <span className="w-6 h-0.5 bg-[#006666]" />
+              <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase flex items-center gap-2">
+                <span className="w-6 h-0.5 bg-[#9a3820]" />
                 <span>INTRODUCTION</span>
               </div>
 
@@ -194,7 +213,7 @@ export const Home: React.FC = () => {
                 <p>You may have ambition, but feel stuck.</p>
                 <p>You may be working hard while quietly wondering whether you are moving in the right direction.</p>
                 <p>You may simply be trying to find yourself again after a difficult season.</p>
-                <p className="font-medium text-[#004C4C] pt-2">
+                <p className="font-medium text-[#7e2e19] pt-2">
                   Keatlegile Mabena's work exists for people navigating these moments — helping them move from pain and uncertainty towards healing, clarity, confidence and purposeful action.
                 </p>
               </div>
@@ -202,7 +221,7 @@ export const Home: React.FC = () => {
               <div className="pt-4">
                 <Link
                   to="/about"
-                  className="px-7 py-3.5 bg-[#004C4C] hover:bg-[#006666] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 inline-flex items-center gap-2"
+                  className="px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 inline-flex items-center gap-2"
                 >
                   <span>Discover His Story</span>
                   <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
@@ -218,7 +237,7 @@ export const Home: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 relative"
             >
-              <div className="bg-[#004C4C] text-white p-8 sm:p-10 rounded-sm shadow-2xl border-l-4 border-[#D4AF37] space-y-6 relative overflow-hidden">
+              <div className="bg-[#7e2e19] text-white p-8 sm:p-10 rounded-sm shadow-2xl border-l-4 border-[#D4AF37] space-y-6 relative overflow-hidden">
                 <div className="text-xs font-bold tracking-widest text-[#E2C45C] uppercase">
                   THE BRAND PROMISE
                 </div>
@@ -232,7 +251,7 @@ export const Home: React.FC = () => {
                   <p>Sometimes it requires finding the courage to make a different decision.</p>
                   <p>And sometimes it simply requires having the right person, perspective or conversation at the right time.</p>
                 </div>
-                <p className="text-xs text-[#E2C45C] italic pt-2 border-t border-white/10">
+                <p className="text-xs text-[#E2C45C] italic pt-2 border-t-2 border-white/10">
                   Through speaking, mentorship, books and thought leadership, Keatlegile creates spaces for people to reflect, grow, make sense of their journeys and move forward with greater intention.
                 </p>
               </div>
@@ -242,10 +261,10 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ================= WHAT KEATLEGILE DOES ================= */}
-      <section className="py-20 bg-[#F8F5EF] border-y border-[#D4AF37]/30">
+      <section className="py-20 bg-[#F8F5EF] border-y-2 border-[#D4AF37]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div className="text-xs font-bold tracking-widest text-[#006666] uppercase">
+            <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
               WHAT KEATLEGILE DOES
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C]">
@@ -258,10 +277,10 @@ export const Home: React.FC = () => {
             {/* Speaking */}
             <motion.div
               whileHover={{ y: -6 }}
-              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#006666] flex flex-col justify-between space-y-6 transition-all"
+              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#9a3820] flex flex-col justify-between space-y-6 transition-all"
             >
               <div className="space-y-4">
-                <div className="w-12 h-12 bg-[#004C4C]/10 rounded-sm flex items-center justify-center text-[#006666]">
+                <div className="w-12 h-12 bg-[#7e2e19]/10 rounded-sm flex items-center justify-center text-[#9a3820]">
                   <Users className="w-6 h-6" />
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-[#1C1C1C]">
@@ -273,7 +292,7 @@ export const Home: React.FC = () => {
               </div>
               <Link
                 to="/speaking"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#006666] hover:text-[#D4AF37] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
               >
                 <span>Explore Speaking</span>
                 <ArrowRight className="w-4 h-4" />
@@ -298,7 +317,7 @@ export const Home: React.FC = () => {
               </div>
               <Link
                 to="/mentorship"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#006666] hover:text-[#D4AF37] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
               >
                 <span>Explore Mentorship</span>
                 <ArrowRight className="w-4 h-4" />
@@ -308,10 +327,10 @@ export const Home: React.FC = () => {
             {/* Career Development */}
             <motion.div
               whileHover={{ y: -6 }}
-              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#006666] flex flex-col justify-between space-y-6 transition-all"
+              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#9a3820] flex flex-col justify-between space-y-6 transition-all"
             >
               <div className="space-y-4">
-                <div className="w-12 h-12 bg-[#004C4C]/10 rounded-sm flex items-center justify-center text-[#006666]">
+                <div className="w-12 h-12 bg-[#7e2e19]/10 rounded-sm flex items-center justify-center text-[#9a3820]">
                   <TrendingUp className="w-6 h-6" />
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-[#1C1C1C]">
@@ -323,7 +342,7 @@ export const Home: React.FC = () => {
               </div>
               <Link
                 to="/career-development"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#006666] hover:text-[#D4AF37] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
               >
                 <span>Explore Career Development</span>
                 <ArrowRight className="w-4 h-4" />
@@ -336,19 +355,24 @@ export const Home: React.FC = () => {
               className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#D4AF37] flex flex-col justify-between space-y-6 transition-all"
             >
               <div className="space-y-4">
-                <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-sm flex items-center justify-center text-[#A88616]">
-                  <BookOpen className="w-6 h-6" />
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-sm flex items-center justify-center text-[#A88616]">
+                    <BookOpen className="w-6 h-6" />
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F8F5EF] text-[#7e2e19] px-2 py-0.5 rounded border border-[#D4AF37]/30">
+                    7,000+ Copies Sold
+                  </span>
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-[#1C1C1C]">
                   BOOKS &amp; WRITING
                 </h3>
                 <p className="text-sm text-[#1C1C1C]/75 leading-relaxed">
-                  Ideas, stories and reflections that help people understand themselves, their journeys and the possibilities ahead.
+                  Author of <em>Breaking the Chains</em> (2019) and upcoming manuscripts. Ideas, stories, and frameworks for healing and purpose.
                 </p>
               </div>
               <Link
                 to="/books"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#006666] hover:text-[#D4AF37] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
               >
                 <span>Explore Books &amp; Writing</span>
                 <ArrowRight className="w-4 h-4" />
@@ -358,10 +382,10 @@ export const Home: React.FC = () => {
             {/* Thought Leadership */}
             <motion.div
               whileHover={{ y: -6 }}
-              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#006666] flex flex-col justify-between space-y-6 transition-all md:col-span-2 lg:col-span-1"
+              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#9a3820] flex flex-col justify-between space-y-6 transition-all md:col-span-2 lg:col-span-1"
             >
               <div className="space-y-4">
-                <div className="w-12 h-12 bg-[#004C4C]/10 rounded-sm flex items-center justify-center text-[#006666]">
+                <div className="w-12 h-12 bg-[#7e2e19]/10 rounded-sm flex items-center justify-center text-[#9a3820]">
                   <Lightbulb className="w-6 h-6" />
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-[#1C1C1C]">
@@ -373,7 +397,7 @@ export const Home: React.FC = () => {
               </div>
               <Link
                 to="/insights"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#006666] hover:text-[#D4AF37] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
               >
                 <span>Explore Insights</span>
                 <ArrowRight className="w-4 h-4" />
@@ -388,7 +412,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
-              <div className="text-xs font-bold tracking-widest text-[#006666] uppercase">
+              <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
                 WHO THIS IS FOR
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C]">
@@ -397,13 +421,13 @@ export const Home: React.FC = () => {
               <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
                 Keatlegile primarily works with individuals seeking healing, purpose, confidence, career growth and personal development, as well as institutions seeking speaking and development programmes.
               </p>
-              <div className="p-4 bg-[#F8F5EF] border-l-4 border-[#D4AF37] rounded-sm text-sm font-medium text-[#004C4C]">
+              <div className="p-4 bg-[#F8F5EF] border-l-4 border-[#D4AF37] rounded-sm text-sm font-medium text-[#7e2e19]">
                 You do not need to have everything figured out before you begin.
               </div>
             </div>
 
-            <div className="lg:col-span-7 bg-[#004C4C] text-white p-8 sm:p-10 rounded-sm shadow-xl space-y-4">
-              <h3 className="font-serif text-2xl font-bold text-[#E2C45C] border-b border-white/10 pb-3">
+            <div className="lg:col-span-7 bg-[#7e2e19] text-white p-8 sm:p-10 rounded-sm shadow-xl space-y-4">
+              <h3 className="font-serif text-2xl font-bold text-[#E2C45C] border-b-2 border-white/10 pb-3">
                 You may be...
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-white/90">
@@ -420,7 +444,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ================= THE TRANSFORMATION ================= */}
-      <section className="py-20 bg-[#002929] text-white relative overflow-hidden border-y-2 border-[#D4AF37]">
+      <section className="py-20 bg-[#42160c] text-white relative overflow-hidden border-y-2 border-[#D4AF37]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-16">
             <div className="text-xs font-bold tracking-widest text-[#E2C45C] uppercase">
@@ -435,7 +459,7 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
             {/* FROM */}
             <div className="bg-white/5 p-8 rounded-sm border border-white/10 space-y-6">
-              <div className="text-sm font-bold tracking-widest text-red-300 uppercase border-b border-white/10 pb-3 flex items-center gap-2">
+              <div className="text-sm font-bold tracking-widest text-red-300 uppercase border-b-2 border-white/10 pb-3 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-400" />
                 <span>FROM</span>
               </div>
@@ -450,8 +474,8 @@ export const Home: React.FC = () => {
             </div>
 
             {/* TOWARDS */}
-            <div className="bg-[#004C4C] p-8 rounded-sm border-2 border-[#D4AF37] space-y-6 shadow-2xl">
-              <div className="text-sm font-bold tracking-widest text-[#E2C45C] uppercase border-b border-[#D4AF37]/30 pb-3 flex items-center gap-2">
+            <div className="bg-[#7e2e19] p-8 rounded-sm border-2 border-[#D4AF37] space-y-6 shadow-2xl">
+              <div className="text-sm font-bold tracking-widest text-[#E2C45C] uppercase border-b-2 border-[#D4AF37]/30 pb-3 flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#E2C45C]" />
                 <span>TOWARDS</span>
               </div>
@@ -476,7 +500,7 @@ export const Home: React.FC = () => {
       <section className="py-20 bg-white text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
           <div className="max-w-3xl space-y-4">
-            <div className="text-xs font-bold tracking-widest text-[#006666] uppercase">
+            <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
               WHY KEATLEGILE
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C]">
@@ -485,7 +509,7 @@ export const Home: React.FC = () => {
             <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
               Keatlegile's advantage lies in bringing together lived experience, academic credibility, authorship, career expertise and community impact in a way that is authentic, practical and relatable.
             </p>
-            <p className="text-sm font-semibold text-[#004C4C]">
+            <p className="text-sm font-semibold text-[#7e2e19]">
               The result is a perspective that connects human transformation with practical progress.
             </p>
           </div>
@@ -496,7 +520,7 @@ export const Home: React.FC = () => {
                 key={idx}
                 className="p-6 bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 space-y-3 hover:border-[#D4AF37] transition-all"
               >
-                <div className="text-xs font-extrabold tracking-widest text-[#006666] uppercase">
+                <div className="text-xs font-extrabold tracking-widest text-[#9a3820] uppercase">
                   {pillar.title}
                 </div>
                 <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
@@ -509,11 +533,11 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ================= FEATURED INSIGHTS ================= */}
-      <section className="py-20 bg-[#F8F5EF] border-t border-[#D4AF37]/30">
+      <section className="py-20 bg-[#F8F5EF] border-t-2 border-[#D4AF37]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-3">
-              <div className="text-xs font-bold tracking-widest text-[#006666] uppercase">
+              <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
                 FEATURED INSIGHTS
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1C1C1C]">
@@ -525,7 +549,7 @@ export const Home: React.FC = () => {
             </div>
             <Link
               to="/insights"
-              className="px-6 py-3 bg-[#004C4C] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#006666] transition-colors inline-flex items-center gap-2 self-start md:self-auto"
+              className="px-6 py-3 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 self-start md:self-auto"
             >
               <span>Explore All Insights</span>
               <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
@@ -572,7 +596,7 @@ export const Home: React.FC = () => {
                 </div>
                 <Link
                   to="/insights"
-                  className="text-xs font-bold text-[#006666] hover:underline inline-flex items-center gap-1 pt-2"
+                  className="text-xs font-bold text-[#9a3820] hover:underline inline-flex items-center gap-1 pt-2"
                 >
                   Read More <ArrowRight className="w-3 h-3" />
                 </Link>
@@ -587,7 +611,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ================= MBN EMPIRE SECTION ================= */}
-      <section className="py-20 bg-[#004C4C] text-white">
+      <section className="py-20 bg-[#7e2e19] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-8 space-y-6">
@@ -641,23 +665,30 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="py-20 bg-white text-[#1C1C1C] border-t border-[#D4AF37]">
+      <section className="py-20 bg-white text-[#1C1C1C] border-t-2 border-[#D4AF37]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-6">
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1C1C1C]">
             Your Next Chapter Can Begin Here.
           </h2>
           <div className="space-y-2 text-base text-[#1C1C1C]/80">
             <p>You don't have to know every step.</p>
-            <p className="font-semibold text-[#004C4C]">You just need to be willing to take the next one.</p>
+            <p className="font-semibold text-[#7e2e19]">You just need to be willing to take the next one.</p>
           </div>
           <div className="pt-4">
-            <Link
-              to="/start-a-conversation"
-              className="px-9 py-4 bg-[#004C4C] hover:bg-[#006666] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all inline-flex items-center gap-3"
+            <button
+              type="button"
+              onClick={() =>
+                openWhatsAppModal({
+                  title: 'Start a Conversation',
+                  subtitle: 'Take the next step with Keatlegile Mabena',
+                  defaultService: 'General Direct Enquiry'
+                })
+              }
+              className="px-9 py-4 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all inline-flex items-center gap-3 cursor-pointer"
             >
               <span>Start a Conversation</span>
               <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-            </Link>
+            </button>
           </div>
         </div>
       </section>

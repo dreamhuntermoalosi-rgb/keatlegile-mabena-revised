@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { Building2, ArrowRight, CheckCircle2, TrendingUp, BookOpen, GraduationCap, Briefcase } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { IMAGES } from '../data/images';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const MbnEmpire: React.FC = () => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   return (
     <>
       <SEO
@@ -15,9 +18,19 @@ export const MbnEmpire: React.FC = () => {
 
       <Breadcrumbs items={[{ label: 'MBN Empire' }]} />
 
-      <section className="bg-[#004C4C] text-white py-16 sm:py-20 border-b border-[#D4AF37]/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006666] border border-[#D4AF37]/40 rounded-sm text-xs font-semibold text-[#E2C45C] uppercase tracking-wider">
+      <section className="relative bg-[#7e2e19] text-white py-16 sm:py-20 border-b-2 border-[#D4AF37] overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={IMAGES.pageTitleBg}
+            alt="MBN Empire"
+            className="w-full h-full object-cover opacity-60 filter brightness-105 contrast-105 transform-gpu"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#5a1f10]/85 via-[#7e2e19]/60 to-[#5a1f10]/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#7e2e19]/75 via-transparent to-[#7e2e19]/40" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_50%)] pointer-events-none" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9a3820] border border-[#D4AF37]/40 rounded-sm text-xs font-semibold text-[#E2C45C] uppercase tracking-wider">
             <Building2 className="w-3.5 h-3.5" />
             <span>COMMERCIAL ECOSYSTEM</span>
           </div>
@@ -43,10 +56,10 @@ export const MbnEmpire: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Division 1: Career Services */}
-            <div className="p-8 bg-[#F8F5EF] rounded-sm border-l-4 border-[#006666] space-y-4">
-              <div className="flex items-center gap-3 text-[#006666]">
+            <div className="p-8 bg-[#F8F5EF] rounded-sm border-l-4 border-[#9a3820] space-y-4">
+              <div className="flex items-center gap-3 text-[#9a3820]">
                 <Briefcase className="w-6 h-6" />
-                <h3 className="font-serif text-2xl font-bold text-[#004C4C]">1. Career Services</h3>
+                <h3 className="font-serif text-2xl font-bold text-[#7e2e19]">1. Career Services</h3>
               </div>
               <ul className="space-y-2 text-xs text-[#1C1C1C]/80">
                 <li className="flex items-center gap-2">▸ Professional CV Writing &amp; Re-design</li>
@@ -61,7 +74,7 @@ export const MbnEmpire: React.FC = () => {
             <div className="p-8 bg-[#F8F5EF] rounded-sm border-l-4 border-[#D4AF37] space-y-4">
               <div className="flex items-center gap-3 text-[#D4AF37]">
                 <GraduationCap className="w-6 h-6" />
-                <h3 className="font-serif text-2xl font-bold text-[#004C4C]">2. Research &amp; Academic Consulting</h3>
+                <h3 className="font-serif text-2xl font-bold text-[#7e2e19]">2. Research &amp; Academic Consulting</h3>
               </div>
               <ul className="space-y-2 text-xs text-[#1C1C1C]/80">
                 <li className="flex items-center gap-2">▸ Academic Research Support &amp; Consultancy</li>
@@ -75,7 +88,7 @@ export const MbnEmpire: React.FC = () => {
             <div className="p-8 bg-[#F8F5EF] rounded-sm border-l-4 border-[#D4AF37] space-y-4">
               <div className="flex items-center gap-3 text-[#D4AF37]">
                 <TrendingUp className="w-6 h-6" />
-                <h3 className="font-serif text-2xl font-bold text-[#004C4C]">3. Business Services</h3>
+                <h3 className="font-serif text-2xl font-bold text-[#7e2e19]">3. Business Services</h3>
               </div>
               <ul className="space-y-2 text-xs text-[#1C1C1C]/80">
                 <li className="flex items-center gap-2">▸ Comprehensive Business Plans</li>
@@ -86,10 +99,10 @@ export const MbnEmpire: React.FC = () => {
             </div>
 
             {/* Division 4: Publishing */}
-            <div className="p-8 bg-[#F8F5EF] rounded-sm border-l-4 border-[#006666] space-y-4">
-              <div className="flex items-center gap-3 text-[#006666]">
+            <div className="p-8 bg-[#F8F5EF] rounded-sm border-l-4 border-[#9a3820] space-y-4">
+              <div className="flex items-center gap-3 text-[#9a3820]">
                 <BookOpen className="w-6 h-6" />
-                <h3 className="font-serif text-2xl font-bold text-[#004C4C]">4. Publishing Services</h3>
+                <h3 className="font-serif text-2xl font-bold text-[#7e2e19]">4. Publishing Services</h3>
               </div>
               <ul className="space-y-2 text-xs text-[#1C1C1C]/80">
                 <li className="flex items-center gap-2">▸ End-to-End Book Publishing Guidance</li>
@@ -102,7 +115,7 @@ export const MbnEmpire: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-[#004C4C] text-white text-center">
+      <section className="py-16 bg-[#7e2e19] text-white text-center">
         <div className="max-w-2xl mx-auto px-4 space-y-6">
           <h2 className="font-serif text-3xl font-bold text-white">
             Engage MBN Empire for Services
@@ -110,13 +123,20 @@ export const MbnEmpire: React.FC = () => {
           <p className="text-sm text-white/80">
             Send an enquiry to discuss your business plan, academic editing, CV re-design, or publishing requirements.
           </p>
-          <Link
-            to="/start-a-conversation"
-            className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-widest rounded-sm transition-all inline-flex items-center gap-2 border border-[#E2C45C]"
+          <button
+            type="button"
+            onClick={() =>
+              openWhatsAppModal({
+                title: 'Engage MBN Empire',
+                subtitle: 'Business Services, Research, Publishing & Career Consulting',
+                defaultService: 'MBN Empire Services'
+              })
+            }
+            className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-widest rounded-sm transition-all inline-flex items-center gap-2 border border-[#E2C45C] cursor-pointer shadow-md"
           >
             <span>Enquire With MBN Empire</span>
             <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
-          </Link>
+          </button>
         </div>
       </section>
     </>

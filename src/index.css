@@ -4,10 +4,10 @@
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  --color-burgundy-900: #003333;
-  --color-burgundy-800: #004C4C;
-  --color-burgundy-700: #006666;
-  --color-burgundy-600: #008080;
+  --color-burgundy-900: #5a1f10;
+  --color-burgundy-800: #7e2e19;
+  --color-burgundy-700: #9a3820;
+  --color-burgundy-600: #b34226;
   --color-gold-600: #A88616;
   --color-gold-500: #D4AF37;
   --color-gold-400: #E2C45C;
@@ -35,6 +35,11 @@
   h1, h2, h3, h4, .font-serif {
     font-family: var(--font-serif);
   }
+
+  hr, .divider {
+    border-top-width: 2px;
+    border-color: rgba(212, 175, 55, 0.4);
+  }
 }
 
 /* Custom scrollbar */
@@ -45,7 +50,7 @@
   background: #1C1C1C;
 }
 ::-webkit-scrollbar-thumb {
-  background: #006666;
+  background: #9a3820;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
