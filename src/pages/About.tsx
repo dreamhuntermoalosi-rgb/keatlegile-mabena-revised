@@ -274,11 +274,11 @@ export const About: React.FC = () => {
             {/* Right Column - Profile Image & Core Capabilities Card */}
             <div className="lg:col-span-5 space-y-6">
               <div className="bg-[#F8F5EF] p-4 rounded-sm border-2 border-[#D4AF37]/40 shadow-xl overflow-hidden">
-                <div className="w-full h-80 sm:h-96 md:h-[460px] rounded-sm overflow-hidden border-2 border-[#D4AF37]/25 bg-gradient-to-b from-[#7e2e19]/10 via-[#F8F5EF] to-[#7e2e19]/5 flex items-center justify-center">
+                <div className="w-full h-[480px] sm:h-[720px] md:h-[800px] lg:h-[640px] rounded-sm overflow-hidden border-2 border-[#D4AF37]/25 bg-gradient-to-b from-[#7e2e19]/10 via-[#F8F5EF] to-[#7e2e19]/5 flex items-center justify-center">
                   <img
                     src={IMAGES.profileCard}
                     alt="Keatlegile Mabena Profile"
-                    className="w-full h-full object-contain object-center filter brightness-105 contrast-105 transform-gpu"
+                    className="w-full h-full object-cover object-top sm:object-bottom lg:object-top filter brightness-105 contrast-105 transform-gpu"
                   />
                 </div>
                 <div className="space-y-2 text-center pt-3">
