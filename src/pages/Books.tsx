@@ -9,7 +9,6 @@ import {
   BookmarkCheck,
   ShoppingBag,
   Award,
-  Layers,
   FileText,
   Calendar,
   Building,
@@ -70,33 +69,7 @@ export const Books: React.FC = () => {
         </div>
       </section>
 
-      {/* Literary Catalog Hierarchy Tree */}
-      <section className="bg-[#F8F5EF] py-8 border-b-2 border-[#D4AF37]/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="bg-white p-6 rounded-sm border border-gray-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-1">
-              <div className="text-[11px] font-bold text-[#9a3820] uppercase tracking-widest flex items-center gap-2">
-                <Layers className="w-4 h-4 text-[#D4AF37]" />
-                <span>Literary Catalog Overview</span>
-              </div>
-              <h2 className="font-serif text-lg font-bold text-[#7e2e19]">
-                Books by Keatlegile Mabena
-              </h2>
-            </div>
 
-            {/* Tree Diagram */}
-            <div className="font-mono text-xs sm:text-sm bg-[#46170d] text-[#E2C45C] p-4 rounded-sm border border-[#D4AF37]/40 shadow-inner">
-              <div className="font-bold text-white mb-1">BOOKS</div>
-              <div>│</div>
-              <div>├── <strong className="text-white">Breaking the Chains</strong></div>
-              <div>│&nbsp;&nbsp; └── <span className="text-[#E2C45C]">Published — 2019 (7,000+ Copies Sold)</span></div>
-              <div>│</div>
-              <div>└── <strong className="text-white">Upcoming Book</strong></div>
-              <div>&nbsp;&nbsp;&nbsp; └── <span className="text-amber-300">Coming Soon</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Featured Main Book Section: Breaking the Chains */}
       <section className="py-20 bg-white text-[#1C1C1C]">
