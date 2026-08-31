@@ -50,11 +50,11 @@ export const Home: React.FC = () => {
             <img
               src={IMAGES.heroMobile}
               alt="Keatlegile Mabena Brand Atmosphere"
-              className="w-full h-full object-cover object-top sm:object-[center_top] opacity-60 filter brightness-105 contrast-105 transform-gpu scale-110 -translate-y-8 sm:scale-100 sm:translate-y-0"
+              className="w-full h-full object-cover object-top sm:object-[center_top] opacity-80 sm:opacity-85 filter brightness-105 contrast-105 transform-gpu scale-110 -translate-y-8 sm:scale-100 sm:translate-y-0"
             />
           </picture>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#38120a]/90 via-[#42160c]/70 to-[#290c06]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#290c06]/80 via-transparent to-[#290c06]/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#290c06]/95 via-[#290c06]/70 sm:via-[#290c06]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#290c06]/85 via-transparent to-[#290c06]/30" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.15),transparent_50%)] pointer-events-none" />
         </div>
 
