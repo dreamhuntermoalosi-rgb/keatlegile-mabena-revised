@@ -1,0 +1,5 @@
+# Matlala M&M Attorneys Inc. Robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://matlalamm.co.za/sitemap.xml
