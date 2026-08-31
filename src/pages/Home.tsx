@@ -52,7 +52,7 @@ export const Home: React.FC = () => {
             <img
               src={IMAGES.heroMobile}
               alt="Keatlegile Mabena Brand Atmosphere"
-              className="w-full h-full object-cover object-[top_center] opacity-60 filter brightness-105 contrast-105 transform-gpu"
+              className="w-full h-full object-cover object-top sm:object-[center_top] opacity-60 filter brightness-105 contrast-105 transform-gpu scale-110 -translate-y-8 sm:scale-100 sm:translate-y-0"
             />
           </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-[#38120a]/90 via-[#42160c]/70 to-[#290c06]/40" />
@@ -67,7 +67,7 @@ export const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex items-start gap-2.5 text-xs sm:text-sm font-semibold tracking-wider uppercase"
+              className="hidden sm:flex items-start gap-2.5 text-xs sm:text-sm font-semibold tracking-wider uppercase"
             >
               <Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
               <div className="space-y-1 leading-snug">
