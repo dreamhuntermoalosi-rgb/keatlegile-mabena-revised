@@ -146,15 +146,15 @@ export const About: React.FC = () => {
     <>
       <SEO
         title="About Keatlegile Mabena | Academic & Professional Profile"
-        description="Official profile of Keatlegile Mabena — Master of Social Sciences (NWU), Cum Laude graduate, Author, Speaker, and Career Success Specialist."
+        description="Official profile of Keatlegile Mabena — Master of Social Sciences (NWU), Cum Laude graduate, Author, Speaker, and Mentor."
         keywords={[
           'Keatlegile Mabena',
           'Academic Profile South Africa',
           'North-West University Cum Laude',
           'Population and Sustainable Development',
-          'Career Success Expert',
           'Youth Empowerment Mentor',
           'Author South Africa',
+          'Keynote Speaker South Africa',
           'Qualifications Keatlegile Mabena',
           'PASA Member'
         ]}
@@ -189,10 +189,10 @@ export const About: React.FC = () => {
                 Keatlegile Mabena
               </h1>
               <p className="text-xs sm:text-sm text-[#E2C45C] font-serif italic tracking-wide">
-                Self-Discovery, Healing &amp; Mental Health Speaker | Best-Selling Author | Career Success Expert
+                Speaker | Best-Selling Author | Mentor
               </p>
               <p className="text-base text-white/85 max-w-2xl leading-relaxed pt-2">
-                Combining double <em>Cum Laude</em> academic excellence in Population &amp; Sustainable Development Studies with published authorship, high-impact youth mentorship, and institutional career guidance.
+                Combining double <em>Cum Laude</em> academic excellence in Population &amp; Sustainable Development Studies with published authorship, high-impact youth mentorship, and transformational keynote speaking.
               </p>
             </div>
 
@@ -266,7 +266,7 @@ export const About: React.FC = () => {
               {/* Quote Box */}
               <div className="pt-4 border-t-2 border-black/10">
                 <blockquote className="font-serif text-lg italic text-[#7e2e19] border-l-4 border-[#D4AF37] pl-4 py-2 bg-[#F8F5EF] rounded-r-sm">
-                  "Healing, self-discovery, purpose, confidence, career success, and institutional discipline sit at the heart of everything we build."
+                  "Healing, self-discovery, purpose, confidence, mentorship, and institutional discipline sit at the heart of everything we build."
                 </blockquote>
               </div>
             </div>
@@ -579,7 +579,7 @@ export const About: React.FC = () => {
               Areas of Focus &amp; Practical Execution
             </h2>
             <p className="text-sm text-[#1C1C1C]/75">
-              Connecting Population and Development Studies expertise with high-impact career progression and mentorship.
+              Connecting Population and Development Studies expertise with high-impact youth mentorship, authorship, and speaking.
             </p>
           </div>
 

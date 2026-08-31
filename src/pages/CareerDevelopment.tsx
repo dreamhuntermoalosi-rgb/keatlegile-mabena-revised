@@ -38,7 +38,7 @@ export const CareerDevelopment: React.FC = () => {
             Your Career Is Part of Your Story.
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
-            Practical guidance for navigating career decisions, professional growth and the journey towards career success.
+            Practical guidance for navigating career decisions, professional growth and the journey towards professional success.
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export const CareerDevelopment: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="max-w-3xl space-y-4">
             <h2 className="font-serif text-3xl font-bold text-[#1C1C1C]">
-              Career Success Starts With Clarity
+              Career Growth Starts With Clarity
             </h2>
             <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
               A career is more than a job. It is a journey of learning, capability, opportunity and growth. Yet navigating that journey can be difficult — especially when you are uncertain about your direction, struggling to articulate your strengths or wondering why your progress does not seem to match your potential.

@@ -17,7 +17,6 @@ export const SEO: React.FC<SEOProps> = ({
   keywords = [
     'Keatlegile Mabena',
     'Speaker South Africa',
-    'Career Success Expert',
     'Author',
     'Mentor',
     'Healing and Purpose',
@@ -86,7 +85,7 @@ export const SEO: React.FC<SEOProps> = ({
       '@type': 'Person',
       '@id': 'https://keatlegilemabena.com/#person',
       'name': 'Keatlegile Mabena',
-      'jobTitle': 'Self-Discovery, Healing & Mental Health Speaker | Best-Selling Author | Career Success Expert',
+      'jobTitle': 'Speaker | Best-Selling Author | Mentor',
       'description': description,
       'url': 'https://keatlegilemabena.com',
       'image': ogImage,
@@ -95,7 +94,7 @@ export const SEO: React.FC<SEOProps> = ({
         'Self-Discovery',
         'Purpose',
         'Confidence',
-        'Career Success',
+        'Mentorship',
         'Transformation'
       ]
     };

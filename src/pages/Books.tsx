@@ -163,7 +163,7 @@ export const Books: React.FC = () => {
                 <div className="text-center pt-3 space-y-1">
                   <div className="font-serif text-sm font-bold text-[#7e2e19]">Keatlegile Mabena</div>
                   <div className="text-[11px] text-[#9a3820] font-semibold uppercase tracking-wider">
-                    Author &amp; Human Development Specialist
+                    Speaker | Author | Mentor
                   </div>
                 </div>
               </div>

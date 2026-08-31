@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-[#7e2e19] via-[#5a1f10] to-[#42160c] text-white pt-16 pb-8 border-t-4 border-[#D4AF37] relative overflow-visible">
+    <footer className="bg-[#5A1F10] text-white pt-16 pb-8 border-t-4 border-[#D4AF37] relative overflow-visible">
       {/* Background Abstract Pattern Layer Container */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />

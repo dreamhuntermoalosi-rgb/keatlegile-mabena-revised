@@ -5,21 +5,21 @@ export const FIRM_DETAILS = {
   name: 'Keatlegile Mabena',
   shortName: 'Keatlegile Mabena',
   // Official full positioning
-  positioning: 'Self-Discovery, Healing & Mental Health Speaker | Best-Selling Author | Career Success Expert',
+  positioning: 'Speaker | Best-Selling Author | Mentor',
   // Shortened & compact variants for versatile display
-  positioningShort: 'Speaker • Best-Selling Author • Career Success Expert',
-  positioningCompact: 'Speaker • Author • Career Expert',
+  positioningShort: 'Speaker • Best-Selling Author • Mentor',
+  positioningCompact: 'Speaker • Author • Mentor',
   positioningPillars: [
-    'Self-Discovery, Healing & Mental Health Speaker',
+    'Speaker',
     'Best-Selling Author',
-    'Career Success Expert'
+    'Mentor'
   ],
   positioningPillarsShort: [
-    'Self-Discovery & Healing Speaker',
+    'Speaker',
     'Best-Selling Author',
-    'Career Success Expert'
+    'Mentor'
   ],
-  brandTerritory: 'Healing • Self-Discovery • Purpose • Confidence • Career Success • Transformation',
+  brandTerritory: 'Healing • Self-Discovery • Purpose • Confidence • Mentorship • Transformation',
   corePromise: 'Helping people move from pain and uncertainty towards healing, clarity, confidence and purposeful action.',
   lawFirmNo: 'KMB-2026',
   practiceNo: 'MBN-001',
@@ -49,7 +49,7 @@ export const BRAND_DETAILS = FIRM_DETAILS;
 
 export const LEADERSHIP: LeadershipMember = {
   name: 'Keatlegile Mabena',
-  title: 'Self-Discovery, Healing & Mental Health Speaker | Best-Selling Author | Career Success Expert',
+  title: 'Speaker | Best-Selling Author | Mentor',
   admittedStatus: 'Thought Leader & Founder of MBN Empire',
   qualifications: [
     'Master of Social Sciences: Population and Sustainable Development (NWU)',
@@ -60,15 +60,15 @@ export const LEADERSHIP: LeadershipMember = {
     'Published Author & Keynote Speaker'
   ],
   bio: [
-    'Keatlegile Mabena is a purpose-led personal brand centred on speaking, authorship, mentorship, thought leadership, career development and social impact.',
+    'Keatlegile Mabena is a purpose-led personal brand centred on speaking, authorship, mentorship, thought leadership and social impact.',
     'The brand grew from lived experience, academic development, authorship, service and a desire to help others rise beyond difficult beginnings. Growing up in Shakung Village in North-West shaped an understanding of resilience, possibility and transformation.',
-    'Keatlegile’s advantage lies in bringing together lived experience, academic credibility, authorship, career expertise and community impact in a way that is authentic, practical and relatable.'
+    'Keatlegile’s advantage lies in bringing together lived experience, academic credibility, authorship, mentorship and community impact in a way that is authentic, practical and relatable.'
   ],
   expertise: [
     'Healing & Personal Transformation',
     'Purpose & Self-Discovery',
     'Confidence & Personal Growth',
-    'Career Success & Employability',
+    'Mentorship & Youth Guidance',
     'Leadership & Youth Empowerment',
     'Publishing & Academic Consulting'
   ]
@@ -88,7 +88,7 @@ export const SERVICES: ServiceItem[] = [
       'Healing & Personal Transformation',
       'Purpose & Self-Discovery',
       'Confidence & Personal Growth',
-      'Career Success & Direction',
+      'Mentorship & Guidance',
       'Leadership & Development',
       'Youth & Empowerment'
     ],
@@ -179,7 +179,7 @@ export const SERVICES: ServiceItem[] = [
     ],
     detailedSections: [
       {
-        heading: 'Career Success Starts With Clarity',
+        heading: 'Career Growth Starts With Clarity',
         content: 'A career is more than a job. It is a journey of learning, capability, opportunity and growth. Yet navigating that journey can be difficult — especially when you are uncertain about your direction, struggling to articulate your strengths or wondering why your progress does not seem to match your potential.',
         bullets: [
           'Clarifying short and long-term career direction.',

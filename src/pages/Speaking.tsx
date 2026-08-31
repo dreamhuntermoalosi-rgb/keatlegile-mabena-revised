@@ -12,7 +12,7 @@ export const Speaking: React.FC = () => {
     <>
       <SEO
         title="Speaking & Keynotes | Keatlegile Mabena"
-        description="Conversations that move people. Keynote speaking, workshops, and panel sessions on healing, purpose, self-discovery, confidence, and career success."
+        description="Conversations that move people. Keynote speaking, workshops, and panel sessions on healing, purpose, self-discovery, confidence, and mentorship."
         keywords={['Keatlegile Mabena Speaking', 'Keynote Speaker South Africa', 'Corporate Speaker', 'Youth Empowerment Speaker']}
         canonicalUrl="https://keatlegilemabena.com/speaking"
       />
@@ -97,7 +97,7 @@ export const Speaking: React.FC = () => {
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />
-                <span>Career Success &amp; Direction</span>
+                <span>Mentorship &amp; Guidance</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />

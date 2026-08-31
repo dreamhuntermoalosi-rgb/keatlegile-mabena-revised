@@ -99,7 +99,7 @@ export const OurApproach: React.FC = () => {
             Strategy Grounded in Real-World Purpose &amp; Transformation
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl font-light">
-            Combining structured methodology with personal growth, career success, and practical implementation to deliver outcomes that elevate lives.
+            Combining structured methodology with personal growth, mentorship, and practical implementation to deliver outcomes that elevate lives.
           </p>
         </div>
       </section>
@@ -111,7 +111,7 @@ export const OurApproach: React.FC = () => {
             <div className="space-y-1">
               <span className="text-[10px] font-bold uppercase tracking-widest text-[#E2C45C]">Our Core Equation</span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-                Healing + Self-Discovery + Purpose = Sustainable Career Success
+                Healing + Self-Discovery + Purpose = Sustainable Personal Growth
               </h2>
             </div>
             <button
@@ -193,7 +193,7 @@ export const OurApproach: React.FC = () => {
               Why Structured Mentorship &amp; Strategy Matters
             </h2>
             <p className="text-sm sm:text-base text-[#1C1C1C]/80 leading-relaxed">
-              Inspiration without strategy leads to temporary motivation. True career success and personal transformation require deep alignment between internal healing, purpose discovery, and strategic skill building.
+              Inspiration without strategy leads to temporary motivation. True personal growth and transformation require deep alignment between internal healing, purpose discovery, and strategic skill building.
             </p>
             <p className="text-sm sm:text-base text-[#1C1C1C]/80 leading-relaxed">
               Through Keatlegile Mabena's speaking engagements, mentorship programmes, authored books, and MBN Empire enterprise services, individuals and organizations receive practical, structured roadmaps designed for sustained excellence.

@@ -14,7 +14,7 @@ export const InsightsPage: React.FC = () => {
     <>
       <SEO
         title="Insights & Thoughts for the Journey | Keatlegile Mabena"
-        description="Reflections and thought leadership on healing, purpose, self-discovery, career success, and transformation."
+        description="Reflections and thought leadership on healing, purpose, self-discovery, mentorship, and transformation."
         canonicalUrl="https://keatlegilemabena.com/insights"
       />
 

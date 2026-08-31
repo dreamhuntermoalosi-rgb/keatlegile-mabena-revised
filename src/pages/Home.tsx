@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
-  Sparkles,
   ArrowRight,
   ChevronDown,
   Heart,
@@ -27,15 +26,14 @@ export const Home: React.FC = () => {
   return (
     <>
       <SEO
-        title="Keatlegile Mabena | Self-Discovery, Healing & Mental Health Speaker | Best-Selling Author | Career Success Expert"
-        description="Official website of Keatlegile Mabena — Self-Discovery, Healing & Mental Health Speaker, Best-Selling Author, and Career Success Expert helping people move towards purpose and transformation."
+        title="Keatlegile Mabena | Speaker, Author & Mentor"
+        description="Official website of Keatlegile Mabena — Keynote Speaker, Best-Selling Author, and Mentor helping people move towards purpose, clarity, and transformation."
         keywords={[
           'Keatlegile Mabena',
           'Self-Discovery Speaker',
-          'Healing and Mental Health Speaker',
-          'Best-Selling Author',
-          'Career Success Expert',
           'Keynote Speaker South Africa',
+          'Best-Selling Author',
+          'Youth & Professional Mentor',
           'Healing and Purpose',
           'South Africa'
         ]}
@@ -60,20 +58,17 @@ export const Home: React.FC = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.15),transparent_50%)] pointer-events-none" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full py-12">
-          <div className="max-w-3xl space-y-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full pt-6 sm:pt-8 pb-10 sm:pb-12">
+          <div className="max-w-3xl space-y-4 sm:space-y-5">
             {/* Top Eyebrow Tagline - Clean text without background */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="hidden sm:flex items-start gap-2.5 text-xs sm:text-sm font-semibold tracking-wider uppercase"
+              className="hidden sm:flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#E2C45C]"
             >
-              <Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-              <div className="space-y-1 leading-snug">
-                <div className="block text-[#E2C45C]">Self-Discovery, Healing &amp; Mental Health Speaker</div>
-                <div className="block text-[#D4AF37] text-[11px] sm:text-xs">Best-Selling Author &bull; Career Success Expert</div>
-              </div>
+              <span className="text-[#D4AF37] font-bold text-sm sm:text-base shrink-0">|</span>
+              <span>Speaker | Author | Mentor</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -162,7 +157,7 @@ export const Home: React.FC = () => {
       <section className="bg-[#7e2e19] text-white py-5 sm:py-6 border-y-2 border-[#D4AF37] relative z-20 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center divide-x-2 divide-[#D4AF37]/20">
-            {['Healing', 'Self-Discovery', 'Purpose', 'Confidence', 'Career Success', 'Transformation'].map((item, idx) => (
+            {['Healing', 'Self-Discovery', 'Purpose', 'Confidence', 'Mentorship', 'Transformation'].map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 12 }}
@@ -501,7 +496,7 @@ export const Home: React.FC = () => {
               A Different Kind of Conversation.
             </h2>
             <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
-              Keatlegile's advantage lies in bringing together lived experience, academic credibility, authorship, career expertise and community impact in a way that is authentic, practical and relatable.
+              Keatlegile's advantage lies in bringing together lived experience, academic credibility, authorship, mentorship and community impact in a way that is authentic, practical and relatable.
             </p>
             <p className="text-sm font-semibold text-[#7e2e19]">
               The result is a perspective that connects human transformation with practical progress.
@@ -620,7 +615,7 @@ export const Home: React.FC = () => {
                   Keatlegile Mabena is distinct from, but strategically connected to, <strong>MBN Empire</strong>, the commercial group through which scalable professional businesses will be developed.
                 </p>
                 <p>
-                  While Keatlegile's personal brand focuses on speaking, authorship, mentorship, thought leadership, career development and social impact, MBN Empire is being developed as the commercial platform for scalable businesses in career services, research and academic consulting, business services and publishing.
+                  While Keatlegile's personal brand focuses on speaking, authorship, and mentorship, MBN Empire is being developed as the commercial platform for scalable businesses in career services, research and academic consulting, business services and publishing.
                 </p>
               </div>
               <div className="pt-2">
