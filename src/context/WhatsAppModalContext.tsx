@@ -32,7 +32,7 @@ const CTA_SERVICES = [
   'One-on-One Mentorship Programme',
   'Career Development & Employability',
   'Book Orders & Enquiries (The Power of Pain / The Art of Becoming)',
-  'MBN Empire Strategic Advisory & Publishing',
+  'Strategic Advisory & Publishing Support',
   'Youth & Leadership Workshops',
   'Media, Interviews & Feature Enquiries',
   'General Direct Enquiry'

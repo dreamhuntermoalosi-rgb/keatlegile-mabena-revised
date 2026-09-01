@@ -22,7 +22,7 @@ export const FIRM_DETAILS = {
   brandTerritory: 'Healing • Self-Discovery • Purpose • Confidence • Mentorship • Transformation',
   corePromise: 'Helping people move from pain and uncertainty towards healing, clarity, confidence and purposeful action.',
   lawFirmNo: 'KMB-2026',
-  practiceNo: 'MBN-001',
+  practiceNo: 'KMB-001',
   address: {
     street: 'Pretoria / Johannesburg',
     city: 'Gauteng',
@@ -50,7 +50,7 @@ export const BRAND_DETAILS = FIRM_DETAILS;
 export const LEADERSHIP: LeadershipMember = {
   name: 'Keatlegile Mabena',
   title: 'Speaker | Best-Selling Author | Mentor',
-  admittedStatus: 'Thought Leader & Founder of MBN Empire',
+  admittedStatus: 'Thought Leader, Best-Selling Author & Youth Mentor',
   qualifications: [
     'Master of Social Sciences: Population and Sustainable Development (NWU)',
     'Honours Bachelor of Social Science: Population Studies (Cum Laude, NWU)',
@@ -257,39 +257,6 @@ export const SERVICES: ServiceItem[] = [
       'Fresh clarity on personal challenges',
       'Grounded advice based on lived experience',
       'Actionable perspective shifts'
-    ]
-  },
-  {
-    id: 'mbn-empire',
-    slug: 'mbn-empire',
-    title: 'MBN Empire',
-    subtitle: 'A Personal Vision. A Growing Enterprise.',
-    shortDescription: 'The commercial platform for scalable businesses in career services, research, academic consulting, business services and publishing.',
-    heroHeadline: 'From Personal Vision to Scalable Enterprise',
-    iconName: 'Building2',
-    image: IMAGES.southAfricaArchitecture,
-    keyAreas: [
-      'Career Services (CVs, LinkedIn, Interview Prep)',
-      'Research & Academic Consulting',
-      'Business Services (Business Plans, Proposals, Profiles)',
-      'Publishing & Author Support Services'
-    ],
-    detailedSections: [
-      {
-        heading: 'Building Businesses That Can Outlive the Founder',
-        content: 'Keatlegile Mabena is distinct from, but strategically connected to, MBN Empire, the commercial group through which scalable professional businesses are being developed. While Keatlegile’s personal brand focuses on speaking, authorship, mentorship, thought leadership, career development and social impact, MBN Empire is being developed as the commercial platform.',
-        bullets: [
-          'Career Services: CVs, LinkedIn optimisation, cover letters, interview prep, career coaching.',
-          'Research & Academic Consulting: Research consultancy, training, writing support, methodology.',
-          'Business Services: Business plans, profiles, funding proposals, market research, SOPs.',
-          'Publishing: Book publishing, manuscript development, editing, proofreading, design.'
-        ]
-      }
-    ],
-    benefits: [
-      'Scalable professional business solutions',
-      'Expert research, academic, and corporate consulting',
-      'End-to-end publishing guidance'
     ]
   }
 ];

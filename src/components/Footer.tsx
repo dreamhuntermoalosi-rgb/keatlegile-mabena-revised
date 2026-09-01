@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, ChevronRight, ChevronUp, Sparkles, Building2, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Mail, Phone, ChevronRight, ChevronUp, Sparkles, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { Logo } from './Logo';
 import { FIRM_DETAILS } from '../data/firmData';
 
@@ -127,38 +127,7 @@ export const Footer: React.FC = () => {
               ))}
             </ul>
 
-            <div className="pt-2 space-y-2 text-xs border-t-2 border-white/10">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-[#E2C45C]">Social Channels</div>
-              <a
-                href={FIRM_DETAILS.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/80 hover:text-[#E2C45C] transition-colors"
-              >
-                <Instagram className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>Instagram (@keatlegile_mabena)</span>
-              </a>
-              <a
-                href={FIRM_DETAILS.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/80 hover:text-[#E2C45C] transition-colors"
-              >
-                <Facebook className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>Facebook (Keatlegile Mabena)</span>
-              </a>
-              <a
-                href={FIRM_DETAILS.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/80 hover:text-[#E2C45C] transition-colors"
-              >
-                <Linkedin className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>LinkedIn (Keatlegile Mabena)</span>
-              </a>
-            </div>
-
-            <div className="pt-2 space-y-2 text-xs text-white/80 border-t-2 border-white/10">
+            <div className="pt-2.5 space-y-2 text-xs text-white/80 border-t-2 border-white/10">
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <a href={`tel:${FIRM_DETAILS.contact.phone.replace(/\s+/g, '')}`} className="hover:text-[#E2C45C]">
@@ -174,25 +143,30 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 4: Business Ecosystem */}
+          {/* Column 4: Publications */}
           <div className="space-y-4">
             <h3 className="font-serif text-lg text-[#E2C45C] font-semibold tracking-wider relative inline-block after:absolute after:-bottom-1 after:left-0 after:w-8 after:h-0.5 after:bg-[#D4AF37]">
-              BUSINESS
+              PUBLICATIONS
             </h3>
-            <div className="p-4 bg-white/5 rounded border border-[#D4AF37]/30 space-y-3">
-              <div className="flex items-center gap-2 text-sm font-bold text-[#E2C45C]">
-                <Building2 className="w-4 h-4 text-[#D4AF37]" />
-                <span>MBN Empire</span>
+            <p className="text-xs text-white/70 leading-relaxed">
+              Keatlegile Mabena is a best-selling author sharing deep insights on overcoming fear, unlocking potential, and mastering career growth.
+            </p>
+            <div className="pt-1.5 space-y-3">
+              <div className="p-3 bg-white/5 rounded-sm border border-[#D4AF37]/20">
+                <div className="text-[10px] font-bold text-[#E2C45C] uppercase tracking-wider mb-1">BEST-SELLER (7,000+ COPIES)</div>
+                <h4 className="text-xs font-serif font-bold text-white leading-tight">
+                  Breaking the Chains
+                </h4>
+                <p className="text-[11px] text-white/60 mt-1 leading-snug">
+                  Bailing out imprisoned potential, power, and persistence.
+                </p>
               </div>
-              <p className="text-xs text-white/70 leading-relaxed">
-                Keatlegile Mabena's commercial ecosystem for scalable professional businesses in career services, research, consulting and publishing.
-              </p>
               <Link
-                to="/mbn-empire"
-                className="inline-flex items-center gap-1 text-xs font-bold text-[#D4AF37] hover:text-white transition-colors"
+                to="/books"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D4AF37] hover:text-white transition-colors group/link"
               >
-                <span>Explore MBN Empire</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+                <span>Order Books &amp; Guides</span>
+                <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
               </Link>
             </div>
           </div>

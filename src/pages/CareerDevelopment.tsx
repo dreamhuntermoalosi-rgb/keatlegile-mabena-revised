@@ -85,7 +85,7 @@ export const CareerDevelopment: React.FC = () => {
             Take the Next Step in Your Career
           </h2>
           <p className="text-sm text-[#1C1C1C]/80">
-            For individual career coaching or MBN Empire career services (CVs, LinkedIn, interview prep), get in touch today.
+            For individual career coaching and professional career services (CVs, LinkedIn, interview prep), get in touch today.
           </p>
           <button
             type="button"

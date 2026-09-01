@@ -368,15 +368,6 @@ export const Navbar: React.FC = () => {
                 </NavLink>
 
                 <NavLink
-                  to="/mbn-empire"
-                  className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
-                  }
-                >
-                  MBN Empire
-                </NavLink>
-
-                <NavLink
                   to="/contact"
                   className={({ isActive }) =>
                     `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`

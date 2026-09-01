@@ -12,7 +12,7 @@ export const ServicesPage: React.FC = () => {
     <>
       <SEO
         title="Offerings & Work | Keatlegile Mabena"
-        description="Explore Keatlegile Mabena's work across speaking, mentorship, career development, books, thought leadership, and MBN Empire."
+        description="Explore Keatlegile Mabena's work across speaking, mentorship, career development, books, and thought leadership."
         canonicalUrl="https://keatlegilemabena.com/services"
       />
 
@@ -37,7 +37,7 @@ export const ServicesPage: React.FC = () => {
             Areas of Impact &amp; Offerings
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
-            Different ways to move forward — through speaking, mentorship, career development, authorship, and commercial services.
+            Different ways to move forward — through speaking, mentorship, career development, and authorship.
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export const ServicesPage: React.FC = () => {
                   <p className="text-sm text-[#1C1C1C]/75 leading-relaxed">{s.shortDescription}</p>
                 </div>
                 <Link
-                  to={s.slug === 'insights' ? '/insights' : s.slug === 'mbn-empire' ? '/mbn-empire' : `/${s.slug}`}
+                  to={s.slug === 'insights' ? '/insights' : `/${s.slug}`}
                   className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
                 >
                   <span>Explore {s.title}</span>

@@ -20,7 +20,7 @@ export const SEO: React.FC<SEOProps> = ({
     'Author',
     'Mentor',
     'Healing and Purpose',
-    'MBN Empire',
+    'Governance & Strategy',
     'Personal Growth',
     'Youth Empowerment'
   ],

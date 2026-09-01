@@ -199,7 +199,7 @@ export const GovernanceCompliance: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#7e2e19] via-transparent to-transparent opacity-90" />
               <div className="absolute bottom-6 left-6 right-6 p-4 bg-[#1C1C1C]/90 text-white border-l-4 border-[#D4AF37] rounded-r-sm">
                 <div className="text-xs font-bold text-[#E2C45C] uppercase mb-1">Executive Leadership</div>
-                <div className="text-xs text-white/90">Keatlegile Mabena &amp; MBN Empire Advisory</div>
+                <div className="text-xs text-white/90">Keatlegile Mabena Advisory Services</div>
               </div>
             </div>
           </div>

@@ -196,7 +196,7 @@ export const OurApproach: React.FC = () => {
               Inspiration without strategy leads to temporary motivation. True personal growth and transformation require deep alignment between internal healing, purpose discovery, and strategic skill building.
             </p>
             <p className="text-sm sm:text-base text-[#1C1C1C]/80 leading-relaxed">
-              Through Keatlegile Mabena's speaking engagements, mentorship programmes, authored books, and MBN Empire enterprise services, individuals and organizations receive practical, structured roadmaps designed for sustained excellence.
+              Through Keatlegile Mabena's speaking engagements, structured mentorship programmes, published books, and institutional advisory services, individuals and organizations receive practical, structured roadmaps designed for sustained excellence.
             </p>
           </div>
 
@@ -215,7 +215,7 @@ export const OurApproach: React.FC = () => {
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-[#9a3820] shrink-0 mt-0.5" />
-                <span>End-to-end commercial excellence through MBN Empire services.</span>
+                <span>End-to-end professional excellence through custom advisory and development programs.</span>
               </li>
             </ul>
 

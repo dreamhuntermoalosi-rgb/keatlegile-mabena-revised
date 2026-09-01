@@ -15,7 +15,6 @@ import { Books } from './pages/Books';
 import { Impact } from './pages/Impact';
 import { Media } from './pages/Media';
 import { Events } from './pages/Events';
-import { MbnEmpire } from './pages/MbnEmpire';
 import { ServicesPage } from './pages/Services';
 import { InsightsPage } from './pages/Insights';
 import { ArticleDetail } from './pages/ArticleDetail';
@@ -41,7 +40,6 @@ export default function App() {
               <Route path="/impact" element={<Impact />} />
               <Route path="/media" element={<Media />} />
               <Route path="/events" element={<Events />} />
-              <Route path="/mbn-empire" element={<MbnEmpire />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/contact" element={<StartConversation />} />
               <Route path="/start-a-conversation" element={<StartConversation />} />

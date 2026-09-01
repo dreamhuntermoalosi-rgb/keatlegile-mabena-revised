@@ -211,8 +211,8 @@ export const About: React.FC = () => {
                 <span><strong>Honours &amp; BSocSc</strong> (<em>Cum Laude</em>)</span>
               </div>
               <div className="flex items-center gap-2">
-                <Building2 className="w-4 h-4 text-[#E2C45C] shrink-0" />
-                <span>Founder: <strong>MBN Empire (Pty) Ltd</strong></span>
+                <BookmarkCheck className="w-4 h-4 text-[#E2C45C] shrink-0" />
+                <span><strong>Published Author &amp; Mentor</strong></span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#E2C45C] shrink-0" />
@@ -259,7 +259,7 @@ export const About: React.FC = () => {
                   In addition to his academic research and lecturing assistantships at North-West University, Keatlegile expanded his qualifications with accredited <strong>Assessor (NQF Level 5)</strong> and <strong>Moderator (NQF Level 6)</strong> certifications, grounding his work in professional training, curriculum standards, and outcomes-based facilitation.
                 </p>
                 <p>
-                  Today, through his books, keynote addresses, structured mentorship programs, and <strong>MBN Empire</strong>, Keatlegile Mabena empowers individuals, students, and professionals to move from uncertainty to clarity, confidence, and purposeful achievement.
+                  Today, through his books, keynote addresses, structured mentorship programs, and executive advisory, Keatlegile Mabena empowers individuals, students, and professionals to move from uncertainty to clarity, confidence, and purposeful achievement.
                 </p>
               </div>
 
@@ -633,7 +633,7 @@ export const About: React.FC = () => {
                 Enterprise &amp; Advisory
               </h3>
               <p className="text-xs text-[#1C1C1C]/80 leading-relaxed">
-                Directing MBN Empire (Pty) Ltd to deliver professional career coaching, academic development programs, and business consulting.
+                Providing high-impact corporate workshops, professional career coaching, academic development programs, and executive advisory.
               </p>
             </div>
 

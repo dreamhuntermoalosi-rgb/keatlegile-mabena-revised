@@ -9,7 +9,6 @@ import {
   BookOpen,
   TrendingUp,
   Lightbulb,
-  Building2,
   Users,
   CheckCircle2,
   Shield,
@@ -596,60 +595,6 @@ export const Home: React.FC = () => {
           <p className="text-xs text-[#1C1C1C]/50 italic">
             These are proposed editorial topics for inspiration and reflections.
           </p>
-        </div>
-      </section>
-
-      {/* ================= MBN EMPIRE SECTION ================= */}
-      <section className="py-20 bg-[#7e2e19] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-8 space-y-6">
-              <div className="text-xs font-bold tracking-widest text-[#E2C45C] uppercase">
-                MBN EMPIRE
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-                A Personal Vision. A Growing Enterprise.
-              </h2>
-              <div className="space-y-4 text-sm sm:text-base text-white/80 leading-relaxed">
-                <p>
-                  Keatlegile Mabena is distinct from, but strategically connected to, <strong>MBN Empire</strong>, the commercial group through which scalable professional businesses will be developed.
-                </p>
-                <p>
-                  While Keatlegile's personal brand focuses on speaking, authorship, and mentorship, MBN Empire is being developed as the commercial platform for scalable businesses in career services, research and academic consulting, business services and publishing.
-                </p>
-              </div>
-              <div className="pt-2">
-                <Link
-                  to="/mbn-empire"
-                  className="px-7 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center gap-2 border border-[#E2C45C]"
-                >
-                  <span>Explore MBN Empire</span>
-                  <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 bg-white/5 p-8 rounded-sm border border-white/20 space-y-4">
-              <Building2 className="w-10 h-10 text-[#E2C45C]" />
-              <h3 className="font-serif text-xl font-bold text-white">
-                Commercial Divisions
-              </h3>
-              <ul className="space-y-2 text-xs text-white/80">
-                <li className="flex items-center gap-2">
-                  <span className="text-[#E2C45C]">▸</span> Career Services
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#E2C45C]">▸</span> Research &amp; Academic Consulting
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#E2C45C]">▸</span> Business Services
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#E2C45C]">▸</span> Publishing
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
 

@@ -13,8 +13,7 @@ import {
   Calendar,
   Building,
   Hash,
-  BookMarked,
-  Clock
+  BookMarked
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
@@ -259,48 +258,7 @@ export const Books: React.FC = () => {
             </div>
           </div>
 
-          {/* Upcoming Book Section */}
-          <div className="bg-[#42160c] text-white p-8 sm:p-12 rounded-sm border-2 border-[#D4AF37] shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-              
-              <div className="lg:col-span-8 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#D4AF37]/20 border border-[#D4AF37] rounded-sm text-xs font-semibold text-[#E2C45C] uppercase tracking-wider">
-                  <Clock className="w-3.5 h-3.5" />
-                  <span>FORTHCOMING TITLE</span>
-                </div>
-                <h3 className="font-serif text-2xl sm:text-4xl font-bold text-white">
-                  Upcoming Book — Coming Soon
-                </h3>
-                <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl">
-                  Keatlegile Mabena is currently finalizing his next manuscript, expanding upon the intersection of emotional healing, structured self-discovery, and institutional career mastery in modern South Africa.
-                </p>
-              </div>
 
-              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-                <button
-                  type="button"
-                  onClick={() =>
-                    openWhatsAppModal({
-                      title: 'Pre-Register for Upcoming Book',
-                      subtitle: 'Get notified first upon launch and receive exclusive author updates',
-                      defaultService: 'Upcoming Book Pre-Registration'
-                    })
-                  }
-                  className="px-6 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm text-center transition-colors border border-[#E2C45C] shadow cursor-pointer"
-                >
-                  Pre-Register Interest
-                </button>
-                <Link
-                  to="/insights"
-                  className="px-6 py-3.5 bg-transparent hover:bg-white/10 text-white font-bold text-xs uppercase tracking-widest rounded-sm text-center transition-colors border border-white/30"
-                >
-                  Read Latest Articles
-                </Link>
-              </div>
-
-            </div>
-          </div>
 
         </div>
       </section>

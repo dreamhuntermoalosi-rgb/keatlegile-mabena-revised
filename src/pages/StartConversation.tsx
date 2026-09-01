@@ -38,7 +38,7 @@ export const StartConversation: React.FC = () => {
     <>
       <SEO
         title="Start a Conversation | Keatlegile Mabena"
-        description="Reach out to Keatlegile Mabena for keynote speaking invitations, mentorship, career coaching, book enquiries, or MBN Empire services."
+        description="Reach out to Keatlegile Mabena for keynote speaking invitations, mentorship, career coaching, and book enquiries."
         canonicalUrl="https://keatlegilemabena.com/start-a-conversation"
       />
 
@@ -79,7 +79,7 @@ export const StartConversation: React.FC = () => {
                   How We Can Collaborate
                 </h2>
                 <p className="text-sm text-[#1C1C1C]/80 leading-relaxed">
-                  Whether you are booking Keatlegile for a keynote presentation, seeking mentorship, asking about books, or engaging MBN Empire for professional services, we look forward to connecting.
+                  Whether you are booking Keatlegile for a keynote presentation, seeking mentorship, or asking about books, we look forward to connecting.
                 </p>
               </div>
 
@@ -191,7 +191,7 @@ export const StartConversation: React.FC = () => {
                         <option>Mentorship Programme</option>
                         <option>Career Guidance</option>
                         <option>Books &amp; Authorship</option>
-                        <option>MBN Empire Services</option>
+                        <option>Governance &amp; Strategy Advisory</option>
                         <option>Media / Interview</option>
                         <option>Other Enquiry</option>
                       </select>
