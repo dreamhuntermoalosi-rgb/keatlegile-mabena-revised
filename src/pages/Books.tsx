@@ -204,7 +204,7 @@ export const Books: React.FC = () => {
                   <em>Breaking the Chains</em> is an intimate, rigorous, and inspiring exploration of what holds individuals back from realizing their true capabilities. Drawing from personal vulnerability, rural roots in Shakung Village, and deep studies in human development, Keatlegile Mabena provides readers with a structured blueprint to bail out their imprisoned potential.
                 </p>
                 <p>
-                  With over <strong>7,000 copies sold</strong>, this book has resonated deeply with students, professionals, youth leaders, and executives across South Africa who find themselves trapped by past failures, imposter syndrome, or systemic limitations.
+                  This book has resonated deeply with students, professionals, youth leaders, and executives across South Africa who find themselves trapped by past failures, imposter syndrome, or systemic limitations.
                 </p>
               </div>
 
