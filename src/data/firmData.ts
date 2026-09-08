@@ -5,35 +5,25 @@ export const FIRM_DETAILS = {
   name: 'Keatlegile Mabena',
   shortName: 'Keatlegile Mabena',
   // Official full positioning
-  positioning: 'Speaker | Best-Selling Author | Mentor',
+  positioning: 'Speaker | Author | Mentor',
   // Shortened & compact variants for versatile display
-  positioningShort: 'Speaker • Best-Selling Author • Mentor',
+  positioningShort: 'Speaker • Author • Mentor',
   positioningCompact: 'Speaker • Author • Mentor',
   positioningPillars: [
     'Speaker',
-    'Best-Selling Author',
+    'Author',
     'Mentor'
   ],
   positioningPillarsShort: [
     'Speaker',
-    'Best-Selling Author',
+    'Author',
     'Mentor'
   ],
   brandTerritory: 'Healing • Self-Discovery • Purpose • Confidence • Mentorship • Transformation',
   corePromise: 'Helping people move from pain and uncertainty towards healing, clarity, confidence and purposeful action.',
-  lawFirmNo: 'KMB-2026',
-  practiceNo: 'KMB-001',
-  address: {
-    street: 'Pretoria / Johannesburg',
-    city: 'Gauteng',
-    province: 'Gauteng Province',
-    postalCode: '0001',
-    country: 'South Africa',
-    full: 'Gauteng & Nationwide, South Africa'
-  },
   contact: {
-    phone: '+27 62 172 6790',
-    whatsappNumber: '27621726790',
+    phone: '+27 68 567 4848',
+    whatsappNumber: '27685674848',
     email: 'info@keatlegilemabena.co.za'
   },
   social: {
@@ -42,35 +32,33 @@ export const FIRM_DETAILS = {
     linkedin: 'https://za.linkedin.com/in/keatlegile-mabena-634570112'
   },
   tagline: 'Find Your Direction. Rediscover Your Confidence. Move With Purpose.',
-  subtitle: 'Helping people heal, discover purpose, build confidence and move towards meaningful personal and career growth.'
+  subtitle: 'Helping people heal, discover purpose, build confidence and move towards meaningful personal growth.'
 };
 
 export const BRAND_DETAILS = FIRM_DETAILS;
 
 export const LEADERSHIP: LeadershipMember = {
   name: 'Keatlegile Mabena',
-  title: 'Speaker | Best-Selling Author | Mentor',
-  admittedStatus: 'Thought Leader, Best-Selling Author & Youth Mentor',
+  title: 'Speaker | Author | Mentor',
+  admittedStatus: 'Author & Youth Mentor',
   qualifications: [
     'Master of Social Sciences: Population and Sustainable Development (NWU)',
     'Honours Bachelor of Social Science: Population Studies (Cum Laude, NWU)',
     'Bachelor of Social Science: Population and Development Studies (Cum Laude, NWU)',
-    'Moderator Training (NQF Level 6) & Assessor Training (NQF Level 5)',
-    'Member of Population Association of Southern Africa (PASA)',
-    'Published Author & Keynote Speaker'
+    'Published Author & Keynote Speaker',
+    'Member of Population Association of Southern Africa (PASA)'
   ],
   bio: [
-    'Keatlegile Mabena is a purpose-led personal brand centred on speaking, authorship, mentorship, thought leadership and social impact.',
-    'The brand grew from lived experience, academic development, authorship, service and a desire to help others rise beyond difficult beginnings. Growing up in Shakung Village in North-West shaped an understanding of resilience, possibility and transformation.',
-    'Keatlegile’s advantage lies in bringing together lived experience, academic credibility, authorship, mentorship and community impact in a way that is authentic, practical and relatable.'
+    'Keatlegile Mabena is a purpose-led personal brand centred on speaking, authorship, mentorship, and personal transformation.',
+    'The brand grew from lived experience, education, authorship, service and a desire to help others rise beyond difficult beginnings. Early life experiences shaped an understanding of resilience, possibility and transformation.',
+    'Keatlegile’s strength lies in bringing together lived experience, authorship, and mentorship in a way that is authentic, practical and relatable.'
   ],
   expertise: [
     'Healing & Personal Transformation',
     'Purpose & Self-Discovery',
     'Confidence & Personal Growth',
-    'Mentorship & Youth Guidance',
-    'Leadership & Youth Empowerment',
-    'Publishing & Academic Consulting'
+    'Mentorship & Personal Guidance',
+    'Keynote Speaking & Authorship'
   ]
 };
 
@@ -88,27 +76,16 @@ export const SERVICES: ServiceItem[] = [
       'Healing & Personal Transformation',
       'Purpose & Self-Discovery',
       'Confidence & Personal Growth',
-      'Mentorship & Guidance',
-      'Leadership & Development',
-      'Youth & Empowerment'
+      'Mentorship & Guidance'
     ],
     detailedSections: [
       {
         heading: 'Conversations That Create a Shift',
-        content: 'The right conversation can create a shift — a shift in perspective, a shift in confidence, and a shift in direction. Keatlegile speaks on the issues that sit at the intersection of personal transformation, purpose and professional growth.',
+        content: 'The right conversation can create a shift — a shift in perspective, a shift in confidence, and a shift in direction. Keatlegile speaks on issues at the intersection of personal transformation, purpose, and inner confidence.',
         bullets: [
-          'Keynote addresses for corporate, institutional, and conference stages.',
-          'Interactive workshops and leadership development sessions.',
-          'Panel discussions and fireside conversations.'
-        ]
-      },
-      {
-        heading: 'For Organisations & Institutions',
-        content: 'Keatlegile works with institutions seeking speaking and development programmes designed to support people through conversations around personal development, career growth, purpose, confidence and transformation.',
-        bullets: [
-          'Suitable for Conferences, Corporate & Leadership programmes.',
-          'Youth empowerment initiatives and student affairs workshops.',
-          'Institutional wellness events and staff development sessions.'
+          'Keynote addresses for conferences, youth gatherings, and community events.',
+          'Interactive talks on overcoming hardship, pain, and self-doubt.',
+          'Panel discussions and inspirational fireside conversations.'
         ]
       }
     ],
@@ -128,30 +105,20 @@ export const SERVICES: ServiceItem[] = [
     iconName: 'Compass',
     image: IMAGES.executiveOffice,
     keyAreas: [
-      'Career Direction & Goal Setting',
+      'Finding Direction & Setting Goals',
       'Overcoming Self-Doubt & Building Confidence',
       'Exploring Purpose & Personal Values',
       'Personal Development & Self-Awareness',
-      'Career Growth & Next Steps',
       'Accountability & Sustained Momentum'
     ],
     detailedSections: [
       {
         heading: 'Mentorship for Your Next Chapter',
-        content: 'There are moments when information isn’t enough. You need perspective. You need someone to listen. Someone to challenge your thinking. Someone to help you see the next step.',
+        content: 'There are moments when information isn’t enough. You need perspective. You need someone to listen, challenge your thinking, and help you see the next step clearly.',
         bullets: [
           'One-on-one structured mentorship journeys.',
           'Guided self-reflection and goal clarification.',
           'Actionable roadmaps to move from uncertainty to purpose.'
-        ]
-      },
-      {
-        heading: 'Who Mentorship Is For',
-        content: 'Whether you are a student, graduate, young professional, job seeker, emerging manager or entrepreneur, you may find yourself at a point where the next step is not obvious. Mentorship begins by understanding where you are, what you are experiencing and where you want to go.',
-        bullets: [
-          'Working through self-doubt to develop belief in your capabilities.',
-          'Turning intentions into measurable action.',
-          'Navigating career transitions with clarity.'
         ]
       }
     ],
@@ -159,39 +126,6 @@ export const SERVICES: ServiceItem[] = [
       'Personalised direction tailored to your story',
       'Unwavering support and objective perspective',
       'Increased confidence and personal responsibility'
-    ]
-  },
-  {
-    id: 'career-development',
-    slug: 'career-development',
-    title: 'Career Development',
-    subtitle: 'Your Career Is Part of Your Story',
-    shortDescription: 'Practical guidance for navigating career decisions, professional growth and the journey towards career success.',
-    heroHeadline: 'Your Career Is Part of Your Story',
-    iconName: 'TrendingUp',
-    image: IMAGES.boardroom,
-    keyAreas: [
-      'Find Your Direction & Set Clear Goals',
-      'Understand & Articulate Your Strengths',
-      'Build Workplace & Professional Confidence',
-      'Prepare for Opportunities & Interviews',
-      'Ongoing Professional & Personal Growth'
-    ],
-    detailedSections: [
-      {
-        heading: 'Career Growth Starts With Clarity',
-        content: 'A career is more than a job. It is a journey of learning, capability, opportunity and growth. Yet navigating that journey can be difficult — especially when you are uncertain about your direction, struggling to articulate your strengths or wondering why your progress does not seem to match your potential.',
-        bullets: [
-          'Clarifying short and long-term career direction.',
-          'Recognising and communicating the unique value you bring.',
-          'Approaching opportunities with intention and preparedness.'
-        ]
-      }
-    ],
-    benefits: [
-      'Clarity on career goals and next steps',
-      'Enhanced confidence in job markets and workplace settings',
-      'Long-term sustainable career development'
     ]
   },
   {
@@ -206,57 +140,23 @@ export const SERVICES: ServiceItem[] = [
     keyAreas: [
       'Published & Forthcoming Books',
       'Articles & Reflections on Transformation',
-      'Authorship & Thought Leadership',
-      'Newsletter & Ongoing Reflections'
+      'Thought Leadership & Writing'
     ],
     detailedSections: [
       {
         heading: 'Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence',
-        content: 'Published in 2019 (126 pages, ISBN: 9780620840668) with over 7,000+ copies sold. What are your chains? Sometimes the chains are circumstances. Sometimes they are fear. Sometimes they are unresolved experiences. Sometimes they are the beliefs we have developed about ourselves. And sometimes we become so accustomed to carrying them that we forget that another way of living is possible.',
+        content: 'Published in 2019 (126 pages, ISBN: 9780620840668). What are your chains? Sometimes the chains are circumstances. Sometimes they are fear. Sometimes they are unresolved experiences. Sometimes they are the beliefs we have developed about ourselves.',
         bullets: [
           'Published: 2019 | Length: 126 pages | ISBN: 9780620840668',
-          'Over 7,000+ copies sold to date across South Africa',
-          'Upcoming book: In development / Coming Soon'
+          'Available for direct order and nationwide delivery',
+          'Upcoming works currently in development'
         ]
       }
     ],
     benefits: [
       'Language for deep personal experiences',
-      'New perspectives on life and career challenges',
+      'New perspectives on life challenges',
       'Actionable reflections for personal growth'
-    ]
-  },
-  {
-    id: 'insights',
-    slug: 'insights',
-    title: 'Thought Leadership & Insights',
-    subtitle: 'Thoughts for the Journey',
-    shortDescription: 'Conversations and perspectives around healing, purpose, self-discovery, career success and transformation.',
-    heroHeadline: 'Thoughts for the Journey',
-    iconName: 'Lightbulb',
-    image: IMAGES.governanceCompliance,
-    keyAreas: [
-      'Healing & Self-Discovery',
-      'Career Growth & Purposeful Action',
-      'Building Confidence',
-      'Transformation & Direction'
-    ],
-    detailedSections: [
-      {
-        heading: 'Perspectives That Change How You See Your Situation',
-        content: 'Sometimes one idea can change the way you see your situation. Ideas and reflections on the experiences that shape our personal and professional journeys.',
-        bullets: [
-          'Career: Your Career Is More Than a Job.',
-          'Purpose: What Are You Building Your Life Around?',
-          'Confidence: When Your Potential and Your Confidence Don’t Match.',
-          'Growth: You Are Allowed to Outgrow Your Old Direction.'
-        ]
-      }
-    ],
-    benefits: [
-      'Fresh clarity on personal challenges',
-      'Grounded advice based on lived experience',
-      'Actionable perspective shifts'
     ]
   }
 ];

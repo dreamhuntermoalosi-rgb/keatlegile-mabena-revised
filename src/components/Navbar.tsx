@@ -32,19 +32,16 @@ export const Navbar: React.FC = () => {
 
   const primaryWorkItems = [
     { title: 'Speaking & Keynotes', path: '/speaking', desc: 'Conversations That Move People' },
-    { title: 'Mentorship', path: '/mentorship', desc: 'Support for Your Next Chapter' },
-    { title: 'Career Development', path: '/career-development', desc: 'Practical Growth & Direction' },
     { title: 'Books & Authorship', path: '/books', desc: 'Words Can Become Windows' },
-    { title: 'Governance & Strategy', path: '/governance-compliance', desc: 'Institutional Frameworks & Advisory' },
-    { title: 'All Offerings & Services', path: '/services', desc: 'Explore Complete Work Portfolio' }
+    { title: 'Mentorship', path: '/mentorship', desc: 'Support for Your Next Chapter' }
   ];
 
   return (
     <header className="sticky top-0 z-40 w-full transition-colors duration-300 shadow-xl">
-      {/* Top Utility Bar - Deep Teal */}
+      {/* Top Utility Bar - Clean Contact Line */}
       <div className="hidden md:block bg-[#5a1f10] text-xs text-white/90 border-b-2 border-[#D4AF37]/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-2 flex justify-between items-center">
-          <div className="flex items-center gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-2 flex justify-start items-center">
+          <div className="flex items-center gap-8">
             <a href={`tel:${FIRM_DETAILS.contact.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 text-white/90 hover:text-[#E2C45C] transition-colors">
               <Phone className="w-3.5 h-3.5 text-[#E2C45C]" />
               <span>{FIRM_DETAILS.contact.phone}</span>
@@ -53,43 +50,6 @@ export const Navbar: React.FC = () => {
               <Mail className="w-3.5 h-3.5 text-[#E2C45C]" />
               <span>{FIRM_DETAILS.contact.email}</span>
             </a>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-[#E2C45C] font-semibold tracking-wide">
-              <Sparkles className="w-3.5 h-3.5 text-[#E2C45C]" />
-              <span>Healing • Self-Discovery • Purpose • Confidence</span>
-            </span>
-            <span className="text-[#D4AF37]/50">|</span>
-            <div className="flex items-center gap-3">
-              <a
-                href={FIRM_DETAILS.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1 text-white/80 hover:text-[#E2C45C] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href={FIRM_DETAILS.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1 text-white/80 hover:text-[#E2C45C] transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href={FIRM_DETAILS.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1 text-white/80 hover:text-[#E2C45C] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-3.5 h-3.5" />
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -172,17 +132,6 @@ export const Navbar: React.FC = () => {
             </div>
 
             <NavLink
-              to="/insights"
-              className={({ isActive }) =>
-                `text-xs font-semibold tracking-wider uppercase transition-colors py-1.5 ${
-                  isActive ? 'text-[#E2C45C] font-bold border-b-2 border-[#E2C45C]' : 'text-white/90 hover:text-[#E2C45C]'
-                }`
-              }
-            >
-              Insights
-            </NavLink>
-
-            <NavLink
               to="/impact"
               className={({ isActive }) =>
                 `text-xs font-semibold tracking-wider uppercase transition-colors py-1.5 ${
@@ -192,17 +141,6 @@ export const Navbar: React.FC = () => {
             >
               Impact
             </NavLink>
-
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `text-xs font-semibold tracking-wider uppercase transition-colors py-1.5 ${
-                  isActive ? 'text-[#E2C45C] font-bold border-b-2 border-[#E2C45C]' : 'text-white/90 hover:text-[#E2C45C]'
-                }`
-              }
-            >
-              Contact
-            </NavLink>
           </div>
 
           {/* Responsive Desktop & Tablet Right CTA - Gold Button */}
@@ -211,14 +149,15 @@ export const Navbar: React.FC = () => {
               type="button"
               onClick={() =>
                 openWhatsAppModal({
-                  title: 'Start a Conversation',
-                  subtitle: 'Direct WhatsApp connect with Keatlegile Mabena',
-                  defaultService: 'General Direct Enquiry'
+                  title: 'Book Keatlegile to Speak',
+                  subtitle: 'Request a keynote address, mentorship, or consultation',
+                  ctaType: 'speaking',
+                  defaultService: 'Speaking & Keynote Addresses'
                 })
               }
               className="px-3.5 sm:px-4 py-2 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-sm shadow-lg transition-all duration-300 hover:shadow-xl border border-[#E2C45C] inline-flex items-center gap-1.5 group whitespace-nowrap cursor-pointer"
             >
-              <span>Start a Conversation</span>
+              <span>Book Keatlegile</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
             </button>
 
@@ -296,24 +235,6 @@ export const Navbar: React.FC = () => {
                 </NavLink>
 
                 <NavLink
-                  to="/mentorship"
-                  className={({ isActive }) =>
-                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
-                  }
-                >
-                  • Mentorship
-                </NavLink>
-
-                <NavLink
-                  to="/career-development"
-                  className={({ isActive }) =>
-                    `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
-                  }
-                >
-                  • Career Development
-                </NavLink>
-
-                <NavLink
                   to="/books"
                   className={({ isActive }) =>
                     `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
@@ -323,57 +244,21 @@ export const Navbar: React.FC = () => {
                 </NavLink>
 
                 <NavLink
-                  to="/governance-compliance"
+                  to="/mentorship"
                   className={({ isActive }) =>
                     `block px-3 py-1.5 pl-6 text-xs rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-2 border-[#D4AF37]' : 'text-white/80 hover:bg-white/10'}`
                   }
                 >
-                  • Governance &amp; Strategy
-                </NavLink>
-
-                <NavLink
-                  to="/insights"
-                  className={({ isActive }) =>
-                    `block px-3 py-2 rounded mt-2 ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
-                  }
-                >
-                  Insights &amp; Reflections
+                  • Mentorship
                 </NavLink>
 
                 <NavLink
                   to="/impact"
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                    `block px-3 py-2 rounded mt-2 ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
                   Social Impact
-                </NavLink>
-
-                <NavLink
-                  to="/media"
-                  className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
-                  }
-                >
-                  Media
-                </NavLink>
-
-                <NavLink
-                  to="/events"
-                  className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
-                  }
-                >
-                  Events
-                </NavLink>
-
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
-                  }
-                >
-                  Contact
                 </NavLink>
               </div>
             </div>
@@ -415,14 +300,15 @@ export const Navbar: React.FC = () => {
                 onClick={() => {
                   setMobileMenuOpen(false);
                   openWhatsAppModal({
-                    title: 'Start a Conversation',
-                    subtitle: 'Direct WhatsApp connect with Keatlegile Mabena',
-                    defaultService: 'General Direct Enquiry'
+                    title: 'Book Keatlegile to Speak',
+                    subtitle: 'Request a keynote address, mentorship, or consultation',
+                    ctaType: 'speaking',
+                    defaultService: 'Speaking & Keynote Addresses'
                   });
                 }}
                 className="w-full py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-center text-xs font-bold uppercase tracking-widest rounded shadow-lg block border border-[#E2C45C] cursor-pointer"
               >
-                Start a Conversation
+                Book Keatlegile to Speak
               </button>
             </div>
           </div>

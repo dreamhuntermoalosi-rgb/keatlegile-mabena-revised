@@ -13,7 +13,7 @@ export const Speaking: React.FC = () => {
       <SEO
         title="Speaking & Keynotes | Keatlegile Mabena"
         description="Conversations that move people. Keynote speaking, workshops, and panel sessions on healing, purpose, self-discovery, confidence, and mentorship."
-        keywords={['Keatlegile Mabena Speaking', 'Keynote Speaker South Africa', 'Corporate Speaker', 'Youth Empowerment Speaker']}
+        keywords={['Keatlegile Mabena Speaking', 'Keynote Speaker', 'Corporate Speaker', 'Youth Empowerment Speaker']}
         canonicalUrl="https://keatlegilemabena.com/speaking"
       />
 
@@ -126,12 +126,13 @@ export const Speaking: React.FC = () => {
               openWhatsAppModal({
                 title: 'Book Keatlegile to Speak',
                 subtitle: 'Keynotes, Corporate Sessions & Institutional Conferences',
+                ctaType: 'speaking',
                 defaultService: 'Speaking & Keynote Addresses'
               })
             }
             className="px-8 py-3.5 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 cursor-pointer shadow-md"
           >
-            <span>Invite Keatlegile to Speak</span>
+            <span>Book Keatlegile to Speak</span>
             <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
           </button>
         </div>

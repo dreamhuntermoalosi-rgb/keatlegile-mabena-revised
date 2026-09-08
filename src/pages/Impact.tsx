@@ -38,7 +38,7 @@ export const Impact: React.FC = () => {
             Growth That Serves Others Is the Only Kind That Lasts.
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
-            Keatlegile's journey from Shakung Village fuels a deep commitment to mentoring youth, supporting underprivileged students, and building sustainable community initiatives.
+            Keatlegile's personal journey fuels a deep commitment to mentoring youth, supporting students, and building sustainable community initiatives.
           </p>
         </div>
       </section>

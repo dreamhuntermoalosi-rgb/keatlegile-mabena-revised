@@ -10,16 +10,10 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Speaking } from './pages/Speaking';
 import { Mentorship } from './pages/Mentorship';
-import { CareerDevelopment } from './pages/CareerDevelopment';
 import { Books } from './pages/Books';
 import { Impact } from './pages/Impact';
-import { Media } from './pages/Media';
-import { Events } from './pages/Events';
-import { ServicesPage } from './pages/Services';
-import { InsightsPage } from './pages/Insights';
-import { ArticleDetail } from './pages/ArticleDetail';
-import { StartConversation } from './pages/StartConversation';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsOfService } from './pages/TermsOfService';
 
 export default function App() {
   return (
@@ -33,19 +27,21 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/speaking" element={<Speaking />} />
               <Route path="/mentorship" element={<Mentorship />} />
-              <Route path="/career-development" element={<CareerDevelopment />} />
+              <Route path="/career-development" element={<Navigate to="/mentorship" replace />} />
               <Route path="/books" element={<Books />} />
-              <Route path="/insights" element={<InsightsPage />} />
-              <Route path="/insights/:slug" element={<ArticleDetail />} />
+              <Route path="/insights" element={<Navigate to="/" replace />} />
+              <Route path="/insights/:slug" element={<Navigate to="/" replace />} />
               <Route path="/impact" element={<Impact />} />
-              <Route path="/media" element={<Media />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/contact" element={<StartConversation />} />
-              <Route path="/start-a-conversation" element={<StartConversation />} />
-              <Route path="/book-keatlegile" element={<StartConversation />} />
-              <Route path="/request-consultation" element={<StartConversation />} />
+              <Route path="/media" element={<Navigate to="/" replace />} />
+              <Route path="/events" element={<Navigate to="/" replace />} />
+              <Route path="/services" element={<Navigate to="/speaking" replace />} />
+              <Route path="/governance-compliance" element={<Navigate to="/speaking" replace />} />
+              <Route path="/contact" element={<Navigate to="/" replace />} />
+              <Route path="/start-a-conversation" element={<Navigate to="/" replace />} />
+              <Route path="/book-keatlegile" element={<Navigate to="/" replace />} />
+              <Route path="/request-consultation" element={<Navigate to="/" replace />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>

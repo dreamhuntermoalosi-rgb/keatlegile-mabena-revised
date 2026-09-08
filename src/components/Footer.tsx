@@ -82,14 +82,9 @@ export const Footer: React.FC = () => {
               {[
                 { name: 'About Keatlegile', path: '/about' },
                 { name: 'Speaking & Keynotes', path: '/speaking' },
-                { name: 'Mentorship', path: '/mentorship' },
-                { name: 'Career Development', path: '/career-development' },
                 { name: 'Books & Authorship', path: '/books' },
-                { name: 'Governance & Strategy', path: '/governance-compliance' },
-                { name: 'Insights & Reflections', path: '/insights' },
-                { name: 'Social Impact', path: '/impact' },
-                { name: 'Media', path: '/media' },
-                { name: 'Events', path: '/events' }
+                { name: 'Mentorship', path: '/mentorship' },
+                { name: 'Social Impact', path: '/impact' }
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -104,16 +99,15 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Connect & Social Channels */}
+          {/* Column 3: Connect & Contact */}
           <div className="space-y-4">
             <h3 className="font-serif text-lg text-[#E2C45C] font-semibold tracking-wider relative inline-block after:absolute after:-bottom-1 after:left-0 after:w-8 after:h-0.5 after:bg-[#D4AF37]">
               CONNECT
             </h3>
             <ul className="space-y-2.5 text-xs">
               {[
-                { name: 'Start a Conversation', path: '/start-a-conversation' },
-                { name: 'Book Keatlegile', path: '/book-keatlegile' },
-                { name: 'Media Enquiries', path: '/contact' }
+                { name: 'Book for Speaking', path: '/speaking' },
+                { name: 'Mentorship Program', path: '/mentorship' }
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -149,11 +143,11 @@ export const Footer: React.FC = () => {
               PUBLICATIONS
             </h3>
             <p className="text-xs text-white/70 leading-relaxed">
-              Keatlegile Mabena is a best-selling author sharing deep insights on overcoming fear, unlocking potential, and mastering career growth.
+              Keatlegile Mabena is an author sharing deep insights on overcoming fear, unlocking potential, and mastering personal growth.
             </p>
             <div className="pt-1.5 space-y-3">
               <div className="p-3 bg-white/5 rounded-sm border border-[#D4AF37]/20">
-                <div className="text-[10px] font-bold text-[#E2C45C] uppercase tracking-wider mb-1">BEST-SELLER (7,000+ COPIES)</div>
+                <div className="text-[10px] font-bold text-[#E2C45C] uppercase tracking-wider mb-1">FEATURED PUBLICATION</div>
                 <h4 className="text-xs font-serif font-bold text-white leading-tight">
                   Breaking the Chains
                 </h4>
@@ -179,9 +173,13 @@ export const Footer: React.FC = () => {
               © {currentYear} Keatlegile Mabena. All Rights Reserved.
             </div>
           </div>
-          <div className="text-center sm:text-right">
+          <div className="flex flex-wrap justify-center sm:justify-end items-center gap-4 text-center sm:text-right">
             <Link to="/privacy-policy" className="hover:text-[#E2C45C] transition-colors font-medium">
-              Privacy Policy &amp; Terms
+              Privacy Policy &amp; POPIA
+            </Link>
+            <span className="text-white/20">•</span>
+            <Link to="/terms-of-service" className="hover:text-[#E2C45C] transition-colors font-medium">
+              Terms of Engagement
             </Link>
           </div>
         </div>

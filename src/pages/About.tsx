@@ -131,30 +131,30 @@ export const About: React.FC = () => {
     {
       title: 'Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence',
       category: 'Published Book (2019)',
-      subtitle: 'ISBN: 9780620840668 | 126 Pages | 7,000+ Copies Sold',
+      subtitle: 'ISBN: 9780620840668 | 126 Pages',
       description: 'An inspiring and actionable exploration of personal liberation, dismantling internal constraints, and bailing out imprisoned potential across life and career.'
     },
     {
       title: 'Upcoming Book',
       category: 'Forthcoming Publication',
       subtitle: 'In Manuscript Development',
-      description: 'A new manuscript expanding on healing, purpose, emotional resilience, and sustainable career mastery in contemporary South Africa (Coming Soon).'
+      description: 'A new manuscript expanding on healing, purpose, emotional resilience, and personal growth (Coming Soon).'
     }
   ];
 
   return (
     <>
       <SEO
-        title="About Keatlegile Mabena | Academic & Professional Profile"
+        title="About Keatlegile Mabena | Personal & Professional Profile"
         description="Official profile of Keatlegile Mabena — Master of Social Sciences (NWU), Cum Laude graduate, Author, Speaker, and Mentor."
         keywords={[
           'Keatlegile Mabena',
-          'Academic Profile South Africa',
+          'Profile',
           'North-West University Cum Laude',
           'Population and Sustainable Development',
-          'Youth Empowerment Mentor',
-          'Author South Africa',
-          'Keynote Speaker South Africa',
+          'Youth Mentor',
+          'Author',
+          'Keynote Speaker',
           'Qualifications Keatlegile Mabena',
           'PASA Member'
         ]}
@@ -162,9 +162,9 @@ export const About: React.FC = () => {
         ogImage={IMAGES.profileCard}
       />
 
-      <Breadcrumbs items={[{ label: 'Academic & Professional Profile' }]} />
+      <Breadcrumbs items={[{ label: 'Personal & Professional Profile' }]} />
 
-      {/* Hero Header - Institutional Academic Profile Style */}
+      {/* Hero Header */}
       <section className="relative bg-[#7e2e19] text-white py-16 sm:py-20 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
@@ -183,23 +183,23 @@ export const About: React.FC = () => {
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9a3820] border border-[#D4AF37]/40 rounded-sm text-xs font-semibold text-[#E2C45C] uppercase tracking-wider">
                 <GraduationCap className="w-3.5 h-3.5" />
-                <span>ACADEMIC &amp; PRACTITIONER DOSSIER</span>
+                <span>PERSONAL &amp; PROFESSIONAL PROFILE</span>
               </div>
               <h1 className="font-serif text-3xl sm:text-5xl font-bold leading-tight">
                 Keatlegile Mabena
               </h1>
               <p className="text-xs sm:text-sm text-[#E2C45C] font-serif italic tracking-wide">
-                Speaker | Best-Selling Author | Mentor
+                Speaker | Author | Mentor
               </p>
               <p className="text-base text-white/85 max-w-2xl leading-relaxed pt-2">
-                Combining double <em>Cum Laude</em> academic excellence in Population &amp; Sustainable Development Studies with published authorship, high-impact youth mentorship, and transformational keynote speaking.
+                Combining qualifications in Population &amp; Sustainable Development Studies with published authorship, youth mentorship, and keynote speaking.
               </p>
             </div>
 
             {/* Right Quick-Facts Badge */}
             <div className="lg:col-span-4 bg-[#5a1f10]/90 border border-[#D4AF37]/40 p-6 rounded-sm space-y-3 shadow-xl text-xs text-white/90">
               <div className="text-[11px] font-bold text-[#E2C45C] uppercase tracking-widest border-b-2 border-white/10 pb-2 flex items-center justify-between">
-                <span>Institutional Credentials</span>
+                <span>Educational Background</span>
                 <span className="text-[10px] text-[#E2C45C]">NWU Alumnus</span>
               </div>
               <div className="flex items-center gap-2">
@@ -245,12 +245,12 @@ export const About: React.FC = () => {
               </div>
               
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#7e2e19] leading-snug">
-                From Shakung Village to Academic Distinction and National Impact.
+                From Lived Experience to Academic Distinction and Impact.
               </h2>
               
               <div className="space-y-4 text-sm sm:text-base text-[#1C1C1C]/85 leading-relaxed">
                 <p>
-                  Growing up in <strong>Shakung Village, North-West Province</strong>, Keatlegile Mabena experienced firsthand the socio-economic challenges, structural limitations, and personal uncertainties that confront youth across South Africa’s rural and township communities.
+                  From an early age, Keatlegile Mabena experienced firsthand the socio-economic challenges, structural limitations, and personal uncertainties that confront youth across under-resourced communities.
                 </p>
                 <p>
                   Rather than allowing circumstances to define his trajectory, Keatlegile channeled these realities into rigorous academic discipline and leadership. At <strong>North-West University</strong>, he earned his <strong>Bachelor of Social Science</strong> with Distinction (<em>Cum Laude</em>, 2017), his <strong>Honours Bachelor of Social Science</strong> with Distinction (<em>Cum Laude</em>, 2018), and subsequently completed his <strong>Master of Social Sciences in Population and Sustainable Development</strong> (2020), supported by the prestigious <strong>National Research Foundation (NRF) Scarce Skills Masters Scholarship</strong>.
@@ -620,7 +620,7 @@ export const About: React.FC = () => {
                 Authorship &amp; Keynote Speaking
               </h3>
               <p className="text-xs text-[#1C1C1C]/80 leading-relaxed">
-                Transformational keynote addresses and published author of <em>Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence</em> (7,000+ copies sold).
+                Transformational keynote addresses and published author of <em>Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence</em>.
               </p>
             </div>
 
@@ -630,10 +630,10 @@ export const About: React.FC = () => {
                 <Building2 className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-lg font-bold text-[#7e2e19]">
-                Enterprise &amp; Advisory
+                Mentorship &amp; Workshops
               </h3>
               <p className="text-xs text-[#1C1C1C]/80 leading-relaxed">
-                Providing high-impact corporate workshops, professional career coaching, academic development programs, and executive advisory.
+                Providing high-impact youth empowerment clinics, personal development workshops, and structured 1-on-1 mentorship.
               </p>
             </div>
 
@@ -661,7 +661,7 @@ export const About: React.FC = () => {
             }
             className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-widest rounded-sm transition-colors inline-flex items-center gap-2 border border-[#E2C45C] cursor-pointer shadow-md"
           >
-            <span>Start a Conversation</span>
+            <span>Get in Touch</span>
             <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
           </button>
         </div>

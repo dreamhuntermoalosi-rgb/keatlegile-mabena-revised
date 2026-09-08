@@ -4,24 +4,25 @@ import { motion } from 'motion/react';
 import {
   ArrowRight,
   ChevronDown,
-  Heart,
   Compass,
   BookOpen,
   TrendingUp,
-  Lightbulb,
   Users,
   CheckCircle2,
-  Shield,
-  Target
+  Quote,
+  Star,
+  GraduationCap,
+  Award
 } from 'lucide-react';
 
 import { SEO } from '../components/SEO';
-import { FIRM_DETAILS, WHO_THIS_IS_FOR, TRANSFORMATION_JOURNEY, TRUST_PILLARS } from '../data/firmData';
+import { FIRM_DETAILS, TRUST_PILLARS } from '../data/firmData';
 import { IMAGES } from '../data/images';
 import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const Home: React.FC = () => {
   const { openWhatsAppModal } = useWhatsAppModal();
+
   return (
     <>
       <SEO
@@ -40,37 +41,24 @@ export const Home: React.FC = () => {
         ogImage={IMAGES.heroDesktop}
       />
 
-      {/* ================= HERO SECTION ================= */}
+      {/* ================= 1. HERO SECTION ================= */}
       <section className="relative min-h-[85vh] flex items-center justify-center bg-[#290c06] text-white overflow-hidden pt-12 pb-20">
-        {/* Responsive Background Image (Mobile & Desktop per user request) */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <picture className="w-full h-full">
             <source media="(min-width: 640px)" srcSet={IMAGES.heroDesktop} />
             <img
               src={IMAGES.heroMobile}
               alt="Keatlegile Mabena Brand Atmosphere"
-              className="w-full h-full object-cover object-top sm:object-[center_top] opacity-80 sm:opacity-85 filter brightness-105 contrast-105 transform-gpu scale-110 -translate-y-8 sm:scale-100 sm:translate-y-0"
+              className="w-full h-full object-cover object-top sm:object-[center_top] opacity-90 sm:opacity-95 filter brightness-105 contrast-105 transform-gpu scale-105 -translate-y-4 sm:scale-100 sm:translate-y-0"
             />
           </picture>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#290c06]/95 via-[#290c06]/70 sm:via-[#290c06]/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#290c06]/85 via-transparent to-[#290c06]/30" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.15),transparent_50%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#290c06]/85 via-[#290c06]/40 sm:via-[#290c06]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#290c06]/60 via-transparent to-[#290c06]/10" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_50%)] pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full pt-6 sm:pt-8 pb-10 sm:pb-12">
           <div className="max-w-3xl space-y-4 sm:space-y-5">
-            {/* Top Eyebrow Tagline - Clean text without background */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="hidden sm:flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#E2C45C]"
-            >
-              <span className="text-[#D4AF37] font-bold text-sm sm:text-base shrink-0">|</span>
-              <span>Speaker | Author | Mentor</span>
-            </motion.div>
-
-            {/* Main Headline */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -78,10 +66,10 @@ export const Home: React.FC = () => {
               className="space-y-3"
             >
               <h1 className="font-serif tracking-tight text-white space-y-2">
-                <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2">
+                <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2 drop-shadow-md">
                   KEATLEGILE MABENA
                 </span>
-                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#E2C45C] via-[#D4AF37] to-[#A88616]">
+                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#E2C45C] [text-shadow:_0_2px_10px_rgba(0,0,0,0.85)]">
                   Find Your Direction. <br />
                   Rediscover Your Confidence. <br />
                   Move With Purpose.
@@ -89,7 +77,6 @@ export const Home: React.FC = () => {
               </h1>
             </motion.div>
 
-            {/* Animated Gold Divider Line */}
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: '120px' }}
@@ -97,7 +84,6 @@ export const Home: React.FC = () => {
               className="h-1 bg-[#D4AF37] rounded-full"
             />
 
-            {/* Supporting Subtext */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -107,39 +93,30 @@ export const Home: React.FC = () => {
               Helping people heal, discover purpose, build confidence and move towards meaningful personal and career growth.
             </motion.p>
 
-            {/* Call to Actions */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4"
             >
-              <button
-                type="button"
-                onClick={() =>
-                  openWhatsAppModal({
-                    title: 'Start a Conversation',
-                    subtitle: 'Connect directly with Keatlegile Mabena',
-                    defaultService: 'Speaking & Keynote Addresses'
-                  })
-                }
-                className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C] cursor-pointer"
+              <Link
+                to="/mentorship"
+                className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C]"
               >
-                <span>Start a Conversation</span>
+                <span>Explore Mentorship</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
-              </button>
+              </Link>
 
               <Link
-                to="/about"
+                to="/books"
                 className="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-widest rounded-sm border border-white/30 hover:border-[#D4AF37] transition-all duration-300 flex items-center justify-center gap-2"
               >
-                <span>Explore Keatlegile's Work</span>
+                <span>Discover His Books</span>
               </Link>
             </motion.div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -152,11 +129,11 @@ export const Home: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* ================= HERO BANNER STRIP ================= */}
+      {/* Hero Strip */}
       <section className="bg-[#7e2e19] text-white py-5 sm:py-6 border-y-2 border-[#D4AF37] relative z-20 shadow-2xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center divide-x-2 divide-[#D4AF37]/20">
-            {['Healing', 'Self-Discovery', 'Purpose', 'Confidence', 'Mentorship', 'Transformation'].map((item, idx) => (
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center divide-x-2 divide-[#D4AF37]/30">
+            {['Speaker', 'Author', 'Mentor'].map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 12 }}
@@ -165,7 +142,7 @@ export const Home: React.FC = () => {
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 className="px-2 py-1"
               >
-                <span className="font-serif font-bold text-xs sm:text-sm tracking-wider text-[#E2C45C] uppercase">
+                <span className="font-serif font-bold text-xs sm:text-base tracking-wider text-[#E2C45C] uppercase">
                   {item}
                 </span>
               </motion.div>
@@ -174,11 +151,10 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ================= INTRODUCTION SECTION ================= */}
+      {/* ================= 2. BRIEF PERSONAL INTRODUCTION ================= */}
       <section className="py-20 bg-white text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -188,80 +164,91 @@ export const Home: React.FC = () => {
             >
               <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase flex items-center gap-2">
                 <span className="w-6 h-0.5 bg-[#9a3820]" />
-                <span>INTRODUCTION</span>
+                <span>ABOUT KEATLEGILE MABENA</span>
               </div>
 
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C] leading-tight">
-                You Are Capable of More Than Where You Are Right Now.
+                A Voice for Purpose, Clarity &amp; Leadership.
               </h2>
 
               <div className="space-y-4 text-base text-[#1C1C1C]/80 leading-relaxed">
-                <p>There are seasons when life feels uncertain.</p>
-                <p>You may know that you want more, but not know what "more" looks like.</p>
-                <p>You may have ambition, but feel stuck.</p>
-                <p>You may be working hard while quietly wondering whether you are moving in the right direction.</p>
-                <p>You may simply be trying to find yourself again after a difficult season.</p>
-                <p className="font-medium text-[#7e2e19] pt-2">
-                  Keatlegile Mabena's work exists for people navigating these moments — helping them move from pain and uncertainty towards healing, clarity, confidence and purposeful action.
+                <p>
+                  Keatlegile Mabena is a South African keynote speaker, published author, and youth mentor dedicated to helping people unlock their potential and navigate career and life transitions.
+                </p>
+                <p>
+                  Holding a <strong>Master of Social Sciences (Cum Laude)</strong> and accredited as an NQF Assessor and Moderator, Keatlegile bridges rigorous academic understanding with authentic lived experience.
+                </p>
+                <p className="font-medium text-[#7e2e19] pt-1">
+                  Whether addressing corporate stages, mentoring emerging leaders, or writing for readers seeking direction, his mission is simple: to help you move from uncertainty towards confidence and purposeful action.
                 </p>
               </div>
 
-              <div className="pt-4">
+              <div className="pt-2">
                 <Link
                   to="/about"
                   className="px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 inline-flex items-center gap-2"
                 >
-                  <span>Discover His Story</span>
+                  <span>Read Full Biography</span>
                   <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
                 </Link>
               </div>
             </motion.div>
 
-            {/* Visual Card / Highlight */}
+            {/* Quick Profile Card */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-5 relative"
+              className="lg:col-span-5"
             >
               <div className="bg-[#7e2e19] text-white p-8 sm:p-10 rounded-sm shadow-2xl border-l-4 border-[#D4AF37] space-y-6 relative overflow-hidden">
                 <div className="text-xs font-bold tracking-widest text-[#E2C45C] uppercase">
-                  THE BRAND PROMISE
+                  BACKGROUND AT A GLANCE
                 </div>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white leading-snug">
-                  From Where You Are to Where You Can Go.
-                </h3>
-                <div className="space-y-3 text-sm text-white/80 leading-relaxed">
-                  <p>Growth is not always about doing more.</p>
-                  <p>Sometimes it begins with understanding yourself more deeply.</p>
-                  <p>Sometimes it requires healing.</p>
-                  <p>Sometimes it requires finding the courage to make a different decision.</p>
-                  <p>And sometimes it simply requires having the right person, perspective or conversation at the right time.</p>
+                <div className="space-y-4 divide-y divide-white/10 text-sm">
+                  <div className="pt-2 flex items-start gap-3">
+                    <GraduationCap className="w-5 h-5 text-[#E2C45C] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-white">Master of Social Sciences (Cum Laude)</div>
+                      <div className="text-xs text-white/70">Population and Sustainable Development, NWU</div>
+                    </div>
+                  </div>
+                  <div className="pt-3 flex items-start gap-3">
+                    <BookOpen className="w-5 h-5 text-[#E2C45C] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-white">Published Author</div>
+                      <div className="text-xs text-white/70">Breaking the Chains</div>
+                    </div>
+                  </div>
+                  <div className="pt-3 flex items-start gap-3">
+                    <Award className="w-5 h-5 text-[#E2C45C] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-white">Accredited Assessor &amp; Moderator</div>
+                      <div className="text-xs text-white/70">NQF Level 5 Assessor &amp; NQF Level 6 Moderator</div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-xs text-[#E2C45C] italic pt-2 border-t-2 border-white/10">
-                  Through speaking, mentorship, books and thought leadership, Keatlegile creates spaces for people to reflect, grow, make sense of their journeys and move forward with greater intention.
-                </p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ================= WHAT KEATLEGILE DOES ================= */}
+      {/* ================= 3. SPEAKER, AUTHOR & MENTOR OFFERINGS ================= */}
       <section className="py-20 bg-[#F8F5EF] border-y-2 border-[#D4AF37]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
             <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
-              WHAT KEATLEGILE DOES
+              AREAS OF ENGAGEMENT
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C]">
-              Different Ways to Move Forward
+              Core Offerings
             </h2>
             <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Speaking */}
             <motion.div
               whileHover={{ y: -6 }}
@@ -271,19 +258,19 @@ export const Home: React.FC = () => {
                 <div className="w-12 h-12 bg-[#7e2e19]/10 rounded-sm flex items-center justify-center text-[#9a3820]">
                   <Users className="w-6 h-6" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-[#1C1C1C]">
-                  SPEAKING
+                <h3 className="font-serif text-xl font-bold text-[#1C1C1C]">
+                  KEYNOTE SPEAKING
                 </h3>
-                <p className="text-sm text-[#1C1C1C]/75 leading-relaxed">
-                  Meaningful conversations that challenge perspectives, create reflection and inspire purposeful action.
+                <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
+                  High-impact addresses and workshops for corporate stages, conferences, and institutional leadership events.
                 </p>
               </div>
               <Link
                 to="/speaking"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors pt-2"
               >
-                <span>Explore Speaking</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Book Keatlegile to Speak</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </motion.div>
 
@@ -296,209 +283,62 @@ export const Home: React.FC = () => {
                 <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-sm flex items-center justify-center text-[#A88616]">
                   <Compass className="w-6 h-6" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-[#1C1C1C]">
+                <h3 className="font-serif text-xl font-bold text-[#1C1C1C]">
                   MENTORSHIP
                 </h3>
-                <p className="text-sm text-[#1C1C1C]/75 leading-relaxed">
-                  Personalised support for people seeking clarity, confidence, direction and meaningful growth.
+                <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
+                  Personalised 1-on-1 and cohort guidance for emerging leaders, students, and professionals seeking clarity.
                 </p>
               </div>
               <Link
                 to="/mentorship"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors pt-2"
               >
                 <span>Explore Mentorship</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
-
-            {/* Career Development */}
-            <motion.div
-              whileHover={{ y: -6 }}
-              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#9a3820] flex flex-col justify-between space-y-6 transition-all"
-            >
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-[#7e2e19]/10 rounded-sm flex items-center justify-center text-[#9a3820]">
-                  <TrendingUp className="w-6 h-6" />
-                </div>
-                <h3 className="font-serif text-2xl font-bold text-[#1C1C1C]">
-                  CAREER DEVELOPMENT
-                </h3>
-                <p className="text-sm text-[#1C1C1C]/75 leading-relaxed">
-                  Practical guidance for navigating career decisions, professional growth and the journey towards career success.
-                </p>
-              </div>
-              <Link
-                to="/career-development"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
-              >
-                <span>Explore Career Development</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </motion.div>
 
             {/* Books & Writing */}
             <motion.div
               whileHover={{ y: -6 }}
-              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#D4AF37] flex flex-col justify-between space-y-6 transition-all"
+              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#9a3820] flex flex-col justify-between space-y-6 transition-all"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-sm flex items-center justify-center text-[#A88616]">
-                    <BookOpen className="w-6 h-6" />
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F8F5EF] text-[#7e2e19] px-2 py-0.5 rounded border border-[#D4AF37]/30">
-                    7,000+ Copies Sold
-                  </span>
+                <div className="w-12 h-12 bg-[#7e2e19]/10 rounded-sm flex items-center justify-center text-[#9a3820]">
+                  <BookOpen className="w-6 h-6" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-[#1C1C1C]">
-                  BOOKS &amp; WRITING
+                <h3 className="font-serif text-xl font-bold text-[#1C1C1C]">
+                  BOOKS &amp; AUTHORSHIP
                 </h3>
-                <p className="text-sm text-[#1C1C1C]/75 leading-relaxed">
-                  Author of <em>Breaking the Chains</em> (2019) and upcoming manuscripts. Ideas, stories, and frameworks for healing and purpose.
+                <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
+                  Author of <em>Breaking the Chains</em> and transformational writings on personal growth.
                 </p>
               </div>
               <Link
                 to="/books"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors pt-2"
               >
-                <span>Explore Books &amp; Writing</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
-
-            {/* Thought Leadership */}
-            <motion.div
-              whileHover={{ y: -6 }}
-              className="bg-white p-8 rounded-sm shadow-md border-t-4 border-[#9a3820] flex flex-col justify-between space-y-6 transition-all md:col-span-2 lg:col-span-1"
-            >
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-[#7e2e19]/10 rounded-sm flex items-center justify-center text-[#9a3820]">
-                  <Lightbulb className="w-6 h-6" />
-                </div>
-                <h3 className="font-serif text-2xl font-bold text-[#1C1C1C]">
-                  THOUGHT LEADERSHIP
-                </h3>
-                <p className="text-sm text-[#1C1C1C]/75 leading-relaxed">
-                  Conversations and perspectives around healing, purpose, self-discovery, career success and transformation.
-                </p>
-              </div>
-              <Link
-                to="/insights"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
-              >
-                <span>Explore Insights</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Discover His Books</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ================= WHO THIS IS FOR ================= */}
-      <section className="py-20 bg-white text-[#1C1C1C]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 space-y-6">
-              <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
-                WHO THIS IS FOR
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C]">
-                For People Who Know There Is More.
-              </h2>
-              <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
-                Keatlegile primarily works with individuals seeking healing, purpose, confidence, career growth and personal development, as well as institutions seeking speaking and development programmes.
-              </p>
-              <div className="p-4 bg-[#F8F5EF] border-l-4 border-[#D4AF37] rounded-sm text-sm font-medium text-[#7e2e19]">
-                You do not need to have everything figured out before you begin.
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 bg-[#7e2e19] text-white p-8 sm:p-10 rounded-sm shadow-xl space-y-4">
-              <h3 className="font-serif text-2xl font-bold text-[#E2C45C] border-b-2 border-white/10 pb-3">
-                You may be...
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-white/90">
-                {WHO_THIS_IS_FOR.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 py-1">
-                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= THE TRANSFORMATION ================= */}
-      <section className="py-20 bg-[#42160c] text-white relative overflow-hidden border-y-2 border-[#D4AF37]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-          <div className="text-center max-w-2xl mx-auto space-y-4 mb-16">
-            <div className="text-xs font-bold tracking-widest text-[#E2C45C] uppercase">
-              THE TRANSFORMATION
-            </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-              What Could Change?
-            </h2>
-            <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
-            {/* FROM */}
-            <div className="bg-white/5 p-8 rounded-sm border border-white/10 space-y-6">
-              <div className="text-sm font-bold tracking-widest text-red-300 uppercase border-b-2 border-white/10 pb-3 flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-red-400" />
-                <span>FROM</span>
-              </div>
-              <ul className="space-y-3 text-base text-white/80">
-                {TRANSFORMATION_JOURNEY.from.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <span className="text-red-400">✕</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* TOWARDS */}
-            <div className="bg-[#7e2e19] p-8 rounded-sm border-2 border-[#D4AF37] space-y-6 shadow-2xl">
-              <div className="text-sm font-bold tracking-widest text-[#E2C45C] uppercase border-b-2 border-[#D4AF37]/30 pb-3 flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#E2C45C]" />
-                <span>TOWARDS</span>
-              </div>
-              <ul className="space-y-3 text-base text-white font-medium">
-                {TRANSFORMATION_JOURNEY.towards.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-[#E2C45C]">
-                    <span>✓</span>
-                    <span className="text-white">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <p className="text-center text-xs text-white/60 pt-8 italic">
-            This is the central transformation described in the strategy.
-          </p>
-        </div>
-      </section>
-
-      {/* ================= WHY KEATLEGILE ================= */}
+      {/* ================= 4. CORE PILLARS ================= */}
       <section className="py-20 bg-white text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
           <div className="max-w-3xl space-y-4">
             <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
-              WHY KEATLEGILE
+              GUIDING PRINCIPLES
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C]">
-              A Different Kind of Conversation.
+              Authentic &amp; Purposeful Guidance.
             </h2>
             <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
-              Keatlegile's advantage lies in bringing together lived experience, academic credibility, authorship, mentorship and community impact in a way that is authentic, practical and relatable.
-            </p>
-            <p className="text-sm font-semibold text-[#7e2e19]">
-              The result is a perspective that connects human transformation with practical progress.
+              Keatlegile's strength lies in connecting lived experience, authorship, and practical mentorship to support personal transformation and career growth.
             </p>
           </div>
 
@@ -520,109 +360,64 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ================= FEATURED INSIGHTS ================= */}
+      {/* ================= 5. FEATURED BOOK ================= */}
       <section className="py-20 bg-[#F8F5EF] border-t-2 border-[#D4AF37]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-3">
-              <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
-                FEATURED INSIGHTS
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1C1C1C]">
-                Thoughts for the Journey.
-              </h2>
-              <p className="text-sm text-[#1C1C1C]/70">
-                Sometimes one idea can change the way you see your situation.
+          {/* Featured Book Banner */}
+          <div className="bg-[#7e2e19] text-white p-8 sm:p-10 rounded-sm border-2 border-[#D4AF37] shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 space-y-4">
+              <span className="text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37] text-[#1C1C1C] px-2.5 py-1 rounded-xs">
+                FEATURED BOOK
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+                Breaking the Chains: Bailing Out Imprisoned Potential
+              </h3>
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-2xl">
+                A transformative read addressing the internal fear, self-doubt, and past experiences that prevent people from stepping into their full capability.
               </p>
-            </div>
-            <Link
-              to="/insights"
-              className="px-6 py-3 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 self-start md:self-auto"
-            >
-              <span>Explore All Insights</span>
-              <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                topic: 'Career',
-                title: 'Your Career Is More Than a Job.',
-                desc: 'Career success is not simply about securing a position. It is about understanding your strengths, making intentional choices and continuing to grow.'
-              },
-              {
-                topic: 'Purpose',
-                title: 'What Are You Building Your Life Around?',
-                desc: 'Purpose begins with asking better questions about who you are and what matters to you.'
-              },
-              {
-                topic: 'Confidence',
-                title: 'When Your Potential and Your Confidence Don’t Match.',
-                desc: 'Sometimes the person you could become is waiting for you to believe that becoming is possible.'
-              },
-              {
-                topic: 'Growth',
-                title: 'You Are Allowed to Outgrow Your Old Direction.',
-                desc: 'Growth can mean changing your mind, changing direction and choosing a path that better reflects who you are becoming.'
-              }
-            ].map((art, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-6 rounded-sm shadow-sm border border-black/5 space-y-4 flex flex-col justify-between"
-              >
-                <div className="space-y-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#D4AF37]">
-                    {art.topic}
-                  </span>
-                  <h3 className="font-serif text-lg font-bold text-[#1C1C1C]">
-                    {art.title}
-                  </h3>
-                  <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
-                    {art.desc}
-                  </p>
-                </div>
+              <div className="pt-2">
                 <Link
-                  to="/insights"
-                  className="text-xs font-bold text-[#9a3820] hover:underline inline-flex items-center gap-1 pt-2"
+                  to="/books"
+                  className="px-6 py-3 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center gap-2"
                 >
-                  Read More <ArrowRight className="w-3 h-3" />
+                  <span>Discover His Books</span>
+                  <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
                 </Link>
               </div>
-            ))}
-          </div>
+            </div>
 
-          <p className="text-xs text-[#1C1C1C]/50 italic">
-            These are proposed editorial topics for inspiration and reflections.
-          </p>
+            <div className="lg:col-span-4 bg-white/10 p-6 rounded-sm border border-white/20 text-center space-y-3">
+              <div className="text-xl font-serif font-bold text-[#E2C45C]">Breaking the Chains</div>
+              <div className="text-xs font-medium text-white/90">Published 2019 • 126 Pages</div>
+              <div className="text-[11px] text-white/60 italic font-mono">ISBN: 9780620840668</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ================= FINAL CTA ================= */}
-      <section className="py-20 bg-white text-[#1C1C1C] border-t-2 border-[#D4AF37]">
+      {/* ================= 6. FINAL BOOKING CALL TO ACTION ================= */}
+      <section className="py-20 bg-[#7e2e19] text-white border-t-2 border-[#D4AF37]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-6">
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1C1C1C]">
-            Your Next Chapter Can Begin Here.
+          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white">
+            Ready to Begin Your Next Chapter?
           </h2>
-          <div className="space-y-2 text-base text-[#1C1C1C]/80">
-            <p>You don't have to know every step.</p>
-            <p className="font-semibold text-[#7e2e19]">You just need to be willing to take the next one.</p>
-          </div>
-          <div className="pt-4">
-            <button
-              type="button"
-              onClick={() =>
-                openWhatsAppModal({
-                  title: 'Start a Conversation',
-                  subtitle: 'Take the next step with Keatlegile Mabena',
-                  defaultService: 'General Direct Enquiry'
-                })
-              }
-              className="px-9 py-4 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all inline-flex items-center gap-3 cursor-pointer"
+          <p className="text-sm sm:text-base text-white/80 max-w-xl mx-auto leading-relaxed">
+            Whether you are seeking mentorship or ordering books, take the first step today.
+          </p>
+          <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+            <Link
+              to="/mentorship"
+              className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C]"
             >
-              <span>Start a Conversation</span>
-              <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-            </button>
+              <span>Explore Mentorship</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
+            </Link>
+            <Link
+              to="/books"
+              className="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-widest rounded-sm border border-white/30 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-2"
+            >
+              <span>Discover His Books</span>
+            </Link>
           </div>
         </div>
       </section>

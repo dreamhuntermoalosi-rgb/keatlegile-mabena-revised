@@ -26,7 +26,7 @@ export const Books: React.FC = () => {
     <>
       <SEO
         title="Books & Authorship | Keatlegile Mabena"
-        description="Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence by Keatlegile Mabena. Over 7,000+ copies sold."
+        description="Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence by Keatlegile Mabena."
         keywords={[
           'Breaking the Chains',
           'Keatlegile Mabena Book',
@@ -106,12 +106,12 @@ export const Books: React.FC = () => {
                     <span className="font-bold text-base text-white">Keatlegile Mabena</span>
                   </div>
 
-                  {/* Impact Highlight Badge */}
+                  {/* Book Highlight Badge */}
                   <div className="bg-[#38120a]/80 border border-[#D4AF37]/50 p-3.5 rounded-sm flex items-center gap-3">
-                    <Award className="w-6 h-6 text-[#D4AF37] shrink-0" />
+                    <BookMarked className="w-6 h-6 text-[#D4AF37] shrink-0" />
                     <div>
-                      <div className="font-bold text-[#E2C45C] text-sm">7,000+ Copies Sold</div>
-                      <div className="text-[11px] text-white/70">Nationwide readership and impact</div>
+                      <div className="font-bold text-[#E2C45C] text-sm">Published Book</div>
+                      <div className="text-[11px] text-white/70">Personal transformation &amp; empowerment</div>
                     </div>
                   </div>
 
@@ -137,14 +137,15 @@ export const Books: React.FC = () => {
                       type="button"
                       onClick={() =>
                         openWhatsAppModal({
-                          title: 'Order "The Power of Pain"',
+                          title: 'Discover His Books & Order Copies',
                           subtitle: 'Direct WhatsApp order / delivery inquiry with the author',
+                          ctaType: 'book',
                           defaultService: 'The Power of Pain Book Order'
                         })
                       }
                       className="w-full py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm text-center block shadow-lg transition-all border border-[#E2C45C] cursor-pointer"
                     >
-                      Inquire / Order Copies
+                      Discover His Books &amp; Order Copies
                     </button>
                   </div>
                 </div>
@@ -276,14 +277,15 @@ export const Books: React.FC = () => {
             type="button"
             onClick={() =>
               openWhatsAppModal({
-                title: 'Bulk Book Order Inquiry',
+                title: 'Order Copies & Bulk Inquiries',
                 subtitle: 'Schools, Corporate Distribution & Group Orders',
+                ctaType: 'book',
                 defaultService: 'The Power of Pain Book Order'
               })
             }
             className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-widest rounded-sm transition-colors inline-flex items-center gap-2 border border-[#E2C45C] cursor-pointer shadow-md"
           >
-            <span>Start an Order Inquiry</span>
+            <span>Order Copies &amp; Bulk Inquiries</span>
             <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
           </button>
         </div>

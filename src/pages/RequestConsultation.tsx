@@ -8,7 +8,7 @@ import { Breadcrumbs } from '../components/Breadcrumbs';
 import { SERVICES, FIRM_DETAILS } from '../data/firmData';
 import { IMAGES } from '../data/images';
 
-const WHATSAPP_NUMBER = "27621726790";
+const WHATSAPP_NUMBER = FIRM_DETAILS.contact.whatsappNumber;
 
 const bookingSchema = z.object({
   fullName: z.string().min(2, 'Full Name is required'),
@@ -343,7 +343,7 @@ Please contact me regarding a legal consultation.`;
                 <div className="p-6 bg-[#1C1C1C] text-white rounded-sm border-2 border-[#D4AF37] space-y-4 shadow-lg font-mono text-xs leading-relaxed">
                   <div className="text-[10px] text-[#E2C45C] font-bold uppercase tracking-widest border-b-2 border-white/20 pb-2 flex items-center justify-between">
                     <span>Generated WhatsApp Message Payload</span>
-                    <span className="text-white/60">Business No: +27 62 172 6790</span>
+                    <span className="text-white/60">Business No: {FIRM_DETAILS.contact.phone}</span>
                   </div>
 
                   <pre className="whitespace-pre-wrap font-mono text-white/90">

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { X, MessageSquare, Send, Building2, User, Phone as PhoneIcon, Mail } from 'lucide-react';
+import { X, MessageSquare, Send, Building2, User, Phone as PhoneIcon, Mail, Lock, Shield } from 'lucide-react';
 import { FIRM_DETAILS } from '../data/firmData';
 
 export interface WhatsAppModalOptions {
@@ -28,12 +28,9 @@ export const useWhatsAppModal = () => {
 };
 
 const CTA_SERVICES = [
-  'Speaking & Keynote Addresses',
-  'One-on-One Mentorship Programme',
-  'Career Development & Employability',
-  'Book Orders & Enquiries (The Power of Pain / The Art of Becoming)',
-  'Strategic Advisory & Publishing Support',
-  'Youth & Leadership Workshops',
+  'Keynote Speaking & Event Addresses',
+  'Mentorship Programme (1-on-1 & Cohort)',
+  'Book Orders & Inquiries (Breaking the Chains / Author)',
   'Media, Interviews & Feature Enquiries',
   'General Direct Enquiry'
 ];
@@ -49,8 +46,10 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
   const [organization, setOrganization] = useState('');
   const [selectedService, setSelectedService] = useState(CTA_SERVICES[0]);
   const [message, setMessage] = useState('');
+  const [consentAgreed, setConsentAgreed] = useState(true);
 
   const openWhatsAppModal = (options?: WhatsAppModalOptions) => {
+    setConsentAgreed(true);
     if (options?.title) setModalTitle(options.title);
     else setModalTitle('Start a Conversation');
 
@@ -133,6 +132,10 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
   };
 
   const handleSendToWhatsApp = () => {
+    if (!consentAgreed) {
+      alert('Please agree to the processing of personal information under POPIA to proceed.');
+      return;
+    }
     const formattedText = buildFormattedMessage();
     const whatsappUrl = `https://wa.me/${FIRM_DETAILS.contact.whatsappNumber}?text=${encodeURIComponent(formattedText)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
@@ -289,6 +292,29 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                     className="w-full px-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] focus:bg-white transition-colors"
                   />
                 </div>
+
+                {/* Information Usage Disclosure & POPIA Consent */}
+                <div className="p-3 bg-gray-50 rounded border border-gray-200 space-y-2 text-[11px] text-gray-700">
+                  <div className="flex items-center gap-1.5 font-bold text-[#7e2e19]">
+                    <Lock className="w-3.5 h-3.5 text-[#9a3820]" />
+                    <span>How Information Will Be Used</span>
+                  </div>
+                  <p className="text-[10px] text-gray-600 leading-snug">
+                    Your personal information (Name, Contact Details, Institution, Message) is collected solely to respond to your enquiry, coordinate booking logistics, or provide requested mentorship details in accordance with South Africa&apos;s POPIA standards.
+                  </p>
+                  <div className="pt-1 border-t border-gray-200 flex items-start gap-2">
+                    <input
+                      type="checkbox"
+                      id="modalConsentAgreed"
+                      checked={consentAgreed}
+                      onChange={(e) => setConsentAgreed(e.target.checked)}
+                      className="mt-0.5 h-3.5 w-3.5 rounded border-gray-300 text-[#7e2e19] focus:ring-[#D4AF37]"
+                    />
+                    <label htmlFor="modalConsentAgreed" className="text-[10px] text-gray-800 leading-tight cursor-pointer">
+                      I consent to the processing of my details under POPIA &amp; agree to the <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#9a3820] font-bold hover:underline">Privacy Policy</a>.
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -308,7 +334,12 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                 className="w-full sm:w-auto px-6 py-2.5 bg-[#25D366] hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider rounded shadow-lg transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 fill-current stroke-none" />
-                <span>Submit &amp; Open WhatsApp</span>
+                <span>
+                  {ctaType === 'speaking' ? 'Book Keatlegile to Speak' :
+                   ctaType === 'mentorship' ? 'Submit Mentorship Application' :
+                   ctaType === 'book' ? 'Order Bestselling Book' :
+                   'Submit Enquiry & Open WhatsApp'}
+                </span>
                 <Send className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </button>
             </div>

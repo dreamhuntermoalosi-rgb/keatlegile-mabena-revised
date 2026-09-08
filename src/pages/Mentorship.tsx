@@ -96,14 +96,15 @@ export const Mentorship: React.FC = () => {
                 type="button"
                 onClick={() =>
                   openWhatsAppModal({
-                    title: 'Apply for Mentorship',
+                    title: 'Explore Mentorship',
                     subtitle: 'One-on-One Guided Clarity, Purpose & Career Direction',
+                    ctaType: 'mentorship',
                     defaultService: 'One-on-One Mentorship Programme'
                   })
                 }
                 className="px-6 py-3 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] cursor-pointer shadow-md"
               >
-                <span>Apply for Mentorship</span>
+                <span>Explore Mentorship &amp; Apply</span>
                 <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
               </button>
             </div>
