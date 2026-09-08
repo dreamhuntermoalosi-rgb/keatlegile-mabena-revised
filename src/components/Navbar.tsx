@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { ChevronDown, Menu, X, Phone, Mail, Sparkles, ArrowRight, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowRight, Instagram, Facebook, Linkedin, Mail } from 'lucide-react';
 import { Logo } from './Logo';
 import { FIRM_DETAILS } from '../data/firmData';
 import { useWhatsAppModal } from '../context/WhatsAppModalContext';
@@ -38,22 +38,6 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 w-full transition-colors duration-300 shadow-xl">
-      {/* Top Utility Bar - Clean Contact Line */}
-      <div className="hidden md:block bg-[#5a1f10] text-xs text-white/90 border-b-2 border-[#D4AF37]/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-2 flex justify-start items-center">
-          <div className="flex items-center gap-8">
-            <a href={`tel:${FIRM_DETAILS.contact.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 text-white/90 hover:text-[#E2C45C] transition-colors">
-              <Phone className="w-3.5 h-3.5 text-[#E2C45C]" />
-              <span>{FIRM_DETAILS.contact.phone}</span>
-            </a>
-            <a href={`mailto:${FIRM_DETAILS.contact.email}`} className="flex items-center gap-2 text-white/90 hover:text-[#E2C45C] transition-colors">
-              <Mail className="w-3.5 h-3.5 text-[#E2C45C]" />
-              <span>{FIRM_DETAILS.contact.email}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation Bar - Primary Teal (#7e2e19) */}
       <nav
         className={`w-full transition-colors duration-300 border-b-2 border-[#D4AF37]/40 py-3.5 sm:py-4 ${
@@ -143,8 +127,17 @@ export const Navbar: React.FC = () => {
             </NavLink>
           </div>
 
-          {/* Responsive Desktop & Tablet Right CTA - Gold Button */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Responsive Desktop & Tablet Right CTA - Gold Button & Email Link */}
+          <div className="hidden sm:flex items-center gap-2.5 sm:gap-3">
+            <a
+              href={`mailto:${FIRM_DETAILS.contact.email}`}
+              className="hidden xl:inline-flex items-center gap-1.5 text-xs text-white/90 hover:text-[#E2C45C] transition-colors py-2 px-3 rounded-sm bg-white/10 hover:bg-white/20 border border-white/20"
+              title="Send an email to Keatlegile Mabena"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#E2C45C]" />
+              <span className="font-medium text-[11px]">{FIRM_DETAILS.contact.email}</span>
+            </a>
+
             <button
               type="button"
               onClick={() =>
@@ -263,9 +256,19 @@ export const Navbar: React.FC = () => {
               </div>
             </div>
 
-            {/* Drawer Footer CTA & Socials */}
-            <div className="pt-6 border-t-2 border-white/20 space-y-4">
-              <div className="flex items-center justify-center gap-4 text-[#E2C45C]">
+            {/* Drawer Footer CTA & Direct Contact */}
+            <div className="pt-5 border-t-2 border-white/20 space-y-3.5 pb-16 sm:pb-6">
+              {/* Direct Email Contact Link */}
+              <a
+                href={`mailto:${FIRM_DETAILS.contact.email}`}
+                className="flex items-center justify-center gap-2 py-2 px-3 bg-white/10 hover:bg-white/20 text-[#E2C45C] rounded text-xs font-semibold border border-[#D4AF37]/40 transition-colors shadow-sm"
+              >
+                <Mail className="w-4 h-4 text-[#E2C45C] shrink-0" />
+                <span className="truncate">{FIRM_DETAILS.contact.email}</span>
+              </a>
+
+              {/* Social Icons */}
+              <div className="flex items-center justify-center gap-4 text-[#E2C45C] pt-1">
                 <a
                   href={FIRM_DETAILS.social.instagram}
                   target="_blank"
@@ -295,21 +298,24 @@ export const Navbar: React.FC = () => {
                 </a>
               </div>
 
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  openWhatsAppModal({
-                    title: 'Book Keatlegile to Speak',
-                    subtitle: 'Request a keynote address, mentorship, or consultation',
-                    ctaType: 'speaking',
-                    defaultService: 'Speaking & Keynote Addresses'
-                  });
-                }}
-                className="w-full py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-center text-xs font-bold uppercase tracking-widest rounded shadow-lg block border border-[#E2C45C] cursor-pointer"
-              >
-                Book Keatlegile to Speak
-              </button>
+              {/* Booking button full width with bottom margin to sit cleanly above fixed floating widget */}
+              <div className="pt-2 w-full mb-14 sm:mb-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openWhatsAppModal({
+                      title: 'Book Keatlegile to Speak',
+                      subtitle: 'Request a keynote address, mentorship, or consultation',
+                      ctaType: 'speaking',
+                      defaultService: 'Speaking & Keynote Addresses'
+                    });
+                  }}
+                  className="w-full py-3 px-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-center text-xs font-bold uppercase tracking-widest rounded shadow-lg block border border-[#E2C45C] cursor-pointer"
+                >
+                  Book Keatlegile to Speak
+                </button>
+              </div>
             </div>
           </div>
         </div>

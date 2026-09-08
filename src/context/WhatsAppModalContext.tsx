@@ -148,28 +148,31 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
 
       {/* WhatsApp Modal Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs animate-fade-in overflow-y-auto">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xs animate-fade-in"
+          onClick={closeWhatsAppModal}
+        >
           <div
-            className="relative w-full max-w-lg bg-white rounded-md shadow-2xl border-2 border-[#D4AF37] my-8 overflow-hidden text-[#1C1C1C]"
+            className="relative w-full max-w-lg bg-white rounded-lg shadow-2xl border-2 border-[#D4AF37] max-h-[92vh] flex flex-col my-auto overflow-hidden text-[#1C1C1C]"
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
             aria-labelledby="whatsapp-modal-title"
           >
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-[#5a1f10] via-[#7e2e19] to-[#5a1f10] text-white p-5 sm:p-6 border-b-2 border-[#D4AF37] relative">
-              <div className="flex items-center gap-3.5">
-                <div className="w-11 h-11 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shrink-0 border border-white/20">
-                  <MessageSquare className="w-6 h-6 fill-current stroke-none" />
+            <div className="shrink-0 bg-gradient-to-r from-[#5a1f10] via-[#7e2e19] to-[#5a1f10] text-white p-4 sm:p-5 border-b-2 border-[#D4AF37] flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3 min-w-0 pr-1">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#D4AF37] text-[#1C1C1C] flex items-center justify-center shadow-lg shrink-0 border border-[#E2C45C]">
+                  <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 fill-current stroke-none" />
                 </div>
-                <div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#E2C45C] mb-0.5">
+                <div className="min-w-0">
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#E2C45C] mb-0.5 truncate">
                     Direct Connect
                   </div>
-                  <h3 id="whatsapp-modal-title" className="font-serif text-lg sm:text-xl font-bold text-white leading-tight">
+                  <h3 id="whatsapp-modal-title" className="font-serif text-base sm:text-lg font-bold text-white leading-tight truncate">
                     {modalTitle}
                   </h3>
-                  <p className="text-xs text-white/80 mt-0.5 font-normal">
+                  <p className="text-[11px] sm:text-xs text-white/80 mt-0.5 font-normal truncate">
                     {modalSubtitle}
                   </p>
                 </div>
@@ -177,15 +180,15 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
 
               <button
                 onClick={closeWhatsAppModal}
-                className="absolute top-4 right-4 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors focus:outline-none cursor-pointer"
+                className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 hover:bg-white/30 active:bg-white/40 text-white flex items-center justify-center border border-white/40 shadow-md transition-all focus:outline-none cursor-pointer"
                 aria-label="Close dialog"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 stroke-[2.5]" />
               </button>
             </div>
 
             {/* Modal Body / Form */}
-            <div className="p-5 sm:p-6 space-y-4 max-h-[72vh] overflow-y-auto">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
               <p className="text-xs text-gray-600 leading-relaxed">
                 Please fill in your details below to connect directly with Keatlegile Mabena on WhatsApp:
               </p>
@@ -319,19 +322,20 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 sm:p-5 bg-gray-100 border-t-2 border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="shrink-0 p-3.5 sm:p-4 bg-gray-100 border-t-2 border-gray-200 flex flex-col-reverse sm:flex-row items-center justify-between gap-2.5">
               <button
                 type="button"
                 onClick={closeWhatsAppModal}
-                className="w-full sm:w-auto px-4 py-2 text-xs font-semibold text-gray-600 hover:text-gray-900 border border-gray-300 rounded hover:bg-gray-200 transition-colors cursor-pointer"
+                className="w-full sm:w-auto px-4 py-2 text-xs font-bold text-gray-700 bg-gray-200 hover:bg-gray-300 rounded transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                Cancel
+                <X className="w-3.5 h-3.5" />
+                <span>Close</span>
               </button>
 
               <button
                 type="button"
                 onClick={handleSendToWhatsApp}
-                className="w-full sm:w-auto px-6 py-2.5 bg-[#25D366] hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider rounded shadow-lg transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                className="w-full sm:w-auto px-5 py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-wider rounded border border-[#E2C45C] shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 fill-current stroke-none" />
                 <span>

@@ -42,14 +42,14 @@ export const Home: React.FC = () => {
       />
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#290c06] text-white overflow-hidden pt-12 pb-20">
-        <div className="absolute inset-0 z-0 overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#290c06] text-white [clip-path:inset(0)] pt-12 pb-20">
+        <div className="fixed inset-0 z-0 pointer-events-none">
           <picture className="w-full h-full">
             <source media="(min-width: 640px)" srcSet={IMAGES.heroDesktop} />
             <img
               src={IMAGES.heroMobile}
               alt="Keatlegile Mabena Brand Atmosphere"
-              className="w-full h-full object-cover object-top sm:object-[center_top] opacity-90 sm:opacity-95 filter brightness-105 contrast-105 transform-gpu scale-105 -translate-y-4 sm:scale-100 sm:translate-y-0"
+              className="w-full h-full object-cover object-top sm:object-[center_top] opacity-90 sm:opacity-95 filter brightness-105 contrast-105"
             />
           </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-[#290c06]/85 via-[#290c06]/40 sm:via-[#290c06]/20 to-transparent" />
@@ -88,7 +88,7 @@ export const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg sm:text-xl text-[#F8F5EF]/90 font-normal leading-relaxed max-w-2xl"
+              className="text-sm sm:text-base text-[#F8F5EF]/85 font-normal leading-relaxed max-w-xl"
             >
               Helping people heal, discover purpose, build confidence and move towards meaningful personal and career growth.
             </motion.p>
