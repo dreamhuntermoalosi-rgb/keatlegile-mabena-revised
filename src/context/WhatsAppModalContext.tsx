@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { X, MessageSquare, Send, Building2, User, Phone as PhoneIcon, Mail, Lock, Shield } from 'lucide-react';
 import { FIRM_DETAILS } from '../data/firmData';
 
@@ -314,7 +315,7 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                       className="mt-0.5 h-3.5 w-3.5 rounded border-gray-300 text-[#7e2e19] focus:ring-[#D4AF37]"
                     />
                     <label htmlFor="modalConsentAgreed" className="text-[10px] text-gray-800 leading-tight cursor-pointer">
-                      I consent to the processing of my details under POPIA &amp; agree to the <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#9a3820] font-bold hover:underline">Privacy Policy</a>.
+                      I consent to the processing of my details under POPIA &amp; agree to the <Link to="/privacy-policy" onClick={closeWhatsAppModal} className="text-[#9a3820] font-bold hover:underline">Privacy Policy</Link>.
                     </label>
                   </div>
                 </div>
