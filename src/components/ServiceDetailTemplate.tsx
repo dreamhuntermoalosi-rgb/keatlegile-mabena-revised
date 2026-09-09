@@ -113,10 +113,10 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
 
           <div className="pt-4 flex flex-wrap gap-4">
             <Link
-              to="/request-consultation"
+              to="/book-keatlegile"
               className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl inline-flex items-center gap-2"
             >
-              <span>Request Consultation</span>
+              <span>Book Keatlegile</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
@@ -219,10 +219,10 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
               </div>
 
               <Link
-                to="/request-consultation"
+                to="/book-keatlegile"
                 className="w-full py-3 bg-[#9a3820] hover:bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-wider rounded-sm text-center block shadow transition-colors border border-[#D4AF37]/40"
               >
-                Request Appointment
+                Book Keatlegile
               </Link>
             </div>
 

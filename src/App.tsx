@@ -14,6 +14,7 @@ import { Books } from './pages/Books';
 import { Impact } from './pages/Impact';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
+import { BookKeatlegile } from './pages/BookKeatlegile';
 
 export default function App() {
   return (
@@ -36,10 +37,11 @@ export default function App() {
               <Route path="/events" element={<Navigate to="/" replace />} />
               <Route path="/services" element={<Navigate to="/speaking" replace />} />
               <Route path="/governance-compliance" element={<Navigate to="/speaking" replace />} />
-              <Route path="/contact" element={<Navigate to="/" replace />} />
-              <Route path="/start-a-conversation" element={<Navigate to="/" replace />} />
-              <Route path="/book-keatlegile" element={<Navigate to="/" replace />} />
-              <Route path="/request-consultation" element={<Navigate to="/" replace />} />
+              <Route path="/contact" element={<Navigate to="/book-keatlegile" replace />} />
+              <Route path="/start-a-conversation" element={<Navigate to="/book-keatlegile" replace />} />
+              <Route path="/book-keatlegile" element={<BookKeatlegile />} />
+              <Route path="/booking" element={<BookKeatlegile />} />
+              <Route path="/request-consultation" element={<BookKeatlegile />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="*" element={<Navigate to="/" replace />} />
