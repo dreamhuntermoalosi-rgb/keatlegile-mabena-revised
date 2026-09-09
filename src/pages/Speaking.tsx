@@ -35,7 +35,7 @@ export const Speaking: React.FC = () => {
             <Mic className="w-3.5 h-3.5" />
             <span>SPEAKING &amp; KEYNOTES</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold">
             Conversations That Move People.
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
@@ -47,7 +47,7 @@ export const Speaking: React.FC = () => {
       <section className="py-20 bg-white text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="max-w-3xl space-y-4">
-            <h2 className="font-serif text-3xl font-bold text-[#1C1C1C]">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
               Conversations That Create a Shift
             </h2>
             <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
@@ -114,7 +114,7 @@ export const Speaking: React.FC = () => {
 
       <section className="py-16 bg-[#F8F5EF] text-center border-t-2 border-[#D4AF37]">
         <div className="max-w-2xl mx-auto px-4 space-y-6">
-          <h2 className="font-serif text-3xl font-bold text-[#1C1C1C]">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
             Book Keatlegile for Your Next Event
           </h2>
           <p className="text-sm text-[#1C1C1C]/80">

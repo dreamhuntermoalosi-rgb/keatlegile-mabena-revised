@@ -59,7 +59,7 @@ export const Books: React.FC = () => {
             <BookOpen className="w-3.5 h-3.5" />
             <span>AUTHORSHIP &amp; LITERARY WORKS</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold leading-tight">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold leading-tight">
             Words Can Become Windows.
           </h1>
           <p className="text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
@@ -151,13 +151,13 @@ export const Books: React.FC = () => {
                 </div>
               </div>
 
-              {/* Author Picture Framing - Responsive & Full Height Contain */}
+              {/* Author Picture Framing - Fixed Scroll Frame */}
               <div className="bg-[#F8F5EF] p-4 rounded-sm border-2 border-[#D4AF37]/30 shadow-md">
                 <div className="w-full h-[480px] sm:h-[720px] md:h-[800px] lg:h-[640px] rounded-sm overflow-hidden border-2 border-[#D4AF37]/20 bg-gradient-to-b from-[#7e2e19]/10 via-[#F8F5EF] to-[#7e2e19]/5 flex items-center justify-center">
                   <img
                     src={IMAGES.profileCard}
                     alt="Keatlegile Mabena Author"
-                    className="w-full h-full object-cover object-top sm:object-bottom lg:object-top filter brightness-105 contrast-105 transform-gpu"
+                    className="w-full h-full object-cover object-top filter brightness-105 contrast-105 transform-gpu"
                   />
                 </div>
                 <div className="text-center pt-3 space-y-1">
@@ -177,7 +177,7 @@ export const Books: React.FC = () => {
                 <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
                   CENTRAL PHILOSOPHICAL ESSENCE
                 </span>
-                <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#7e2e19]">
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19]">
                   What Are Your Chains?
                 </h3>
               </div>

@@ -42,14 +42,14 @@ export const Home: React.FC = () => {
       />
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#290c06] text-white [clip-path:inset(0)] pt-12 pb-20">
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#290c06] text-white [clip-path:inset(0)] pt-20 sm:pt-28 lg:pt-32 pb-20 sm:pb-24">
         <div className="fixed inset-0 z-0 pointer-events-none">
           <picture className="w-full h-full">
             <source media="(min-width: 640px)" srcSet={IMAGES.heroDesktop} />
             <img
               src={IMAGES.heroMobile}
               alt="Keatlegile Mabena Brand Atmosphere"
-              className="w-full h-full object-cover object-top sm:object-[center_top] opacity-90 sm:opacity-95 filter brightness-105 contrast-105"
+              className="w-full h-full object-cover object-[center_12%] sm:object-[center_15%] opacity-90 sm:opacity-95 filter brightness-105 contrast-105"
             />
           </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-[#290c06]/85 via-[#290c06]/40 sm:via-[#290c06]/20 to-transparent" />
@@ -167,7 +167,7 @@ export const Home: React.FC = () => {
                 <span>ABOUT KEATLEGILE MABENA</span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C] leading-tight">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C] leading-tight">
                 A Voice for Purpose, Clarity &amp; Leadership.
               </h2>
 
@@ -242,7 +242,7 @@ export const Home: React.FC = () => {
             <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
               AREAS OF ENGAGEMENT
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C]">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
               Core Offerings
             </h2>
             <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full" />
@@ -334,7 +334,7 @@ export const Home: React.FC = () => {
             <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
               GUIDING PRINCIPLES
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1C1C]">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
               Authentic &amp; Purposeful Guidance.
             </h2>
             <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
@@ -398,7 +398,7 @@ export const Home: React.FC = () => {
       {/* ================= 6. FINAL BOOKING CALL TO ACTION ================= */}
       <section className="py-20 bg-[#7e2e19] text-white border-t-2 border-[#D4AF37]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-6">
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-white">
             Ready to Begin Your Next Chapter?
           </h2>
           <p className="text-sm sm:text-base text-white/80 max-w-xl mx-auto leading-relaxed">

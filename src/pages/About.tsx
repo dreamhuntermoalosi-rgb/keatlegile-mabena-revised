@@ -185,7 +185,7 @@ export const About: React.FC = () => {
                 <GraduationCap className="w-3.5 h-3.5" />
                 <span>PERSONAL &amp; PROFESSIONAL PROFILE</span>
               </div>
-              <h1 className="font-serif text-3xl sm:text-5xl font-bold leading-tight">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
                 Keatlegile Mabena
               </h1>
               <p className="text-xs sm:text-sm text-[#E2C45C] font-serif italic tracking-wide">
@@ -244,7 +244,7 @@ export const About: React.FC = () => {
                 <span>Biographical Foundations</span>
               </div>
               
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#7e2e19] leading-snug">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19] leading-snug">
                 From Lived Experience to Academic Distinction and Impact.
               </h2>
               
@@ -278,7 +278,7 @@ export const About: React.FC = () => {
                   <img
                     src={IMAGES.profileCard}
                     alt="Keatlegile Mabena Profile"
-                    className="w-full h-full object-cover object-top sm:object-bottom lg:object-top filter brightness-105 contrast-105 transform-gpu"
+                    className="w-full h-full object-cover object-top filter brightness-105 contrast-105 transform-gpu"
                   />
                 </div>
                 <div className="space-y-2 text-center pt-3">
@@ -320,7 +320,7 @@ export const About: React.FC = () => {
             <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
               CURRICULUM VITAE &amp; ACCREDITATIONS
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#7e2e19]">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19]">
               Qualifications, Positions &amp; Academic Awards
             </h2>
             <p className="text-sm text-[#1C1C1C]/75">
@@ -575,7 +575,7 @@ export const About: React.FC = () => {
             <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1">
               CORE DOMAINS
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#7e2e19]">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19]">
               Areas of Focus &amp; Practical Execution
             </h2>
             <p className="text-sm text-[#1C1C1C]/75">

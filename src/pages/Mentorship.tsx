@@ -34,7 +34,7 @@ export const Mentorship: React.FC = () => {
             <Compass className="w-3.5 h-3.5" />
             <span>MENTORSHIP &amp; GUIDANCE</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold">
             You Don’t Have to Figure Everything Out Alone.
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
@@ -46,7 +46,7 @@ export const Mentorship: React.FC = () => {
       <section className="py-20 bg-white text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="max-w-3xl space-y-4">
-            <h2 className="font-serif text-3xl font-bold text-[#1C1C1C]">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
               Mentorship for Your Next Chapter
             </h2>
             <p className="text-base text-[#1C1C1C]/80 leading-relaxed">

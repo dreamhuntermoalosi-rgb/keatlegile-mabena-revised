@@ -134,7 +134,7 @@ ${submittedData.message}`;
           <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#E2C45C] uppercase border-b-2 border-[#D4AF37] pb-1">
             <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> Direct Web3Forms Submission Portal
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold">
             Book Keatlegile Mabena
           </h1>
           <p className="text-sm sm:text-base text-white/90 max-w-2xl font-light leading-relaxed">
@@ -159,7 +159,7 @@ ${submittedData.message}`;
                   <span className="text-xs font-bold text-[#9a3820] uppercase tracking-widest">
                     Web3Forms Submission Received
                   </span>
-                  <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#7e2e19]">
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#7e2e19]">
                     Booking Request Submitted!
                   </h2>
                   <p className="text-xs sm:text-sm text-gray-700 leading-relaxed pt-2">
