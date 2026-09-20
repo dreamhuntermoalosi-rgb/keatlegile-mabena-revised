@@ -19,8 +19,8 @@ export const FIRM_DETAILS = {
     'Author',
     'Mentor'
   ],
-  brandTerritory: 'Healing • Self-Discovery • Purpose • Confidence • Mentorship • Transformation',
-  corePromise: 'Helping people move from pain and uncertainty towards healing, clarity, confidence and purposeful action.',
+  brandTerritory: 'Keynote Addresses • Published Books • Youth Mentorship • Leadership Masterclasses',
+  corePromise: 'Equipping individuals and institutions with practical frameworks for ethical leadership, accountability, and purpose-driven growth.',
   contact: {
     phone: '+27 68 567 4848',
     whatsappNumber: '27685674848',
@@ -31,8 +31,8 @@ export const FIRM_DETAILS = {
     facebook: 'https://www.facebook.com/keatlegile.mabena.71/',
     linkedin: 'https://za.linkedin.com/in/keatlegile-mabena-634570112'
   },
-  tagline: 'Find Your Direction. Rediscover Your Confidence. Move With Purpose.',
-  subtitle: 'Helping people heal, discover purpose, build confidence and move towards meaningful personal growth.'
+  tagline: 'Empowering Leaders. Inspiring Institutions. Transforming Lives.',
+  subtitle: 'Keynote Speaker, Published Author, and Mentor delivering actionable insight for personal and organizational excellence.'
 };
 
 export const BRAND_DETAILS = FIRM_DETAILS;

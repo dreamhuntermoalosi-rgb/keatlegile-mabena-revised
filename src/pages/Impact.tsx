@@ -4,10 +4,8 @@ import { Users, Heart, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { IMAGES } from '../data/images';
-import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const Impact: React.FC = () => {
-  const { openWhatsAppModal } = useWhatsAppModal();
   return (
     <>
       <SEO
@@ -78,20 +76,13 @@ export const Impact: React.FC = () => {
           <p className="text-sm text-[#1C1C1C]/80">
             Learn how your institution or business can collaborate on community mentorship and student outreach.
           </p>
-          <button
-            type="button"
-            onClick={() =>
-              openWhatsAppModal({
-                title: 'Partner for Impact',
-                subtitle: 'Community Initiatives, Youth Development & CSR Partnerships',
-                defaultService: 'Social Impact & Community Initiatives'
-              })
-            }
-            className="px-8 py-3.5 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 cursor-pointer shadow-md"
+          <Link
+            to="/book-keatlegile"
+            className="px-8 py-3.5 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 shadow-md"
           >
             <span>Partner for Impact</span>
             <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-          </button>
+          </Link>
         </div>
       </section>
     </>

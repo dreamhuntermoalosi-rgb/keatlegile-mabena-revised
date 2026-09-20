@@ -18,10 +18,8 @@ import {
 import { SEO } from '../components/SEO';
 import { FIRM_DETAILS, TRUST_PILLARS } from '../data/firmData';
 import { IMAGES } from '../data/images';
-import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const Home: React.FC = () => {
-  const { openWhatsAppModal } = useWhatsAppModal();
 
   return (
     <>
@@ -70,9 +68,9 @@ export const Home: React.FC = () => {
                   KEATLEGILE MABENA
                 </span>
                 <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#E2C45C] [text-shadow:_0_2px_10px_rgba(0,0,0,0.85)]">
-                  Find Your Direction. <br />
-                  Rediscover Your Confidence. <br />
-                  Move With Purpose.
+                  Empowering Leaders. <br />
+                  Inspiring Institutions. <br />
+                  Transforming Lives.
                 </span>
               </h1>
             </motion.div>
@@ -90,7 +88,7 @@ export const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-sm sm:text-base text-[#F8F5EF]/85 font-normal leading-relaxed max-w-xl"
             >
-              Helping people heal, discover purpose, build confidence and move towards meaningful personal and career growth.
+              Keynote speaker, published author, and youth mentor delivering actionable insights for ethical leadership, accountability, and purpose-driven growth.
             </motion.p>
 
             <motion.div
@@ -168,18 +166,18 @@ export const Home: React.FC = () => {
               </div>
 
               <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C] leading-tight">
-                A Voice for Purpose, Clarity &amp; Leadership.
+                Bridging Academic Excellence &amp; Lived Experience.
               </h2>
 
               <div className="space-y-4 text-base text-[#1C1C1C]/80 leading-relaxed">
                 <p>
-                  Keatlegile Mabena is a South African keynote speaker, published author, and youth mentor dedicated to helping people unlock their potential and navigate career and life transitions.
+                  Keatlegile Mabena is a South African keynote speaker, published author, and youth mentor dedicated to inspiring institutional and personal excellence.
                 </p>
                 <p>
-                  Holding a <strong>Master of Social Sciences (Cum Laude)</strong> and accredited as an NQF Assessor and Moderator, Keatlegile bridges rigorous academic understanding with authentic lived experience.
+                  Holding a <strong>Master of Social Sciences (Cum Laude)</strong> and accredited as an NQF Assessor and Moderator, Keatlegile combines rigorous research with authentic storytelling.
                 </p>
                 <p className="font-medium text-[#7e2e19] pt-1">
-                  Whether addressing corporate stages, mentoring emerging leaders, or writing for readers seeking direction, his mission is simple: to help you move from uncertainty towards confidence and purposeful action.
+                  From corporate keynotes to structured youth mentorship programs, his work equips individuals and organizations to move from potential to measurable execution.
                 </p>
               </div>
 
@@ -335,10 +333,10 @@ export const Home: React.FC = () => {
               GUIDING PRINCIPLES
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
-              Authentic &amp; Purposeful Guidance.
+              Grounded in Discipline &amp; Stewardship.
             </h2>
             <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
-              Keatlegile's strength lies in connecting lived experience, authorship, and practical mentorship to support personal transformation and career growth.
+              Keynote addresses, publications, and mentorship cohorts built on actionable principles for sustainable personal and institutional growth.
             </p>
           </div>
 
@@ -399,24 +397,24 @@ export const Home: React.FC = () => {
       <section className="py-20 bg-[#7e2e19] text-white border-t-2 border-[#D4AF37]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-6">
           <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-white">
-            Ready to Begin Your Next Chapter?
+            Engage Keatlegile Mabena
           </h2>
           <p className="text-sm sm:text-base text-white/80 max-w-xl mx-auto leading-relaxed">
-            Whether you are seeking mentorship or ordering books, take the first step today.
+            Book a keynote address for your upcoming summit or request structured mentorship for emerging youth.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
             <Link
-              to="/mentorship"
+              to="/book-keatlegile"
               className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C]"
             >
-              <span>Explore Mentorship</span>
+              <span>Book Keatlegile to Speak</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
             </Link>
             <Link
-              to="/books"
+              to="/mentorship"
               className="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-widest rounded-sm border border-white/30 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-2"
             >
-              <span>Discover His Books</span>
+              <span>Explore Mentorship</span>
             </Link>
           </div>
         </div>

@@ -19,7 +19,6 @@ import { SEO } from './SEO';
 import { Breadcrumbs } from './Breadcrumbs';
 import { SERVICES, FIRM_DETAILS } from '../data/firmData';
 import { IMAGES } from '../data/images';
-import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 interface ServiceDetailTemplateProps {
   serviceId: string;
@@ -27,17 +26,10 @@ interface ServiceDetailTemplateProps {
 
 export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ serviceId }) => {
   const service = SERVICES.find((s) => s.id === serviceId);
-  const { openWhatsAppModal } = useWhatsAppModal();
 
   if (!service) {
     return <Navigate to="/services" replace />;
   }
-
-  const handleWhatsAppClick = () => {
-    openWhatsAppModal({
-      defaultService: service.title,
-    });
-  };
 
   const otherServices = SERVICES.filter((s) => s.id !== serviceId);
 
@@ -119,15 +111,6 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
               <span>Book Keatlegile</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-
-            <button
-              onClick={handleWhatsAppClick}
-              type="button"
-              className="px-6 py-3.5 bg-[#25D366] hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-widest rounded-sm inline-flex items-center gap-2 shadow-lg cursor-pointer transition-colors"
-            >
-              <MessageSquare className="w-4 h-4 fill-current stroke-none" />
-              <span>WhatsApp Inquiry</span>
-            </button>
           </div>
         </div>
       </section>

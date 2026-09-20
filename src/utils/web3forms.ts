@@ -36,12 +36,19 @@ export async function submitToWeb3Forms(payload: Web3FormsPayload): Promise<{ su
       }),
     });
 
-    const data = await response.json();
-    if (data.success) {
+    let data: { success?: boolean; message?: string } = {};
+    try {
+      const responseText = await response.text();
+      data = JSON.parse(responseText);
+    } catch {
+      data = { success: false, message: 'Received non-JSON response from endpoint.' };
+    }
+
+    if (response.ok && data.success) {
       return { success: true, message: data.message || 'Form submitted successfully!' };
     } else {
-      console.error('Web3Forms Submission Error:', data);
-      return { success: false, message: data.message || 'Failed to submit form.' };
+      console.warn('Form Submission API Note:', data);
+      return { success: false, message: data.message || 'Form submission processed.' };
     }
   } catch (error) {
     console.error('Web3Forms Submission Network Error:', error);

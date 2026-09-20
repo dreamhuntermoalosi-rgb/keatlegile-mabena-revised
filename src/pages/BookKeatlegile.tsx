@@ -79,27 +79,6 @@ export const BookKeatlegile: React.FC = () => {
     window.scrollTo({ top: 250, behavior: 'smooth' });
   };
 
-  const handleOpenWhatsApp = () => {
-    if (!submittedData) return;
-
-    const formattedMessage = `BOOKING ENQUIRY: KEATLEGILE MABENA
-
-• Name: ${submittedData.fullName}
-• Email: ${submittedData.email}
-• Phone: ${submittedData.phone}
-• Organisation: ${submittedData.organisation || 'N/A'}
-• Service: ${submittedData.serviceRequired}
-• Format: ${submittedData.engagementFormat}
-• Date: ${submittedData.preferredDate || 'Flexible'}
-• Location: ${submittedData.eventLocation || 'TBD'}
-
-Details / Message:
-${submittedData.message}`;
-
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(formattedMessage)}`;
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <>
       <SEO
@@ -110,7 +89,7 @@ ${submittedData.message}`;
           'Keynote Speaker Booking South Africa',
           'Executive Mentorship Request',
           'Youth Development Workshop Speaker',
-          'Web3Forms Booking Portal'
+          'Direct Booking Portal'
         ]}
         breadcrumbs={[{ label: 'Book Keatlegile', path: '/book-keatlegile' }]}
       />
@@ -132,13 +111,13 @@ ${submittedData.message}`;
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
           <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#E2C45C] uppercase border-b-2 border-[#D4AF37] pb-1">
-            <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> Direct Web3Forms Submission Portal
+            <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> Direct Submission Portal
           </span>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold">
             Book Keatlegile Mabena
           </h1>
           <p className="text-sm sm:text-base text-white/90 max-w-2xl font-light leading-relaxed">
-            Submit your event, speaking engagement, mentorship, or advisory requirements. All submissions are processed directly via Web3Forms with zero backend storage.
+            Submit your event, speaking engagement, mentorship, or advisory requirements. All submissions are processed directly and securely.
           </p>
         </div>
       </section>
@@ -157,13 +136,13 @@ ${submittedData.message}`;
 
                 <div className="space-y-2 max-w-xl mx-auto">
                   <span className="text-xs font-bold text-[#9a3820] uppercase tracking-widest">
-                    Web3Forms Submission Received
+                    Submission Received
                   </span>
                   <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#7e2e19]">
                     Booking Request Submitted!
                   </h2>
                   <p className="text-xs sm:text-sm text-gray-700 leading-relaxed pt-2">
-                    Thank you, <strong className="text-[#7e2e19]">{submittedData?.fullName}</strong>! Your booking details for <strong className="text-[#7e2e19]">{submittedData?.serviceRequired}</strong> have been submitted successfully via Web3Forms.
+                    Thank you, <strong className="text-[#7e2e19]">{submittedData?.fullName}</strong>! Your booking details for <strong className="text-[#7e2e19]">{submittedData?.serviceRequired}</strong> have been submitted successfully.
                   </p>
                   <p className="text-xs text-gray-600">
                     Keatlegile Mabena&apos;s management team will review your requirements and respond shortly at <span className="font-semibold text-gray-800">{submittedData?.email}</span>.
@@ -172,14 +151,13 @@ ${submittedData.message}`;
 
                 {/* Secondary Actions */}
                 <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-                  <button
-                    type="button"
-                    onClick={handleOpenWhatsApp}
-                    className="w-full sm:w-auto px-6 py-3 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-wider rounded border border-[#E2C45C] shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  <a
+                    href={`tel:${FIRM_DETAILS.contact.phone.replace(/\s+/g, '')}`}
+                    className="w-full sm:w-auto px-6 py-3 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-wider rounded border border-[#E2C45C] shadow-md transition-all flex items-center justify-center gap-2"
                   >
-                    <MessageSquare className="w-4 h-4 fill-current stroke-none" />
-                    <span>Also Connect via WhatsApp</span>
-                  </button>
+                    <Phone className="w-4 h-4" />
+                    <span>Call Office ({FIRM_DETAILS.contact.phone})</span>
+                  </a>
 
                   <button
                     type="button"
@@ -199,7 +177,7 @@ ${submittedData.message}`;
               <>
                 <div className="border-b-2 border-gray-100 pb-4 space-y-1.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#9a3820] uppercase tracking-wider">
-                    <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> Direct Web3Forms Form
+                    <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> Direct Booking Form
                   </div>
                   <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#7e2e19]">
                     Booking &amp; Engagement Form
@@ -264,7 +242,7 @@ ${submittedData.message}`;
 
                       <div>
                         <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
-                          Phone / WhatsApp Number <span className="text-red-500">*</span>
+                          Telephone Number <span className="text-red-500">*</span>
                         </label>
                         <input
                           type="tel"
@@ -295,10 +273,9 @@ ${submittedData.message}`;
                           className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] focus:bg-white transition-colors"
                         >
                           <option value="Keynote Address & Guest Speaker">Keynote Address &amp; Guest Speaker</option>
-                          <option value="Executive Mentorship & Coaching">Executive Mentorship &amp; Coaching</option>
-                          <option value="Youth Development & Empowerment Workshop">Youth Development Workshop</option>
+                          <option value="Youth & Student Mentorship">Youth &amp; Student Mentorship</option>
+                          <option value="Empowerment Workshop & Masterclass">Empowerment Workshop &amp; Masterclass</option>
                           <option value="Books & Authorship Orders">Books &amp; Authorship Orders</option>
-                          <option value="Strategic Advisory & Consultation">Strategic Advisory &amp; Consultation</option>
                         </select>
                       </div>
 
@@ -312,7 +289,7 @@ ${submittedData.message}`;
                         >
                           <option value="In-Person Keynote">In-Person Keynote</option>
                           <option value="Online / Virtual Keynote">Online / Virtual Keynote</option>
-                          <option value="Executive Mentorship (1-on-1)">Executive Mentorship (1-on-1)</option>
+                          <option value="Mentorship Session (1-on-1 or Group)">Mentorship Session (1-on-1 or Group)</option>
                           <option value="Interactive Workshop / Masterclass">Interactive Workshop / Masterclass</option>
                           <option value="Panel / Guest Speaking">Panel / Guest Speaking</option>
                           <option value="Books & Bulk Order Request">Books &amp; Bulk Order Request</option>
@@ -415,7 +392,7 @@ ${submittedData.message}`;
                       {isSubmitting ? (
                         <>
                           <Loader2 className="w-4 h-4 animate-spin text-[#1C1C1C]" />
-                          <span>Submitting Request to Web3Forms...</span>
+                          <span>Submitting Request...</span>
                         </>
                       ) : (
                         <>

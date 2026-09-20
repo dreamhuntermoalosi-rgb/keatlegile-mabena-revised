@@ -14,6 +14,7 @@ import {
   ChevronUp,
   FileText,
   HeartHandshake,
+  Mic,
   ShieldCheck,
   Mail,
   Phone,
@@ -29,10 +30,8 @@ import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { CORE_VALUES, FIRM_DETAILS } from '../data/firmData';
 import { IMAGES } from '../data/images';
-import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const About: React.FC = () => {
-  const { openWhatsAppModal } = useWhatsAppModal();
   // Academic Accordion state
   const [activeAccordion, setActiveAccordion] = useState<string | null>('qualifications');
 
@@ -132,7 +131,7 @@ export const About: React.FC = () => {
       title: 'Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence',
       category: 'Published Book (2019)',
       subtitle: 'ISBN: 9780620840668 | 126 Pages',
-      description: 'An inspiring and actionable exploration of personal liberation, dismantling internal constraints, and bailing out imprisoned potential across life and career.'
+      description: 'An inspiring and actionable exploration of personal liberation, dismantling internal constraints, and bailing out imprisoned potential across life and personal growth.'
     },
     {
       title: 'Upcoming Book',
@@ -259,7 +258,7 @@ export const About: React.FC = () => {
                   In addition to his academic research and lecturing assistantships at North-West University, Keatlegile expanded his qualifications with accredited <strong>Assessor (NQF Level 5)</strong> and <strong>Moderator (NQF Level 6)</strong> certifications, grounding his work in professional training, curriculum standards, and outcomes-based facilitation.
                 </p>
                 <p>
-                  Today, through his books, keynote addresses, structured mentorship programs, and executive advisory, Keatlegile Mabena empowers individuals, students, and professionals to move from uncertainty to clarity, confidence, and purposeful achievement.
+                  Today, through his books, keynote addresses, and structured mentorship programs, Keatlegile Mabena empowers individuals, students, and leaders to move from uncertainty to clarity, confidence, and purposeful achievement.
                 </p>
               </div>
 
@@ -585,55 +584,55 @@ export const About: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            {/* Domain 1 */}
+            {/* Domain 1: Keynote Speaking */}
             <div className="bg-white p-6 rounded-sm border-t-4 border-[#7e2e19] shadow-md hover:shadow-xl transition-shadow space-y-3 border-x border-b-2 border-gray-100">
               <div className="w-10 h-10 bg-[#7e2e19]/10 text-[#7e2e19] rounded-sm flex items-center justify-center">
-                <GraduationCap className="w-5 h-5" />
+                <Mic className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-lg font-bold text-[#7e2e19]">
-                Career &amp; Talent Development
+                Keynote Speaking
               </h3>
               <p className="text-xs text-[#1C1C1C]/80 leading-relaxed">
-                Graduate employability, CV design, interview mastery, and strategic transition frameworks for students and professionals.
+                Transformational keynote addresses for corporate summits, university convocations, youth conferences, and institutional gatherings.
               </p>
             </div>
 
-            {/* Domain 2 */}
+            {/* Domain 2: Authorship & Publications */}
             <div className="bg-white p-6 rounded-sm border-t-4 border-[#D4AF37] shadow-md hover:shadow-xl transition-shadow space-y-3 border-x border-b-2 border-gray-100">
               <div className="w-10 h-10 bg-[#D4AF37]/10 text-[#7e2e19] rounded-sm flex items-center justify-center">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <h3 className="font-serif text-lg font-bold text-[#7e2e19]">
+                Authorship &amp; Publications
+              </h3>
+              <p className="text-xs text-[#1C1C1C]/80 leading-relaxed">
+                Published author of <em>Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence</em> and ongoing thought leadership.
+              </p>
+            </div>
+
+            {/* Domain 3: Youth & Student Mentorship */}
+            <div className="bg-white p-6 rounded-sm border-t-4 border-[#9a3820] shadow-md hover:shadow-xl transition-shadow space-y-3 border-x border-b-2 border-gray-100">
+              <div className="w-10 h-10 bg-[#9a3820]/10 text-[#9a3820] rounded-sm flex items-center justify-center">
                 <HeartHandshake className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-lg font-bold text-[#7e2e19]">
                 Youth &amp; Student Mentorship
               </h3>
               <p className="text-xs text-[#1C1C1C]/80 leading-relaxed">
-                Empowerment clinics for high school learners and university students to foster emotional resilience, discipline, and purpose.
+                Structured 1-on-1 and cohort mentorship pathways for high school learners and university students to foster purpose and resilience.
               </p>
             </div>
 
-            {/* Domain 3 */}
-            <div className="bg-white p-6 rounded-sm border-t-4 border-[#9a3820] shadow-md hover:shadow-xl transition-shadow space-y-3 border-x border-b-2 border-gray-100">
-              <div className="w-10 h-10 bg-[#9a3820]/10 text-[#9a3820] rounded-sm flex items-center justify-center">
-                <BookOpen className="w-5 h-5" />
-              </div>
-              <h3 className="font-serif text-lg font-bold text-[#7e2e19]">
-                Authorship &amp; Keynote Speaking
-              </h3>
-              <p className="text-xs text-[#1C1C1C]/80 leading-relaxed">
-                Transformational keynote addresses and published author of <em>Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence</em>.
-              </p>
-            </div>
-
-            {/* Domain 4 */}
+            {/* Domain 4: Empowerment Workshops */}
             <div className="bg-white p-6 rounded-sm border-t-4 border-[#5a1f10] shadow-md hover:shadow-xl transition-shadow space-y-3 border-x border-b-2 border-gray-100">
               <div className="w-10 h-10 bg-[#5a1f10]/10 text-[#5a1f10] rounded-sm flex items-center justify-center">
-                <Building2 className="w-5 h-5" />
+                <Users className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-lg font-bold text-[#7e2e19]">
-                Mentorship &amp; Workshops
+                Empowerment Workshops
               </h3>
               <p className="text-xs text-[#1C1C1C]/80 leading-relaxed">
-                Providing high-impact youth empowerment clinics, personal development workshops, and structured 1-on-1 mentorship.
+                Interactive group masterclasses focusing on mindset transformation, discipline, goal-setting, and purpose discovery.
               </p>
             </div>
 
@@ -648,22 +647,15 @@ export const About: React.FC = () => {
             Invite Keatlegile Mabena to Speak or Collaborate
           </h2>
           <p className="text-sm text-white/80">
-            Available for keynote addresses, campus masterclasses, corporate empowerment sessions, and professional consultations.
+            Available for keynote addresses, campus masterclasses, corporate empowerment sessions, and structured mentorship programs.
           </p>
-          <button
-            type="button"
-            onClick={() =>
-              openWhatsAppModal({
-                title: 'Invite Keatlegile to Speak / Collaborate',
-                subtitle: 'Keynotes, Corporate Sessions & Institutional Partnerships',
-                defaultService: 'Speaking & Keynote Addresses'
-              })
-            }
-            className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-widest rounded-sm transition-colors inline-flex items-center gap-2 border border-[#E2C45C] cursor-pointer shadow-md"
+          <Link
+            to="/book-keatlegile"
+            className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-widest rounded-sm transition-colors inline-flex items-center gap-2 border border-[#E2C45C] shadow-md"
           >
             <span>Get in Touch</span>
             <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
-          </button>
+          </Link>
         </div>
       </section>
     </>

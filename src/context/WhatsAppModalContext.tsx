@@ -217,14 +217,14 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                   </div>
                   <div className="space-y-1">
                     <span className="text-[10px] font-bold text-[#9a3820] uppercase tracking-widest">
-                      Web3Forms Submission Received
+                      Submission Received
                     </span>
                     <h4 className="font-serif text-xl sm:text-2xl font-bold text-[#7e2e19]">
                       Booking Request Submitted!
                     </h4>
                   </div>
                   <p className="text-xs text-gray-700 leading-relaxed max-w-sm mx-auto">
-                    Thank you, <strong className="text-[#7e2e19]">{fullName}</strong>! Your request for <strong className="text-[#7e2e19]">{selectedService}</strong> has been submitted to Web3Forms.
+                    Thank you, <strong className="text-[#7e2e19]">{fullName}</strong>! Your request for <strong className="text-[#7e2e19]">{selectedService}</strong> has been submitted successfully.
                   </p>
                   <p className="text-[11px] text-gray-600 max-w-xs mx-auto">
                     Keatlegile Mabena&apos;s team will review your message and contact you shortly.
@@ -254,7 +254,7 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
               ) : (
                 <>
                   <p className="text-xs text-gray-600 leading-relaxed">
-                    Please fill in your details below to submit a direct booking request to Web3Forms:
+                    Please fill in your details below to submit a direct booking request:
                   </p>
 
                   {/* Form Controls */}
