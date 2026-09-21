@@ -84,7 +84,8 @@ export const Footer: React.FC = () => {
                 { name: 'Speaking & Keynotes', path: '/speaking' },
                 { name: 'Books & Authorship', path: '/books' },
                 { name: 'Mentorship', path: '/mentorship' },
-                { name: 'Social Impact', path: '/impact' }
+                { name: 'Social Impact', path: '/impact' },
+                { name: 'Testimonials', path: '/testimonials' }
               ].map((link) => (
                 <li key={link.name}>
                   <Link

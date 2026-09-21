@@ -123,6 +123,17 @@ export const Navbar: React.FC = () => {
             >
               Impact
             </NavLink>
+
+            <NavLink
+              to="/testimonials"
+              className={({ isActive }) =>
+                `text-xs font-semibold tracking-wider uppercase transition-colors py-1.5 ${
+                  isActive ? 'text-[#E2C45C] font-bold border-b-2 border-[#E2C45C]' : 'text-white/90 hover:text-[#E2C45C]'
+                }`
+              }
+            >
+              Testimonials
+            </NavLink>
           </div>
 
           {/* Responsive Desktop & Tablet Right CTA - Gold Button & Email Link */}
@@ -242,6 +253,15 @@ export const Navbar: React.FC = () => {
                   }
                 >
                   Social Impact
+                </NavLink>
+
+                <NavLink
+                  to="/testimonials"
+                  className={({ isActive }) =>
+                    `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
+                  }
+                >
+                  Testimonials
                 </NavLink>
               </div>
             </div>
