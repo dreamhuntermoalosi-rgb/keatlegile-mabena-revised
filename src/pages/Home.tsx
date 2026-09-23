@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
@@ -12,7 +12,8 @@ import {
   Quote,
   Mic,
   Sparkles,
-  ExternalLink
+  ExternalLink,
+  ShoppingBag
 } from 'lucide-react';
 
 import { SEO } from '../components/SEO';
@@ -27,6 +28,121 @@ const iconMap: Record<string, React.ElementType> = {
   Award,
   Compass,
   Mic
+};
+
+/* Featured book card — mirrors the Books page shop card style (cream backdrop,
+   full-bleed cover, auto-sliding carousel with pagination dots, white body) */
+const FeaturedBookCard: React.FC<{ book: typeof BOOKS[number] }> = ({ book }) => {
+  const images = book.galleryImages.length > 0 ? book.galleryImages : [];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const hasGallery = images.length > 1;
+
+  useEffect(() => {
+    if (!hasGallery) return;
+    const id = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [hasGallery, images.length]);
+
+  const activeImage = images[activeIndex] ?? null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-white rounded-sm shadow-md border border-[#D4AF37]/20 overflow-hidden flex flex-col max-w-md mx-auto w-full"
+    >
+      {/* Cover image area — cream backdrop, auto-sliding carousel */}
+      <div className="bg-[#F8F5EF] flex items-center justify-center relative border-b border-[#D4AF37]/20 overflow-hidden">
+        {book.featured && (
+          <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37] text-[#1C1C1C] px-2.5 py-1 rounded z-20 shadow-md">
+            New Release
+          </span>
+        )}
+        {activeImage ? (
+          <>
+            {images.map((img, i) => (
+              <img
+                key={i}
+                src={img}
+                alt={`${book.title} — image ${i + 1}`}
+                className="w-full h-auto max-h-[60vh] object-cover absolute inset-0 transition-opacity duration-700 ease-in-out"
+                style={{ opacity: i === activeIndex ? 1 : 0 }}
+                aria-hidden={i !== activeIndex}
+              />
+            ))}
+            <img
+              src={images[activeIndex]}
+              alt=""
+              aria-hidden="true"
+              className="w-full h-auto max-h-[60vh] object-cover invisible pointer-events-none select-none"
+            />
+          </>
+        ) : (
+          <div className="w-full h-64 flex items-center justify-center text-center bg-[#F8F5EF] p-6">
+            <span className="text-xs text-[#9a3820] uppercase tracking-wider font-semibold">
+              Cover image coming soon
+            </span>
+          </div>
+        )}
+
+        {/* Pagination dots */}
+        {hasGallery && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveIndex(i)}
+                aria-label={`View image ${i + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === activeIndex ? 'w-6 bg-[#D4AF37]' : 'w-2 bg-white/70 hover:bg-white'
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Card body */}
+      <div className="p-7 sm:p-8 space-y-4 flex-1 flex flex-col">
+        <div className="space-y-2">
+          <h3 className="font-serif text-2xl font-bold text-[#1C1C1C] leading-tight">
+            {book.title}
+          </h3>
+          {book.subtitle && !book.hideSubtitleOnCard && (
+            <p className="font-serif text-base text-[#7e2e19] italic leading-snug">
+              {book.subtitle}
+            </p>
+          )}
+        </div>
+
+        <div className="text-xs text-[#1C1C1C]/60">
+          by <span className="font-bold text-[#1C1C1C]">{book.author}</span>
+        </div>
+
+        {/* Price + Buy button */}
+        <div className="mt-auto pt-5 flex flex-col sm:flex-row sm:items-center gap-4">
+          {book.priceLabel && (
+            <div className="text-2xl font-serif font-bold text-[#7e2e19]">{book.priceLabel}</div>
+          )}
+          <a
+            href={book.orderUrl ?? '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] shadow-md"
+          >
+            <ShoppingBag className="w-4 h-4 text-[#1C1C1C]" />
+            <span>{book.orderLabel}</span>
+            <ExternalLink className="w-3.5 h-3.5 text-[#1C1C1C]" />
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
 };
 
 export const Home: React.FC = () => {
@@ -385,60 +501,27 @@ export const Home: React.FC = () => {
 
       {/* ================= 6. FEATURED BOOK ================= */}
       <section className="py-20 bg-[#F8F5EF] border-t-2 border-[#D4AF37]/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="bg-[#7e2e19] text-white p-8 sm:p-10 rounded-sm border-2 border-[#D4AF37] shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Book cover image */}
-            {featuredBook.coverImage && (
-              <div className="lg:col-span-4 flex justify-center">
-                <img
-                  src={featuredBook.coverImage}
-                  alt={`${featuredBook.title} — book cover`}
-                  className="w-48 sm:w-56 h-auto object-contain rounded-sm shadow-2xl border-2 border-[#D4AF37]"
-                />
-              </div>
-            )}
-
-            <div className={featuredBook.coverImage ? "lg:col-span-8 space-y-4" : "lg:col-span-12 space-y-4"}>
-              <span className="text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37] text-[#1C1C1C] px-2.5 py-1 rounded-xs">
-                FEATURED BOOK
-              </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-                {featuredBook.title}
-              </h3>
-              {featuredBook.subtitle && (
-                <p className="font-serif text-base sm:text-lg text-[#E2C45C] italic leading-snug">
-                  {featuredBook.subtitle}
-                </p>
-              )}
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-2xl">
-                Keatlegile Mabena's {featuredBook.id === 'the-weight-i-did-not-choose' ? 'latest' : ''} published work — {featuredBook.subtitle.toLowerCase()}.
-              </p>
-
-              {/* Purchasing information */}
-              <div className="flex flex-wrap items-center gap-4 pt-1">
-                {featuredBook.priceLabel && (
-                  <span className="text-xl font-serif font-bold text-[#E2C45C]">{featuredBook.priceLabel}</span>
-                )}
-                <a
-                  href={featuredBook.orderUrl ?? '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center gap-2"
-                >
-                  <span>{featuredBook.orderLabel}</span>
-                  <ExternalLink className="w-4 h-4 text-[#1C1C1C]" />
-                </a>
-              </div>
-
-              {/* Metadata where available */}
-              {(featuredBook.year || featuredBook.pages || featuredBook.isbn) && (
-                <div className="pt-3 flex flex-wrap gap-x-5 gap-y-1 text-[11px] text-white/60 border-t border-white/10">
-                  {featuredBook.year && <span>Published {featuredBook.year}</span>}
-                  {featuredBook.pages && <span>{featuredBook.pages} Pages</span>}
-                  {featuredBook.isbn && <span className="font-mono">ISBN: {featuredBook.isbn}</span>}
-                </div>
-              )}
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
+              Featured Book
             </div>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
+              A Book Worth Reading
+            </h2>
+            <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full" />
+          </div>
+
+          <FeaturedBookCard book={featuredBook} />
+
+          <div className="text-center">
+            <Link
+              to="/books"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors"
+            >
+              <span>View All Books</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
       </section>
