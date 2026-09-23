@@ -30,12 +30,12 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b-2 border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-12 border-b-2 border-white/10">
           {/* Column 1: Brand Identity */}
           <div className="space-y-4">
             <Logo variant="dark" size="md" />
             <p className="text-xs text-white/75 leading-relaxed pt-2">
-              Keynote Speaker, Published Author, and Youth Mentor delivering actionable insights for ethical leadership and purposeful personal transformation.
+              Speaker, Author and Mentor helping people move toward healing, clarity and purposeful action.
             </p>
 
             {/* Social Icons Container */}
@@ -138,33 +138,6 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 4: Publications */}
-          <div className="space-y-4">
-            <h3 className="font-serif text-lg text-[#E2C45C] font-semibold tracking-wider relative inline-block after:absolute after:-bottom-1 after:left-0 after:w-8 after:h-0.5 after:bg-[#D4AF37]">
-              PUBLICATIONS
-            </h3>
-            <p className="text-xs text-white/70 leading-relaxed">
-              Keatlegile Mabena is an author sharing deep insights on overcoming fear, unlocking potential, and mastering personal growth.
-            </p>
-            <div className="pt-1.5 space-y-3">
-              <div className="p-3 bg-white/5 rounded-sm border border-[#D4AF37]/20">
-                <div className="text-[10px] font-bold text-[#E2C45C] uppercase tracking-wider mb-1">FEATURED PUBLICATION</div>
-                <h4 className="text-xs font-serif font-bold text-white leading-tight">
-                  Breaking the Chains
-                </h4>
-                <p className="text-[11px] text-white/60 mt-1 leading-snug">
-                  Bailing out imprisoned potential, power, and persistence.
-                </p>
-              </div>
-              <Link
-                to="/books"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D4AF37] hover:text-white transition-colors group/link"
-              >
-                <span>Order Books &amp; Guides</span>
-                <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
-              </Link>
-            </div>
-          </div>
         </div>
 
         {/* Footer Bottom Bar */}

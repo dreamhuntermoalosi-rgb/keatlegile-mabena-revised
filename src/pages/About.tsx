@@ -293,14 +293,15 @@ export const About: React.FC = () => {
                 <h3 className="font-serif text-xl font-bold text-[#E2C45C] border-b-2 border-white/10 pb-2">
                   Foundational Values
                 </h3>
-                <div className="space-y-3 text-xs text-white/90">
+                {/* Stacked on mobile, horizontal grid on tablet+ */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-white/90">
                   {CORE_VALUES.map((val, idx) => (
-                    <div key={idx} className="space-y-1">
+                    <div key={idx} className="space-y-1 sm:flex sm:flex-col sm:gap-1">
                       <div className="font-bold text-[#E2C45C] flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
                         <span>{val.name}</span>
                       </div>
-                      <p className="text-[11px] text-white/75 pl-6">{val.description}</p>
+                      <p className="text-[11px] text-white/75 pl-6 sm:pl-6">{val.description}</p>
                     </div>
                   ))}
                 </div>

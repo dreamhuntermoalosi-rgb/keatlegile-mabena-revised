@@ -51,5 +51,13 @@ export const IMAGES = {
   governanceCompliance: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=80',
   
   // Polokwane / Limpopo South African urban landscape
-  southAfricaArchitecture: 'https://images.unsplash.com/photo-1576485290814-1c72aa4bbb8e?auto=format&fit=crop&w=1600&q=80'
+  southAfricaArchitecture: 'https://images.unsplash.com/photo-1576485290814-1c72aa4bbb8e?auto=format&fit=crop&w=1600&q=80',
+
+  // "The Weight I Did Not Choose" book images (provided by client)
+  weightBookCover: 'https://order.keatlegilemabena.co.za/wp-content/uploads/2026/09/ChatGPT-Image-Sep-21-2026-08_52_22-PM.png',
+  weightBookImage1: 'https://order.keatlegilemabena.co.za/wp-content/uploads/2026/09/Image-Sep-21-2026-08_55_04-PM-600x600.webp',
+  weightBookImage2: 'https://order.keatlegilemabena.co.za/wp-content/uploads/2026/09/Sep-21-2026-09_09_07-PM-600x600.webp',
+
+  // "Breaking the Chains" book cover (provided by client)
+  breakingChainsCover: 'https://order.keatlegilemabena.co.za/wp-content/uploads/2026/09/Sep-21-2026-09_38_02-PM-600x600.webp'
 };

@@ -84,3 +84,8 @@
 .pause-on-hover:hover .animate-marquee-slow-reverse {
   animation-play-state: paused !important;
 }
+
+/* Hide scrollbar on the gallery slider (cross-browser) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

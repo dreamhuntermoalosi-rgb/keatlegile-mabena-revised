@@ -1,43 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import {
   BookOpen,
   ArrowRight,
-  Sparkles,
-  CheckCircle2,
-  BookmarkCheck,
   ShoppingBag,
-  Award,
-  FileText,
-  Calendar,
-  Building,
   Hash,
-  BookMarked
+  Calendar,
+  FileText,
+  ExternalLink
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { IMAGES } from '../data/images';
+import { BOOKS } from '../data/firmData';
 import { useWhatsAppModal } from '../context/WhatsAppModalContext';
+
+type Book = (typeof BOOKS)[number];
 
 export const Books: React.FC = () => {
   const { openWhatsAppModal } = useWhatsAppModal();
+
   return (
     <>
       <SEO
         title="Books & Authorship | Keatlegile Mabena"
-        description="Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence by Keatlegile Mabena."
+        description="Books by Keatlegile Mabena — Breaking the Chains and The Weight I Did Not Choose."
         keywords={[
-          'Breaking the Chains',
           'Keatlegile Mabena Book',
-          'Bailing Out the Imprisoned Potential',
+          'Breaking the Chains',
+          'The Weight I Did Not Choose',
           'South African Author',
-          'Personal Development Books',
-          'Healing and Purpose',
-          '9780620840668'
+          'Personal Development Books'
         ]}
-        canonicalUrl="https://keatlegilemabena.com/books"
-        ogImage={IMAGES.profileCard}
+        canonicalUrl="https://keatlegilemabena.co.za/books"
+        ogImage={IMAGES.weightBookCover}
       />
 
       <Breadcrumbs items={[{ label: 'Books & Authorship' }]} />
@@ -60,211 +56,26 @@ export const Books: React.FC = () => {
             <span>AUTHORSHIP &amp; LITERARY WORKS</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold leading-tight">
-            Words Can Become Windows.
+            The Bookshop
           </h1>
           <p className="text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
-            Ideas, stories, and frameworks that help people make sense of where they are, break free from limitations, and move forward with unshakeable conviction.
+            Published works by Keatlegile Mabena. Order individual copies below, or reach out for school and organisational bulk purchases.
           </p>
         </div>
       </section>
 
-
-
-      {/* Featured Main Book Section: Breaking the Chains */}
-      <section className="py-20 bg-white text-[#1C1C1C]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            {/* Left Column: Book Presentation & Metadata Card */}
-            <div className="lg:col-span-5 space-y-6">
-              
-              {/* Book Spine / Cover Mockup Card */}
-              <div className="bg-gradient-to-br from-[#5a1f10] via-[#7e2e19] to-[#38120a] text-white p-8 sm:p-10 rounded-sm border-2 border-[#D4AF37] shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/10 rounded-full blur-2xl pointer-events-none" />
-                <div className="space-y-6 relative z-10">
-                  <div className="flex items-center justify-between border-b-2 border-white/20 pb-4">
-                    <span className="text-[10px] font-extrabold uppercase tracking-widest bg-[#D4AF37] text-[#1C1C1C] px-2.5 py-1 rounded">
-                      Published Book
-                    </span>
-                    <span className="text-xs font-semibold text-[#E2C45C]">
-                      2019 Release
-                    </span>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight">
-                      Breaking the Chains
-                    </h2>
-                    <p className="font-serif text-base sm:text-lg text-[#E2C45C] italic leading-snug">
-                      Bailing Out the Imprisoned Potential, Power and Persistence
-                    </p>
-                  </div>
-
-                  <div className="pt-2 text-sm text-white/90">
-                    <span className="text-white/60 text-xs block uppercase tracking-wider">Author</span>
-                    <span className="font-bold text-base text-white">Keatlegile Mabena</span>
-                  </div>
-
-                  {/* Book Highlight Badge */}
-                  <div className="bg-[#38120a]/80 border border-[#D4AF37]/50 p-3.5 rounded-sm flex items-center gap-3">
-                    <BookMarked className="w-6 h-6 text-[#D4AF37] shrink-0" />
-                    <div>
-                      <div className="font-bold text-[#E2C45C] text-sm">Published Book</div>
-                      <div className="text-[11px] text-white/70">Personal transformation &amp; empowerment</div>
-                    </div>
-                  </div>
-
-                  {/* Metadata Specs */}
-                  <div className="grid grid-cols-2 gap-3 pt-2 text-xs border-t-2 border-white/10">
-                    <div>
-                      <span className="text-white/50 block text-[10px] uppercase">Length</span>
-                      <span className="font-semibold text-white">126 Pages</span>
-                    </div>
-                    <div>
-                      <span className="text-white/50 block text-[10px] uppercase">Publisher</span>
-                      <span className="font-semibold text-white">Self-Published</span>
-                    </div>
-                    <div className="col-span-2">
-                      <span className="text-white/50 block text-[10px] uppercase">ISBN</span>
-                      <span className="font-mono text-[#E2C45C] font-semibold">9780620840668</span>
-                    </div>
-                  </div>
-
-                  {/* Order CTA Button */}
-                  <div className="pt-4">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        openWhatsAppModal({
-                          title: 'Discover His Books & Order Copies',
-                          subtitle: 'Direct WhatsApp order / delivery inquiry with the author',
-                          ctaType: 'book',
-                          defaultService: 'The Power of Pain Book Order'
-                        })
-                      }
-                      className="w-full py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm text-center block shadow-lg transition-all border border-[#E2C45C] cursor-pointer"
-                    >
-                      Discover His Books &amp; Order Copies
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Author Picture Framing - Fixed Scroll Frame */}
-              <div className="bg-[#F8F5EF] p-4 rounded-sm border-2 border-[#D4AF37]/30 shadow-md">
-                <div className="w-full h-[480px] sm:h-[720px] md:h-[800px] lg:h-[640px] rounded-sm overflow-hidden border-2 border-[#D4AF37]/20 bg-gradient-to-b from-[#7e2e19]/10 via-[#F8F5EF] to-[#7e2e19]/5 flex items-center justify-center">
-                  <img
-                    src={IMAGES.profileCard}
-                    alt="Keatlegile Mabena Author"
-                    className="w-full h-full object-cover object-top filter brightness-105 contrast-105 transform-gpu"
-                  />
-                </div>
-                <div className="text-center pt-3 space-y-1">
-                  <div className="font-serif text-sm font-bold text-[#7e2e19]">Keatlegile Mabena</div>
-                  <div className="text-[11px] text-[#9a3820] font-semibold uppercase tracking-wider">
-                    Speaker | Author | Mentor
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Right Column: Book Excerpt, Themes, and Core Narrative */}
-            <div className="lg:col-span-7 space-y-8">
-              
-              <div className="space-y-3">
-                <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
-                  CENTRAL PHILOSOPHICAL ESSENCE
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19]">
-                  What Are Your Chains?
-                </h3>
-              </div>
-
-              {/* High-Impact Excerpt Block */}
-              <div className="bg-[#F8F5EF] p-8 rounded-sm border-l-4 border-[#D4AF37] space-y-5 shadow-sm">
-                <p className="font-serif text-lg sm:text-xl font-bold text-[#7e2e19] uppercase tracking-wide">
-                  WHAT ARE YOUR CHAINS?
-                </p>
-                <div className="space-y-4 text-base sm:text-lg text-[#1C1C1C]/90 font-serif italic leading-relaxed">
-                  <p>Sometimes the chains are circumstances.</p>
-                  <p>Sometimes they are fear.</p>
-                  <p>Sometimes they are unresolved experiences.</p>
-                  <p>Sometimes they are the beliefs we have developed about ourselves.</p>
-                  <p className="font-bold text-[#7e2e19] not-italic pt-2">
-                    And sometimes we become so accustomed to carrying them that we forget that another way of living is possible.
-                  </p>
-                </div>
-              </div>
-
-              {/* Book Description & Insights */}
-              <div className="space-y-4 text-base text-[#1C1C1C]/85 leading-relaxed">
-                <p>
-                  <em>Breaking the Chains</em> is an intimate, rigorous, and inspiring exploration of what holds individuals back from realizing their true capabilities. Drawing from personal vulnerability, rural roots in Shakung Village, and deep studies in human development, Keatlegile Mabena provides readers with a structured blueprint to bail out their imprisoned potential.
-                </p>
-                <p>
-                  This book has resonated deeply with students, professionals, youth leaders, and executives across South Africa who find themselves trapped by past failures, imposter syndrome, or systemic limitations.
-                </p>
-              </div>
-
-              {/* Key Pillars Explored in the Book */}
-              <div className="space-y-4">
-                <h4 className="font-serif text-xl font-bold text-[#7e2e19] border-b-2 border-gray-200 pb-2">
-                  Key Transformational Themes Explored:
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
-                  <div className="p-4 bg-white rounded-sm border border-gray-200 space-y-1">
-                    <div className="font-bold text-[#7e2e19] flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                      <span>Imprisoned Potential</span>
-                    </div>
-                    <p className="text-gray-600 text-xs">
-                      Identifying invisible mental constraints and unexpressed gifts.
-                    </p>
-                  </div>
-
-                  <div className="p-4 bg-white rounded-sm border border-gray-200 space-y-1">
-                    <div className="font-bold text-[#7e2e19] flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                      <span>Reclaiming Personal Power</span>
-                    </div>
-                    <p className="text-gray-600 text-xs">
-                      Transitioning from a victim of circumstances to an agent of change.
-                    </p>
-                  </div>
-
-                  <div className="p-4 bg-white rounded-sm border border-gray-200 space-y-1">
-                    <div className="font-bold text-[#7e2e19] flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                      <span>The Architecture of Persistence</span>
-                    </div>
-                    <p className="text-gray-600 text-xs">
-                      Building the stamina to endure difficult seasons without surrendering vision.
-                    </p>
-                  </div>
-
-                  <div className="p-4 bg-white rounded-sm border border-gray-200 space-y-1">
-                    <div className="font-bold text-[#7e2e19] flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                      <span>Freedom &amp; Purpose</span>
-                    </div>
-                    <p className="text-gray-600 text-xs">
-                      Stepping boldly into meaningful academic, career, and personal contribution.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+      {/* Shop grid of book cards */}
+      <section className="py-20 bg-[#F8F5EF] text-[#1C1C1C]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {BOOKS.map((book, idx) => (
+              <BookCard key={book.id} book={book} index={idx} openWhatsAppModal={openWhatsAppModal} />
+            ))}
           </div>
-
-
-
         </div>
       </section>
 
-      {/* Book Orders & Institutional Bulk Inquiries CTA */}
+      {/* Bulk / Institutional Orders CTA */}
       <section className="py-16 bg-[#7e2e19] text-white text-center border-t-2 border-[#D4AF37]/40">
         <div className="max-w-3xl mx-auto px-4 space-y-6">
           <h2 className="font-serif text-3xl font-bold text-[#E2C45C]">
@@ -280,7 +91,7 @@ export const Books: React.FC = () => {
                 title: 'Order Copies & Bulk Inquiries',
                 subtitle: 'Schools, Corporate Distribution & Group Orders',
                 ctaType: 'book',
-                defaultService: 'The Power of Pain Book Order'
+                defaultService: 'Book Order & Bulk Inquiry'
               })
             }
             className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-widest rounded-sm transition-colors inline-flex items-center gap-2 border border-[#E2C45C] cursor-pointer shadow-md"
@@ -291,5 +102,180 @@ export const Books: React.FC = () => {
         </div>
       </section>
     </>
+  );
+};
+
+/* ---------------- Book Card ---------------- */
+
+const BookCard: React.FC<{
+  book: Book;
+  index: number;
+  openWhatsAppModal: (options?: {
+    title?: string;
+    subtitle?: string;
+    ctaType?: 'speaking' | 'mentorship' | 'career' | 'book' | 'partnership' | 'conversation' | 'general';
+    defaultService?: string;
+  }) => void;
+}> = ({ book, index, openWhatsAppModal }) => {
+  const images = book.galleryImages.length > 0 ? book.galleryImages : [];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const hasGallery = images.length > 1;
+
+  // Auto-advance the cover carousel every 5 seconds when there are multiple images
+  useEffect(() => {
+    if (!hasGallery) return;
+    const id = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [hasGallery, images.length]);
+
+  const activeImage = images[activeIndex] ?? null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="bg-white rounded-sm shadow-md border border-[#D4AF37]/20 overflow-hidden flex flex-col"
+    >
+      {/* Cover image area — auto-sliding carousel with pagination dots */}
+      <div className="bg-[#F8F5EF] flex items-center justify-center relative border-b border-[#D4AF37]/20 overflow-hidden">
+        {book.featured && (
+          <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37] text-[#1C1C1C] px-2.5 py-1 rounded z-20 shadow-md">
+            New Release
+          </span>
+        )}
+        {activeImage ? (
+          <>
+            {/* Stacked images cross-fade between slides */}
+            {images.map((img, i) => (
+              <img
+                key={i}
+                src={img}
+                alt={`${book.title} — image ${i + 1}`}
+                className="w-full h-auto max-h-[60vh] object-cover absolute inset-0 transition-opacity duration-700 ease-in-out"
+                style={{ opacity: i === activeIndex ? 1 : 0 }}
+                aria-hidden={i !== activeIndex}
+              />
+            ))}
+            {/* Spacer to give the absolute-positioned images height */}
+            <img
+              src={images[activeIndex]}
+              alt=""
+              aria-hidden="true"
+              className="w-full h-auto max-h-[60vh] object-cover invisible pointer-events-none select-none"
+            />
+          </>
+        ) : (
+          <div className="w-full h-64 flex items-center justify-center text-center bg-[#F8F5EF] p-6">
+            <span className="text-xs text-[#9a3820] uppercase tracking-wider font-semibold">
+              Cover image coming soon
+            </span>
+          </div>
+        )}
+
+        {/* Pagination dots */}
+        {hasGallery && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveIndex(i)}
+                aria-label={`View image ${i + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === activeIndex
+                    ? 'w-6 bg-[#D4AF37]'
+                    : 'w-2 bg-white/70 hover:bg-white'
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Card body */}
+      <div className="p-7 sm:p-8 space-y-4 flex-1 flex flex-col">
+        <div className="space-y-2">
+          <h2 className="font-serif text-2xl font-bold text-[#1C1C1C] leading-tight">
+            {book.title}
+          </h2>
+          {book.subtitle && !book.hideSubtitleOnCard && (
+            <p className="font-serif text-base text-[#7e2e19] italic leading-snug">
+              {book.subtitle}
+            </p>
+          )}
+        </div>
+
+        <div className="text-xs text-[#1C1C1C]/60">
+          by <span className="font-bold text-[#1C1C1C]">{book.author}</span>
+        </div>
+
+        {/* Description (only if provided) */}
+        {book.description && (
+          <p className="text-sm text-[#1C1C1C]/80 leading-relaxed">
+            {book.description}
+          </p>
+        )}
+
+        {/* Metadata (only where provided) */}
+        {(book.year || book.pages || book.isbn) && (
+          <div className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] text-[#1C1C1C]/70 pt-2 border-t border-[#D4AF37]/20">
+            {book.year && (
+              <span className="inline-flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-[#9a3820]" /> Published {book.year}
+              </span>
+            )}
+            {book.pages && (
+              <span className="inline-flex items-center gap-1.5">
+                <FileText className="w-3.5 h-3.5 text-[#9a3820]" /> {book.pages} Pages
+              </span>
+            )}
+            {book.isbn && (
+              <span className="inline-flex items-center gap-1.5 font-mono">
+                <Hash className="w-3.5 h-3.5 text-[#9a3820]" /> ISBN: {book.isbn}
+              </span>
+            )}
+          </div>
+        )}
+
+        {/* Price + Buy button */}
+        <div className="mt-auto pt-5 flex flex-col sm:flex-row sm:items-center gap-4">
+          {book.priceLabel && (
+            <div className="text-2xl font-serif font-bold text-[#7e2e19]">{book.priceLabel}</div>
+          )}
+          {book.orderUrl ? (
+            <a
+              href={book.orderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] shadow-md"
+            >
+              <ShoppingBag className="w-4 h-4 text-[#1C1C1C]" />
+              <span>{book.orderLabel}</span>
+              <ExternalLink className="w-3.5 h-3.5 text-[#1C1C1C]" />
+            </a>
+          ) : (
+            <button
+              type="button"
+              onClick={() =>
+                openWhatsAppModal({
+                  title: `${book.orderLabel}`,
+                  subtitle: 'Direct WhatsApp order / delivery inquiry with the author',
+                  ctaType: 'book',
+                  defaultService: `${book.title} — Book Order`
+                })
+              }
+              className="flex-1 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] shadow-md cursor-pointer"
+            >
+              <ShoppingBag className="w-4 h-4 text-[#1C1C1C]" />
+              <span>{book.orderLabel}</span>
+            </button>
+          )}
+        </div>
+      </div>
+    </motion.div>
   );
 };

@@ -184,6 +184,77 @@ export const TRUST_PILLARS = [
   }
 ];
 
+/**
+ * Published & forthcoming books.
+ * Only fields with provided values are populated — no metadata is invented.
+ */
+export const BOOKS = [
+  {
+    id: 'breaking-the-chains',
+    title: 'Breaking the Chains',
+    subtitle: 'Bailing Out the Imprisoned Potential, Power and Persistence',
+    author: 'Keatlegile Mabena',
+    year: null as number | null,
+    pages: null as number | null,
+    isbn: null as string | null,
+    publisher: 'Self-Published',
+    coverImage: IMAGES.breakingChainsCover,
+    galleryImages: [IMAGES.breakingChainsCover] as string[],
+    price: 300,
+    priceLabel: 'R300',
+    description: null as string | null,
+    orderLabel: 'Grab Your Copy',
+    orderUrl: 'https://order.keatlegilemabena.co.za/product/breaking-the-chains-paperback/',
+    featured: false,
+    hideSubtitleOnCard: false
+  },
+  {
+    id: 'the-weight-i-did-not-choose',
+    title: 'The Weight I Did Not Choose',
+    subtitle: 'Healing, Rising, and Becoming',
+    author: 'Keatlegile Mabena',
+    year: null as number | null,
+    pages: null as number | null,
+    isbn: null as string | null,
+    publisher: null as string | null,
+    coverImage: IMAGES.weightBookCover,
+    galleryImages: [IMAGES.weightBookCover, IMAGES.weightBookImage1, IMAGES.weightBookImage2],
+    price: 350,
+    priceLabel: 'R350',
+    description: null as string | null,
+    orderLabel: 'Grab Your Copy',
+    orderUrl: 'https://order.keatlegilemabena.co.za/product/the-weight-i-did-not-choose-healing-rising-and-becoming/',
+    featured: true,
+    hideSubtitleOnCard: true
+  }
+];
+
+/**
+ * Credibility & impact evidence — sourced only from documented facts.
+ * No institutions, events, media appearances or metrics have been invented.
+ */
+export const CREDIBILITY = {
+  highlights: [
+    {
+      icon: 'GraduationCap',
+      title: 'Master of Social Sciences (Cum Laude)',
+      detail: 'Population and Sustainable Development — NWU'
+    },
+    {
+      icon: 'Users',
+      title: 'Member, Population Association of Southern Africa',
+      detail: 'PASA — professional affiliation'
+    },
+    {
+      icon: 'BookOpen',
+      title: 'Published Author',
+      detail: 'Breaking the Chains & The Weight I Did Not Choose'
+    }
+  ],
+  note:
+    'Institutions spoken at, event photographs, media appearances and measurable impact indicators will be added as the brand grows.'
+};
+
 export const CORE_VALUES = [
   {
     name: 'Healing',
