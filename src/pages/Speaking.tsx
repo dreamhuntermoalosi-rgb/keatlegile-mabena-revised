@@ -14,7 +14,7 @@ export const Speaking: React.FC = () => {
         title="Speaking & Keynotes | Keatlegile Mabena"
         description="Conversations that move people. Keynote speaking, workshops, and panel sessions on healing, purpose, self-discovery, confidence, and mentorship."
         keywords={['Keatlegile Mabena Speaking', 'Keynote Speaker', 'Corporate Speaker', 'Youth Empowerment Speaker']}
-        canonicalUrl="https://keatlegilemabena.com/speaking"
+        canonicalUrl="https://keatlegilemabena.co.za/speaking"
       />
 
       <Breadcrumbs items={[{ label: 'Speaking' }]} />

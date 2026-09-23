@@ -66,14 +66,16 @@ export const OurApproach: React.FC = () => {
   return (
     <>
       <SEO
-        title="Strategic Approach & Methodology | Keatlegile Mabena"
-        description="Our multi-disciplinary methodology combines purpose-driven clarity, self-discovery frameworks, and institutional governance to deliver practical, transformative outcomes."
+        title="Approach & Methodology | Keatlegile Mabena"
+        description="Keatlegile Mabena's approach combines lived experience, academic credibility and authorship to connect personal transformation with practical guidance."
         keywords={[
           'Mentorship Methodology',
-          'Self Discovery Strategy',
-          'Governance Advisory South Africa'
+          'Self Discovery',
+          'Personal Transformation',
+          'Practical Guidance'
         ]}
-        breadcrumbs={[{ label: 'Our Strategic Approach', path: '/our-approach' }]}
+        canonicalUrl="https://keatlegilemabena.co.za/our-approach"
+        breadcrumbs={[{ label: 'Our Approach', path: '/our-approach' }]}
       />
 
       <Breadcrumbs items={[{ label: 'Our Strategic Approach' }]} />

@@ -19,18 +19,19 @@ export const SEO: React.FC<SEOProps> = ({
     'Speaker South Africa',
     'Author',
     'Mentor',
+    'Keynote Speaker',
     'Healing and Purpose',
     'Personal Growth',
-    'Youth Empowerment'
+    'Mentorship'
   ],
   canonicalUrl,
-  ogImage = 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/07/hero-law.webp',
+  ogImage = 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/08/KEATLEGILE-MABENA-scaled.webp',
   ogType = 'website',
   breadcrumbs,
   jsonLd,
 }) => {
   const fullTitle = title.includes('Keatlegile') ? title : `${title} | Keatlegile Mabena`;
-  const currentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : 'https://keatlegilemabena.com');
+  const currentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : 'https://keatlegilemabena.co.za');
 
   useEffect(() => {
     // 1. Title
@@ -82,11 +83,11 @@ export const SEO: React.FC<SEOProps> = ({
     const basePersonLd = {
       '@context': 'https://schema.org',
       '@type': 'Person',
-      '@id': 'https://keatlegilemabena.com/#person',
+      '@id': 'https://keatlegilemabena.co.za/#person',
       'name': 'Keatlegile Mabena',
-      'jobTitle': 'Speaker | Best-Selling Author | Mentor',
+      'jobTitle': 'Speaker | Author | Mentor',
       'description': description,
-      'url': 'https://keatlegilemabena.com',
+      'url': 'https://keatlegilemabena.co.za',
       'image': ogImage,
       'knowsAbout': [
         'Healing',
@@ -94,6 +95,8 @@ export const SEO: React.FC<SEOProps> = ({
         'Purpose',
         'Confidence',
         'Mentorship',
+        'Keynote Speaking',
+        'Authorship',
         'Transformation'
       ]
     };

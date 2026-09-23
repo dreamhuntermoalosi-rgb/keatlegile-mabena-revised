@@ -11,7 +11,7 @@ export const Mentorship: React.FC = () => {
       <SEO
         title="Youth & Student Mentorship | Keatlegile Mabena"
         description="Structured 1-on-1 and cohort mentorship tailored specifically for emerging leaders, university students, and motivated youth."
-        canonicalUrl="https://keatlegilemabena.com/mentorship"
+        canonicalUrl="https://keatlegilemabena.co.za/mentorship"
       />
 
       <Breadcrumbs items={[{ label: 'Mentorship' }]} />

@@ -34,6 +34,26 @@ export const Books: React.FC = () => {
         ]}
         canonicalUrl="https://keatlegilemabena.co.za/books"
         ogImage={IMAGES.weightBookCover}
+        breadcrumbs={[{ label: 'Books & Authorship', path: '/books' }]}
+        jsonLd={BOOKS.map((book) => ({
+          '@context': 'https://schema.org',
+          '@type': 'Book',
+          'name': book.title,
+          'author': {
+            '@type': 'Person',
+            'name': book.author
+          },
+          ...(book.subtitle ? { 'description': book.subtitle } : {}),
+          ...(book.isbn ? { 'isbn': book.isbn } : {}),
+          ...(book.price ? { 'offers': {
+            '@type': 'Offer',
+            'price': String(book.price),
+            'priceCurrency': 'ZAR',
+            'availability': 'https://schema.org/InStock',
+            'url': book.orderUrl
+          } } : {}),
+          ...(book.coverImage ? { 'image': book.coverImage } : {})
+        }))}
       />
 
       <Breadcrumbs items={[{ label: 'Books & Authorship' }]} />

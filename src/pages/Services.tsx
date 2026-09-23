@@ -13,7 +13,7 @@ export const ServicesPage: React.FC = () => {
       <SEO
         title="Offerings & Work | Keatlegile Mabena"
         description="Explore Keatlegile Mabena's work across speaking, mentorship, career development, books, and thought leadership."
-        canonicalUrl="https://keatlegilemabena.com/services"
+        canonicalUrl="https://keatlegilemabena.co.za/services"
       />
 
       <Breadcrumbs items={[{ label: 'Offerings & Work' }]} />

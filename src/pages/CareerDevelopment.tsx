@@ -13,7 +13,7 @@ export const CareerDevelopment: React.FC = () => {
       <SEO
         title="Career Development | Keatlegile Mabena"
         description="Your career is part of your story. Practical guidance for navigating career decisions, professional growth and the journey towards career success."
-        canonicalUrl="https://keatlegilemabena.com/career-development"
+        canonicalUrl="https://keatlegilemabena.co.za/career-development"
       />
 
       <Breadcrumbs items={[{ label: 'Career Development' }]} />

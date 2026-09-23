@@ -11,7 +11,7 @@ export const Impact: React.FC = () => {
       <SEO
         title="Social Impact & Community | Keatlegile Mabena"
         description="Growth that serves others is the only kind that lasts. Discover Keatlegile Mabena's social impact, youth empowerment, and community initiatives."
-        canonicalUrl="https://keatlegilemabena.com/impact"
+        canonicalUrl="https://keatlegilemabena.co.za/impact"
       />
 
       <Breadcrumbs items={[{ label: 'Social Impact' }]} />
