@@ -16,6 +16,7 @@ import { Testimonials } from './pages/Testimonials';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
 import { BookKeatlegile } from './pages/BookKeatlegile';
+import { Media } from './pages/Media';
 
 export default function App() {
   return (
@@ -35,7 +36,7 @@ export default function App() {
               <Route path="/insights/:slug" element={<Navigate to="/" replace />} />
               <Route path="/impact" element={<Impact />} />
               <Route path="/testimonials" element={<Testimonials />} />
-              <Route path="/media" element={<Navigate to="/" replace />} />
+              <Route path="/media" element={<Media />} />
               <Route path="/events" element={<Navigate to="/" replace />} />
               <Route path="/services" element={<Navigate to="/speaking" replace />} />
               <Route path="/governance-compliance" element={<Navigate to="/speaking" replace />} />

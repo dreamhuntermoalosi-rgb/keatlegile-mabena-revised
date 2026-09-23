@@ -24,11 +24,13 @@ import {
   Medal,
   Calendar,
   BookmarkCheck,
-  Check
+  Check,
+  ExternalLink
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { CORE_VALUES, FIRM_DETAILS } from '../data/firmData';
+import { LETTERS } from '../data/mediaData';
 import { IMAGES } from '../data/images';
 
 export const About: React.FC = () => {
@@ -637,6 +639,62 @@ export const About: React.FC = () => {
               </p>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Letters of Recognition */}
+      <section className="py-20 bg-[#F8F5EF] border-t-2 border-[#D4AF37]/30 text-[#1C1C1C]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
+              LETTERS &amp; RECOGNITION
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19]">
+              Formal Recognition
+            </h2>
+            <p className="text-sm text-[#1C1C1C]/75">
+              Letters of appreciation, testimonial, and recognition received in acknowledgment of Keatlegile Mabena's work and impact.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {LETTERS.map((letter, idx) => (
+              <motion.div
+                key={letter.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-white p-6 rounded-sm border-t-4 border-[#D4AF37] border-x border-b border-[#D4AF37]/20 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between gap-5"
+              >
+                <div className="space-y-3">
+                  <div className="w-12 h-12 bg-[#7e2e19]/10 rounded-sm flex items-center justify-center text-[#9a3820]">
+                    <FileText className="w-6 h-6" />
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#9a3820]">
+                      {letter.type}
+                    </span>
+                    <h3 className="font-serif text-lg font-bold text-[#1C1C1C] leading-tight">
+                      {letter.title}
+                    </h3>
+                    <span className="text-[11px] text-[#1C1C1C]/50 uppercase tracking-wider">
+                      {letter.format.toUpperCase()} Document
+                    </span>
+                  </div>
+                </div>
+                <a
+                  href={letter.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm transition-all shadow-sm"
+                >
+                  <span>View Letter</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
