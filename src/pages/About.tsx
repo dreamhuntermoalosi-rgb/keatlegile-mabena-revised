@@ -83,10 +83,6 @@ export const About: React.FC = () => {
 
   const positionsAndAwardsList = [
     {
-      title: 'Member of Population Association of Southern Africa (PASA)',
-      type: 'Professional Membership'
-    },
-    {
       title: '2018 NWU: Certificate of Academic excellence: Honours bachelor of Social science - Population studies with Distinction (Cum Laude)',
       type: 'Academic Excellence Award'
     },
@@ -156,8 +152,7 @@ export const About: React.FC = () => {
           'Youth Mentor',
           'Author',
           'Keynote Speaker',
-          'Qualifications Keatlegile Mabena',
-          'PASA Member'
+          'Qualifications Keatlegile Mabena'
         ]}
         canonicalUrl="https://keatlegilemabena.co.za/about"
         ogImage={IMAGES.profileCard}

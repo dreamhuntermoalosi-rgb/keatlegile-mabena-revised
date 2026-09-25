@@ -45,8 +45,7 @@ export const LEADERSHIP: LeadershipMember = {
     'Master of Social Sciences: Population and Sustainable Development (NWU)',
     'Honours Bachelor of Social Science: Population Studies (Cum Laude, NWU)',
     'Bachelor of Social Science: Population and Development Studies (Cum Laude, NWU)',
-    'Published Author & Keynote Speaker',
-    'Member of Population Association of Southern Africa (PASA)'
+    'Published Author & Keynote Speaker'
   ],
   bio: [
     'Keatlegile Mabena is a purpose-led personal brand centred on speaking, authorship, mentorship, and personal transformation.',
@@ -219,11 +218,11 @@ export const BOOKS = [
     publisher: null as string | null,
     coverImage: IMAGES.weightBookCover,
     galleryImages: [IMAGES.weightBookCover, IMAGES.weightBookImage1, IMAGES.weightBookImage2],
-    price: 350,
-    priceLabel: 'R350',
+    price: null as number | null,
+    priceLabel: null as string | null,
     description: null as string | null,
-    orderLabel: 'Grab Your Copy',
-    orderUrl: 'https://order.keatlegilemabena.co.za/product/the-weight-i-did-not-choose-healing-rising-and-becoming/',
+    orderLabel: 'Coming Soon',
+    orderUrl: null as string | null,
     featured: true,
     hideSubtitleOnCard: true
   }
@@ -241,9 +240,9 @@ export const CREDIBILITY = {
       detail: 'Population and Sustainable Development — NWU'
     },
     {
-      icon: 'Users',
-      title: 'Member, Population Association of Southern Africa',
-      detail: 'PASA — professional affiliation'
+      icon: 'Award',
+      title: 'Honours Bachelor of Social Science (Cum Laude)',
+      detail: 'Population Studies — NWU'
     },
     {
       icon: 'BookOpen',

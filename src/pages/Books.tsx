@@ -278,21 +278,11 @@ const BookCard: React.FC<{
               <ExternalLink className="w-3.5 h-3.5 text-[#1C1C1C]" />
             </a>
           ) : (
-            <button
-              type="button"
-              onClick={() =>
-                openWhatsAppModal({
-                  title: `${book.orderLabel}`,
-                  subtitle: 'Direct WhatsApp order / delivery inquiry with the author',
-                  ctaType: 'book',
-                  defaultService: `${book.title} — Book Order`
-                })
-              }
-              className="flex-1 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] shadow-md cursor-pointer"
+            <span
+              className="flex-1 px-6 py-3.5 bg-gray-200 text-gray-500 font-bold text-xs uppercase tracking-widest rounded-sm inline-flex items-center justify-center gap-2 border border-gray-300 cursor-not-allowed"
             >
-              <ShoppingBag className="w-4 h-4 text-[#1C1C1C]" />
               <span>{book.orderLabel}</span>
-            </button>
+            </span>
           )}
         </div>
       </div>

@@ -129,16 +129,24 @@ const FeaturedBookCard: React.FC<{ book: typeof BOOKS[number] }> = ({ book }) =>
           {book.priceLabel && (
             <div className="text-2xl font-serif font-bold text-[#7e2e19]">{book.priceLabel}</div>
           )}
-          <a
-            href={book.orderUrl ?? '#'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] shadow-md"
-          >
-            <ShoppingBag className="w-4 h-4 text-[#1C1C1C]" />
-            <span>{book.orderLabel}</span>
-            <ExternalLink className="w-3.5 h-3.5 text-[#1C1C1C]" />
-          </a>
+          {book.orderUrl ? (
+            <a
+              href={book.orderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] shadow-md"
+            >
+              <ShoppingBag className="w-4 h-4 text-[#1C1C1C]" />
+              <span>{book.orderLabel}</span>
+              <ExternalLink className="w-3.5 h-3.5 text-[#1C1C1C]" />
+            </a>
+          ) : (
+            <span
+              className="flex-1 px-6 py-3.5 bg-gray-200 text-gray-500 font-bold text-xs uppercase tracking-widest rounded-sm inline-flex items-center justify-center gap-2 border border-gray-300 cursor-not-allowed"
+            >
+              <span>{book.orderLabel}</span>
+            </span>
+          )}
         </div>
       </div>
     </motion.div>
@@ -312,7 +320,7 @@ export const Home: React.FC = () => {
                   Keatlegile Mabena is a South African speaker, author and mentor. His work grew from lived experience, education and a desire to help others rise beyond difficult beginnings.
                 </p>
                 <p>
-                  Growing up in Shakung Village in North-West shaped an early understanding of resilience, possibility and transformation. He holds a Master of Social Sciences (Cum Laude) from the North-West University and is a member of the Population Association of Southern Africa (PASA).
+                  Growing up in Shakung Village in North-West shaped an early understanding of resilience, possibility and transformation. He holds a Master of Social Sciences (Cum Laude) from the North-West University.
                 </p>
                 <p className="font-medium text-[#7e2e19] pt-1">
                   What makes his perspective distinctive is the combination of lived experience, academic credibility and authorship — connecting human transformation with practical guidance.
