@@ -99,24 +99,24 @@ export const BookKeatlegile: React.FC = () => {
         title="Invite me to speak | Keatlegile Mabena"
         description="Submit a booking request for Keatlegile Mabena for keynote addresses, mentorship, or book orders."
         keywords={[
-          'Book Keatlegile Mabena',
+          'Invite Keatlegile Mabena to speak',
           'Keynote Speaker Booking South Africa',
           'Mentorship Request',
           'Speaking Engagement',
           'Direct Booking Portal'
         ]}
         canonicalUrl="https://keatlegilemabena.co.za/book-keatlegile"
-        breadcrumbs={[{ label: 'Book Keatlegile', path: '/book-keatlegile' }]}
+        breadcrumbs={[{ label: 'Invite me to speak', path: '/book-keatlegile' }]}
       />
 
-      <Breadcrumbs items={[{ label: 'Book Keatlegile' }]} />
+      <Breadcrumbs items={[{ label: 'Invite me to speak' }]} />
 
       {/* Hero Header */}
       <section className="relative bg-[#7e2e19] text-white py-16 sm:py-20 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
-            alt="Book Keatlegile Background"
+            alt="Invite me to speak background"
             className="w-full h-full object-cover opacity-70 filter brightness-105 contrast-105 transform-gpu"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#5a1f10]/90 via-[#7e2e19]/70 to-[#5a1f10]/40" />
