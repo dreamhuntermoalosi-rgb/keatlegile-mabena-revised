@@ -4,6 +4,8 @@ import { motion } from 'motion/react';
 import {
   ArrowRight,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Compass,
   BookOpen,
   Users,
@@ -166,6 +168,182 @@ const FeaturedBookCard: React.FC<{ book: typeof BOOKS[number] }> = ({ book }) =>
         </div>
       </div>
     </motion.div>
+  );
+};
+
+/* Media carousel — smooth auto-advancing, 3 cards per view on desktop,
+   2 on tablet, 1 on mobile. Pauses on hover. */
+const MediaCarousel: React.FC = () => {
+  const items = MEDIA_PREVIEW;
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  // Number of cards per view by breakpoint (tracked via window width)
+  const [perView, setPerView] = useState(3);
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setPerView(w < 640 ? 1 : w < 1024 ? 2 : 3);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const maxIndex = Math.max(0, items.length - perView);
+
+  // Auto-advance every 4.5s, pause on hover
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 4500);
+    return () => clearInterval(id);
+  }, [paused, maxIndex]);
+
+  // Clamp index if perView changes
+  useEffect(() => {
+    if (index > maxIndex) setIndex(maxIndex);
+  }, [maxIndex, index]);
+
+  const go = (dir: -1 | 1) => {
+    setIndex((prev) => {
+      const next = prev + dir;
+      if (next < 0) return maxIndex;
+      if (next > maxIndex) return 0;
+      return next;
+    });
+  };
+
+  return (
+    <section className="py-20 bg-white text-[#1C1C1C] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="max-w-3xl space-y-4">
+            <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
+              SPEAKING ENGAGEMENTS, MEDIA FEATURES &amp; RECOGNITION
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
+              In the Public Eye
+            </h2>
+            <div className="w-16 h-1 bg-[#D4AF37] rounded-full" />
+          </div>
+
+          {/* Arrow controls */}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              className="w-10 h-10 rounded-full border border-[#D4AF37]/40 text-[#7e2e19] hover:bg-[#7e2e19] hover:text-white transition-colors flex items-center justify-center"
+              aria-label="Previous media"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              className="w-10 h-10 rounded-full border border-[#D4AF37]/40 text-[#7e2e19] hover:bg-[#7e2e19] hover:text-white transition-colors flex items-center justify-center"
+              aria-label="Next media"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Carousel viewport */}
+        <div
+          className="relative overflow-hidden"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${index * (100 / perView)}%)` }}
+          >
+            {items.map((item) => (
+              <div
+                key={item.id}
+                className="shrink-0 px-3"
+                style={{ width: `${100 / perView}%` }}
+              >
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all overflow-hidden flex flex-col group block"
+                >
+                  {/* Image / thumbnail */}
+                  {item.image ? (
+                    <div className="relative w-full overflow-hidden" style={{ paddingBottom: '56.25%' }}>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="absolute top-0 left-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      {item.type === 'video' && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                          <div className="w-12 h-12 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg">
+                            <svg className="w-5 h-5 text-[#1C1C1C] ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="relative w-full bg-[#7e2e19] flex items-center justify-center" style={{ paddingBottom: '56.25%' }}>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Newspaper className="w-12 h-12 text-[#E2C45C]/40" />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Card body */}
+                  <div className="p-5 space-y-2 flex-1 flex flex-col justify-between gap-3">
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9a3820]">
+                        {item.source}
+                      </span>
+                      <h3 className="font-serif text-base font-bold text-[#1C1C1C] leading-tight group-hover:text-[#7e2e19] transition-colors">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#9a3820] group-hover:text-[#D4AF37] transition-colors">
+                      <span>{item.type === 'video' ? 'Watch' : 'Read'}</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pagination dots */}
+        <div className="flex items-center justify-center gap-2">
+          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setIndex(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === index ? 'w-6 bg-[#D4AF37]' : 'w-2 bg-[#D4AF37]/30 hover:bg-[#D4AF37]/60'
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="text-center pt-2">
+          <Link
+            to="/media"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300"
+          >
+            <span>View All Media</span>
+            <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -485,87 +663,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ================= 5. SPEAKING ENGAGEMENTS, MEDIA FEATURES & RECOGNITION ================= */}
-      <section className="py-20 bg-white text-[#1C1C1C]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
-              SPEAKING ENGAGEMENTS, MEDIA FEATURES &amp; RECOGNITION
-            </div>
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
-              In the Public Eye
-            </h2>
-            <div className="w-16 h-1 bg-[#D4AF37] rounded-full" />
-          </div>
-
-          {/* Media preview grid — articles (with images) + video thumbnails */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {MEDIA_PREVIEW.map((item, idx) => (
-              <motion.a
-                key={item.id}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all overflow-hidden flex flex-col group"
-              >
-                {/* Image / thumbnail */}
-                {item.image ? (
-                  <div className="relative w-full overflow-hidden" style={{ paddingBottom: '56.25%' }}>
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="absolute top-0 left-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    {item.type === 'video' && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
-                        <div className="w-12 h-12 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg">
-                          <svg className="w-5 h-5 text-[#1C1C1C] ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className="relative w-full bg-[#7e2e19] flex items-center justify-center" style={{ paddingBottom: '56.25%' }}>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Newspaper className="w-12 h-12 text-[#E2C45C]/40" />
-                    </div>
-                  </div>
-                )}
-
-                {/* Card body */}
-                <div className="p-5 space-y-2 flex-1 flex flex-col justify-between gap-3">
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#9a3820]">
-                      {item.source}
-                    </span>
-                    <h3 className="font-serif text-base font-bold text-[#1C1C1C] leading-tight group-hover:text-[#7e2e19] transition-colors">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#9a3820] group-hover:text-[#D4AF37] transition-colors">
-                    <span>{item.type === 'video' ? 'Watch' : 'Read'}</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </div>
-                </div>
-              </motion.a>
-            ))}
-          </div>
-
-          <div className="text-center pt-2">
-            <Link
-              to="/media"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300"
-            >
-              <span>View All Media</span>
-              <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <MediaCarousel />
 
       {/* ================= 6. FEATURED BOOK ================= */}
       <section className="py-20 bg-[#F8F5EF] border-t-2 border-[#D4AF37]/30">

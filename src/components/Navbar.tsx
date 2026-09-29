@@ -159,10 +159,10 @@ export const Navbar: React.FC = () => {
             </a>
 
             <Link
-              to="/book-keatlegile"
+              to="/book-keatlegile?service=speaking"
               className="px-3.5 sm:px-4 py-2 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-sm shadow-lg transition-all duration-300 hover:shadow-xl border border-[#E2C45C] inline-flex items-center gap-1.5 group whitespace-nowrap"
             >
-              <span>Book Keatlegile</span>
+              <span>Invite me to speak</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
             </Link>
 
@@ -331,11 +331,11 @@ export const Navbar: React.FC = () => {
               {/* Booking button full width with bottom margin to sit cleanly above fixed floating widget */}
               <div className="pt-2 w-full mb-14 sm:mb-2">
                 <Link
-                  to="/book-keatlegile"
+                  to="/book-keatlegile?service=speaking"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full py-3 px-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-center text-xs font-bold uppercase tracking-widest rounded shadow-lg block border border-[#E2C45C]"
                 >
-                  Book Keatlegile to Speak
+                  Invite me to speak
                 </Link>
               </div>
             </div>

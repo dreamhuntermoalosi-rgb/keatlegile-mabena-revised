@@ -57,7 +57,7 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
     setIsSubmitted(false);
     setConsentAgreed(true);
     if (options?.title) setModalTitle(options.title);
-    else setModalTitle('Book Keatlegile Mabena');
+    else setModalTitle('Invite me to speak');
 
     if (options?.subtitle) setModalSubtitle(options.subtitle);
     else setModalSubtitle('Direct WhatsApp connect with Keatlegile Mabena');
@@ -414,7 +414,7 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                     <>
                       <Send className="w-4 h-4 text-[#1C1C1C]" />
                       <span>
-                        {ctaType === 'speaking' ? 'Book Keatlegile to Speak' :
+                        {ctaType === 'speaking' ? 'Invite me to speak' :
                          ctaType === 'mentorship' ? 'Submit Mentorship Request' :
                          ctaType === 'book' ? 'Submit Book Order Request' :
                          'Submit Booking Request'}

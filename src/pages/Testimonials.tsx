@@ -346,10 +346,10 @@ export const Testimonials: React.FC = () => {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              to="/book-keatlegile"
+              to="/book-keatlegile?service=speaking"
               className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center justify-center"
             >
-              Book Keatlegile
+              Invite me to speak
             </Link>
           </div>
         </div>

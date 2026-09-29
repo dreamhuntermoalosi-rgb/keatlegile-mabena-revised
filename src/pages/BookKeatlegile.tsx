@@ -96,7 +96,7 @@ export const BookKeatlegile: React.FC = () => {
   return (
     <>
       <SEO
-        title="Book Keatlegile Mabena | Keynotes & Mentorship"
+        title="Invite me to speak | Keatlegile Mabena"
         description="Submit a booking request for Keatlegile Mabena for keynote addresses, mentorship, or book orders."
         keywords={[
           'Book Keatlegile Mabena',
@@ -129,7 +129,7 @@ export const BookKeatlegile: React.FC = () => {
             <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> Direct Submission Portal
           </span>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold">
-            Book Keatlegile Mabena
+            Invite me to speak
           </h1>
           <p className="text-sm sm:text-base text-white/90 max-w-2xl font-light leading-relaxed">
             Submit your event, speaking engagement, mentorship, or advisory requirements. All submissions are processed directly and securely.

@@ -4,10 +4,8 @@ import { Sparkles, ArrowRight, CheckCircle2, Users, Mic, Award, Building2 } from
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { IMAGES } from '../data/images';
-import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const Speaking: React.FC = () => {
-  const { openWhatsAppModal } = useWhatsAppModal();
   return (
     <>
       <SEO
@@ -115,26 +113,18 @@ export const Speaking: React.FC = () => {
       <section className="py-16 bg-[#F8F5EF] text-center border-t-2 border-[#D4AF37]">
         <div className="max-w-2xl mx-auto px-4 space-y-6">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
-            Book Keatlegile for Your Next Event
+            Invite me to speak at your next event
           </h2>
           <p className="text-sm text-[#1C1C1C]/80">
             Enquire about availability, keynote themes, and institutional speaking packages.
           </p>
-          <button
-            type="button"
-            onClick={() =>
-              openWhatsAppModal({
-                title: 'Book Keatlegile to Speak',
-                subtitle: 'Keynotes, Corporate Sessions & Institutional Conferences',
-                ctaType: 'speaking',
-                defaultService: 'Speaking & Keynote Addresses'
-              })
-            }
-            className="px-8 py-3.5 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 cursor-pointer shadow-md"
+          <Link
+            to="/book-keatlegile?service=speaking"
+            className="px-8 py-3.5 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 shadow-md"
           >
-            <span>Book Keatlegile to Speak</span>
+            <span>Invite me to speak</span>
             <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-          </button>
+          </Link>
         </div>
       </section>
     </>
