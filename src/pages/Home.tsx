@@ -59,9 +59,9 @@ const FeaturedBookCard: React.FC<{ book: typeof BOOKS[number] }> = ({ book }) =>
     >
       {/* Cover image area — cream backdrop, auto-sliding carousel */}
       <div className="bg-[#F8F5EF] flex items-center justify-center relative border-b border-[#D4AF37]/20 overflow-hidden">
-        {book.featured && (
+        {book.launchDate && (
           <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37] text-[#1C1C1C] px-2.5 py-1 rounded z-20 shadow-md">
-            New Release
+            Launching {book.launchDate}
           </span>
         )}
         {activeImage ? (
@@ -115,7 +115,7 @@ const FeaturedBookCard: React.FC<{ book: typeof BOOKS[number] }> = ({ book }) =>
           <h3 className="font-serif text-2xl font-bold text-[#1C1C1C] leading-tight">
             {book.title}
           </h3>
-          {book.subtitle && !book.hideSubtitleOnCard && (
+          {book.subtitle && (
             <p className="font-serif text-base text-[#7e2e19] italic leading-snug">
               {book.subtitle}
             </p>
@@ -125,6 +125,20 @@ const FeaturedBookCard: React.FC<{ book: typeof BOOKS[number] }> = ({ book }) =>
         <div className="text-xs text-[#1C1C1C]/60">
           by <span className="font-bold text-[#1C1C1C]">{book.author}</span>
         </div>
+
+        {/* Description (if provided) */}
+        {book.description && (
+          <p className="text-sm text-[#1C1C1C]/80 leading-relaxed">
+            {book.description}
+          </p>
+        )}
+
+        {/* Launch date line (if provided and not already shown as badge) */}
+        {book.launchDate && (
+          <p className="text-xs font-semibold text-[#9a3820] uppercase tracking-wider">
+            Launching {book.launchDate}
+          </p>
+        )}
 
         {/* Price + Buy button */}
         <div className="mt-auto pt-5 flex flex-col sm:flex-row sm:items-center gap-4">
@@ -238,10 +252,10 @@ export const Home: React.FC = () => {
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4"
             >
               <Link
-                to="/book-keatlegile"
+                to="/book-keatlegile?service=speaking"
                 className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C]"
               >
-                <span>Book Keatlegile to Speak</span>
+                <span>Invite me to speak</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
               </Link>
 
@@ -641,17 +655,17 @@ export const Home: React.FC = () => {
           </h2>
           <div className="pt-2 flex flex-col sm:flex-row justify-center items-center gap-4">
             <Link
-              to="/book-keatlegile"
+              to="/book-keatlegile?service=speaking"
               className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C]"
             >
-              <span>Book Keatlegile to Speak</span>
+              <span>Enquire about speaking</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
             </Link>
             <Link
-              to="/mentorship"
+              to="/book-keatlegile?service=mentorship"
               className="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-widest rounded-sm border border-white/30 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-2"
             >
-              <span>Apply for Mentorship</span>
+              <span>Apply for mentorship</span>
             </Link>
           </div>
         </div>

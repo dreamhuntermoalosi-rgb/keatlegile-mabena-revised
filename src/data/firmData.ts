@@ -202,6 +202,7 @@ export const BOOKS = [
     price: 300,
     priceLabel: 'R300',
     description: null as string | null,
+    launchDate: null as string | null,
     orderLabel: 'Grab Your Copy',
     orderUrl: 'https://order.keatlegilemabena.co.za/product/breaking-the-chains-paperback/',
     featured: false,
@@ -220,9 +221,10 @@ export const BOOKS = [
     galleryImages: [IMAGES.weightBookCover, IMAGES.weightBookImage1, IMAGES.weightBookImage2],
     price: null as number | null,
     priceLabel: null as string | null,
-    description: null as string | null,
-    orderLabel: 'Coming Soon',
-    orderUrl: null as string | null,
+    description: 'Poetry and reflections for anyone carrying grief, wounds or burdens they didn\u2019t choose and finding a way towards healing.',
+    launchDate: '21 November 2026',
+    orderLabel: 'Pre-order your copy',
+    orderUrl: 'https://order.keatlegilemabena.co.za/product/the-weight-i-did-not-choose-healing-rising-and-becoming/',
     featured: true,
     hideSubtitleOnCard: true
   }

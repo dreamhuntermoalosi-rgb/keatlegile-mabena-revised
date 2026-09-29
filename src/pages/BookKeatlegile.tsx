@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { useSearchParams } from 'react-router-dom';
 import { MessageSquare, Calendar, CheckCircle2, ShieldCheck, ArrowRight, User, Building, Mail, Phone, MapPin, Users, Send, Loader2 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
@@ -20,7 +21,7 @@ const bookingSchema = z.object({
   engagementFormat: z.enum([
     'In-Person Keynote',
     'Online / Virtual Keynote',
-    'Executive Mentorship (1-on-1)',
+    'Mentorship Session (1-on-1 or Group)',
     'Interactive Workshop / Masterclass',
     'Panel / Guest Speaking',
     'Books & Bulk Order Request'
@@ -40,6 +41,19 @@ export const BookKeatlegile: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState<BookingFormData | null>(null);
+  const [searchParams] = useSearchParams();
+
+  // Preselect the service category based on ?service= query param
+  const serviceParam = searchParams.get('service');
+  const presetService =
+    serviceParam === 'mentorship' ? 'Youth & Student Mentorship' :
+    serviceParam === 'speaking' ? 'Keynote Address & Guest Speaker' :
+    'Keynote Address & Guest Speaker';
+
+  // Preselect the engagement format based on ?service= query param
+  const presetFormat =
+    serviceParam === 'mentorship' ? 'Mentorship Session (1-on-1 or Group)' :
+    'In-Person Keynote';
 
   const {
     register,
@@ -49,8 +63,8 @@ export const BookKeatlegile: React.FC = () => {
   } = useForm<BookingFormData>({
     resolver: zodResolver(bookingSchema),
     defaultValues: {
-      serviceRequired: 'Keynote Address & Guest Speaker',
-      engagementFormat: 'In-Person Keynote',
+      serviceRequired: presetService,
+      engagementFormat: presetFormat,
       popiaConsent: true
     }
   });

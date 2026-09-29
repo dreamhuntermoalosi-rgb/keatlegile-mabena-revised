@@ -162,9 +162,9 @@ const BookCard: React.FC<{
     >
       {/* Cover image area — auto-sliding carousel with pagination dots */}
       <div className="bg-[#F8F5EF] flex items-center justify-center relative border-b border-[#D4AF37]/20 overflow-hidden">
-        {book.featured && (
+        {book.launchDate && (
           <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37] text-[#1C1C1C] px-2.5 py-1 rounded z-20 shadow-md">
-            New Release
+            Launching {book.launchDate}
           </span>
         )}
         {activeImage ? (
@@ -222,7 +222,7 @@ const BookCard: React.FC<{
           <h2 className="font-serif text-2xl font-bold text-[#1C1C1C] leading-tight">
             {book.title}
           </h2>
-          {book.subtitle && !book.hideSubtitleOnCard && (
+          {book.subtitle && (
             <p className="font-serif text-base text-[#7e2e19] italic leading-snug">
               {book.subtitle}
             </p>
@@ -237,6 +237,13 @@ const BookCard: React.FC<{
         {book.description && (
           <p className="text-sm text-[#1C1C1C]/80 leading-relaxed">
             {book.description}
+          </p>
+        )}
+
+        {/* Launch date (if provided) */}
+        {book.launchDate && (
+          <p className="text-xs font-semibold text-[#9a3820] uppercase tracking-wider">
+            Launching {book.launchDate}
           </p>
         )}
 
