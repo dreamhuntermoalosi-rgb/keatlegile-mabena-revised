@@ -13,12 +13,14 @@ import {
   Mic,
   Sparkles,
   ExternalLink,
-  ShoppingBag
+  ShoppingBag,
+  Newspaper
 } from 'lucide-react';
 
 import { SEO } from '../components/SEO';
-import { FIRM_DETAILS, CREDIBILITY, BOOKS } from '../data/firmData';
+import { FIRM_DETAILS, AT_A_GLANCE, BOOKS } from '../data/firmData';
 import { ALL_TESTIMONIALS } from '../data/testimonialsData';
+import { MEDIA_PREVIEW } from '../data/mediaData';
 import { IMAGES } from '../data/images';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -338,7 +340,7 @@ export const Home: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Quick Profile Card — Background at a Glance (3 real credential highlights) */}
+            {/* Quick Profile Card — At a Glance */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -348,17 +350,17 @@ export const Home: React.FC = () => {
             >
               <div className="bg-[#7e2e19] text-white p-8 sm:p-10 rounded-sm shadow-2xl border-l-4 border-[#D4AF37] space-y-6 relative overflow-hidden">
                 <div className="text-xs font-bold tracking-widest text-[#E2C45C] uppercase">
-                  BACKGROUND AT A GLANCE
+                  AT A GLANCE
                 </div>
-                <div className="space-y-4 divide-y divide-white/10 text-sm">
-                  {CREDIBILITY.highlights.map((item, idx) => {
+                <div className="space-y-5 divide-y divide-white/10 text-sm">
+                  {AT_A_GLANCE.map((item, idx) => {
                     const Icon = iconMap[item.icon] ?? Award;
                     return (
                       <div key={idx} className="pt-2 flex items-start gap-3">
                         <Icon className="w-5 h-5 text-[#E2C45C] shrink-0 mt-0.5" />
                         <div>
                           <div className="font-semibold text-white">{item.title}</div>
-                          <div className="text-xs text-white/70">{item.detail}</div>
+                          <div className="text-xs text-white/70 leading-relaxed">{item.detail}</div>
                         </div>
                       </div>
                     );
@@ -378,7 +380,7 @@ export const Home: React.FC = () => {
               CORE OFFERINGS
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
-              What I Do, Who It Is For &amp; The Outcome
+              Speaking, mentorship and books for life&rsquo;s turning points.
             </h2>
             <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full" />
           </div>
@@ -394,19 +396,19 @@ export const Home: React.FC = () => {
                   <Mic className="w-6 h-6" />
                 </div>
                 <h3 className="font-serif text-xl font-bold text-[#1C1C1C]">
-                  KEYNOTE SPEAKING
+                  SPEAKING &amp; KEYNOTES
                 </h3>
                 <div className="space-y-2 text-xs text-[#1C1C1C]/75 leading-relaxed">
-                  <p><span className="font-semibold text-[#7e2e19]">What:</span> Keynote addresses and talks for conferences, institutions and gatherings.</p>
-                  <p><span className="font-semibold text-[#7e2e19]">Who:</span> Organisations, institutions and audiences seeking honest, reflective conversation.</p>
-                  <p><span className="font-semibold text-[#7e2e19]">Outcome:</span> A shift in perspective, renewed confidence and practical steps to act on.</p>
+                  <p><span className="font-semibold text-[#7e2e19]">What:</span> Keynotes and talks on mental health and wellbeing, resilience, healing, grief, self-discovery, personal growth and career progress.</p>
+                  <p><span className="font-semibold text-[#7e2e19]">Who:</span> Conferences, institutions, organisations and community groups seeking an honest, engaging speaker.</p>
+                  <p><span className="font-semibold text-[#7e2e19]">Outcome:</span> Fresh perspectives and practical ideas audiences can carry into their lives and work.</p>
                 </div>
               </div>
               <Link
                 to="/speaking"
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors pt-2"
               >
-                <span>Book Keatlegile to Speak</span>
+                <span>Invite me to speak</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </motion.div>
@@ -424,16 +426,16 @@ export const Home: React.FC = () => {
                   MENTORSHIP
                 </h3>
                 <div className="space-y-2 text-xs text-[#1C1C1C]/75 leading-relaxed">
-                  <p><span className="font-semibold text-[#7e2e19]">What:</span> One-on-one and cohort guidance for people navigating their next chapter.</p>
-                  <p><span className="font-semibold text-[#7e2e19]">Who:</span> Students, graduates and young professionals seeking personal growth, emotional healing, confidence, purpose and career direction.</p>
-                  <p><span className="font-semibold text-[#7e2e19]">Outcome:</span> Clearer direction, steady support and greater confidence to move forward.</p>
+                  <p><span className="font-semibold text-[#7e2e19]">What:</span> One-on-one mentorship for people navigating personal or career transitions.</p>
+                  <p><span className="font-semibold text-[#7e2e19]">Who:</span> Students, graduates and young professionals seeking support with resilience, self-discovery, healing, grief, confidence or career progress.</p>
+                  <p><span className="font-semibold text-[#7e2e19]">Outcome:</span> Greater clarity, practical next steps and steady support as you move forward.</p>
                 </div>
               </div>
               <Link
                 to="/mentorship"
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors pt-2"
               >
-                <span>Apply for Mentorship</span>
+                <span>Apply for mentorship</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </motion.div>
@@ -451,16 +453,16 @@ export const Home: React.FC = () => {
                   BOOKS &amp; AUTHORSHIP
                 </h3>
                 <div className="space-y-2 text-xs text-[#1C1C1C]/75 leading-relaxed">
-                  <p><span className="font-semibold text-[#7e2e19]">What:</span> Published books offering language for deep personal experiences.</p>
-                  <p><span className="font-semibold text-[#7e2e19]">Who:</span> Readers seeking healing, direction and personal growth.</p>
-                  <p><span className="font-semibold text-[#7e2e19]">Outcome:</span> New perspectives and reflections that translate into meaningful next steps.</p>
+                  <p><span className="font-semibold text-[#7e2e19]">What:</span> Breaking the Chains and my forthcoming book, The Weight I Didn&rsquo;t Choose: Healing, Rising and Becoming, explore mental health, grief, healing, resilience and personal growth.</p>
+                  <p><span className="font-semibold text-[#7e2e19]">Who:</span> Readers looking for honest reflections on mental health, grief, healing and self-discovery.</p>
+                  <p><span className="font-semibold text-[#7e2e19]">Outcome:</span> Stories and reflections that help readers feel seen and find hope as they navigate their own journeys.</p>
                 </div>
               </div>
               <Link
                 to="/books"
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors pt-2"
               >
-                <span>Discover His Books</span>
+                <span>Explore my books</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </motion.div>
@@ -468,42 +470,86 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ================= 5. CREDIBILITY & IMPACT (replaces Guiding Principles) ================= */}
+      {/* ================= 5. SPEAKING ENGAGEMENTS, MEDIA FEATURES & RECOGNITION ================= */}
       <section className="py-20 bg-white text-[#1C1C1C]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           <div className="max-w-3xl space-y-4">
             <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
-              CREDIBILITY &amp; IMPACT
+              SPEAKING ENGAGEMENTS, MEDIA FEATURES &amp; RECOGNITION
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
-              Evidence of the Work
+              In the Public Eye
             </h2>
             <div className="w-16 h-1 bg-[#D4AF37] rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {CREDIBILITY.highlights.map((item, idx) => {
-              const Icon = iconMap[item.icon] ?? Award;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="p-6 bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 space-y-3 hover:border-[#D4AF37] transition-all"
-                >
-                  <div className="w-10 h-10 bg-[#7e2e19]/10 rounded-sm flex items-center justify-center text-[#9a3820]">
-                    <Icon className="w-5 h-5" />
+          {/* Media preview grid — articles (with images) + video thumbnails */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {MEDIA_PREVIEW.map((item, idx) => (
+              <motion.a
+                key={item.id}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all overflow-hidden flex flex-col group"
+              >
+                {/* Image / thumbnail */}
+                {item.image ? (
+                  <div className="relative w-full overflow-hidden" style={{ paddingBottom: '56.25%' }}>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="absolute top-0 left-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    {item.type === 'video' && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                        <div className="w-12 h-12 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg">
+                          <svg className="w-5 h-5 text-[#1C1C1C] ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <div className="font-serif text-base font-bold text-[#1C1C1C]">{item.title}</div>
-                  <p className="text-xs text-[#1C1C1C]/70 leading-relaxed">{item.detail}</p>
-                </motion.div>
-              );
-            })}
+                ) : (
+                  <div className="relative w-full bg-[#7e2e19] flex items-center justify-center" style={{ paddingBottom: '56.25%' }}>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Newspaper className="w-12 h-12 text-[#E2C45C]/40" />
+                    </div>
+                  </div>
+                )}
+
+                {/* Card body */}
+                <div className="p-5 space-y-2 flex-1 flex flex-col justify-between gap-3">
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#9a3820]">
+                      {item.source}
+                    </span>
+                    <h3 className="font-serif text-base font-bold text-[#1C1C1C] leading-tight group-hover:text-[#7e2e19] transition-colors">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#9a3820] group-hover:text-[#D4AF37] transition-colors">
+                    <span>{item.type === 'video' ? 'Watch' : 'Read'}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </div>
+                </div>
+              </motion.a>
+            ))}
           </div>
 
-          <p className="text-xs text-[#1C1C1C]/50 italic max-w-2xl">{CREDIBILITY.note}</p>
+          <div className="text-center pt-2">
+            <Link
+              to="/media"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300"
+            >
+              <span>View All Media</span>
+              <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
+            </Link>
+          </div>
         </div>
       </section>
 

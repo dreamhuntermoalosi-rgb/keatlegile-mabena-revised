@@ -229,30 +229,31 @@ export const BOOKS = [
 ];
 
 /**
- * Credibility & impact evidence — sourced only from documented facts.
- * No institutions, events, media appearances or metrics have been invented.
+ * "At a Glance" — the quick profile card on the homepage.
+ * Content provided directly by the client.
  */
-export const CREDIBILITY = {
-  highlights: [
-    {
-      icon: 'GraduationCap',
-      title: 'Master of Social Sciences (Cum Laude)',
-      detail: 'Population and Sustainable Development — NWU'
-    },
-    {
-      icon: 'Award',
-      title: 'Honours Bachelor of Social Science (Cum Laude)',
-      detail: 'Population Studies — NWU'
-    },
-    {
-      icon: 'BookOpen',
-      title: 'Published Author',
-      detail: 'Breaking the Chains & The Weight I Did Not Choose'
-    }
-  ],
-  note:
-    'Institutions spoken at, event photographs, media appearances and measurable impact indicators will be added as the brand grows.'
-};
+export const AT_A_GLANCE = [
+  {
+    icon: 'Mic',
+    title: 'Mentor & Speaker',
+    detail: 'Resilience, mental health, self-discovery, career progress, healing and grief'
+  },
+  {
+    icon: 'BookOpen',
+    title: 'Self-Published, Best-Selling Author',
+    detail: 'Breaking the Chains · The Weight I Didn\u2019t Choose: Healing, Rising and Becoming \u2014 launching 21 November 2026'
+  },
+  {
+    icon: 'GraduationCap',
+    title: 'Lecturer & PhD Candidate',
+    detail: 'Development Studies, UNISA'
+  },
+  {
+    icon: 'Award',
+    title: 'Academic Background',
+    detail: 'BSocSc in Population and Development Studies (cum laude) · BSocSc Honours in Population Studies (cum laude) · MSocSc in Population and Sustainable Development (with distinctions) \u2014 North-West University'
+  }
+];
 
 export const CORE_VALUES = [
   {

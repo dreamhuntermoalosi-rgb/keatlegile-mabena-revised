@@ -115,3 +115,59 @@ export const LETTERS: Letter[] = [
     format: 'doc'
   }
 ];
+
+/**
+ * Media preview for the homepage "Speaking Engagements, Media Features and Recognition" section.
+ * YouTube thumbnails are public (img.youtube.com) and the NWU article OG image is verified accessible.
+ */
+export interface MediaPreviewItem {
+  id: string;
+  type: 'article' | 'video' | 'social';
+  title: string;
+  source: string;
+  url: string;
+  image: string;
+}
+
+export const MEDIA_PREVIEW: MediaPreviewItem[] = [
+  {
+    id: 'mp1',
+    type: 'article',
+    title: 'NWU Alumnus: Unsung Hero',
+    source: 'NWU News',
+    url: 'https://news.nwu.ac.za/nwu-alumnus-unsung-hero',
+    image: 'https://news.nwu.ac.za/sites/news.nwu.ac.za/files/styles/news_photo_attached/public/files/attach/2022-07/Keatlegile-ICON.jpg?itok=oxdXiYBa'
+  },
+  {
+    id: 'mp2',
+    type: 'article',
+    title: 'Feature on Keatlegile Mabena',
+    source: 'Sunday World',
+    url: 'https://share.google/Sgk8HyT69s0xopoGV',
+    image: ''
+  },
+  {
+    id: 'mp3',
+    type: 'video',
+    title: 'Video Appearance',
+    source: 'YouTube',
+    url: 'https://youtu.be/be90J73qeKg',
+    image: 'https://img.youtube.com/vi/be90J73qeKg/hqdefault.jpg'
+  },
+  {
+    id: 'mp4',
+    type: 'video',
+    title: 'Video Appearance',
+    source: 'YouTube',
+    url: 'https://youtu.be/bFO_R_GLc48',
+    image: 'https://img.youtube.com/vi/bFO_R_GLc48/hqdefault.jpg'
+  },
+  {
+    id: 'mp5',
+    type: 'video',
+    title: 'Video Appearance',
+    source: 'YouTube',
+    url: 'https://youtu.be/VeHSfRh8Xjo',
+    image: 'https://img.youtube.com/vi/VeHSfRh8Xjo/hqdefault.jpg'
+  }
+];
