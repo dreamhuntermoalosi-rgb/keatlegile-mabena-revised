@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ArrowRight, CheckCircle2, Users, Mic, Award, Building2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Mic } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { IMAGES } from '../data/images';
@@ -9,19 +9,21 @@ export const Speaking: React.FC = () => {
   return (
     <>
       <SEO
-        title="Speaking & Keynotes | Keatlegile Mabena"
-        description="Conversations that move people. Keynote speaking, workshops, and panel sessions on healing, purpose, self-discovery, confidence, and mentorship."
-        keywords={['Keatlegile Mabena Speaking', 'Keynote Speaker', 'Corporate Speaker', 'Youth Empowerment Speaker']}
+        title="Speaking | Keatlegile Mabena"
+        description="From finding my voice to helping others find theirs. Speaking on mental health, grief, resilience, healing and personal growth for schools, universities, workplaces and communities."
+        keywords={['Keatlegile Mabena Speaking', 'Keynote Speaker', 'Mental Health Speaker', 'Resilience Speaker', 'Grief Speaker']}
         canonicalUrl="https://keatlegilemabena.co.za/speaking"
+        breadcrumbs={[{ label: 'Speaking', path: '/speaking' }]}
       />
 
       <Breadcrumbs items={[{ label: 'Speaking' }]} />
 
+      {/* Hero Header */}
       <section className="relative bg-[#7e2e19] text-white py-16 sm:py-20 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
-            alt="Speaking & Keynotes"
+            alt="Speaking"
             className="w-full h-full object-cover opacity-60 filter brightness-105 contrast-105 transform-gpu"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#5a1f10]/85 via-[#7e2e19]/60 to-[#5a1f10]/35" />
@@ -31,85 +33,72 @@ export const Speaking: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9a3820] border border-[#D4AF37]/40 rounded-sm text-xs font-semibold text-[#E2C45C] uppercase tracking-wider">
             <Mic className="w-3.5 h-3.5" />
-            <span>SPEAKING &amp; KEYNOTES</span>
+            <span>Speaking</span>
           </div>
-          <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold">
-            Conversations that move people
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold">
+            Speaking
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
-            Meaningful conversations that challenge perspectives, create reflection and inspire purposeful action.
+            From finding my voice to helping others find theirs.
           </p>
         </div>
       </section>
 
+      {/* Personal intro — speaking journey */}
       <section className="py-20 bg-white text-[#1C1C1C]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
-          <div className="max-w-3xl space-y-4">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
-              Conversations that create a shift
-            </h2>
-            <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
-              The right conversation can create a shift — a shift in perspective, a shift in confidence, and a shift in direction. Keatlegile speaks on the issues that sit at the intersection of personal transformation, purpose and professional growth.
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 space-y-6">
+          <div className="space-y-4 text-base sm:text-lg text-[#1C1C1C]/85 leading-relaxed">
+            <p>
+              My speaking journey began in high school. Back then, I was discovering the power of using my voice: standing before others, sharing ideas and learning how words can make people think, feel and see things differently. I could not have known then how much that early experience would shape the work I do today.
+            </p>
+            <p>
+              Over the years, that first spark has grown into a deeper purpose. I have developed from a young person learning to speak with confidence into a speaker who brings lived experience, reflection and care to conversations about mental health, grief, resilience, healing and personal growth. Today, I speak to schools, universities, workplaces, organisations and community groups, creating space for people to engage with subjects that are often difficult to talk about.
+            </p>
+            <p>
+              I know that an audience does not need polished words alone; it needs to feel that the speaker understands why the conversation matters. I draw on my own journey, my work in education and the stories people carry to make each talk thoughtful, relatable and grounded. My aim is for people to leave feeling seen, with a new perspective and a meaningful next step to consider.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="p-8 bg-[#F8F5EF] rounded-sm border-t-4 border-[#9a3820] space-y-4">
-              <h3 className="font-serif text-xl font-bold text-[#7e2e19]">Keynote Addresses</h3>
-              <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
-                Inspiring keynote addresses tailored for corporate conferences, institutional gatherings, and youth conventions.
-              </p>
-            </div>
-
-            <div className="p-8 bg-[#F8F5EF] rounded-sm border-t-4 border-[#D4AF37] space-y-4">
-              <h3 className="font-serif text-xl font-bold text-[#7e2e19]">Interactive Workshops</h3>
-              <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
-                Hands-on sessions focused on career readiness, confidence building, goal-setting, and purpose discovery.
-              </p>
-            </div>
-
-            <div className="p-8 bg-[#F8F5EF] rounded-sm border-t-4 border-[#9a3820] space-y-4">
-              <h3 className="font-serif text-xl font-bold text-[#7e2e19]">Panel &amp; Moderation</h3>
-              <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
-                Thought-provoking discussions on leadership, mental health, education, and social transformation.
-              </p>
-            </div>
-          </div>
-
+      {/* Core Speaking Topics */}
+      <section className="py-20 bg-[#F8F5EF] border-y-2 border-[#D4AF37]/30 text-[#1C1C1C]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 space-y-8">
           <div className="bg-[#7e2e19] text-white p-8 sm:p-10 rounded-sm space-y-6 border border-[#D4AF37]/30">
-            <h3 className="font-serif text-2xl font-bold text-[#E2C45C]">
-              Core Speaking Topics
-            </h3>
+            <h2 className="font-serif text-2xl font-bold text-[#E2C45C]">
+              Core speaking topics
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-white/90">
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />
-                <span>Healing &amp; Personal Transformation</span>
+                <span>Mental health &amp; wellbeing</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />
-                <span>Purpose &amp; Self-Discovery</span>
+                <span>Grief &amp; healing</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />
-                <span>Confidence &amp; Personal Growth</span>
+                <span>Resilience</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />
-                <span>Mentorship &amp; Guidance</span>
+                <span>Self-discovery &amp; identity</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />
-                <span>Leadership &amp; Development</span>
+                <span>Personal growth</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />
-                <span>Youth &amp; Empowerment</span>
+                <span>Career progress</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* CTA */}
       <section className="py-16 bg-[#F8F5EF] text-center border-t-2 border-[#D4AF37]">
         <div className="max-w-2xl mx-auto px-4 space-y-6">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
