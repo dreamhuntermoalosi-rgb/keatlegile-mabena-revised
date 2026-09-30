@@ -485,9 +485,6 @@ export const About: React.FC = () => {
                     <BookOpen className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#9a3820]">
-                      Published Works &amp; Literature
-                    </div>
                     <h3 className="font-serif text-base sm:text-lg font-bold text-[#7e2e19]">
                       Authored Books &amp; Publications
                     </h3>
