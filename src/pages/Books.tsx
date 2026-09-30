@@ -73,14 +73,34 @@ export const Books: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9a3820] border border-[#D4AF37]/40 rounded-sm text-xs font-semibold text-[#E2C45C] uppercase tracking-wider">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>AUTHORSHIP &amp; LITERARY WORKS</span>
+            <span>Authorship &amp; literary works</span>
           </div>
-          <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold leading-tight">
-            The bookshop
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+            Writing
           </h1>
           <p className="text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
-            Published works by Keatlegile Mabena. Order individual copies below, or reach out for school and organisational bulk purchases.
+            Words for the things we struggle to say.
           </p>
+        </div>
+      </section>
+
+      {/* Writing intro — author's personal reflection on writing */}
+      <section className="py-20 bg-white text-[#1C1C1C]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 space-y-6">
+          <div className="space-y-4 text-base sm:text-lg text-[#1C1C1C]/85 leading-relaxed">
+            <p>
+              I began writing because I wanted to bring light into dark spaces. There were experiences I struggled to name and questions I could not easily answer. I searched for words and guidance that might help me make sense of pain, identity and possibility. When I could not find the book I needed, I began writing it.
+            </p>
+            <p>
+              Published in 2019, <em>Breaking the Chains</em> grew from my lived experience and my desire to remind readers that their beginnings and hardships do not have to define their whole lives. Through reflections on resilience, identity and personal growth, the book invites readers to question the beliefs that keep them bound, recognise the strength they have already shown and imagine what may be possible beyond survival. I hope it offers not only encouragement, but a starting point for honest reflection and change.
+            </p>
+            <p>
+              My forthcoming book, <em>The Weight I Didn&rsquo;t Choose: Healing, Rising and Becoming</em>, is a collection of poetry and reflections shaped by the realities of grief, emotional pain and the burdens people carry without choosing. Some pain is difficult to explain, and some seasons leave us unsure of who we are becoming. I wrote this book to give those experiences room and language&mdash;to help readers feel less alone, reflect on what they carry and approach healing with patience and compassion.
+            </p>
+            <p>
+              <em>The Weight I Didn&rsquo;t Choose</em> is an invitation to meet yourself honestly, honour the distance you have travelled and believe that a painful chapter does not have to be the end of your story. Through both books, I hope readers find words that stay with them and the courage to take their next step.
+            </p>
+          </div>
         </div>
       </section>
 
