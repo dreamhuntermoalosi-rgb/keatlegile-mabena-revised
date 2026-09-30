@@ -1,17 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Compass, ArrowRight, CheckCircle2, Users, GraduationCap, Target, Building2, BookOpen } from 'lucide-react';
+import { Compass, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { IMAGES } from '../data/images';
+
+const MENTORSHIP_PILLARS = [
+  {
+    number: '1',
+    title: 'Identity and self-discovery',
+    description: 'Understand who you are, what matters to you and what you want your next chapter to look like.'
+  },
+  {
+    number: '2',
+    title: 'Emotional well-being and self-worth',
+    description: 'Make space to process difficult experiences and strengthen the way you see and value yourself.'
+  },
+  {
+    number: '3',
+    title: 'Healthy relationships and boundaries',
+    description: 'Recognise the boundaries, choices and relationship patterns that support your well-being and growth.'
+  },
+  {
+    number: '4',
+    title: 'Career clarity and personal direction',
+    description: 'Explore what you want from your career and identify practical steps towards greater clarity and progress.'
+  },
+  {
+    number: '5',
+    title: 'Accountability and forward movement',
+    description: 'Turn reflection into achievable action, with support to stay focused on the steps you choose.'
+  }
+];
 
 export const Mentorship: React.FC = () => {
   return (
     <>
       <SEO
-        title="Youth & Student Mentorship | Keatlegile Mabena"
-        description="Structured 1-on-1 and cohort mentorship tailored specifically for emerging leaders, university students, and motivated youth."
+        title="Mentorship | Keatlegile Mabena"
+        description="A thoughtful space to find your next step. One-on-one mentorship for people seeking clarity, confidence or direction in their personal or career lives."
         canonicalUrl="https://keatlegilemabena.co.za/mentorship"
+        breadcrumbs={[{ label: 'Mentorship', path: '/mentorship' }]}
       />
 
       <Breadcrumbs items={[{ label: 'Mentorship' }]} />
@@ -21,7 +50,7 @@ export const Mentorship: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
-            alt="Mentorship & Guidance"
+            alt="Mentorship"
             className="w-full h-full object-cover opacity-60 filter brightness-105 contrast-105 transform-gpu"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#5a1f10]/85 via-[#7e2e19]/60 to-[#5a1f10]/35" />
@@ -31,161 +60,98 @@ export const Mentorship: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9a3820] border border-[#D4AF37]/40 rounded-sm text-xs font-semibold text-[#E2C45C] uppercase tracking-wider">
             <Compass className="w-3.5 h-3.5" />
-            <span>YOUTH &amp; STUDENT MENTORSHIP</span>
+            <span>Mentorship</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold">
-            Structured guidance for emerging leaders
+            Mentorship
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
-            Targeted 1-on-1 and cohort mentorship helping young adults and university students build discipline, self-efficacy, and purposeful direction.
+            A thoughtful space to find your next step.
           </p>
         </div>
       </section>
 
-      {/* Primary Audience Definition */}
-      <section className="py-16 bg-white text-[#1C1C1C]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
-          
-          {/* Target Audience Banner */}
-          <div className="bg-[#F8F5EF] p-8 rounded-sm border-t-4 border-[#7e2e19] shadow-sm space-y-6">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#9a3820]">
-              <Target className="w-4 h-4 text-[#D4AF37]" />
-              <span>Primary Audience &amp; Focus Area</span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded border border-gray-200 space-y-2">
-                <div className="w-8 h-8 bg-[#7e2e19]/10 text-[#7e2e19] rounded flex items-center justify-center font-bold text-sm">
-                  01
-                </div>
-                <h3 className="font-serif font-bold text-[#7e2e19] text-base">University Students &amp; Scholars</h3>
-                <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
-                  Undergraduates and postgraduate scholars navigating academic rigor, personal discipline, and post-graduation direction.
-                </p>
-              </div>
+      {/* Personal intro */}
+      <section className="py-20 bg-white text-[#1C1C1C]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 space-y-6">
+          <div className="space-y-4 text-base sm:text-lg text-[#1C1C1C]/85 leading-relaxed">
+            <p>
+              My growth has never been mine alone. Along the way, people opened doors for me, offered opportunities and stood beside me when I could not yet see in myself what they saw. Their belief did not do the growing for me, but it helped me believe that growth was possible. Each opportunity became a chance to rise, learn and take another step forward.
+            </p>
+            <p>
+              That experience shapes the way I mentor. I want to offer others the kind of thoughtful support that can help them recognise their own potential, especially when uncertainty, grief, disappointment or self-doubt makes it hard to see a way ahead. My mentorship is for people who feel stuck, have lost confidence, are navigating change or want to make progress in their personal or career lives.
+            </p>
+            <p>
+              Together, we make space to understand what is happening, reconnect with your strengths and identify practical next steps. I will not hand you a ready-made life plan; I will walk alongside you as you work out what moving forward can look like for you. This is personal-development mentorship; a space for reflection, encouragement and accountability as you build a future that feels more purposeful and your own.
+            </p>
+          </div>
+        </div>
+      </section>
 
-              <div className="bg-white p-5 rounded border border-gray-200 space-y-2">
-                <div className="w-8 h-8 bg-[#D4AF37]/20 text-[#7e2e19] rounded flex items-center justify-center font-bold text-sm">
-                  02
-                </div>
-                <h3 className="font-serif font-bold text-[#7e2e19] text-base">High-Potential Youth &amp; Emerging Leaders</h3>
-                <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
-                  Young adults seeking structured accountability, value alignment, and emotional resilience to overcome internal constraints.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded border border-gray-200 space-y-2">
-                <div className="w-8 h-8 bg-[#7e2e19]/10 text-[#7e2e19] rounded flex items-center justify-center font-bold text-sm">
-                  03
-                </div>
-                <h3 className="font-serif font-bold text-[#7e2e19] text-base">Institutional Youth Cohorts</h3>
-                <p className="text-xs text-[#1C1C1C]/75 leading-relaxed">
-                  Schools, youth foundations, and bursary programs seeking customized cohort mentorship frameworks for their beneficiaries.
-                </p>
-              </div>
-            </div>
+      {/* Core Mentorship Pillars */}
+      <section className="py-20 bg-[#F8F5EF] border-y-2 border-[#D4AF37]/30 text-[#1C1C1C]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 space-y-12">
+          <div className="space-y-3">
+            <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
+              Core mentorship pillars
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
+              What we work through together
+            </h2>
           </div>
 
-          {/* Offerings Focus Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-            <div className="bg-[#F8F5EF] p-8 rounded-sm border-l-4 border-[#9a3820] space-y-6">
-              <h3 className="font-serif text-2xl font-bold text-[#7e2e19]">Core Mentorship Pillars</h3>
-              <ul className="space-y-4 text-sm text-[#1C1C1C]/85">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="block text-[#7e2e19] font-medium">Self-Efficacy &amp; Mindset Transformation</strong>
-                    <span className="text-xs text-[#1C1C1C]/70">Dismantling internal fear, self-doubt, and past constraints.</span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="block text-[#7e2e19] font-medium">Academic &amp; Personal Discipline</strong>
-                    <span className="text-xs text-[#1C1C1C]/70">Establishing consistent routines, focus, and time stewardship.</span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="block text-[#7e2e19] font-medium">Ethical Leadership &amp; Values</strong>
-                    <span className="text-xs text-[#1C1C1C]/70">Cultivating integrity, community responsibility, and clear personal ethics.</span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="block text-[#7e2e19] font-medium">Sustained Accountability</strong>
-                    <span className="text-xs text-[#1C1C1C]/70">Structured check-ins to measure progress and maintain forward momentum.</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-[#7e2e19] text-white p-8 rounded-sm space-y-6 flex flex-col justify-between border border-[#D4AF37]/30 shadow-xl">
-              <div className="space-y-4">
-                <div className="text-xs font-bold uppercase tracking-widest text-[#E2C45C]">Apply for Mentorship</div>
-                <h3 className="font-serif text-2xl font-bold text-white">Join the Next Mentorship Cohort</h3>
-                <p className="text-sm text-white/85 leading-relaxed">
-                  Mentorship with Keatlegile Mabena begins with an initial background review to understand your personal goals, current challenges, and growth objectives.
-                </p>
-                <div className="pt-2 text-xs text-[#E2C45C] font-medium">
-                  Available as 1-on-1 virtual sessions or institutional group cohorts.
-                </div>
-              </div>
-              <Link
-                to="/book-keatlegile"
-                className="px-6 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] shadow-md"
+          <div className="space-y-6">
+            {MENTORSHIP_PILLARS.map((pillar) => (
+              <div
+                key={pillar.number}
+                className="bg-white p-6 sm:p-7 rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all flex flex-col sm:flex-row gap-5"
               >
-                <span>Submit Mentorship Request</span>
-                <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
-              </Link>
-            </div>
+                <div className="w-12 h-12 shrink-0 bg-[#7e2e19] text-[#E2C45C] rounded-full flex items-center justify-center font-serif font-bold text-lg">
+                  {pillar.number}
+                </div>
+                <div className="space-y-1.5 flex-1">
+                  <h3 className="font-serif text-lg font-bold text-[#7e2e19] leading-snug">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-sm text-[#1C1C1C]/75 leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who this mentorship is for */}
+      <section className="py-20 bg-white text-[#1C1C1C]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 space-y-6">
+          <div className="space-y-3">
+            <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
+              Who this mentorship is for
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
+              You don&rsquo;t need to have everything figured out
+            </h2>
+          </div>
+          <div className="space-y-4 text-base text-[#1C1C1C]/85 leading-relaxed">
+            <p>
+              This one-on-one mentorship is for people seeking greater clarity, confidence or direction in their personal or career lives. You may be rebuilding your self-belief, working through a difficult chapter, strengthening your boundaries, considering a career change or trying to follow through on goals that matter to you.
+            </p>
+            <p>
+              You do not need to have everything figured out before you begin. Each online, 60-minute session is tailored to your needs, goals and challenges.
+            </p>
           </div>
 
-          {/* Offerings Audience Delineation Summary */}
-          <div className="pt-8 border-t border-gray-200 space-y-6">
-            <h3 className="font-serif text-xl font-bold text-[#7e2e19] text-center">
-              Clear Audience Alignment Across Keatlegile Mabena's Offerings
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-              <div className="p-4 bg-gray-50 border border-gray-200 rounded space-y-1">
-                <div className="font-bold text-[#7e2e19] flex items-center gap-1.5">
-                  <Users className="w-4 h-4 text-[#D4AF37]" />
-                  <span>Keynote Speaking</span>
-                </div>
-                <div className="text-gray-600 font-medium">Primary Audience:</div>
-                <div className="text-gray-500">Corporates, Universities &amp; Summit Organisers</div>
-              </div>
-
-              <div className="p-4 bg-gray-50 border border-gray-200 rounded space-y-1">
-                <div className="font-bold text-[#7e2e19] flex items-center gap-1.5">
-                  <GraduationCap className="w-4 h-4 text-[#D4AF37]" />
-                  <span>Mentorship</span>
-                </div>
-                <div className="text-gray-600 font-medium">Primary Audience:</div>
-                <div className="text-gray-500">Youth, University Students &amp; Emerging Leaders</div>
-              </div>
-
-              <div className="p-4 bg-gray-50 border border-gray-200 rounded space-y-1">
-                <div className="font-bold text-[#7e2e19] flex items-center gap-1.5">
-                  <BookOpen className="w-4 h-4 text-[#D4AF37]" />
-                  <span>Authorship</span>
-                </div>
-                <div className="text-gray-600 font-medium">Primary Audience:</div>
-                <div className="text-gray-500">Individual Readers, Libraries &amp; Book Clubs</div>
-              </div>
-
-              <div className="p-4 bg-gray-50 border border-gray-200 rounded space-y-1">
-                <div className="font-bold text-[#7e2e19] flex items-center gap-1.5">
-                  <Building2 className="w-4 h-4 text-[#D4AF37]" />
-                  <span>Workshops</span>
-                </div>
-                <div className="text-gray-600 font-medium">Primary Audience:</div>
-                <div className="text-gray-500">Corporate Teams &amp; Educational Faculties</div>
-              </div>
-            </div>
+          <div className="pt-4">
+            <Link
+              to="/book-keatlegile?service=mentorship"
+              className="px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 inline-flex items-center gap-2"
+            >
+              <span>Apply for mentorship</span>
+              <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
+            </Link>
           </div>
-
         </div>
       </section>
     </>
