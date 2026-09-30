@@ -212,7 +212,7 @@ export const Navbar: React.FC = () => {
                     `block px-3 py-2 rounded ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
                   }
                 >
-                  About Keatlegile
+                  About Me
                 </NavLink>
 
                 <div className="pt-2 pb-1 text-[11px] font-bold uppercase tracking-wider text-[#E2C45C] px-3">

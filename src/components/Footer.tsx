@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-xs">
               {[
-                { name: 'About Keatlegile', path: '/about' },
+                { name: 'About Me', path: '/about' },
                 { name: 'Speaking & Keynotes', path: '/speaking' },
                 { name: 'Books & Authorship', path: '/books' },
                 { name: 'Mentorship', path: '/mentorship' },

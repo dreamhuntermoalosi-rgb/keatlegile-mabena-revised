@@ -142,7 +142,7 @@ export const About: React.FC = () => {
   return (
     <>
       <SEO
-        title="About Keatlegile Mabena | Personal & Professional Profile"
+        title="About Me | Keatlegile Mabena"
         description="Official profile of Keatlegile Mabena — Master of Social Sciences (NWU), Cum Laude graduate, Author, Speaker, and Mentor."
         keywords={[
           'Keatlegile Mabena',
@@ -285,26 +285,30 @@ export const About: React.FC = () => {
                 </div>
               </div>
 
-              {/* Core Values */}
-              <div className="bg-[#7e2e19] text-white p-6 rounded-sm border border-[#D4AF37]/40 space-y-4 shadow-lg">
-                <h3 className="font-serif text-xl font-bold text-[#E2C45C] border-b-2 border-white/10 pb-2">
-                  Foundational Values
-                </h3>
-                {/* Stacked on mobile, horizontal grid on tablet+ */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-white/90">
-                  {CORE_VALUES.map((val, idx) => (
-                    <div key={idx} className="space-y-1 sm:flex sm:flex-col sm:gap-1">
-                      <div className="font-bold text-[#E2C45C] flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                        <span>{val.name}</span>
-                      </div>
-                      <p className="text-[11px] text-white/75 pl-6 sm:pl-6">{val.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOUNDATIONAL VALUES — full-width horizontal section */}
+      <section className="py-16 bg-[#7e2e19] text-white border-y-2 border-[#D4AF37]/40">
+        <div className="px-4 sm:px-8 space-y-8">
+          <div className="max-w-7xl mx-auto">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#E2C45C] border-b-2 border-white/10 pb-3">
+              Foundational Values
+            </h3>
+          </div>
+          {/* Full-width horizontal grid — 5 values across on desktop */}
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-xs text-white/90">
+            {CORE_VALUES.map((val, idx) => (
+              <div key={idx} className="space-y-1.5">
+                <div className="font-bold text-[#E2C45C] flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                  <span>{val.name}</span>
+                </div>
+                <p className="text-[11px] text-white/75 pl-6 leading-relaxed">{val.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
