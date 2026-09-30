@@ -114,17 +114,6 @@ export const Navbar: React.FC = () => {
             </div>
 
             <NavLink
-              to="/impact"
-              className={({ isActive }) =>
-                `text-xs font-semibold tracking-wider uppercase transition-colors py-1.5 ${
-                  isActive ? 'text-[#E2C45C] font-bold border-b-2 border-[#E2C45C]' : 'text-white/90 hover:text-[#E2C45C]'
-                }`
-              }
-            >
-              Impact
-            </NavLink>
-
-            <NavLink
               to="/media"
               className={({ isActive }) =>
                 `text-xs font-semibold tracking-wider uppercase transition-colors py-1.5 ${
@@ -255,15 +244,6 @@ export const Navbar: React.FC = () => {
                   }
                 >
                   • Mentorship
-                </NavLink>
-
-                <NavLink
-                  to="/impact"
-                  className={({ isActive }) =>
-                    `block px-3 py-2 rounded mt-2 ${isActive ? 'bg-[#9a3820] text-[#E2C45C] font-bold border-l-4 border-[#D4AF37]' : 'text-white/90 hover:bg-white/10'}`
-                  }
-                >
-                  Social Impact
                 </NavLink>
 
                 <NavLink

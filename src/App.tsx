@@ -11,7 +11,6 @@ import { About } from './pages/About';
 import { Speaking } from './pages/Speaking';
 import { Mentorship } from './pages/Mentorship';
 import { Books } from './pages/Books';
-import { Impact } from './pages/Impact';
 import { Testimonials } from './pages/Testimonials';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
@@ -34,7 +33,7 @@ export default function App() {
               <Route path="/books" element={<Books />} />
               <Route path="/insights" element={<Navigate to="/" replace />} />
               <Route path="/insights/:slug" element={<Navigate to="/" replace />} />
-              <Route path="/impact" element={<Impact />} />
+              <Route path="/impact" element={<Navigate to="/" replace />} />
               <Route path="/testimonials" element={<Testimonials />} />
               <Route path="/media" element={<Media />} />
               <Route path="/events" element={<Navigate to="/" replace />} />

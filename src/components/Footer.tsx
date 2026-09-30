@@ -84,7 +84,6 @@ export const Footer: React.FC = () => {
                 { name: 'Speaking & Keynotes', path: '/speaking' },
                 { name: 'Books & Authorship', path: '/books' },
                 { name: 'Mentorship', path: '/mentorship' },
-                { name: 'Social Impact', path: '/impact' },
                 { name: 'Media', path: '/media' },
                 { name: 'Testimonials', path: '/testimonials' }
               ].map((link) => (
