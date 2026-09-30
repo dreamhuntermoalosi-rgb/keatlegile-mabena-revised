@@ -86,7 +86,7 @@ export const Books: React.FC = () => {
 
       {/* Writing intro — author's personal reflection on writing */}
       <section className="py-20 bg-white text-[#1C1C1C]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 space-y-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="space-y-4 text-base sm:text-lg text-[#1C1C1C]/85 leading-relaxed">
             <p>
               I began writing because I wanted to bring light into dark spaces. There were experiences I struggled to name and questions I could not easily answer. I searched for words and guidance that might help me make sense of pain, identity and possibility. When I could not find the book I needed, I began writing it.

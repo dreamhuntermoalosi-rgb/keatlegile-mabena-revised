@@ -73,7 +73,7 @@ export const Mentorship: React.FC = () => {
 
       {/* Personal intro */}
       <section className="py-20 bg-white text-[#1C1C1C]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 space-y-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="space-y-4 text-base sm:text-lg text-[#1C1C1C]/85 leading-relaxed">
             <p>
               My growth has never been mine alone. Along the way, people opened doors for me, offered opportunities and stood beside me when I could not yet see in myself what they saw. Their belief did not do the growing for me, but it helped me believe that growth was possible. Each opportunity became a chance to rise, learn and take another step forward.
@@ -125,7 +125,7 @@ export const Mentorship: React.FC = () => {
 
       {/* Who this mentorship is for */}
       <section className="py-20 bg-white text-[#1C1C1C]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 space-y-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
               Who this mentorship is for

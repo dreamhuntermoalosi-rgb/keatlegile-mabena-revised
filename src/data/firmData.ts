@@ -201,7 +201,7 @@ export const BOOKS = [
     galleryImages: [IMAGES.breakingChainsCover] as string[],
     price: 300,
     priceLabel: 'R300',
-    description: 'Published in 2019, Breaking the Chains grew from lived experience and a desire to remind readers that their beginnings and hardships do not have to define their whole lives. Through reflections on resilience, identity and personal growth, the book invites readers to question the beliefs that keep them bound, recognise the strength they have already shown and imagine what may be possible beyond survival.',
+    description: 'Published in 2019. Reflections on resilience, identity and personal growth for anyone questioning the beliefs that keep them bound.',
     launchDate: null as string | null,
     orderLabel: 'Grab Your Copy',
     orderUrl: 'https://order.keatlegilemabena.co.za/product/breaking-the-chains-paperback/',

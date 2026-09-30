@@ -46,7 +46,7 @@ export const Speaking: React.FC = () => {
 
       {/* Personal intro — speaking journey */}
       <section className="py-20 bg-white text-[#1C1C1C]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 space-y-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="space-y-4 text-base sm:text-lg text-[#1C1C1C]/85 leading-relaxed">
             <p>
               My speaking journey began in high school. Back then, I was discovering the power of using my voice: standing before others, sharing ideas and learning how words can make people think, feel and see things differently. I could not have known then how much that early experience would shape the work I do today.
