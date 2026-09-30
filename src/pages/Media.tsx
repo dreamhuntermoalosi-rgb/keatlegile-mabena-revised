@@ -72,7 +72,7 @@ export const Media: React.FC = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {MEDIA_VIDEOS.map((video, idx) => (
               <motion.div
                 key={video.id}
@@ -80,7 +80,7 @@ export const Media: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 overflow-hidden shadow-sm hover:shadow-lg transition-all"
+                className="bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col h-full"
               >
                 {/* Responsive YouTube embed */}
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
@@ -93,14 +93,16 @@ export const Media: React.FC = () => {
                     allowFullScreen
                   />
                 </div>
-                <div className="p-5 space-y-2">
-                  <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#9a3820]">
-                    <Youtube className="w-3.5 h-3.5" />
-                    <span>YouTube</span>
+                <div className="p-5 flex-1 flex flex-col justify-between gap-3">
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#9a3820]">
+                      <Youtube className="w-3.5 h-3.5" />
+                      <span>YouTube</span>
+                    </div>
+                    <h3 className="font-sans text-sm font-semibold text-[#1C1C1C] leading-snug line-clamp-3">
+                      {video.title}
+                    </h3>
                   </div>
-                  <h3 className="font-serif text-base font-bold text-[#1C1C1C] leading-tight">
-                    {video.title}
-                  </h3>
                 </div>
               </motion.div>
             ))}
@@ -120,7 +122,7 @@ export const Media: React.FC = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {articles.map((article, idx) => (
               <motion.a
                 key={article.id}
@@ -131,14 +133,14 @@ export const Media: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-white p-6 rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all flex flex-col justify-between gap-4 group"
+                className="bg-white p-6 rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all flex flex-col justify-between gap-4 group h-full"
               >
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#9a3820]">
                     <Newspaper className="w-3.5 h-3.5" />
                     <span>{article.source}</span>
                   </div>
-                  <h3 className="font-serif text-base font-bold text-[#1C1C1C] leading-tight group-hover:text-[#7e2e19] transition-colors">
+                  <h3 className="font-sans text-sm font-semibold text-[#1C1C1C] leading-snug group-hover:text-[#7e2e19] transition-colors line-clamp-3">
                     {article.title}
                   </h3>
                 </div>
@@ -164,7 +166,7 @@ export const Media: React.FC = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {socials.map((post, idx) => (
               <motion.a
                 key={post.id}
@@ -175,14 +177,14 @@ export const Media: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-[#F8F5EF] p-6 rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all flex flex-col justify-between gap-4 group"
+                className="bg-[#F8F5EF] p-6 rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all flex flex-col justify-between gap-4 group h-full"
               >
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#9a3820]">
                     <Twitter className="w-3.5 h-3.5" />
                     <span>{post.source}</span>
                   </div>
-                  <h3 className="font-serif text-base font-bold text-[#1C1C1C] leading-tight group-hover:text-[#7e2e19] transition-colors">
+                  <h3 className="font-sans text-sm font-semibold text-[#1C1C1C] leading-snug group-hover:text-[#7e2e19] transition-colors line-clamp-3">
                     {post.title}
                   </h3>
                 </div>

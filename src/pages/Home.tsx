@@ -270,7 +270,7 @@ const MediaCarousel: React.FC = () => {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all overflow-hidden flex flex-col group block"
+                  className="bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 shadow-sm hover:shadow-md hover:border-[#D4AF37] transition-all overflow-hidden flex flex-col h-full group block"
                 >
                   {/* Image / thumbnail */}
                   {item.image ? (
@@ -298,12 +298,12 @@ const MediaCarousel: React.FC = () => {
                   )}
 
                   {/* Card body */}
-                  <div className="p-5 space-y-2 flex-1 flex flex-col justify-between gap-3">
-                    <div className="space-y-1">
+                  <div className="p-5 flex-1 flex flex-col justify-between gap-3">
+                    <div className="space-y-1.5">
                       <span className="text-[10px] font-bold uppercase tracking-widest text-[#9a3820]">
                         {item.source}
                       </span>
-                      <h3 className="font-serif text-base font-bold text-[#1C1C1C] leading-tight group-hover:text-[#7e2e19] transition-colors">
+                      <h3 className="font-sans text-sm font-semibold text-[#1C1C1C] leading-snug group-hover:text-[#7e2e19] transition-colors line-clamp-3">
                         {item.title}
                       </h3>
                     </div>
