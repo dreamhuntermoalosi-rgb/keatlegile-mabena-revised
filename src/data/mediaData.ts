@@ -21,13 +21,6 @@ export interface MediaVideo {
 /** Written articles & social posts referencing Keatlegile */
 export const MEDIA_ARTICLES: MediaArticle[] = [
   {
-    id: 'a1',
-    title: 'Feature on Keatlegile Mabena',
-    source: 'Sunday World',
-    url: 'https://share.google/Sgk8HyT69s0xopoGV',
-    type: 'article'
-  },
-  {
     id: 'a2',
     title: 'NWU Alumnus: Unsung Hero',
     source: 'NWU News',
@@ -69,17 +62,22 @@ export const MEDIA_VIDEOS: MediaVideo[] = [
   {
     id: 'v1',
     youtubeId: 'be90J73qeKg',
-    title: 'Keatlegile Mabena — Video Appearance'
+    title: 'EP.107 Keatlegile Mabena on losing his mom in the hands of an ex who refused to leave them alone'
   },
   {
     id: 'v2',
     youtubeId: 'bFO_R_GLc48',
-    title: 'Keatlegile Mabena — Video Appearance'
+    title: 'I discovered my mother\u2019s butchered body (Part 2) | Unpacked with - Episode 91 | Season 3'
   },
   {
     id: 'v3',
     youtubeId: 'VeHSfRh8Xjo',
-    title: 'Keatlegile Mabena — Video Appearance'
+    title: 'I discovered my mother\u2019s butchered body (Part 1) | Unpacked with Relebogile - Episode 90 | Season 3'
+  },
+  {
+    id: 'v4',
+    youtubeId: '3WJBjAaEhbw',
+    title: 'Keatlegile Mabena on rising above the trauma after finding mom butchered'
   }
 ];
 
@@ -139,17 +137,9 @@ export const MEDIA_PREVIEW: MediaPreviewItem[] = [
     image: 'https://news.nwu.ac.za/sites/news.nwu.ac.za/files/styles/news_photo_attached/public/files/attach/2022-07/Keatlegile-ICON.jpg?itok=oxdXiYBa'
   },
   {
-    id: 'mp2',
-    type: 'article',
-    title: 'Feature on Keatlegile Mabena',
-    source: 'Sunday World',
-    url: 'https://share.google/Sgk8HyT69s0xopoGV',
-    image: ''
-  },
-  {
     id: 'mp3',
     type: 'video',
-    title: 'Video Appearance',
+    title: 'EP.107 Keatlegile Mabena on losing his mom in the hands of an ex who refused to leave them alone',
     source: 'YouTube',
     url: 'https://youtu.be/be90J73qeKg',
     image: 'https://img.youtube.com/vi/be90J73qeKg/hqdefault.jpg'
@@ -157,7 +147,7 @@ export const MEDIA_PREVIEW: MediaPreviewItem[] = [
   {
     id: 'mp4',
     type: 'video',
-    title: 'Video Appearance',
+    title: 'I discovered my mother\u2019s butchered body (Part 2) | Unpacked with - Episode 91 | Season 3',
     source: 'YouTube',
     url: 'https://youtu.be/bFO_R_GLc48',
     image: 'https://img.youtube.com/vi/bFO_R_GLc48/hqdefault.jpg'
@@ -165,9 +155,17 @@ export const MEDIA_PREVIEW: MediaPreviewItem[] = [
   {
     id: 'mp5',
     type: 'video',
-    title: 'Video Appearance',
+    title: 'I discovered my mother\u2019s butchered body (Part 1) | Unpacked with Relebogile - Episode 90 | Season 3',
     source: 'YouTube',
     url: 'https://youtu.be/VeHSfRh8Xjo',
     image: 'https://img.youtube.com/vi/VeHSfRh8Xjo/hqdefault.jpg'
+  },
+  {
+    id: 'mp6',
+    type: 'video',
+    title: 'Keatlegile Mabena on rising above the trauma after finding mom butchered',
+    source: 'YouTube',
+    url: 'https://youtu.be/3WJBjAaEhbw',
+    image: 'https://img.youtube.com/vi/3WJBjAaEhbw/hqdefault.jpg'
   }
 ];

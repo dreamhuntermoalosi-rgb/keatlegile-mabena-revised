@@ -237,33 +237,23 @@ export const About: React.FC = () => {
             <div className="lg:col-span-7 space-y-6">
               <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase flex items-center gap-2 border-b-2 border-gray-100 pb-2">
                 <BookOpen className="w-4 h-4 text-[#D4AF37]" />
-                <span>Biographical Foundations</span>
+                <span>About Keatlegile Mabena</span>
               </div>
               
               <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19] leading-snug">
-                From Lived Experience to Academic Distinction and Impact.
+                From Shakung Village to a life of healing, growth and purpose.
               </h2>
               
               <div className="space-y-4 text-sm sm:text-base text-[#1C1C1C]/85 leading-relaxed">
                 <p>
-                  From an early age, Keatlegile Mabena experienced firsthand the socio-economic challenges, structural limitations, and personal uncertainties that confront youth across under-resourced communities.
+                  I&rsquo;m Keatlegile Mabena, a South African self-published, best-selling author, speaker and mentor, born and raised in Shakung, North-West. Through my mentorship and speaking, I create space for honest conversations about resilience, self-discovery, career progress, healing and grief. I support people as they make sense of what they have lived through and find direction for what comes next.
                 </p>
                 <p>
-                  Rather than allowing circumstances to define his trajectory, Keatlegile channeled these realities into rigorous academic discipline and leadership. At <strong>North-West University</strong>, he earned his <strong>Bachelor of Social Science</strong> with Distinction (<em>Cum Laude</em>, 2017), his <strong>Honours Bachelor of Social Science</strong> with Distinction (<em>Cum Laude</em>, 2018), and subsequently completed his <strong>Master of Social Sciences in Population and Sustainable Development</strong> (2020), supported by the prestigious <strong>National Research Foundation (NRF) Scarce Skills Masters Scholarship</strong>.
+                  My books reflect that journey. In <em>Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence</em>, I write about facing pain and recognising the possibility of change. My forthcoming book, <em>The Weight I Didn&rsquo;t Choose: Healing, Rising and Becoming</em>, is for those learning to live beyond the grief, wounds and burdens they never chose.
                 </p>
                 <p>
-                  In addition to his academic research and lecturing assistantships at North-West University, Keatlegile expanded his qualifications with accredited <strong>Assessor (NQF Level 5)</strong> and <strong>Moderator (NQF Level 6)</strong> certifications, grounding his work in professional training, curriculum standards, and outcomes-based facilitation.
+                  Alongside this work, I&rsquo;m a lecturer in Development Studies at the University of South Africa (UNISA) and a PhD candidate in Development Studies. I hold a Bachelor of Social Science in Population and Development Studies (cum laude), a Bachelor of Social Sciences Honours in Population Studies (cum laude), and a Master of Social Science in Population and Sustainable Development (with distinctions) from North-West University. In 2022, I was named a Sunday World Unsung Hero in Youth in Education and Academia.
                 </p>
-                <p>
-                  Today, through his books, keynote addresses, and structured mentorship programs, Keatlegile Mabena empowers individuals, students, and leaders to move from uncertainty to clarity, confidence, and purposeful achievement.
-                </p>
-              </div>
-
-              {/* Quote Box */}
-              <div className="pt-4 border-t-2 border-black/10">
-                <blockquote className="font-serif text-lg italic text-[#7e2e19] border-l-4 border-[#D4AF37] pl-4 py-2 bg-[#F8F5EF] rounded-r-sm">
-                  "Healing, self-discovery, purpose, confidence, mentorship, and institutional discipline sit at the heart of everything we build."
-                </blockquote>
               </div>
             </div>
 
@@ -322,7 +312,7 @@ export const About: React.FC = () => {
               CURRICULUM VITAE &amp; ACCREDITATIONS
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19]">
-              Qualifications, Positions &amp; Academic Awards
+              Qualifications, positions &amp; academic awards
             </h2>
             <p className="text-sm text-[#1C1C1C]/75">
               Click the accordions below to review official academic degrees, professional assessor/moderator credentials, awards, fellowships, and authored publications.
@@ -577,7 +567,7 @@ export const About: React.FC = () => {
               CORE DOMAINS
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19]">
-              Areas of Focus &amp; Practical Execution
+              Areas of focus &amp; practical execution
             </h2>
             <p className="text-sm text-[#1C1C1C]/75">
               Connecting Population and Development Studies expertise with high-impact youth mentorship, authorship, and speaking.
@@ -702,7 +692,7 @@ export const About: React.FC = () => {
       <section className="py-16 bg-[#7e2e19] text-white text-center border-t-2 border-[#D4AF37]/40">
         <div className="max-w-3xl mx-auto px-4 space-y-6">
           <h2 className="font-serif text-3xl font-bold text-[#E2C45C]">
-            Invite Keatlegile Mabena to Speak or Collaborate
+            Invite Keatlegile Mabena to speak or collaborate
           </h2>
           <p className="text-sm text-white/80">
             Available for keynote addresses, campus masterclasses, corporate empowerment sessions, and structured mentorship programs.

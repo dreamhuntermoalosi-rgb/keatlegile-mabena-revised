@@ -64,7 +64,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight max-w-4xl mx-auto">
-            Words of Transformation &amp; Hope
+            Words of transformation &amp; hope
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed font-light">
@@ -332,7 +332,7 @@ export const Testimonials: React.FC = () => {
       <section className="bg-[#7e2e19] text-white py-14 px-4 sm:px-8 border-t-4 border-[#D4AF37]/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">
-            Ready to Begin Your Own Journey of Purpose?
+            Ready to begin your own journey of purpose?
           </h2>
           <p className="text-xs sm:text-sm text-white/90 max-w-xl mx-auto mb-8 leading-relaxed">
             Discover Keatlegile Mabena's best-selling book <em>Breaking the Chains</em> or book a keynote address or mentorship session.

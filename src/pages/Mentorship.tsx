@@ -34,7 +34,7 @@ export const Mentorship: React.FC = () => {
             <span>YOUTH &amp; STUDENT MENTORSHIP</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold">
-            Structured Guidance for Emerging Leaders.
+            Structured guidance for emerging leaders
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
             Targeted 1-on-1 and cohort mentorship helping young adults and university students build discipline, self-efficacy, and purposeful direction.

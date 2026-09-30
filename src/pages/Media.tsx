@@ -52,7 +52,7 @@ export const Media: React.FC = () => {
             <span>MEDIA &amp; PRESS</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-            Features, Coverage &amp; Appearances
+            Features, coverage &amp; appearances
           </h1>
           <p className="text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
             A collection of media features, press coverage, and video appearances of Keatlegile Mabena across publications and platforms.
@@ -68,7 +68,7 @@ export const Media: React.FC = () => {
               VIDEO APPEARANCES
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
-              Watch &amp; Listen
+              Watch &amp; listen
             </h2>
           </div>
 
@@ -116,7 +116,7 @@ export const Media: React.FC = () => {
               PRESS &amp; FEATURES
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
-              In the News
+              In the news
             </h2>
           </div>
 
@@ -160,7 +160,7 @@ export const Media: React.FC = () => {
               SOCIAL FEATURES
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
-              Featured on Social
+              Featured on social
             </h2>
           </div>
 
@@ -200,7 +200,7 @@ export const Media: React.FC = () => {
       <section className="py-16 bg-[#7e2e19] text-white text-center border-t-2 border-[#D4AF37]">
         <div className="max-w-3xl mx-auto px-4 space-y-6">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-            Engage Keatlegile Mabena for Your Next Feature
+            Engage Keatlegile Mabena for your next feature
           </h2>
           <p className="text-sm text-white/80 max-w-xl mx-auto leading-relaxed">
             For media enquiries, interviews, or speaking engagements, get in touch directly.

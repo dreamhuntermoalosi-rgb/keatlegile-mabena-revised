@@ -34,7 +34,7 @@ export const Speaking: React.FC = () => {
             <span>SPEAKING &amp; KEYNOTES</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold">
-            Conversations That Move People.
+            Conversations that move people
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
             Meaningful conversations that challenge perspectives, create reflection and inspire purposeful action.
@@ -46,7 +46,7 @@ export const Speaking: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="max-w-3xl space-y-4">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
-              Conversations That Create a Shift
+              Conversations that create a shift
             </h2>
             <p className="text-base text-[#1C1C1C]/80 leading-relaxed">
               The right conversation can create a shift — a shift in perspective, a shift in confidence, and a shift in direction. Keatlegile speaks on the issues that sit at the intersection of personal transformation, purpose and professional growth.

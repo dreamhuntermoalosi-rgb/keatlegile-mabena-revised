@@ -224,7 +224,7 @@ const MediaCarousel: React.FC = () => {
               SPEAKING ENGAGEMENTS, MEDIA FEATURES &amp; RECOGNITION
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
-              In the Public Eye
+              In the public eye
             </h2>
             <div className="w-16 h-1 bg-[#D4AF37] rounded-full" />
           </div>
@@ -501,23 +501,16 @@ export const Home: React.FC = () => {
             >
               <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase flex items-center gap-2">
                 <span className="w-6 h-0.5 bg-[#9a3820]" />
-                <span>ABOUT KEATLEGILE MABENA</span>
+                <span>About Keatlegile Mabena</span>
               </div>
 
               <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C] leading-tight">
-                From Shakung Village to a Life of Service.
+                From Shakung Village to a life of service
               </h2>
 
-              {/* Journey intro (does NOT repeat qualifications) */}
               <div className="space-y-4 text-base text-[#1C1C1C]/80 leading-relaxed">
                 <p>
-                  Keatlegile Mabena is a South African speaker, author and mentor. His work grew from lived experience, education and a desire to help others rise beyond difficult beginnings.
-                </p>
-                <p>
-                  Growing up in Shakung Village in North-West shaped an early understanding of resilience, possibility and transformation. He holds a Master of Social Sciences (Cum Laude) from the North-West University.
-                </p>
-                <p className="font-medium text-[#7e2e19] pt-1">
-                  What makes his perspective distinctive is the combination of lived experience, academic credibility and authorship — connecting human transformation with practical guidance.
+                  I grew up in Shakung Village, carrying experiences that could have narrowed my sense of what was possible. Today, I&rsquo;m a speaker, author and mentor, using my voice and lived experience to open honest conversations about mental health, resilience, grief and growth.
                 </p>
               </div>
 
@@ -526,7 +519,7 @@ export const Home: React.FC = () => {
                   to="/about"
                   className="px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 inline-flex items-center gap-2"
                 >
-                  <span>Read Full Biography</span>
+                  <span>Read full biography</span>
                   <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
                 </Link>
               </div>
@@ -673,7 +666,7 @@ export const Home: React.FC = () => {
               Featured Book
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
-              A Book Worth Reading
+              A book worth reading
             </h2>
             <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full" />
           </div>
@@ -700,7 +693,7 @@ export const Home: React.FC = () => {
               TESTIMONIALS
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
-              Words From Readers &amp; Audiences
+              Words from readers &amp; audiences
             </h2>
             <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full" />
           </div>
