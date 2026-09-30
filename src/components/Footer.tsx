@@ -31,16 +31,16 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-12 border-b-2 border-white/10">
-          {/* Column 1: Brand Identity */}
+          {/* Column 1: Brand Identity + Social */}
           <div className="space-y-4">
             <Logo variant="dark" size="md" />
             <p className="text-xs text-white/75 leading-relaxed pt-2">
               Speaker, Author and Mentor helping people move toward healing, clarity and purposeful action.
             </p>
 
-            {/* Social Icons Container */}
+            {/* Social Icons */}
             <div className="pt-2">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-[#E2C45C] mb-2">Connect On Social</div>
+              <div className="text-[10px] font-bold uppercase tracking-wider text-[#E2C45C] mb-2">Follow</div>
               <div className="flex items-center gap-3">
                 <a
                   href={FIRM_DETAILS.social.instagram}
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Explore */}
+          {/* Column 2: Explore (nav links) */}
           <div className="space-y-4">
             <h3 className="font-serif text-lg text-[#E2C45C] font-semibold tracking-wider relative inline-block after:absolute after:-bottom-1 after:left-0 after:w-8 after:h-0.5 after:bg-[#D4AF37]">
               EXPLORE
@@ -100,41 +100,34 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Connect & Contact */}
+          {/* Column 3: Contact details */}
           <div className="space-y-4">
             <h3 className="font-serif text-lg text-[#E2C45C] font-semibold tracking-wider relative inline-block after:absolute after:-bottom-1 after:left-0 after:w-8 after:h-0.5 after:bg-[#D4AF37]">
-              CONNECT
+              CONTACT
             </h3>
-            <ul className="space-y-2.5 text-xs">
-              {[
-                { name: 'Book for Speaking', path: '/speaking' },
-                { name: 'Mentorship Program', path: '/mentorship' }
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-white/80 hover:text-[#E2C45C] transition-colors flex items-center gap-1.5 font-medium group"
-                  >
-                    <ChevronRight className="w-3 h-3 text-[#D4AF37]" />
-                    <span>{link.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <div className="pt-2.5 space-y-2 text-xs text-white/80 border-t-2 border-white/10">
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <a href={`tel:${FIRM_DETAILS.contact.phone.replace(/\s+/g, '')}`} className="hover:text-[#E2C45C]">
-                  {FIRM_DETAILS.contact.phone}
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <a href={`mailto:${FIRM_DETAILS.contact.email}`} className="hover:text-[#E2C45C]">
-                  {FIRM_DETAILS.contact.email}
-                </a>
-              </div>
+            <div className="space-y-3 text-xs text-white/80">
+              <a
+                href={`tel:${FIRM_DETAILS.contact.phone.replace(/\s+/g, '')}`}
+                className="flex items-center gap-2.5 hover:text-[#E2C45C] transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                <span>{FIRM_DETAILS.contact.phone}</span>
+              </a>
+              <a
+                href={`mailto:${FIRM_DETAILS.contact.email}`}
+                className="flex items-center gap-2.5 hover:text-[#E2C45C] transition-colors"
+              >
+                <Mail className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                <span>{FIRM_DETAILS.contact.email}</span>
+              </a>
+            </div>
+            <div className="pt-3">
+              <Link
+                to="/book-keatlegile?service=speaking"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-[11px] font-bold uppercase tracking-wider rounded-sm transition-colors border border-[#E2C45C]"
+              >
+                Invite me to speak
+              </Link>
             </div>
           </div>
 
