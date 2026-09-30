@@ -35,24 +35,10 @@ export const MEDIA_ARTICLES: MediaArticle[] = [
     type: 'article'
   },
   {
-    id: 's1',
-    title: 'Featured post',
-    source: 'X (Twitter)',
-    url: 'https://share.google/HYukFpmtzpkG4KUsx',
-    type: 'social'
-  },
-  {
     id: 's2',
     title: 'Featured post',
     source: 'X (Twitter)',
     url: 'https://share.google/bBg9otXfwMRVPyeKD',
-    type: 'social'
-  },
-  {
-    id: 's3',
-    title: 'Featured post',
-    source: 'X (Twitter)',
-    url: 'https://share.google/k3f47g5ZwYUsh600r',
     type: 'social'
   }
 ];

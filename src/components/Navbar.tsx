@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
                 }`
               }
             >
-              About
+              About Me
             </NavLink>
 
             {/* Work / Offerings Dropdown */}

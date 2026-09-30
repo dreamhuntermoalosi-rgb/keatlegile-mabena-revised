@@ -160,7 +160,7 @@ export const Media: React.FC = () => {
               SOCIAL FEATURES
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
-              Featured on social
+              Selected posts
             </h2>
           </div>
 
