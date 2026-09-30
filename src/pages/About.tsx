@@ -124,21 +124,6 @@ export const About: React.FC = () => {
     }
   ];
 
-  const publicationsList = [
-    {
-      title: 'Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence',
-      category: 'Published Book (2019)',
-      subtitle: 'ISBN: 9780620840668 | 126 Pages',
-      description: 'An inspiring and actionable exploration of personal liberation, dismantling internal constraints, and bailing out imprisoned potential across life and personal growth.'
-    },
-    {
-      title: 'Upcoming Book',
-      category: 'Forthcoming Publication',
-      subtitle: 'In Manuscript Development',
-      description: 'A new manuscript expanding on healing, purpose, emotional resilience, and personal growth (Coming Soon).'
-    }
-  ];
-
   return (
     <>
       <SEO
@@ -469,86 +454,6 @@ export const About: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            {/* Accordion 3: Publications & Authored Books */}
-            <div
-              className={`bg-white rounded-sm border transition-all duration-200 overflow-hidden ${
-                activeAccordion === 'publications' ? 'border-[#7e2e19] shadow-lg ring-1 ring-[#7e2e19]/20' : 'border-gray-200 hover:border-[#D4AF37]'
-              }`}
-            >
-              <button
-                onClick={() => toggleAccordion('publications')}
-                className="w-full px-6 py-4 flex items-center justify-between text-left transition-colors bg-white hover:bg-gray-50 focus:outline-none"
-                aria-expanded={activeAccordion === 'publications'}
-              >
-                <div className="flex items-center gap-4">
-                  <div className={`p-2.5 rounded-sm ${activeAccordion === 'publications' ? 'bg-[#7e2e19] text-[#E2C45C]' : 'bg-[#F8F5EF] text-[#7e2e19]'}`}>
-                    <BookOpen className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-base sm:text-lg font-bold text-[#7e2e19]">
-                      Authored Books &amp; Publications
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <span className="text-xs font-semibold text-[#9a3820] hidden sm:inline">
-                    {activeAccordion === 'publications' ? 'Collapse' : 'Expand'}
-                  </span>
-                  <div className={`p-1 rounded-full ${activeAccordion === 'publications' ? 'bg-[#7e2e19] text-[#E2C45C]' : 'bg-gray-100 text-gray-600'}`}>
-                    {activeAccordion === 'publications' ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                  </div>
-                </div>
-              </button>
-
-              <AnimatePresence>
-                {activeAccordion === 'publications' && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="border-t-2 border-gray-100 px-6 py-6 bg-[#FAFAF8]"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {publicationsList.map((book, idx) => (
-                        <div
-                          key={idx}
-                          className="bg-white p-5 rounded-sm border border-gray-200 shadow-sm space-y-3 hover:border-[#D4AF37] transition-all"
-                        >
-                          <div className="flex items-center justify-between border-b-2 border-gray-100 pb-2">
-                            <span className="text-[11px] font-bold uppercase tracking-wider text-[#9a3820] bg-[#F8F5EF] px-2 py-0.5 rounded">
-                              {book.category}
-                            </span>
-                            <span className="text-xs text-[#D4AF37] font-semibold">Keatlegile Mabena</span>
-                          </div>
-                          <h4 className="font-serif text-lg font-bold text-[#7e2e19]">
-                            "{book.title}"
-                          </h4>
-                          {book.subtitle && (
-                            <p className="text-[11px] font-mono font-semibold text-[#A88616]">
-                              {book.subtitle}
-                            </p>
-                          )}
-                          <p className="text-xs text-[#1C1C1C]/80 leading-relaxed">
-                            {book.description}
-                          </p>
-                          <div className="pt-2">
-                            <Link
-                              to="/books"
-                              className="text-xs font-bold text-[#9a3820] hover:text-[#7e2e19] inline-flex items-center gap-1.5"
-                            >
-                              <span>Learn more about this book</span>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </Link>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
 
           </div>
 
