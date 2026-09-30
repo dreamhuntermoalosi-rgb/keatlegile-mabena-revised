@@ -359,13 +359,14 @@ export const Home: React.FC = () => {
     <>
       <SEO
         title="Keatlegile Mabena | Speaker, Author & Mentor"
-        description="Keatlegile Mabena is a Speaker, Author and Mentor helping people move towards healing, clarity, confidence and purposeful action."
+        description="Speaker, author and mentor helping people move from pain and uncertainty toward healing, clarity, confidence and purposeful action. Keynote speaking, mentorship and books for life's turning points."
         keywords={[
           'Keatlegile Mabena',
           'Speaker',
           'Author',
           'Mentor',
           'Keynote Speaker South Africa',
+          'Mental Health Speaker',
           'Healing and Purpose',
           'Mentorship'
         ]}

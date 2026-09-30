@@ -97,12 +97,13 @@ export const BookKeatlegile: React.FC = () => {
     <>
       <SEO
         title="Invite me to speak | Keatlegile Mabena"
-        description="Submit a booking request for Keatlegile Mabena for keynote addresses, mentorship, or book orders."
+        description="Enquire about speaking engagements, mentorship or book orders. Submit a booking request for keynote addresses on mental health, grief, resilience and personal growth."
         keywords={[
           'Invite Keatlegile Mabena to speak',
           'Keynote Speaker Booking South Africa',
-          'Mentorship Request',
           'Speaking Engagement',
+          'Mentorship Request',
+          'Book a Speaker',
           'Direct Booking Portal'
         ]}
         canonicalUrl="https://keatlegilemabena.co.za/book-keatlegile"

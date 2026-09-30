@@ -46,8 +46,8 @@ export const Testimonials: React.FC = () => {
   return (
     <div className="bg-[#FAF8F5] min-h-screen text-[#1C1C1C]">
       <SEO
-        title="Testimonials & Reader Reflections | Keatlegile Mabena"
-        description="Read authentic reflections and messages from readers of 'Breaking the Chains' and participants in Keatlegile Mabena's personal growth journeys."
+        title="Testimonials | Keatlegile Mabena"
+        description="Words of transformation and hope. Read authentic reflections and messages from readers of Breaking the Chains and people impacted by Keatlegile Mabena's work on healing, grief and personal growth."
         canonicalUrl="https://keatlegilemabena.co.za/testimonials"
       />
 

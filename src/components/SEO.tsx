@@ -20,9 +20,11 @@ export const SEO: React.FC<SEOProps> = ({
     'Author',
     'Mentor',
     'Keynote Speaker',
+    'Mental Health Speaker',
     'Healing and Purpose',
     'Personal Growth',
-    'Mentorship'
+    'Mentorship',
+    'Grief and Resilience'
   ],
   canonicalUrl,
   ogImage = 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/08/KEATLEGILE-MABENA-scaled.webp',

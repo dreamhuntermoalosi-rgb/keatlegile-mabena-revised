@@ -20,13 +20,14 @@ export const Media: React.FC = () => {
     <>
       <SEO
         title="Media & Press | Keatlegile Mabena"
-        description="Media features, press coverage, and video appearances of Keatlegile Mabena — Speaker, Author, and Mentor."
+        description="Media features, press coverage and video appearances. Watch interviews, podcast appearances and read articles featuring Keatlegile Mabena — Speaker, Author and Mentor."
         keywords={[
           'Keatlegile Mabena Media',
           'Press Coverage',
+          'Interviews',
+          'Podcast Appearances',
           'Speaker South Africa',
-          'Author Interviews',
-          'Media Appearances'
+          'Media Features'
         ]}
         canonicalUrl="https://keatlegilemabena.co.za/media"
         breadcrumbs={[{ label: 'Media', path: '/media' }]}

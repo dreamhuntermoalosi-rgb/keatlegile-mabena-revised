@@ -23,14 +23,16 @@ export const Books: React.FC = () => {
   return (
     <>
       <SEO
-        title="Books & Authorship | Keatlegile Mabena"
-        description="Books by Keatlegile Mabena — Breaking the Chains and The Weight I Did Not Choose."
+        title="Writing | Books | Keatlegile Mabena"
+        description="Words for the things we struggle to say. Breaking the Chains (2019) and the forthcoming The Weight I Didn't Choose: Healing, Rising and Becoming — poetry and reflections on grief, healing, resilience and personal growth."
         keywords={[
-          'Keatlegile Mabena Book',
+          'Keatlegile Mabena Books',
           'Breaking the Chains',
           'The Weight I Did Not Choose',
           'South African Author',
-          'Personal Development Books'
+          'Personal Development Books',
+          'Healing and Grief',
+          'Poetry and Reflections'
         ]}
         canonicalUrl="https://keatlegilemabena.co.za/books"
         ogImage={IMAGES.weightBookCover}

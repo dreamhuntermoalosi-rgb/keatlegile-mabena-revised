@@ -128,16 +128,16 @@ export const About: React.FC = () => {
     <>
       <SEO
         title="About Me | Keatlegile Mabena"
-        description="Official profile of Keatlegile Mabena — Master of Social Sciences (NWU), Cum Laude graduate, Author, Speaker, and Mentor."
+        description="Keatlegile Mabena is a self-published, best-selling author, speaker and mentor from Shakung, North-West. A lecturer and PhD candidate at UNISA, he creates space for honest conversations about resilience, healing, grief and growth."
         keywords={[
           'Keatlegile Mabena',
-          'Profile',
-          'North-West University Cum Laude',
-          'Population and Sustainable Development',
-          'Youth Mentor',
-          'Author',
-          'Keynote Speaker',
-          'Qualifications Keatlegile Mabena'
+          'About Keatlegile Mabena',
+          'South African Author',
+          'Speaker South Africa',
+          'Mentor',
+          'UNISA Lecturer',
+          'PhD Candidate',
+          'Sunday World Unsung Hero'
         ]}
         canonicalUrl="https://keatlegilemabena.co.za/about"
         ogImage={IMAGES.profileCard}
