@@ -397,12 +397,16 @@ export const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-3"
             >
-              <h1 className="font-serif tracking-tight text-white space-y-2">
+              <h1 className="font-serif tracking-tight text-white space-y-3">
                 <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2 drop-shadow-md">
                   KEATLEGILE MABENA
                 </span>
-                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#E2C45C] [text-shadow:_0_2px_10px_rgba(0,0,0,0.85)]">
-                  Speaker &bull; Author &bull; Mentor
+                <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium leading-tight text-[#E2C45C] [text-shadow:_0_2px_10px_rgba(0,0,0,0.85)]">
+                  <span className="font-serif italic">Speaker</span>
+                  <span className="text-[#D4AF37]/60 text-sm">&bull;</span>
+                  <span className="font-serif italic">Author</span>
+                  <span className="text-[#D4AF37]/60 text-sm">&bull;</span>
+                  <span className="font-serif italic">Mentor</span>
                 </span>
               </h1>
             </motion.div>
@@ -411,7 +415,7 @@ export const Home: React.FC = () => {
               initial={{ width: 0 }}
               animate={{ width: '120px' }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="h-1 bg-[#D4AF37] rounded-full"
+              className="h-px bg-gradient-to-r from-[#D4AF37] via-[#D4AF37]/60 to-transparent"
             />
 
             <motion.p
