@@ -262,6 +262,13 @@ const BookCard: React.FC<{
           </p>
         )}
 
+        {/* Badge (award / sales highlight) */}
+        {book.badge && (
+          <p className="text-xs font-semibold text-[#9a3820] uppercase tracking-wider">
+            {book.badge}
+          </p>
+        )}
+
         {/* Launch date (if provided) */}
         {book.launchDate && (
           <p className="text-xs font-semibold text-[#9a3820] uppercase tracking-wider">
