@@ -34,7 +34,7 @@ export const Media: React.FC = () => {
 
 
       {/* Hero Header */}
-      <section className="relative bg-[#7e2e19] text-white pt-10 pb-15 border-b-2 border-[#D4AF37] overflow-hidden">
+      <section className="relative bg-[#7e2e19] text-white pt-5 pb-10 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
@@ -60,7 +60,7 @@ export const Media: React.FC = () => {
       </section>
 
       {/* Video Appearances */}
-      <section className="pt-15 pb-20 bg-white text-[#1C1C1C]">
+      <section className="pt-10 pb-15 bg-white text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           <div className="max-w-3xl space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">

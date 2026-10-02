@@ -17,7 +17,7 @@ export const Speaking: React.FC = () => {
 
 
       {/* Hero Header */}
-      <section className="relative bg-[#7e2e19] text-white pt-10 pb-15 border-b-2 border-[#D4AF37] overflow-hidden">
+      <section className="relative bg-[#7e2e19] text-white pt-5 pb-10 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
@@ -40,7 +40,7 @@ export const Speaking: React.FC = () => {
       </section>
 
       {/* Personal intro — speaking journey */}
-      <section className="pt-15 pb-20 bg-white text-[#1C1C1C]">
+      <section className="pt-10 pb-15 bg-white text-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="space-y-4 text-base sm:text-lg text-[#1C1C1C]/85 leading-relaxed">
             <p>

@@ -144,7 +144,7 @@ export const About: React.FC = () => {
 
 
       {/* Hero Header */}
-      <section className="relative bg-[#7e2e19] text-white pt-10 pb-15 border-b-2 border-[#D4AF37] [clip-path:inset(0)] overflow-hidden">
+      <section className="relative bg-[#7e2e19] text-white pt-5 pb-10 border-b-2 border-[#D4AF37] [clip-path:inset(0)] overflow-hidden">
         <div className="fixed inset-0 z-0 pointer-events-none">
           <img
             src={IMAGES.pageTitleBg}
@@ -179,7 +179,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Main Biography & Professional Background Section */}
-      <section className="pt-15 pb-20 bg-white text-[#1C1C1C]">
+      <section className="pt-10 pb-15 bg-white text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             

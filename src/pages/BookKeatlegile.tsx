@@ -111,7 +111,7 @@ export const BookKeatlegile: React.FC = () => {
 
 
       {/* Hero Header */}
-      <section className="relative bg-[#7e2e19] text-white pt-10 pb-15 border-b-2 border-[#D4AF37] overflow-hidden">
+      <section className="relative bg-[#7e2e19] text-white pt-5 pb-10 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
@@ -137,7 +137,7 @@ export const BookKeatlegile: React.FC = () => {
       </section>
 
       {/* Main Booking Section */}
-      <section className="pt-10 sm:pt-15 pb-16 sm:pb-20 bg-gray-50 text-[#1C1C1C]">
+      <section className="pt-5 sm:pt-10 pb-10 sm:pb-15 bg-gray-50 text-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <div className="bg-white p-6 sm:p-12 rounded-lg border-2 border-[#D4AF37] shadow-2xl space-y-8">
 
