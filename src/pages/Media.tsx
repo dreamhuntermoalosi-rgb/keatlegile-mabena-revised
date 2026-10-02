@@ -53,7 +53,7 @@ export const Media: React.FC = () => {
             <span>MEDIA &amp; PRESS</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-            Media
+            Features, coverage &amp; appearances
           </h1>
           <p className="text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
             A collection of media features, press coverage, and video appearances of Keatlegile Mabena across publications and platforms.
