@@ -39,7 +39,7 @@ export const Speaking: React.FC = () => {
             Speaking &amp; Keynotes
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
-            From finding my voice to helping others find theirs.
+            An autobiography for anyone who has felt held back by self-doubt, limiting beliefs or difficult circumstances and is ready to rediscover their potential and move forward.
           </p>
         </div>
       </section>
