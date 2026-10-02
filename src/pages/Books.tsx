@@ -189,6 +189,11 @@ const BookCard: React.FC<{
             Launching {book.launchDate}
           </span>
         )}
+        {book.badge && (
+          <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37] text-[#1C1C1C] px-2.5 py-1 rounded z-20 shadow-md">
+            {book.badge}
+          </span>
+        )}
         {activeImage ? (
           <>
             {/* Stacked images cross-fade between slides */}
@@ -262,20 +267,6 @@ const BookCard: React.FC<{
           </p>
         )}
 
-        {/* Badge (award / sales highlight) */}
-        {book.badge && (
-          <p className="text-xs font-semibold text-[#9a3820] uppercase tracking-wider">
-            {book.badge}
-          </p>
-        )}
-
-        {/* Launch date (if provided) */}
-        {book.launchDate && (
-          <p className="text-xs font-semibold text-[#9a3820] uppercase tracking-wider">
-            Launching {book.launchDate}
-          </p>
-        )}
-
         {/* Metadata (only where provided) */}
         {(book.year || book.pages || book.isbn) && (
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] text-[#1C1C1C]/70 pt-2 border-t border-[#D4AF37]/20">
@@ -297,12 +288,12 @@ const BookCard: React.FC<{
           </div>
         )}
 
-        {/* Price + Buy buttons */}
-        <div className="mt-auto pt-5 space-y-3">
+        {/* Price + Buy button */}
+        <div className="mt-auto pt-5 space-y-4">
+          {book.priceLabel && (
+            <div className="text-2xl font-serif font-bold text-[#7e2e19]">{book.priceLabel}</div>
+          )}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            {book.priceLabel && (
-              <div className="text-2xl font-serif font-bold text-[#7e2e19]">{book.priceLabel}</div>
-            )}
             {book.orderUrl ? (
               <a
                 href={book.orderUrl}
@@ -322,19 +313,6 @@ const BookCard: React.FC<{
               </span>
             )}
           </div>
-
-          {/* Amazon button (if available) */}
-          {book.amazonUrl && (
-            <a
-              href={book.amazonUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full px-6 py-3 bg-[#131921] hover:bg-[#232F3E] text-white font-semibold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#FF9900]/40"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14.3 12.5c-.3.4-.7.6-1.2.6-.5 0-.9-.2-1.2-.6-.3-.4-.4-.9-.4-1.5s.1-1.1.4-1.5c.3-.4.7-.6 1.2-.6.5 0 .9.2 1.2.6.3.4.4.9.4 1.5s-.1 1.1-.4 1.5zm-5.6 2.2c0 .2 0 .4.1.5.1.2.3.3.5.4.2.1.5.1.8.1.4 0 .8-.1 1.1-.2.3-.1.6-.4.9-.7.2-.3.4-.7.5-1.1.1-.4.2-.9.2-1.5v-.1c-.3.3-.6.5-1 .7-.4.1-.9.2-1.5.2-.5 0-1-.1-1.4-.3-.4-.2-.8-.4-1.1-.8-.3-.3-.5-.7-.7-1.2-.2-.5-.2-1-.2-1.6 0-.6.1-1.1.3-1.5.2-.5.5-.8.8-1.2.3-.3.8-.5 1.2-.7.5-.2 1-.2 1.5-.2.6 0 1.1.1 1.6.3.5.2.9.5 1.2.9.3.4.6.9.8 1.4.2.6.3 1.2.3 2v.4c0 .8-.1 1.5-.3 2.2-.2.6-.5 1.2-.9 1.6-.4.4-.8.8-1.4 1-.5.2-1.1.4-1.8.4-.5 0-1-.1-1.4-.2-.4-.1-.8-.3-1.2-.6-.3-.2-.6-.5-.8-.9-.2-.3-.4-.7-.4-1.1h2.3zm-3.7-5.4v6.9H2.5v-6.9H.8V7.6h4.5v1.7H3.6zm15.5 4.7c.3.2.6.4 1 .5.4.1.8.2 1.2.2.4 0 .8-.1 1.2-.2.4-.1.7-.3 1-.5.3-.2.5-.5.7-.8.2-.3.3-.7.3-1.1h2.3c0 .7-.2 1.3-.5 1.9-.3.6-.7 1-1.2 1.4-.5.4-1.1.7-1.7.9-.6.2-1.3.3-2 .3-.9 0-1.6-.1-2.3-.4-.7-.3-1.2-.7-1.7-1.2-.5-.5-.8-1.1-1-1.8-.2-.7-.4-1.4-.4-2.2 0-.8.1-1.5.4-2.2.2-.7.6-1.3 1-1.8.5-.5 1-.9 1.7-1.2.7-.3 1.4-.4 2.3-.4.7 0 1.3.1 1.9.3.6.2 1.1.5 1.6.8.4.4.8.8 1 1.4.2.5.4 1.1.4 1.8h-2.3c0-.4-.1-.8-.3-1.1-.2-.3-.4-.6-.7-.8-.3-.2-.6-.4-1-.5-.4-.1-.8-.2-1.2-.2-.5 0-.9.1-1.3.2-.4.1-.7.4-1 .7-.3.3-.5.6-.6 1.1-.2.4-.2.9-.2 1.5v.3c0 .6.1 1.1.2 1.5.1.4.4.8.6 1 .3.3.6.5 1 .6z"/></svg>
-              <span>Buy on Amazon</span>
-            </a>
-          )}
         </div>
       </div>
     </motion.div>

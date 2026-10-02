@@ -66,6 +66,11 @@ const FeaturedBookCard: React.FC<{ book: typeof BOOKS[number] }> = ({ book }) =>
             Launching {book.launchDate}
           </span>
         )}
+        {book.badge && (
+          <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-widest bg-[#D4AF37] text-[#1C1C1C] px-2.5 py-1 rounded z-20 shadow-md">
+            {book.badge}
+          </span>
+        )}
         {activeImage ? (
           <>
             {images.map((img, i) => (
@@ -135,36 +140,31 @@ const FeaturedBookCard: React.FC<{ book: typeof BOOKS[number] }> = ({ book }) =>
           </p>
         )}
 
-        {/* Launch date line (if provided and not already shown as badge) */}
-        {book.launchDate && (
-          <p className="text-xs font-semibold text-[#9a3820] uppercase tracking-wider">
-            Launching {book.launchDate}
-          </p>
-        )}
-
         {/* Price + Buy button */}
-        <div className="mt-auto pt-5 flex flex-col sm:flex-row sm:items-center gap-4">
+        <div className="mt-auto pt-5 space-y-4">
           {book.priceLabel && (
             <div className="text-2xl font-serif font-bold text-[#7e2e19]">{book.priceLabel}</div>
           )}
-          {book.orderUrl ? (
-            <a
-              href={book.orderUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] shadow-md"
-            >
-              <ShoppingBag className="w-4 h-4 text-[#1C1C1C]" />
-              <span>{book.orderLabel}</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#1C1C1C]" />
-            </a>
-          ) : (
-            <span
-              className="flex-1 px-6 py-3.5 bg-gray-200 text-gray-500 font-bold text-xs uppercase tracking-widest rounded-sm inline-flex items-center justify-center gap-2 border border-gray-300 cursor-not-allowed"
-            >
-              <span>{book.orderLabel}</span>
-            </span>
-          )}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            {book.orderUrl ? (
+              <a
+                href={book.orderUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#E2C45C] shadow-md"
+              >
+                <ShoppingBag className="w-4 h-4 text-[#1C1C1C]" />
+                <span>{book.orderLabel}</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#1C1C1C]" />
+              </a>
+            ) : (
+              <span
+                className="flex-1 px-6 py-3.5 bg-gray-200 text-gray-500 font-bold text-xs uppercase tracking-widest rounded-sm inline-flex items-center justify-center gap-2 border border-gray-300 cursor-not-allowed"
+              >
+                <span>{book.orderLabel}</span>
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>
