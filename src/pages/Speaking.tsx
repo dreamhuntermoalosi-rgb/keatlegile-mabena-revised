@@ -154,7 +154,7 @@ export const Speaking: React.FC = () => {
       <section className="py-16 bg-[#F8F5EF] text-center border-t-2 border-[#D4AF37]">
         <div className="max-w-2xl mx-auto px-4 space-y-6">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
-            Invite me to speak at your next event
+            Enquire about speaking
           </h2>
           <p className="text-sm text-[#1C1C1C]/80">
             Enquire about availability, keynote themes, and institutional speaking packages.
@@ -163,7 +163,7 @@ export const Speaking: React.FC = () => {
             to="/book-keatlegile?service=speaking"
             className="px-8 py-3.5 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 shadow-md"
           >
-            <span>Invite me to speak</span>
+            <span>Enquire about speaking</span>
             <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
           </Link>
         </div>
