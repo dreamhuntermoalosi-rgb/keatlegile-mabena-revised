@@ -169,6 +169,9 @@ export const About: React.FC = () => {
               <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
                 Keatlegile Mabena
               </h1>
+              <p className="text-base text-white/85 max-w-2xl leading-relaxed pt-2">
+                Combining qualifications in Population &amp; Sustainable Development Studies with published authorship, youth mentorship, and keynote speaking.
+              </p>
             </div>
 
             {/* Right Quick-Facts Badge removed */}
