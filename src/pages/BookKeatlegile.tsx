@@ -133,7 +133,7 @@ export const BookKeatlegile: React.FC = () => {
             Invite me to speak
           </h1>
           <p className="text-sm sm:text-base text-white/90 max-w-2xl font-light leading-relaxed">
-            Submit your event, speaking engagement, mentorship, or advisory requirements. All submissions are processed directly and securely.
+            Planning an event, speaking engagement, mentorship programme or purpose-driven collaboration? Share the details below, and I&rsquo;ll be in touch to explore how we can work together.
           </p>
         </div>
       </section>
