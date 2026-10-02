@@ -40,7 +40,7 @@ export const Speaking: React.FC = () => {
       </section>
 
       {/* Personal intro — speaking journey */}
-      <section className="py-20 bg-white text-[#1C1C1C]">
+      <section className="pt-15 pb-20 bg-white text-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="space-y-4 text-base sm:text-lg text-[#1C1C1C]/85 leading-relaxed">
             <p>

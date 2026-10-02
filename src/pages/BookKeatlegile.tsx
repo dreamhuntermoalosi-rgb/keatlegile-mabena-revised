@@ -137,7 +137,7 @@ export const BookKeatlegile: React.FC = () => {
       </section>
 
       {/* Main Booking Section */}
-      <section className="py-16 sm:py-20 bg-gray-50 text-[#1C1C1C]">
+      <section className="pt-10 sm:pt-15 pb-16 sm:pb-20 bg-gray-50 text-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <div className="bg-white p-6 sm:p-12 rounded-lg border-2 border-[#D4AF37] shadow-2xl space-y-8">
 

@@ -60,7 +60,7 @@ export const Media: React.FC = () => {
       </section>
 
       {/* Video Appearances */}
-      <section className="py-20 bg-white text-[#1C1C1C]">
+      <section className="pt-15 pb-20 bg-white text-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           <div className="max-w-3xl space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
