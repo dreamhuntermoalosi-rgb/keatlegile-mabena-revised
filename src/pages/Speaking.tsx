@@ -17,7 +17,7 @@ export const Speaking: React.FC = () => {
 
 
       {/* Hero Header */}
-      <section className="relative bg-[#7e2e19] text-white pt-16 sm:pt-20 pb-10 sm:pb-12 border-b-2 border-[#D4AF37] overflow-hidden">
+      <section className="relative bg-[#7e2e19] text-white pt-10 pb-15 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
