@@ -671,7 +671,7 @@ export const Home: React.FC = () => {
               Published Books
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
-              A book worth reading
+              Books worth reading
             </h2>
             <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full" />
           </div>
