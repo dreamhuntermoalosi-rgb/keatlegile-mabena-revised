@@ -28,7 +28,6 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
-import { Breadcrumbs } from '../components/Breadcrumbs';
 import { CORE_VALUES, FIRM_DETAILS } from '../data/firmData';
 import { LETTERS } from '../data/mediaData';
 import { IMAGES } from '../data/images';
@@ -143,10 +142,9 @@ export const About: React.FC = () => {
         ogImage={IMAGES.profileCard}
       />
 
-      <Breadcrumbs items={[{ label: 'Personal & Professional Profile' }]} />
 
       {/* Hero Header */}
-      <section className="relative bg-[#7e2e19] text-white py-16 sm:py-20 border-b-2 border-[#D4AF37] [clip-path:inset(0)] overflow-hidden">
+      <section className="relative bg-[#7e2e19] text-white pt-16 sm:pt-20 pb-10 sm:pb-12 border-b-2 border-[#D4AF37] [clip-path:inset(0)] overflow-hidden">
         <div className="fixed inset-0 z-0 pointer-events-none">
           <img
             src={IMAGES.pageTitleBg}

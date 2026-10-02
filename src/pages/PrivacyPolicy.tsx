@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEO } from '../components/SEO';
-import { Breadcrumbs } from '../components/Breadcrumbs';
 import { FIRM_DETAILS } from '../data/firmData';
 import { Shield, Lock, FileText, UserCheck, AlertCircle, Phone, Mail } from 'lucide-react';
 
@@ -13,7 +12,6 @@ export const PrivacyPolicy: React.FC = () => {
         breadcrumbs={[{ label: 'Privacy Policy & POPIA', path: '/privacy-policy' }]}
       />
 
-      <Breadcrumbs items={[{ label: 'Privacy Policy & POPIA' }]} />
 
       <section className="py-16 sm:py-20 bg-white text-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-10">

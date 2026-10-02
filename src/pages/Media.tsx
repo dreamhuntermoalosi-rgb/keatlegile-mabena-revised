@@ -8,7 +8,6 @@ import {
   Play
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
-import { Breadcrumbs } from '../components/Breadcrumbs';
 import { IMAGES } from '../data/images';
 import { MEDIA_ARTICLES, MEDIA_VIDEOS } from '../data/mediaData';
 
@@ -33,10 +32,9 @@ export const Media: React.FC = () => {
         breadcrumbs={[{ label: 'Media', path: '/media' }]}
       />
 
-      <Breadcrumbs items={[{ label: 'Media' }]} />
 
       {/* Hero Header */}
-      <section className="relative bg-[#7e2e19] text-white py-16 sm:py-20 border-b-2 border-[#D4AF37] overflow-hidden">
+      <section className="relative bg-[#7e2e19] text-white pt-16 sm:pt-20 pb-10 sm:pb-12 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}

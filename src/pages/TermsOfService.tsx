@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEO } from '../components/SEO';
-import { Breadcrumbs } from '../components/Breadcrumbs';
 import { FIRM_DETAILS } from '../data/firmData';
 import { FileCheck, BookOpen, ShieldAlert, Award, Phone, Mail } from 'lucide-react';
 
@@ -13,7 +12,6 @@ export const TermsOfService: React.FC = () => {
         breadcrumbs={[{ label: 'Terms of Service', path: '/terms-of-service' }]}
       />
 
-      <Breadcrumbs items={[{ label: 'Terms of Engagement' }]} />
 
       <section className="py-16 sm:py-20 bg-white text-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-10">

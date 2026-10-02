@@ -5,7 +5,6 @@ import { z } from 'zod';
 import { useSearchParams } from 'react-router-dom';
 import { MessageSquare, Calendar, CheckCircle2, ShieldCheck, ArrowRight, User, Building, Mail, Phone, MapPin, Users, Send, Loader2 } from 'lucide-react';
 import { SEO } from '../components/SEO';
-import { Breadcrumbs } from '../components/Breadcrumbs';
 import { FIRM_DETAILS } from '../data/firmData';
 import { IMAGES } from '../data/images';
 import { submitToWeb3Forms } from '../utils/web3forms';
@@ -110,10 +109,9 @@ export const BookKeatlegile: React.FC = () => {
         breadcrumbs={[{ label: 'Invite me to speak', path: '/book-keatlegile' }]}
       />
 
-      <Breadcrumbs items={[{ label: 'Invite me to speak' }]} />
 
       {/* Hero Header */}
-      <section className="relative bg-[#7e2e19] text-white py-16 sm:py-20 border-b-2 border-[#D4AF37] overflow-hidden">
+      <section className="relative bg-[#7e2e19] text-white pt-16 sm:pt-20 pb-10 sm:pb-12 border-b-2 border-[#D4AF37] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.pageTitleBg}
