@@ -9,7 +9,7 @@ export const Speaking: React.FC = () => {
   return (
     <>
       <SEO
-        title="Speaking | Keatlegile Mabena"
+        title="Speaking & Keynotes | Keatlegile Mabena"
         description="From finding my voice to helping others find theirs. Speaking on mental health, grief, resilience, healing and personal growth for schools, universities, workplaces and communities."
         keywords={['Keatlegile Mabena Speaking', 'Keynote Speaker', 'Mental Health Speaker', 'Resilience Speaker', 'Grief Speaker']}
         canonicalUrl="https://keatlegilemabena.co.za/speaking"

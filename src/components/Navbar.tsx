@@ -29,9 +29,9 @@ export const Navbar: React.FC = () => {
   }, [location.pathname]);
 
   const primaryWorkItems = [
-    { title: 'Speaking & Keynotes', path: '/speaking', desc: 'Conversations That Move People' },
-    { title: 'Books & Authorship', path: '/books', desc: 'Words Can Become Windows' },
-    { title: 'Mentorship', path: '/mentorship', desc: 'Support for Your Next Chapter' }
+    { title: 'Speaking & Keynotes', path: '/speaking', desc: 'From finding my voice to helping others find theirs' },
+    { title: 'Books & Authorship', path: '/books', desc: 'Words for the things we struggle to say' },
+    { title: 'Mentorship', path: '/mentorship', desc: 'A thoughtful space to find your next step' }
   ];
 
   return (

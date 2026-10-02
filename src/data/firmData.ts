@@ -205,6 +205,7 @@ export const BOOKS = [
     launchDate: null as string | null,
     orderLabel: 'Grab Your Copy',
     orderUrl: 'https://order.keatlegilemabena.co.za/product/breaking-the-chains-paperback/',
+    amazonUrl: 'https://share.google/PqQ7Gvzzt5eejQKh7',
     featured: false,
     hideSubtitleOnCard: false
   },
@@ -225,6 +226,7 @@ export const BOOKS = [
     launchDate: '21 November 2026',
     orderLabel: 'Pre-order your copy',
     orderUrl: 'https://order.keatlegilemabena.co.za/product/the-weight-i-did-not-choose-healing-rising-and-becoming/',
+    amazonUrl: null as string | null,
     featured: true,
     hideSubtitleOnCard: true
   }
