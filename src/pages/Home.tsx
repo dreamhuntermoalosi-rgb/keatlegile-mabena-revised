@@ -515,7 +515,7 @@ export const Home: React.FC = () => {
 
               <div className="space-y-4 text-base text-[#1C1C1C]/80 leading-relaxed">
                 <p>
-                  I grew up in Shakung Village, carrying experiences that could have narrowed my sense of what was possible. Today, I&rsquo;m a speaker, author and mentor, using my voice and lived experience to open honest conversations about mental health, resilience, grief and growth.
+                  I grew up in Shakung (North-West Province, South Africa), carrying experiences that could have narrowed my sense of what was possible. Today, I&rsquo;m a speaker, author and mentor, using my voice and lived experience to open honest conversations about mental health, resilience, grief and growth.
                 </p>
               </div>
 

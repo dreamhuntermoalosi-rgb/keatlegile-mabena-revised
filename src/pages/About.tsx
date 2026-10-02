@@ -190,7 +190,7 @@ export const About: React.FC = () => {
               </div>
               
               <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19] leading-snug">
-                From Shakung Village to a life of healing, growth and purpose.
+                From Shakung Village to a life of service
               </h2>
 
               {/* Quote */}
@@ -264,7 +264,7 @@ export const About: React.FC = () => {
             Invite Keatlegile Mabena to speak or collaborate
           </h2>
           <p className="text-sm text-white/80">
-            Available for keynote addresses, campus masterclasses, corporate empowerment sessions, and structured mentorship programs.
+            Available for speaking engagements, facilitated conversations, mentorship programmes and purpose-driven collaborations across educational, corporate and community settings.
           </p>
           <Link
             to="/book-keatlegile"
