@@ -668,7 +668,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="text-xs font-bold tracking-widest text-[#9a3820] uppercase">
-              Featured Book
+              Published Books
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#1C1C1C]">
               A book worth reading
