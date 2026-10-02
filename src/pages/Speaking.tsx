@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Mic } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Mic, Quote } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { IMAGES } from '../data/images';
@@ -92,6 +92,58 @@ export const Speaking: React.FC = () => {
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />
                 <span>Career progress</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feedback from speaking engagements */}
+      <section className="py-20 bg-white text-[#1C1C1C]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 space-y-10">
+          <div className="space-y-3">
+            <span className="text-xs font-bold tracking-widest text-[#9a3820] uppercase border-b-2 border-[#D4AF37] pb-1 inline-block">
+              Feedback from speaking engagements
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
+              What institutions and audiences have said
+            </h2>
+          </div>
+
+          <div className="space-y-8">
+            {/* Feedback 1 */}
+            <div className="bg-[#F8F5EF] p-6 sm:p-8 rounded-sm border-l-4 border-[#D4AF37] shadow-sm">
+              <Quote className="w-8 h-8 text-[#D4AF37]/40 mb-3" />
+              <p className="font-serif text-base sm:text-lg italic text-[#1C1C1C]/85 leading-relaxed">
+                &ldquo;Your presentation on gender equality and equity promotion in the workplace provided valuable insight and meaningful perspectives to the audience. Your engagement on this important topic was both informative and relatable.&rdquo;
+              </p>
+              <div className="mt-4 pt-3 border-t border-[#D4AF37]/20">
+                <p className="text-sm font-bold text-[#7e2e19]">North-West University</p>
+                <p className="text-xs text-[#1C1C1C]/60 italic">Gender Awareness Week Presentation</p>
+              </div>
+            </div>
+
+            {/* Feedback 2 */}
+            <div className="bg-[#F8F5EF] p-6 sm:p-8 rounded-sm border-l-4 border-[#D4AF37] shadow-sm">
+              <Quote className="w-8 h-8 text-[#D4AF37]/40 mb-3" />
+              <p className="font-serif text-base sm:text-lg italic text-[#1C1C1C]/85 leading-relaxed">
+                &ldquo;Mr Mabena created a space for honest reflection, accountability and growth. Students were encouraged to confront issues of identity, responsibility, integrity, and purpose in a way that was both empowering and practical.&rdquo;
+              </p>
+              <div className="mt-4 pt-3 border-t border-[#D4AF37]/20">
+                <p className="text-sm font-bold text-[#7e2e19]">North-West University</p>
+                <p className="text-xs text-[#1C1C1C]/60 italic">Gentlemen&rsquo;s Conference</p>
+              </div>
+            </div>
+
+            {/* Feedback 3 */}
+            <div className="bg-[#F8F5EF] p-6 sm:p-8 rounded-sm border-l-4 border-[#D4AF37] shadow-sm">
+              <Quote className="w-8 h-8 text-[#D4AF37]/40 mb-3" />
+              <p className="font-serif text-base sm:text-lg italic text-[#1C1C1C]/85 leading-relaxed">
+                &ldquo;Your efforts in presenting &lsquo;Silencing the Imposter Syndrome&rsquo; to the entire Transnet Property division demonstrated not only technical skill but also a strong sense of responsibility and integrity.&rdquo;
+              </p>
+              <div className="mt-4 pt-3 border-t border-[#D4AF37]/20">
+                <p className="text-sm font-bold text-[#7e2e19]">Transnet Property</p>
+                <p className="text-xs text-[#1C1C1C]/60 italic">Wellness Wednesdays</p>
               </div>
             </div>
           </div>

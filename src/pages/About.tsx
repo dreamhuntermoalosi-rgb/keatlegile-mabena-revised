@@ -128,7 +128,7 @@ export const About: React.FC = () => {
     <>
       <SEO
         title="About Me | Keatlegile Mabena"
-        description="Keatlegile Mabena is a self-published, best-selling author, speaker and mentor from Shakung, North-West. A lecturer and PhD candidate at UNISA, he creates space for honest conversations about resilience, healing, grief and growth."
+        description="Combining lived experience, a record of published authorship, years of speaking and mentorship, and a commitment to helping people find healing, clarity and purpose."
         keywords={[
           'Keatlegile Mabena',
           'About Keatlegile Mabena',
@@ -228,7 +228,17 @@ export const About: React.FC = () => {
               <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl font-bold text-[#7e2e19] leading-snug">
                 From Shakung Village to a life of healing, growth and purpose.
               </h2>
-              
+
+              {/* Quote */}
+              <blockquote className="relative bg-[#F8F5EF] border-l-4 border-[#D4AF37] p-5 sm:p-6 rounded-r-sm">
+                <p className="font-serif text-base sm:text-lg italic text-[#7e2e19] leading-relaxed">
+                  &ldquo;Healing, self-discovery, purpose and confidence shape the way I live, lead and serve. I believe growth takes courage, and that discipline helps us keep moving towards the lives we are becoming.&rdquo;
+                </p>
+                <footer className="mt-3 text-xs font-bold uppercase tracking-wider text-[#9a3820]">
+                  &mdash; Keatlegile Mabena
+                </footer>
+              </blockquote>
+
               <div className="space-y-4 text-sm sm:text-base text-[#1C1C1C]/85 leading-relaxed">
                 <p>
                   I&rsquo;m Keatlegile Mabena, a South African self-published, best-selling author, speaker and mentor, born and raised in Shakung, North-West. Through my mentorship and speaking, I create space for honest conversations about resilience, self-discovery, career progress, healing and grief. I support people as they make sense of what they have lived through and find direction for what comes next.
