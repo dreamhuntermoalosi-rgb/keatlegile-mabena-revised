@@ -78,7 +78,7 @@ export const Books: React.FC = () => {
             <span>Authorship &amp; literary works</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-            Writing
+            Books &amp; Authorship
           </h1>
           <p className="text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
             Words for the things we struggle to say.
@@ -313,6 +313,18 @@ const BookCard: React.FC<{
               </span>
             )}
           </div>
+
+          {/* Amazon button (if available) */}
+          {book.amazonUrl && (
+            <a
+              href={book.amazonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full px-6 py-3 bg-[#131921] hover:bg-[#232F3E] text-white font-semibold text-xs uppercase tracking-widest rounded-sm transition-all inline-flex items-center justify-center gap-2 border border-[#FF9900]/40"
+            >
+              <span>Buy on Amazon</span>
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

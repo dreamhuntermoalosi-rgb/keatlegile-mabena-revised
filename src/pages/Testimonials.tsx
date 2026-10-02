@@ -64,7 +64,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight max-w-4xl mx-auto">
-            Words of transformation &amp; hope
+            Testimonials
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed font-light">

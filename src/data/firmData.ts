@@ -206,7 +206,7 @@ export const BOOKS = [
     badge: 'An award-winning bestseller with more than 8,000+ copies sold.',
     orderLabel: 'Grab Your Copy',
     orderUrl: 'https://order.keatlegilemabena.co.za/product/breaking-the-chains-paperback/',
-    amazonUrl: null as string | null,
+    amazonUrl: 'https://share.google/PqQ7Gvzzt5eejQKh7',
     featured: false,
     hideSubtitleOnCard: false
   },

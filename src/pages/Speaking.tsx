@@ -36,7 +36,7 @@ export const Speaking: React.FC = () => {
             <span>Speaking</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold">
-            Speaking
+            Speaking &amp; Keynotes
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
             From finding my voice to helping others find theirs.
