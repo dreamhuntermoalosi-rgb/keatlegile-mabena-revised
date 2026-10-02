@@ -193,6 +193,15 @@ export const About: React.FC = () => {
                 From Shakung Village to a life of service
               </h2>
 
+              <div className="space-y-4 text-sm sm:text-base text-[#1C1C1C]/85 leading-relaxed">
+                <p>
+                  I&rsquo;m Keatlegile Mabena, a South African self-published, best-selling author, speaker and mentor, born and raised in Shakung, North-West. Through my mentorship and speaking, I create space for honest conversations about resilience, self-discovery, career progress, healing and grief. I support people as they make sense of what they have lived through and find direction for what comes next.
+                </p>
+                <p>
+                  My books reflect that journey. In <em>Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence</em>, I write about facing pain and recognising the possibility of change. My forthcoming book, <em>The Weight I Didn&rsquo;t Choose: Healing, Rising and Becoming</em>, is for those learning to live beyond the grief, wounds and burdens they never chose.
+                </p>
+              </div>
+
               {/* Quote */}
               <blockquote className="relative bg-[#F8F5EF] border-l-4 border-[#D4AF37] p-5 sm:p-6 rounded-r-sm">
                 <p className="font-serif text-base sm:text-lg italic text-[#7e2e19] leading-relaxed">
@@ -202,15 +211,6 @@ export const About: React.FC = () => {
                   &mdash; Keatlegile Mabena
                 </footer>
               </blockquote>
-
-              <div className="space-y-4 text-sm sm:text-base text-[#1C1C1C]/85 leading-relaxed">
-                <p>
-                  I&rsquo;m Keatlegile Mabena, a South African self-published, best-selling author, speaker and mentor, born and raised in Shakung, North-West. Through my mentorship and speaking, I create space for honest conversations about resilience, self-discovery, career progress, healing and grief. I support people as they make sense of what they have lived through and find direction for what comes next.
-                </p>
-                <p>
-                  My books reflect that journey. In <em>Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence</em>, I write about facing pain and recognising the possibility of change. My forthcoming book, <em>The Weight I Didn&rsquo;t Choose: Healing, Rising and Becoming</em>, is for those learning to live beyond the grief, wounds and burdens they never chose.
-                </p>
-              </div>
             </div>
 
             {/* Right Column - Profile Image & Core Capabilities Card */}
