@@ -38,9 +38,6 @@ export const Speaking: React.FC = () => {
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold">
             Speaking &amp; Keynotes
           </h1>
-          <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
-            An autobiography for anyone who has felt held back by self-doubt, limiting beliefs or difficult circumstances and is ready to rediscover their potential and move forward.
-          </p>
         </div>
       </section>
 
