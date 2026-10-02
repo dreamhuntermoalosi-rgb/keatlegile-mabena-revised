@@ -128,7 +128,7 @@ export const About: React.FC = () => {
     <>
       <SEO
         title="About Me | Keatlegile Mabena"
-        description="Combining lived experience, a record of published authorship, years of speaking and mentorship, and a commitment to helping people find healing, clarity and purpose."
+        description="Combining qualifications in Population & Sustainable Development Studies with published authorship, youth mentorship, and keynote speaking."
         keywords={[
           'Keatlegile Mabena',
           'About Keatlegile Mabena',
