@@ -212,7 +212,7 @@ export const Media: React.FC = () => {
             href="mailto:info@keatlegilemabena.co.za"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm transition-all border border-[#E2C45C] shadow-md"
           >
-            <span>Media Enquiry</span>
+            <span>Media &amp; Press Enquiry</span>
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>
