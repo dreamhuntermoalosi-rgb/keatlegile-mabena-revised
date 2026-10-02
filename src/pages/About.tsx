@@ -261,20 +261,20 @@ export const About: React.FC = () => {
 
 
       {/* CTA Footer Section */}
-      <section className="py-16 bg-[#7e2e19] text-white text-center border-t-2 border-[#D4AF37]/40">
+      <section className="py-16 bg-[#F8F5EF] text-[#1C1C1C] text-center border-t-2 border-[#D4AF37]/40">
         <div className="max-w-3xl mx-auto px-4 space-y-6">
-          <h2 className="font-serif text-3xl font-bold text-[#E2C45C]">
+          <h2 className="font-serif text-3xl font-bold text-[#7e2e19]">
             Invite Keatlegile Mabena to speak or collaborate
           </h2>
-          <p className="text-sm text-white/80">
+          <p className="text-sm text-[#1C1C1C]/70">
             Available for speaking engagements, facilitated conversations, mentorship programmes and purpose-driven collaborations across educational, corporate and community settings.
           </p>
           <Link
             to="/book-keatlegile"
-            className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-widest rounded-sm transition-colors inline-flex items-center gap-2 border border-[#E2C45C] shadow-md"
+            className="px-8 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white text-xs font-bold uppercase tracking-widest rounded-sm transition-colors inline-flex items-center gap-2 border border-[#D4AF37]/40 shadow-md"
           >
             <span>Get in Touch</span>
-            <ArrowRight className="w-4 h-4 text-[#1C1C1C]" />
+            <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
           </Link>
         </div>
       </section>
