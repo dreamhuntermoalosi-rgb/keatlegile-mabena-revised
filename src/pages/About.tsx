@@ -201,6 +201,9 @@ export const About: React.FC = () => {
                 <p>
                   My books reflect that journey. In <em>Breaking the Chains: Bailing Out the Imprisoned Potential, Power and Persistence</em>, I write about facing pain and recognising the possibility of change. My forthcoming book, <em>The Weight I Didn&rsquo;t Choose: Healing, Rising and Becoming</em>, is for those learning to live beyond the grief, wounds and burdens they never chose.
                 </p>
+                <p>
+                  Alongside this work, I&rsquo;m a lecturer in Development Studies at the University of South Africa (UNISA) and a PhD candidate in Development Studies. I hold a Bachelor of Social Science in Population and Development Studies (cum laude), a Bachelor of Social Sciences Honours in Population Studies (cum laude), and a Master of Social Science in Population and Sustainable Development (with distinctions) from North-West University. In 2022, I was named a Sunday World Unsung Hero in Youth in Education and Academia.
+                </p>
               </div>
 
               {/* Quote */}
