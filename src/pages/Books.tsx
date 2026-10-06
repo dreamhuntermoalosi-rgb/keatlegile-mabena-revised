@@ -76,7 +76,7 @@ export const Books: React.FC = () => {
             <span>Authorship &amp; literary works</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-            Books &amp; Authorship
+            Writing
           </h1>
           <p className="text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
             Words for the things we struggle to say.

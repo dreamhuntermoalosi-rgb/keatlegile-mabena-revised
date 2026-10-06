@@ -168,7 +168,7 @@ export const About: React.FC = () => {
                 Keatlegile Mabena
               </h1>
               <p className="text-base text-white/85 max-w-2xl leading-relaxed pt-2">
-                Combining qualifications in Population &amp; Sustainable Development Studies with published authorship, youth mentorship, and keynote speaking.
+                Combining lived experience, a record of published authorship, years of speaking and mentorship, and a commitment to helping people find healing, clarity and purpose.
               </p>
             </div>
 
