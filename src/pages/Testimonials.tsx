@@ -24,7 +24,7 @@ export const Testimonials: React.FC = () => {
   // Modal Form State
   const [formData, setFormData] = useState({
     name: '',
-    category: 'On "Breaking The Chains"',
+    category: 'Faith & Perseverance',
     quote: ''
   });
 
@@ -35,7 +35,7 @@ export const Testimonials: React.FC = () => {
     setTimeout(() => {
       setIsSubmitModalOpen(false);
       setSubmittedSuccess(false);
-      setFormData({ name: '', category: 'On "Breaking The Chains"', quote: '' });
+      setFormData({ name: '', category: 'Faith & Perseverance', quote: '' });
     }, 2500);
   };
 
@@ -47,8 +47,9 @@ export const Testimonials: React.FC = () => {
     <div className="bg-[#FAF8F5] min-h-screen text-[#1C1C1C]">
       <SEO
         title="Testimonials | Keatlegile Mabena"
-        description="Words of transformation and hope. Read authentic reflections and messages from readers of Breaking the Chains and people impacted by Keatlegile Mabena's work on healing, grief and personal growth."
+        description="Reader reflections on Breaking the Chains — stories of faith, perseverance, rediscovering worth, trusting the journey and becoming a chain-breaker."
         canonicalUrl="https://keatlegilemabena.co.za/testimonials"
+        breadcrumbs={[{ label: 'Testimonials', path: '/testimonials' }]}
       />
 
       {/* Hero Banner - NO COUNTER NUMBERS */}
@@ -272,7 +273,7 @@ export const Testimonials: React.FC = () => {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Winnie M. or Anonymous Reader"
+                      placeholder="e.g. Refilwe M. or Anonymous Reader"
                       className="w-full px-3 py-2 text-xs border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-[#7e2e19]"
                     />
                   </div>
@@ -286,8 +287,11 @@ export const Testimonials: React.FC = () => {
                       onChange={(e) => setFormData({ ...formData, category: e.target.value as any })}
                       className="w-full px-3 py-2 text-xs border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-[#7e2e19]"
                     >
-                      <option value='On "Breaking The Chains"'>On "Breaking The Chains"</option>
-                      <option value="Life-Changing Impact & Personal Growth">Life-Changing Impact &amp; Personal Growth</option>
+                      <option value="Faith & Perseverance">Faith &amp; Perseverance</option>
+                      <option value="Trusting the journey">Trusting the journey</option>
+                      <option value="Hope beyond your beginning">Hope beyond your beginning</option>
+                      <option value="Rediscovering my worth">Rediscovering my worth</option>
+                      <option value="Becoming a chain-breaker">Becoming a chain-breaker</option>
                     </select>
                   </div>
 
