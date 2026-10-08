@@ -715,7 +715,10 @@ export const Home: React.FC = () => {
                   className="w-[300px] sm:w-[360px] shrink-0 bg-[#F8F5EF] p-6 rounded-sm border-t-4 border-[#D4AF37] border-x border-b border-[#D4AF37]/20 shadow-sm flex flex-col justify-between"
                 >
                   <div>
-                    <Quote className="w-5 h-5 text-[#D4AF37]/40 mb-3" />
+                    <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-[#9a3820] mb-3">
+                      {t.category}
+                    </span>
+                    <Quote className="w-5 h-5 text-[#D4AF37]/40 mb-2" />
                     <p className="text-xs sm:text-sm text-[#1C1C1C]/80 leading-relaxed">
                       &ldquo;{t.quote}&rdquo;
                     </p>
