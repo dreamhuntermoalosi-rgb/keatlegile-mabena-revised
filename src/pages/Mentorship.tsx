@@ -58,10 +58,10 @@ export const Mentorship: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9a3820] border border-[#D4AF37]/40 rounded-sm text-xs font-semibold text-[#E2C45C] uppercase tracking-wider">
             <Compass className="w-3.5 h-3.5" />
-            <span>One-on-one Mentorship Program</span>
+            <span>Mentorship</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold">
-            Mentorship
+            One-on-one Mentorship Program
           </h1>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
             A thoughtful space to find your next step.
