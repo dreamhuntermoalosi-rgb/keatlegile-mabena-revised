@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { X, MessageSquare, Send, Building2, User, Phone as PhoneIcon, Mail, Lock, Shield, CheckCircle2, Loader2 } from 'lucide-react';
+import { X, Send, Building2, User, Phone as PhoneIcon, Mail, Lock, CheckCircle2, Loader2 } from 'lucide-react';
 import { FIRM_DETAILS } from '../data/firmData';
 import { submitToWordPress, FormType } from '../utils/wordpressForms';
 
@@ -29,24 +29,39 @@ export const useWhatsAppModal = () => {
   return context;
 };
 
-const CTA_SERVICES = [
-  'Keynote Speaking & Event Addresses',
-  'Mentorship Programme (1-on-1 & Cohort)',
-  'Book Orders & Inquiries (Breaking the Chains / Author)',
-  'Media, Interviews & Feature Enquiries',
-  'General Direct Enquiry'
-];
+// Locked service label per CTA type — no dropdown needed
+const SERVICE_LABELS: Record<string, string> = {
+  speaking: 'Keynote Speaking & Event Addresses',
+  mentorship: 'Mentorship Programme (1-on-1 & Cohort)',
+  book: 'Book Orders & Inquiries',
+  media: 'Media, Interviews & Feature Enquiries',
+  conversation: 'General Direct Enquiry',
+  general: 'General Direct Enquiry',
+  partnership: 'Partnership Enquiry',
+  career: 'Career Development Enquiry',
+};
+
+// Submit button text per CTA type
+const SUBMIT_LABELS: Record<string, string> = {
+  speaking: 'Enquire about speaking',
+  mentorship: 'Apply for mentorship',
+  book: 'Submit book order',
+  media: 'Submit media enquiry',
+  conversation: 'Submit enquiry',
+  general: 'Submit enquiry',
+  partnership: 'Submit partnership enquiry',
+  career: 'Submit career enquiry',
+};
 
 export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [modalTitle, setModalTitle] = useState('Start a Conversation');
+  const [modalTitle, setModalTitle] = useState('Invite me to speak');
   const [modalSubtitle, setModalSubtitle] = useState('Direct WhatsApp connect with Keatlegile Mabena');
   const [ctaType, setCtaType] = useState<string>('conversation');
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [organization, setOrganization] = useState('');
-  const [selectedService, setSelectedService] = useState(CTA_SERVICES[0]);
   const [message, setMessage] = useState('');
   const [consentAgreed, setConsentAgreed] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -70,13 +85,6 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
 
     if (options?.initialOrganization) setOrganization(options.initialOrganization);
     else setOrganization('');
-
-    if (options?.defaultService) {
-      const matched = CTA_SERVICES.find(s => s.toLowerCase().includes(options.defaultService!.toLowerCase()));
-      setSelectedService(matched || options.defaultService);
-    } else {
-      setSelectedService(CTA_SERVICES[0]);
-    }
 
     if (options?.defaultMessage) {
       setMessage(options.defaultMessage);
@@ -114,29 +122,6 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
     };
   }, [isOpen]);
 
-  // Build formatted message for WhatsApp payload upon submission
-  const buildFormattedMessage = () => {
-    const clientName = fullName.trim() || 'Enquirer';
-    const clientPhone = phone.trim() ? phone.trim() : 'Not provided';
-    const clientEmail = email.trim() ? email.trim() : 'Not provided';
-    const clientOrg = organization.trim() ? organization.trim() : 'Individual / Independent';
-    const note = message.trim() || 'No additional details provided.';
-
-    return `Hello Keatlegile Mabena,
-
-*ENQUIRY: ${modalTitle.toUpperCase()}*
-• *Full Name:* ${clientName}
-• *Phone:* ${clientPhone}
-• *Email:* ${clientEmail}
-• *Organisation:* ${clientOrg}
-• *Area of Focus:* ${selectedService}
-
-*Message / Request Details:*
-${note}
-
-_Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
-  };
-
   const handleFormSubmit = async () => {
     if (!fullName.trim()) {
       alert('Please enter your full name.');
@@ -149,11 +134,11 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
 
     setIsSubmitting(true);
 
-    // Determine the WordPress form type based on the CTA type
     const formType: FormType =
       ctaType === 'speaking' ? 'speaking' :
       ctaType === 'mentorship' ? 'mentorship' :
       ctaType === 'book' ? 'book-order' :
+      ctaType === 'media' ? 'media' :
       ctaType === 'general' ? 'book-order' : 'book-order';
 
     await submitToWordPress(formType, {
@@ -161,7 +146,7 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
       phone: phone.trim() || 'Not provided',
       email: email.trim() || 'Not provided',
       organisation: organization.trim() || 'Individual / Independent',
-      service: selectedService,
+      service: SERVICE_LABELS[ctaType] || 'General Direct Enquiry',
       message: message.trim() || 'No additional details provided.',
     });
 
@@ -169,11 +154,14 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
     setIsSubmitted(true);
   };
 
+  const serviceLabel = SERVICE_LABELS[ctaType] || 'General Direct Enquiry';
+  const submitLabel = SUBMIT_LABELS[ctaType] || 'Submit enquiry';
+
   return (
     <WhatsAppModalContext.Provider value={{ openWhatsAppModal, closeWhatsAppModal }}>
       {children}
 
-      {/* WhatsApp Modal Overlay */}
+      {/* Form Modal Overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xs animate-fade-in"
@@ -186,32 +174,39 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
             aria-modal="true"
             aria-labelledby="whatsapp-modal-title"
           >
-            {/* Modal Header */}
-            <div className="shrink-0 bg-gradient-to-r from-[#5a1f10] via-[#7e2e19] to-[#5a1f10] text-white p-4 sm:p-5 border-b-2 border-[#D4AF37] flex items-center justify-between gap-3">
-              <div className="flex items-center gap-3 min-w-0 pr-1">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#D4AF37] text-[#1C1C1C] flex items-center justify-center shadow-lg shrink-0 border border-[#E2C45C]">
-                  <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 fill-current stroke-none" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#E2C45C] mb-0.5 truncate">
-                    Direct Connect
+            {/* Modal Header — with KM Logo */}
+            <div className="shrink-0 bg-gradient-to-r from-[#5a1f10] via-[#7e2e19] to-[#5a1f10] text-white border-b-2 border-[#D4AF37] relative">
+              <div className="flex items-center justify-between gap-3 p-4 sm:p-5">
+                <div className="flex items-center gap-3 min-w-0 pr-1">
+                  {/* KM Logo */}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg shrink-0 border-2 border-[#E2C45C] overflow-hidden">
+                    <img
+                      src="https://mediahub.swiftcart.co.za/wp-content/uploads/2026/08/KM-Fav-Icon.png"
+                      alt="KM"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <h3 id="whatsapp-modal-title" className="font-serif text-base sm:text-lg font-bold text-white leading-tight truncate">
-                    {modalTitle}
-                  </h3>
-                  <p className="text-[11px] sm:text-xs text-white/80 mt-0.5 font-normal truncate">
-                    {modalSubtitle}
-                  </p>
+                  <div className="min-w-0">
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#E2C45C] mb-0.5 truncate">
+                      Keatlegile Mabena
+                    </div>
+                    <h3 id="whatsapp-modal-title" className="font-serif text-base sm:text-lg font-bold text-white leading-tight truncate">
+                      {modalTitle}
+                    </h3>
+                    <p className="text-[11px] sm:text-xs text-white/80 mt-0.5 font-normal truncate">
+                      {modalSubtitle}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <button
-                onClick={closeWhatsAppModal}
-                className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 hover:bg-white/30 active:bg-white/40 text-white flex items-center justify-center border border-white/40 shadow-md transition-all focus:outline-none cursor-pointer"
-                aria-label="Close dialog"
-              >
-                <X className="w-5 h-5 stroke-[2.5]" />
-              </button>
+                <button
+                  onClick={closeWhatsAppModal}
+                  className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 hover:bg-white/30 active:bg-white/40 text-white flex items-center justify-center border border-white/40 shadow-md transition-all focus:outline-none cursor-pointer"
+                  aria-label="Close dialog"
+                >
+                  <X className="w-5 h-5 stroke-[2.5]" />
+                </button>
+              </div>
             </div>
 
             {/* Modal Body / Form */}
@@ -226,32 +221,20 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                       Submission Received
                     </span>
                     <h4 className="font-serif text-xl sm:text-2xl font-bold text-[#7e2e19]">
-                      Booking Request Submitted!
+                      Thank you, {fullName}!
                     </h4>
                   </div>
                   <p className="text-xs text-gray-700 leading-relaxed max-w-sm mx-auto">
-                    Thank you, <strong className="text-[#7e2e19]">{fullName}</strong>! Your request for <strong className="text-[#7e2e19]">{selectedService}</strong> has been submitted successfully.
+                    Your enquiry has been submitted successfully. A confirmation email has been sent to {email || 'your inbox'}.
                   </p>
                   <p className="text-[11px] text-gray-600 max-w-xs mx-auto">
-                    Keatlegile Mabena&apos;s team will review your message and contact you shortly.
+                    Keatlegile Mabena will review your message and respond shortly.
                   </p>
-                  <div className="pt-3 flex flex-col sm:flex-row gap-2.5 justify-center max-w-xs mx-auto">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        const formattedText = buildFormattedMessage();
-                        const whatsappUrl = `https://wa.me/${FIRM_DETAILS.contact.whatsappNumber}?text=${encodeURIComponent(formattedText)}`;
-                        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-                      }}
-                      className="w-full sm:w-auto px-4 py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-wider rounded border border-[#E2C45C] shadow flex items-center justify-center gap-1.5 cursor-pointer"
-                    >
-                      <MessageSquare className="w-3.5 h-3.5 fill-current stroke-none" />
-                      <span>Also Connect on WhatsApp</span>
-                    </button>
+                  <div className="pt-3">
                     <button
                       type="button"
                       onClick={closeWhatsAppModal}
-                      className="w-full sm:w-auto px-4 py-2.5 bg-gray-200 hover:bg-gray-300 text-gray-800 text-xs font-bold uppercase tracking-wider rounded cursor-pointer"
+                      className="px-6 py-2.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-colors cursor-pointer shadow-sm"
                     >
                       Done
                     </button>
@@ -259,9 +242,11 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                 </div>
               ) : (
                 <>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Please fill in your details below to submit a direct booking request:
-                  </p>
+                  {/* Service label (locked, no dropdown) */}
+                  <div className="p-2.5 bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                    <span className="text-xs font-semibold text-[#7e2e19]">{serviceLabel}</span>
+                  </div>
 
                   {/* Form Controls */}
                   <div className="space-y-3.5">
@@ -302,7 +287,7 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
 
                       <div>
                         <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
-                          Email Address (Optional)
+                          Email Address
                         </label>
                         <div className="relative">
                           <Mail className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -317,7 +302,7 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                       </div>
                     </div>
 
-                    {/* Organisation / Company (if applicable) */}
+                    {/* Organisation / Company */}
                     <div>
                       <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
                         Organisation / Institution (Optional)
@@ -334,24 +319,6 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                       </div>
                     </div>
 
-                    {/* Service / Topic */}
-                    <div>
-                      <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
-                        Area of Focus / Engagement Topic
-                      </label>
-                      <select
-                        value={selectedService}
-                        onChange={(e) => setSelectedService(e.target.value)}
-                        className="w-full px-3.5 py-2 bg-gray-50 border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] focus:bg-white transition-colors"
-                      >
-                        {CTA_SERVICES.map((s, idx) => (
-                          <option key={idx} value={s}>
-                            {s}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
                     {/* Message Notes */}
                     <div>
                       <label className="block text-xs font-bold text-[#1C1C1C] mb-1">
@@ -366,14 +333,25 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                       />
                     </div>
 
-                    {/* Information Usage Disclosure & POPIA Consent */}
+                    {/* Honeypot (hidden from humans) */}
+                    <input
+                      type="text"
+                      name="website"
+                      value=""
+                      onChange={() => {}}
+                      style={{ display: 'none' }}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+
+                    {/* POPIA Consent */}
                     <div className="p-3 bg-gray-50 rounded border border-gray-200 space-y-2 text-[11px] text-gray-700">
                       <div className="flex items-center gap-1.5 font-bold text-[#7e2e19]">
                         <Lock className="w-3.5 h-3.5 text-[#9a3820]" />
                         <span>How Information Will Be Used</span>
                       </div>
                       <p className="text-[10px] text-gray-600 leading-snug">
-                        Your personal information (Name, Contact Details, Institution, Message) is collected solely to respond to your enquiry, coordinate booking logistics, or provide requested mentorship details in accordance with South Africa&apos;s POPIA standards.
+                        Your personal information (Name, Contact Details, Institution, Message) is collected solely to respond to your enquiry, coordinate booking logistics, or provide requested details in accordance with South Africa&apos;s POPIA standards.
                       </p>
                       <div className="pt-1 border-t border-gray-200 flex items-start gap-2">
                         <input
@@ -395,21 +373,21 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
 
             {/* Modal Footer */}
             {!isSubmitted && (
-              <div className="shrink-0 p-3.5 sm:p-4 bg-gray-100 border-t-2 border-gray-200 flex flex-col-reverse sm:flex-row items-center justify-between gap-2.5">
+              <div className="shrink-0 p-3.5 sm:p-4 bg-[#7e2e19] border-t-2 border-[#D4AF37] flex flex-col-reverse sm:flex-row items-center justify-between gap-2.5">
                 <button
                   type="button"
                   onClick={closeWhatsAppModal}
-                  className="w-full sm:w-auto px-4 py-2 text-xs font-bold text-gray-700 bg-gray-200 hover:bg-gray-300 rounded transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full sm:w-auto px-4 py-2 text-xs font-bold text-white/70 hover:text-white transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <X className="w-3.5 h-3.5" />
-                  <span>Close</span>
+                  <span>Cancel</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={handleFormSubmit}
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto px-5 py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-wider rounded border border-[#E2C45C] shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-70"
+                  className="w-full sm:w-auto px-5 py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-wider rounded-sm border border-[#E2C45C] shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <>
@@ -419,12 +397,7 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
                   ) : (
                     <>
                       <Send className="w-4 h-4 text-[#1C1C1C]" />
-                      <span>
-                        {ctaType === 'speaking' ? 'Invite me to speak' :
-                         ctaType === 'mentorship' ? 'Submit Mentorship Request' :
-                         ctaType === 'book' ? 'Submit Book Order Request' :
-                         'Submit Booking Request'}
-                      </span>
+                      <span>{submitLabel}</span>
                     </>
                   )}
                 </button>
