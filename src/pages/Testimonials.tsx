@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { BOOK_TESTIMONIALS, Testimonial } from '../data/testimonialsData';
+import { submitToWordPress } from '../utils/wordpressForms';
 
 export const Testimonials: React.FC = () => {
   const [isSubmitModalOpen, setIsSubmitModalOpen] = useState<boolean>(false);
@@ -26,9 +27,20 @@ export const Testimonials: React.FC = () => {
     quote: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.quote) return;
+
+    setIsSubmitting(true);
+    await submitToWordPress('testimonial', {
+      name: formData.name,
+      category: formData.category,
+      message: formData.quote,
+    });
+    setIsSubmitting(false);
+
     setSubmittedSuccess(true);
     setTimeout(() => {
       setIsSubmitModalOpen(false);

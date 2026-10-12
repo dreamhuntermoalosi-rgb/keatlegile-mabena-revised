@@ -7,7 +7,7 @@ import { MessageSquare, Calendar, CheckCircle2, ShieldCheck, ArrowRight, User, B
 import { SEO } from '../components/SEO';
 import { FIRM_DETAILS } from '../data/firmData';
 import { IMAGES } from '../data/images';
-import { submitToWeb3Forms } from '../utils/web3forms';
+import { submitToWordPress } from '../utils/wordpressForms';
 
 const WHATSAPP_NUMBER = FIRM_DETAILS.contact.whatsappNumber;
 
@@ -72,18 +72,20 @@ export const BookKeatlegile: React.FC = () => {
     setIsSubmitting(true);
     setSubmittedData(data);
 
-    // Direct client-side submission to Web3Forms API
-    await submitToWeb3Forms({
-      subject: `New Booking Request: ${data.fullName} - ${data.serviceRequired}`,
+    // Determine form type based on the preselected service
+    const formType = serviceParam === 'mentorship' ? 'mentorship' : 'speaking';
+
+    // Submit to WordPress REST endpoint
+    await submitToWordPress(formType, {
       name: data.fullName,
       email: data.email,
       phone: data.phone,
-      organization: data.organisation || 'Independent / Individual',
+      organisation: data.organisation || 'Independent / Individual',
       service: data.serviceRequired,
       format: data.engagementFormat,
-      preferredDate: data.preferredDate || 'Flexible / To be confirmed',
-      eventLocation: data.eventLocation || 'To be specified',
-      estimatedAudience: data.estimatedAudience || 'N/A',
+      date: data.preferredDate || 'Flexible / To be confirmed',
+      location: data.eventLocation || 'To be specified',
+      audience: data.estimatedAudience || 'N/A',
       message: data.message
     });
 

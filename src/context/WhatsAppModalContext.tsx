@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { X, MessageSquare, Send, Building2, User, Phone as PhoneIcon, Mail, Lock, Shield, CheckCircle2, Loader2 } from 'lucide-react';
 import { FIRM_DETAILS } from '../data/firmData';
-import { submitToWeb3Forms } from '../utils/web3forms';
+import { submitToWordPress, FormType } from '../utils/wordpressForms';
 
 export interface WhatsAppModalOptions {
   title?: string;
@@ -149,12 +149,18 @@ _Sent via Keatlegile Mabena Official Portal (keatlegilemabena.co.za)_`;
 
     setIsSubmitting(true);
 
-    await submitToWeb3Forms({
-      subject: `New Booking Request: ${modalTitle} (${fullName.trim()})`,
+    // Determine the WordPress form type based on the CTA type
+    const formType: FormType =
+      ctaType === 'speaking' ? 'speaking' :
+      ctaType === 'mentorship' ? 'mentorship' :
+      ctaType === 'book' ? 'book-order' :
+      ctaType === 'general' ? 'book-order' : 'book-order';
+
+    await submitToWordPress(formType, {
       name: fullName.trim(),
       phone: phone.trim() || 'Not provided',
       email: email.trim() || 'Not provided',
-      organization: organization.trim() || 'Individual / Independent',
+      organisation: organization.trim() || 'Individual / Independent',
       service: selectedService,
       message: message.trim() || 'No additional details provided.',
     });
