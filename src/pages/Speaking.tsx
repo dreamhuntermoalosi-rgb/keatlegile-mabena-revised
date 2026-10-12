@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Mic, Quote } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { IMAGES } from '../data/images';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const Speaking: React.FC = () => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   return (
     <>
       <SEO
@@ -157,13 +158,13 @@ export const Speaking: React.FC = () => {
           <p className="text-sm text-[#1C1C1C]/80">
             Enquire about availability, keynote themes, and institutional speaking packages.
           </p>
-          <Link
-            to="/book-keatlegile?service=speaking"
-            className="px-8 py-3.5 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 shadow-md"
+          <button
+            onClick={() => openWhatsAppModal({ ctaType: 'speaking', title: 'Enquire about speaking', subtitle: 'Speaking engagements & keynote addresses' })}
+            className="px-8 py-3.5 bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#9a3820] transition-colors inline-flex items-center gap-2 shadow-md cursor-pointer"
           >
             <span>Enquire about speaking</span>
             <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-          </Link>
+          </button>
         </div>
       </section>
     </>

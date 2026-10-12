@@ -24,6 +24,7 @@ import { FIRM_DETAILS, AT_A_GLANCE, BOOKS } from '../data/firmData';
 import { ALL_TESTIMONIALS } from '../data/testimonialsData';
 import { MEDIA_PREVIEW } from '../data/mediaData';
 import { IMAGES } from '../data/images';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 const iconMap: Record<string, React.ElementType> = {
   GraduationCap,
@@ -348,6 +349,7 @@ const MediaCarousel: React.FC = () => {
 };
 
 export const Home: React.FC = () => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   // Featured book = the one flagged as featured (has a real cover image)
   const featuredBook = BOOKS.find((b) => b.featured) ?? BOOKS[0];
 
@@ -434,13 +436,13 @@ export const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4"
             >
-              <Link
-                to="/book-keatlegile?service=speaking"
-                className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C]"
+              <button
+                onClick={() => openWhatsAppModal({ ctaType: 'speaking', title: 'Invite me to speak', subtitle: 'Speaking engagements & keynote addresses' })}
+                className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C] cursor-pointer"
               >
                 <span>Invite me to speak</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
-              </Link>
+              </button>
 
               <Link
                 to="/mentorship"
@@ -753,19 +755,19 @@ export const Home: React.FC = () => {
             Engage Keatlegile Mabena
           </h2>
           <div className="pt-2 flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link
-              to="/book-keatlegile?service=speaking"
-              className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C]"
+            <button
+              onClick={() => openWhatsAppModal({ ctaType: 'speaking', title: 'Enquire about speaking', subtitle: 'Speaking engagements & keynote addresses' })}
+              className="px-8 py-4 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl transition-all duration-300 hover:shadow-2xl flex items-center justify-center gap-3 group border border-[#E2C45C] cursor-pointer"
             >
               <span>Enquire about speaking</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
-            </Link>
-            <Link
-              to="/book-keatlegile?service=mentorship"
-              className="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-widest rounded-sm border border-white/30 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-2"
+            </button>
+            <button
+              onClick={() => openWhatsAppModal({ ctaType: 'mentorship', title: 'Apply for mentorship', subtitle: 'One-on-one mentorship programme' })}
+              className="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-widest rounded-sm border border-white/30 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Apply for mentorship</span>
-            </Link>
+            </button>
           </div>
         </div>
       </section>

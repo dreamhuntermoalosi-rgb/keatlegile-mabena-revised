@@ -19,12 +19,14 @@ import { SEO } from './SEO';
 import { Breadcrumbs } from './Breadcrumbs';
 import { SERVICES, FIRM_DETAILS } from '../data/firmData';
 import { IMAGES } from '../data/images';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 interface ServiceDetailTemplateProps {
   serviceId: string;
 }
 
 export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ serviceId }) => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   const service = SERVICES.find((s) => s.id === serviceId);
 
   if (!service) {
@@ -104,13 +106,13 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
           </p>
 
           <div className="pt-4 flex flex-wrap gap-4">
-            <Link
-              to="/book-keatlegile?service=speaking"
-              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl inline-flex items-center gap-2"
+            <button
+              onClick={() => openWhatsAppModal({ ctaType: 'speaking', title: 'Invite me to speak', subtitle: 'Speaking engagements & keynote addresses' })}
+              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] font-bold text-xs uppercase tracking-widest rounded-sm shadow-xl inline-flex items-center gap-2 cursor-pointer"
             >
               <span>Invite me to speak</span>
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -201,12 +203,12 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ se
                 </div>
               </div>
 
-              <Link
-                to="/book-keatlegile?service=speaking"
-                className="w-full py-3 bg-[#9a3820] hover:bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-wider rounded-sm text-center block shadow transition-colors border border-[#D4AF37]/40"
+              <button
+                onClick={() => openWhatsAppModal({ ctaType: 'speaking', title: 'Invite me to speak', subtitle: 'Speaking engagements & keynote addresses' })}
+                className="w-full py-3 bg-[#9a3820] hover:bg-[#7e2e19] text-white text-xs font-bold uppercase tracking-wider rounded-sm text-center block shadow transition-colors border border-[#D4AF37]/40 cursor-pointer"
               >
                 Invite me to speak
-              </Link>
+              </button>
             </div>
 
             {/* Other Practice Areas List */}

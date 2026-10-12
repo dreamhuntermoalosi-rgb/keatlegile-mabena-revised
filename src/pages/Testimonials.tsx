@@ -14,8 +14,10 @@ import {
 import { SEO } from '../components/SEO';
 import { BOOK_TESTIMONIALS, Testimonial } from '../data/testimonialsData';
 import { submitToWordPress } from '../utils/wordpressForms';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const Testimonials: React.FC = () => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   const [isSubmitModalOpen, setIsSubmitModalOpen] = useState<boolean>(false);
   const [submittedSuccess, setSubmittedSuccess] = useState<boolean>(false);
   const [isPausedRow1, setIsPausedRow1] = useState<boolean>(false);
@@ -291,18 +293,18 @@ export const Testimonials: React.FC = () => {
               <span>Explore the books</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link
-              to="/book-keatlegile?service=speaking"
-              className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center justify-center"
+            <button
+              onClick={() => openWhatsAppModal({ ctaType: 'speaking', title: 'Enquire about speaking', subtitle: 'Speaking engagements & keynote addresses' })}
+              className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center justify-center cursor-pointer"
             >
               Enquire about speaking
-            </Link>
-            <Link
-              to="/book-keatlegile?service=mentorship"
-              className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center justify-center"
+            </button>
+            <button
+              onClick={() => openWhatsAppModal({ ctaType: 'mentorship', title: 'Apply for mentorship', subtitle: 'One-on-one mentorship programme' })}
+              className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center justify-center cursor-pointer"
             >
               Apply for mentorship
-            </Link>
+            </button>
           </div>
         </div>
       </section>

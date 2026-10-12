@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Compass, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { IMAGES } from '../data/images';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 const MENTORSHIP_PILLARS = [
   {
@@ -33,6 +33,7 @@ const MENTORSHIP_PILLARS = [
 ];
 
 export const Mentorship: React.FC = () => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   return (
     <>
       <SEO
@@ -142,13 +143,13 @@ export const Mentorship: React.FC = () => {
           </div>
 
           <div className="pt-4">
-            <Link
-              to="/book-keatlegile?service=mentorship"
-              className="px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 inline-flex items-center gap-2"
+            <button
+              onClick={() => openWhatsAppModal({ ctaType: 'mentorship', title: 'Apply for mentorship', subtitle: 'One-on-one mentorship programme' })}
+              className="px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 inline-flex items-center gap-2 cursor-pointer"
             >
               <span>Apply for mentorship</span>
               <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-            </Link>
+            </button>
           </div>
         </div>
       </section>

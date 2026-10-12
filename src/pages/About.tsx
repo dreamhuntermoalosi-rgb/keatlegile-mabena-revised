@@ -31,8 +31,10 @@ import { SEO } from '../components/SEO';
 import { CORE_VALUES, FIRM_DETAILS } from '../data/firmData';
 import { LETTERS } from '../data/mediaData';
 import { IMAGES } from '../data/images';
+import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const About: React.FC = () => {
+  const { openWhatsAppModal } = useWhatsAppModal();
   // Academic Accordion state
   const [activeAccordion, setActiveAccordion] = useState<string | null>('qualifications');
 
@@ -270,13 +272,13 @@ export const About: React.FC = () => {
           <p className="text-sm text-[#1C1C1C]/70">
             Available for speaking engagements, facilitated conversations, mentorship programmes and purpose-driven collaborations across educational, corporate and community settings.
           </p>
-          <Link
-            to="/book-keatlegile"
-            className="px-8 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white text-xs font-bold uppercase tracking-widest rounded-sm transition-colors inline-flex items-center gap-2 border border-[#D4AF37]/40 shadow-md"
+          <button
+            onClick={() => openWhatsAppModal({ ctaType: 'speaking', title: 'Invite me to speak', subtitle: 'Speaking, mentorship & collaborations' })}
+            className="px-8 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white text-xs font-bold uppercase tracking-widest rounded-sm transition-colors inline-flex items-center gap-2 border border-[#D4AF37]/40 shadow-md cursor-pointer"
           >
             <span>Get in Touch</span>
             <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-          </Link>
+          </button>
         </div>
       </section>
     </>
