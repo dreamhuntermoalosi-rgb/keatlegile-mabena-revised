@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-4">
             <Logo variant="dark" size="md" />
             <p className="text-xs text-white/75 leading-relaxed pt-2">
-              Speaker, Author and Mentor helping people move toward healing, clarity and purposeful action.
+              Speaker, author and mentor helping people move towards healing, clarity and purposeful action.
             </p>
 
             {/* Social Icons */}

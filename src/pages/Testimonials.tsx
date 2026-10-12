@@ -5,7 +5,6 @@ import {
   MessageSquare,
   Sparkles,
   BookOpen,
-  Heart,
   ArrowRight,
   CheckCircle2,
   Send,
@@ -13,13 +12,12 @@ import {
   Play
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
-import { BOOK_TESTIMONIALS, IMPACT_TESTIMONIALS, Testimonial } from '../data/testimonialsData';
+import { BOOK_TESTIMONIALS, Testimonial } from '../data/testimonialsData';
 
 export const Testimonials: React.FC = () => {
   const [isSubmitModalOpen, setIsSubmitModalOpen] = useState<boolean>(false);
   const [submittedSuccess, setSubmittedSuccess] = useState<boolean>(false);
   const [isPausedRow1, setIsPausedRow1] = useState<boolean>(false);
-  const [isPausedRow2, setIsPausedRow2] = useState<boolean>(false);
 
   // Modal Form State
   const [formData, setFormData] = useState({
@@ -41,7 +39,6 @@ export const Testimonials: React.FC = () => {
 
   // Triple the arrays to ensure seamless infinite looping without gaps
   const row1Triple = [...BOOK_TESTIMONIALS, ...BOOK_TESTIMONIALS, ...BOOK_TESTIMONIALS];
-  const row2Triple = [...IMPACT_TESTIMONIALS, ...IMPACT_TESTIMONIALS, ...IMPACT_TESTIMONIALS];
 
   return (
     <div className="bg-[#FAF8F5] min-h-screen text-[#1C1C1C]">
@@ -61,7 +58,7 @@ export const Testimonials: React.FC = () => {
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-[#D4AF37]/40 text-[#E2C45C] text-xs font-semibold uppercase tracking-wider mb-6">
             <Sparkles className="w-3.5 h-3.5 text-[#E2C45C]" />
-            <span>Readers' Reflections &amp; Personal Impact</span>
+            <span>Readers' Reflections</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight max-w-4xl mx-auto">
@@ -69,7 +66,7 @@ export const Testimonials: React.FC = () => {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed font-light">
-            Real notes, heartfelt reflections, and life-changing testimonials shared by readers of <em>Breaking the Chains</em> and people empowered by Keatlegile Mabena's work.
+            Real notes, heartfelt reflections, and life-changing testimonials share by readers on Breaking the Chains.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -78,7 +75,7 @@ export const Testimonials: React.FC = () => {
               className="px-5 py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-wider rounded shadow-md transition-colors inline-flex items-center gap-2"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Share Your Story</span>
+              <span>Share your experience</span>
             </button>
 
             <Link
@@ -86,15 +83,15 @@ export const Testimonials: React.FC = () => {
               className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center gap-2"
             >
               <BookOpen className="w-4 h-4 text-[#E2C45C]" />
-              <span>Explore The Book</span>
+              <span>Explore my books</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Main Content Area - Infinite Loop Carousels */}
+      {/* Main Content Area - Infinite Loop Carousel */}
       <div className="py-16 space-y-16 overflow-hidden">
-        {/* CAROUSEL SECTION 1: ON "BREAKING THE CHAINS" (THE BOOK) */}
+        {/* CAROUSEL SECTION: Reader testimonials */}
         <section className="space-y-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
             <div className="flex items-center gap-3">
@@ -103,7 +100,7 @@ export const Testimonials: React.FC = () => {
               </div>
               <div>
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1C1C]">
-                  ON "BREAKING THE CHAINS" (THE BOOK)
+                  Readers on Breaking the Chains.
                 </h2>
                 <p className="text-xs text-slate-500">
                   Hover over any card to pause scrolling
@@ -162,73 +159,6 @@ export const Testimonials: React.FC = () => {
           </div>
         </section>
 
-        {/* CAROUSEL SECTION 2: 💫 LIFE-CHANGING IMPACT & PERSONAL GROWTH */}
-        <section className="space-y-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 bg-[#D4AF37]/20 text-[#A88616] rounded-lg">
-                <Heart className="w-5 h-5" />
-              </div>
-              <div>
-                <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1C1C]">
-                  💫 LIFE-CHANGING IMPACT &amp; PERSONAL GROWTH
-                </h2>
-                <p className="text-xs text-slate-500">
-                  Hover over any card to pause scrolling
-                </p>
-              </div>
-            </div>
-
-            <button
-              onClick={() => setIsPausedRow2(!isPausedRow2)}
-              className="px-3 py-1.5 text-xs font-semibold rounded bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 flex items-center gap-1.5 shadow-sm"
-            >
-              {isPausedRow2 ? <Play className="w-3.5 h-3.5 text-[#7e2e19]" /> : <Pause className="w-3.5 h-3.5 text-[#7e2e19]" />}
-              <span>{isPausedRow2 ? 'Resume Scroll' : 'Pause Scroll'}</span>
-            </button>
-          </div>
-
-          {/* Continuous Infinite Marquee Track 2 (Reverse direction) */}
-          <div className="relative w-full overflow-hidden pause-on-hover py-4 bg-gradient-to-r from-transparent via-[#FAF8F5] to-transparent">
-            {/* Fade Edges */}
-            <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
-            <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
-
-            <div
-              className={`animate-marquee-slow-reverse flex gap-6 ${isPausedRow2 ? '[animation-play-state:paused!important]' : ''}`}
-            >
-              {row2Triple.map((t, idx) => (
-                <div
-                  key={`${t.id}-${idx}`}
-                  className="w-[320px] sm:w-[380px] shrink-0 bg-white p-6 rounded-xl border-t-4 border-t-[#7e2e19] border-x border-b border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-[#D4AF37]/20 text-[#7e2e19] rounded-full border border-[#D4AF37]/30">
-                        {t.category}
-                      </span>
-                      <Quote className="w-5 h-5 text-[#7e2e19]/40 group-hover:text-[#7e2e19] transition-colors" />
-                    </div>
-
-                    <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal mb-4 whitespace-normal">
-                      "{t.quote}"
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-[#D4AF37] text-[#1C1C1C] flex items-center justify-center font-bold text-xs uppercase shadow-sm">
-                        {t.name.charAt(0)}
-                      </div>
-                      <span className="text-xs font-bold text-[#1C1C1C]">{t.name}</span>
-                    </div>
-                    <span className="text-[10px] text-slate-400 font-medium">Verified Message</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </div>
 
       {/* Share Feedback Modal */}
@@ -336,24 +266,30 @@ export const Testimonials: React.FC = () => {
       <section className="bg-[#7e2e19] text-white py-14 px-4 sm:px-8 border-t-4 border-[#D4AF37]/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">
-            Ready to begin your own journey of purpose?
+            Ready to take the next step?
           </h2>
           <p className="text-xs sm:text-sm text-white/90 max-w-xl mx-auto mb-8 leading-relaxed">
-            Discover Keatlegile Mabena's best-selling book <em>Breaking the Chains</em> or book a keynote address or mentorship session.
+            Explore Keatlegile&rsquo;s books, invite him to speak at your event, or apply for mentorship.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/books"
               className="w-full sm:w-auto px-6 py-3 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-xs font-bold uppercase tracking-wider rounded shadow-lg transition-colors inline-flex items-center justify-center gap-2"
             >
-              <span>Explore His Books</span>
+              <span>Explore the books</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/book-keatlegile?service=speaking"
               className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center justify-center"
             >
-              Invite me to speak
+              Enquire about speaking
+            </Link>
+            <Link
+              to="/book-keatlegile?service=mentorship"
+              className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center justify-center"
+            >
+              Apply for mentorship
             </Link>
           </div>
         </div>
