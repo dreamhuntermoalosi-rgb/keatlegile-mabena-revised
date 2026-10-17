@@ -119,7 +119,7 @@ export const Books: React.FC = () => {
       <section className="py-16 bg-[#7e2e19] text-white text-center border-t-2 border-[#D4AF37]/40">
         <div className="max-w-3xl mx-auto px-4 space-y-6">
           <h2 className="font-serif text-3xl font-bold text-[#E2C45C]">
-            Order books for yourself, schools, or your organization
+            Order books for yourself, for someone else, or in bulk
           </h2>
           <p className="text-sm text-white/80">
             For individual book orders, school distribution, or corporate bulk purchases accompanied by keynote talks, reach out directly.
