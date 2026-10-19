@@ -33,7 +33,7 @@ export const useWhatsAppModal = () => {
 // Locked service label per CTA type — no dropdown needed
 const SERVICE_LABELS: Record<string, string> = {
   speaking: 'Keynote Speaking & Event Addresses',
-  mentorship: 'Mentorship Programme (1-on-1 & Cohort)',
+  mentorship: 'Mentorship Programme (1-on-1)',
   book: 'Book Orders & Inquiries',
   media: 'Media, Interviews & Feature Enquiries',
   conversation: 'General Direct Enquiry',

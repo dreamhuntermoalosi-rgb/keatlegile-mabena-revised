@@ -231,6 +231,9 @@ export const About: React.FC = () => {
                 </div>
                 <div className="space-y-2 text-center pt-3">
                   <h3 className="font-serif text-xl font-bold text-[#7e2e19]">Keatlegile Mabena</h3>
+                  <p className="text-xs text-[#9a3820] font-semibold uppercase tracking-wider">
+                    Speaker | Best-Selling Author | Mentor
+                  </p>
                 </div>
               </div>
 
