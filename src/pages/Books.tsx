@@ -122,14 +122,14 @@ export const Books: React.FC = () => {
             Order books for yourself, for someone else, or in bulk
           </h2>
           <p className="text-sm text-white/80">
-            For individual book orders, school distribution, or corporate bulk purchases accompanied by keynote talks, reach out directly.
+            To purchase a copy, enquire about bulk orders, reach out directly.
           </p>
           <button
             type="button"
             onClick={() =>
               openWhatsAppModal({
                 title: 'Order Copies & Bulk Inquiries',
-                subtitle: 'Schools, Corporate Distribution & Group Orders',
+                subtitle: 'To purchase a copy, enquire about bulk orders, reach out directly.',
                 ctaType: 'book',
                 defaultService: 'Book Order & Bulk Inquiry'
               })
