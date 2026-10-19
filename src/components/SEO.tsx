@@ -27,7 +27,7 @@ export const SEO: React.FC<SEOProps> = ({
     'Grief and Resilience'
   ],
   canonicalUrl,
-  ogImage = 'https://mediahub.swiftcart.co.za/wp-content/uploads/2026/08/KEATLEGILE-MABENA-scaled.webp',
+  ogImage = '/og-image.webp',
   ogType = 'website',
   breadcrumbs,
   jsonLd,

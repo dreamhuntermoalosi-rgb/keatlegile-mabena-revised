@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { X, Send, Building2, User, Phone as PhoneIcon, Mail, Lock, CheckCircle2, Loader2 } from 'lucide-react';
 import { FIRM_DETAILS } from '../data/firmData';
 import { submitToWordPress, FormType } from '../utils/wordpressForms';
+import { IMAGES } from '../data/images';
 
 export interface WhatsAppModalOptions {
   title?: string;
@@ -181,7 +182,7 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
                   {/* KM Logo */}
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg shrink-0 border-2 border-[#E2C45C] overflow-hidden">
                     <img
-                      src="https://mediahub.swiftcart.co.za/wp-content/uploads/2026/08/KM-Fav-Icon.png"
+                      src={IMAGES.favicon}
                       alt="KM"
                       className="w-full h-full object-cover"
                     />

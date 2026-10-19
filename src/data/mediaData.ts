@@ -3,6 +3,8 @@
  * Sources are grouped by type for display on the /media page.
  */
 
+import { IMAGES } from './images';
+
 export interface MediaArticle {
   id: string;
   title: string;
@@ -120,7 +122,7 @@ export const MEDIA_PREVIEW: MediaPreviewItem[] = [
     title: 'NWU Alumnus: Unsung Hero',
     source: 'NWU News',
     url: 'https://news.nwu.ac.za/nwu-alumnus-unsung-hero',
-    image: 'https://news.nwu.ac.za/sites/news.nwu.ac.za/files/styles/news_photo_attached/public/files/attach/2022-07/Keatlegile-ICON.jpg?itok=oxdXiYBa'
+    image: IMAGES.nwuArticle
   },
   {
     id: 'mp3',
