@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, ChevronRight, ChevronUp, Sparkles, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { Logo } from './Logo';
 import { FIRM_DETAILS } from '../data/firmData';
-import { useWhatsAppModal } from '../context/WhatsAppModalContext';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const { openWhatsAppModal } = useWhatsAppModal();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -122,14 +120,6 @@ export const Footer: React.FC = () => {
                 <Mail className="w-4 h-4 text-[#D4AF37] shrink-0" />
                 <span>{FIRM_DETAILS.contact.email}</span>
               </a>
-            </div>
-            <div className="pt-3">
-              <button
-                onClick={() => openWhatsAppModal({ ctaType: 'speaking', title: 'Invite me to speak', subtitle: 'Speaking engagements & keynote addresses' })}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D4AF37] hover:bg-[#A88616] text-[#1C1C1C] text-[11px] font-bold uppercase tracking-wider rounded-sm transition-colors border border-[#E2C45C] cursor-pointer"
-              >
-                Invite me to speak
-              </button>
             </div>
           </div>
 
