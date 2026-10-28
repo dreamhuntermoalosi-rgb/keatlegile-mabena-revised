@@ -623,13 +623,15 @@ export const Home: React.FC = () => {
                   <p><span className="font-semibold text-[#7e2e19]">Outcome:</span> Greater clarity, practical next steps and steady support as you move forward.</p>
                 </div>
               </div>
-              <Link
-                to="/mentorship"
+              <a
+                href="https://order.keatlegilemabena.co.za/product/one-on-one-mentorship-session/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9a3820] hover:text-[#D4AF37] transition-colors pt-2"
               >
                 <span>Apply for mentorship</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </a>
             </motion.div>
 
             {/* Books & Authorship */}
@@ -762,12 +764,14 @@ export const Home: React.FC = () => {
               <span>Enquire about speaking</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#1C1C1C]" />
             </button>
-            <button
-              onClick={() => openWhatsAppModal({ ctaType: 'mentorship', title: 'Apply for mentorship', subtitle: 'One-on-one mentorship programme' })}
-              className="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-widest rounded-sm border border-white/30 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-2 cursor-pointer"
+            <a
+              href="https://order.keatlegilemabena.co.za/product/one-on-one-mentorship-session/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-widest rounded-sm border border-white/30 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-2"
             >
               <span>Apply for mentorship</span>
-            </button>
+            </a>
           </div>
         </div>
       </section>

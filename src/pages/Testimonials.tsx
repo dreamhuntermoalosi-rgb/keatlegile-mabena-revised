@@ -299,12 +299,14 @@ export const Testimonials: React.FC = () => {
             >
               Enquire about speaking
             </button>
-            <button
-              onClick={() => openWhatsAppModal({ ctaType: 'mentorship', title: 'Apply for mentorship', subtitle: 'One-on-one mentorship programme' })}
-              className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center justify-center cursor-pointer"
+            <a
+              href="https://order.keatlegilemabena.co.za/product/one-on-one-mentorship-session/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-colors inline-flex items-center justify-center"
             >
               Apply for mentorship
-            </button>
+            </a>
           </div>
         </div>
       </section>

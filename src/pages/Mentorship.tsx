@@ -143,13 +143,15 @@ export const Mentorship: React.FC = () => {
           </div>
 
           <div className="pt-4">
-            <button
-              onClick={() => openWhatsAppModal({ ctaType: 'mentorship', title: 'Apply for mentorship', subtitle: 'One-on-one mentorship programme' })}
-              className="px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 inline-flex items-center gap-2 cursor-pointer"
+            <a
+              href="https://order.keatlegilemabena.co.za/product/one-on-one-mentorship-session/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3.5 bg-[#7e2e19] hover:bg-[#9a3820] text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 inline-flex items-center gap-2"
             >
               <span>Apply for mentorship</span>
               <ArrowRight className="w-4 h-4 text-[#E2C45C]" />
-            </button>
+            </a>
           </div>
         </div>
       </section>
