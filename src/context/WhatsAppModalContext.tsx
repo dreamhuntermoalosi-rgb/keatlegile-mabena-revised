@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Send, Building2, User, Phone as PhoneIcon, Mail, Lock, CheckCircle2, Loader2 } from 'lucide-react';
+import { X, Send, Building2, User, Phone as PhoneIcon, Mail, Lock, CheckCircle2, Loader2, Calendar } from 'lucide-react';
 import { FIRM_DETAILS } from '../data/firmData';
 import { submitToWordPress, FormType } from '../utils/wordpressForms';
 import { IMAGES } from '../data/images';
@@ -67,6 +67,42 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
   const [consentAgreed, setConsentAgreed] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
+
+  // Generate next 4 Wednesdays and Sundays for date picker
+  const availableDates = useMemo(() => {
+    const dates: { value: string; label: string }[] = [];
+    const today = new Date();
+    const daysAhead = 42; // ~6 weeks
+    for (let i = 1; i <= daysAhead; i++) {
+      const d = new Date(today);
+      d.setDate(d.getDate() + i);
+      const day = d.getDay(); // 0=Sunday, 3=Wednesday
+      if (day === 0 || day === 3) {
+        const yyyy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const dd = String(d.getDate()).padStart(2, '0');
+        const dayName = day === 0 ? 'Sunday' : 'Wednesday';
+        const monthName = d.toLocaleDateString('en-ZA', { month: 'short' });
+        dates.push({
+          value: `${yyyy}-${mm}-${dd}`,
+          label: `${dayName}, ${dd} ${monthName} ${yyyy}`,
+        });
+      }
+    }
+    return dates;
+  }, []);
+
+  const timeSlots = [
+    '09:00 – 10:00',
+    '10:00 – 11:00',
+    '11:00 – 12:00',
+    '13:00 – 14:00',
+    '14:00 – 15:00',
+    '15:00 – 16:00',
+    '16:00 – 17:00',
+  ];
 
   const openWhatsAppModal = (options?: WhatsAppModalOptions) => {
     setIsSubmitting(false);
@@ -92,6 +128,9 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
     } else {
       setMessage('');
     }
+
+    setSelectedDate('');
+    setSelectedTime('');
 
     setIsOpen(true);
   };
@@ -148,6 +187,8 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
       email: email.trim() || 'Not provided',
       organisation: organization.trim() || 'Individual / Independent',
       service: SERVICE_LABELS[ctaType] || 'General Direct Enquiry',
+      date: selectedDate || 'No date selected',
+      time: selectedTime || 'No time selected',
       message: message.trim() || 'No additional details provided.',
     });
 
@@ -319,6 +360,45 @@ export const WhatsAppModalProvider: React.FC<{ children: React.ReactNode }> = ({
                         />
                       </div>
                     </div>
+
+                    {/* Preferred Date & Time (speaking only) */}
+                    {ctaType === 'speaking' && (
+                      <div className="space-y-3 p-3 bg-[#F8F5EF] rounded-sm border border-[#D4AF37]/20">
+                        <div className="flex items-center gap-1.5 text-xs font-bold text-[#7e2e19]">
+                          <Calendar className="w-3.5 h-3.5 text-[#9a3820]" />
+                          <span>Preferred Date &amp; Time</span>
+                          <span className="text-[10px] font-normal text-gray-500 ml-1">(Wednesdays &amp; Sundays only)</span>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <div>
+                            <label className="block text-[10px] font-bold text-gray-600 mb-1">Date</label>
+                            <select
+                              value={selectedDate}
+                              onChange={(e) => setSelectedDate(e.target.value)}
+                              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] transition-colors"
+                            >
+                              <option value="">Select a date...</option>
+                              {availableDates.map((d) => (
+                                <option key={d.value} value={d.value}>{d.label}</option>
+                              ))}
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-[10px] font-bold text-gray-600 mb-1">Time Slot</label>
+                            <select
+                              value={selectedTime}
+                              onChange={(e) => setSelectedTime(e.target.value)}
+                              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-sm text-xs sm:text-sm focus:outline-none focus:border-[#7e2e19] transition-colors"
+                            >
+                              <option value="">Select a time...</option>
+                              {timeSlots.map((t) => (
+                                <option key={t} value={t}>{t}</option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    )}
 
                     {/* Message Notes */}
                     <div>
